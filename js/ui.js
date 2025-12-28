@@ -104,7 +104,7 @@ function createFilledSlotElement(enhancement, powerName, slotIndex) {
             // Shift + Left click: Remove slot
             removeSlotFromPower(powerName, slotIndex);
             updatePowerSlots(powerName);
-            updateStatsDisplay();
+            recalculateStats();
         } else {
             // Normal left click: Open picker with clear option
             openPickerForFilledSlot(powerName, slotIndex, enhancement);
@@ -146,7 +146,7 @@ function createEmptySlotElement(powerName, slotIndex) {
             // Shift + Left click: Remove slot
             removeSlotFromPower(powerName, slotIndex);
             updatePowerSlots(powerName);
-            updateStatsDisplay();
+            recalculateStats();
         } else {
             // Normal left click: Open picker
             AppState.currentSlotIndex = slotIndex;
@@ -256,7 +256,7 @@ function smartAddSetPiece(powerName, slotIndex, setId, power) {
     
     if (addEnhancementToPower(powerName, slotIndex, enhancement)) {
         updatePowerSlots(powerName);
-        updateStatsDisplay();
+        recalculateStats();
         console.log(`Smart-added: ${set.name} - ${nextPiece.name}`);
     }
 }
@@ -296,7 +296,7 @@ function cloneEnhancement(powerName, slotIndex, template) {
     
     if (enhancement && addEnhancementToPower(powerName, slotIndex, enhancement)) {
         updatePowerSlots(powerName);
-        updateStatsDisplay();
+        recalculateStats();
         console.log(`Cloned: ${template.type} enhancement`);
     }
 }
@@ -316,7 +316,7 @@ function openPickerForFilledSlot(powerName, slotIndex, currentEnhancement) {
             untrackSetBonus(currentEnhancement.setId, currentEnhancement.pieceNum);
         }
         updatePowerSlots(powerName);
-        updateStatsDisplay();
+        recalculateStats();
     }
     
     // Open picker to replace
@@ -411,23 +411,6 @@ function showEnhancementTooltip(event, enhancement) {
     tooltip.innerHTML = html;
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
-}
-
-// ============================================
-// STATS DISPLAY
-// ============================================
-
-/**
- * Update the stats dashboard with calculated values
- */
-function updateStatsDisplay() {
-    // TODO: Calculate actual stats from slotted enhancements
-    // For now, just log that we should update
-    console.log('Stats display should update here');
-    
-    // Get active set bonuses
-    const activeBonuses = getActiveSetBonuses();
-    console.log('Active set bonuses:', activeBonuses);
 }
 
 // ============================================

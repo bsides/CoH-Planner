@@ -282,9 +282,17 @@ function updateAvailablePrimaryPowers(powerset) {
             powerElement.onclick = () => selectPower(power, 'primary');
         }
         
-        // Hover tooltip
-        powerElement.onmouseenter = (e) => showPowerTooltip(e, power);
-        powerElement.onmouseleave = () => hideTooltip();
+        // Hover tooltip - use available power tooltip (base values only)
+        powerElement.onmouseenter = (e) => {
+            if (typeof showAvailablePowerTooltip === 'function') {
+                showAvailablePowerTooltip(e, power);
+            }
+        };
+        powerElement.onmouseleave = () => {
+            if (typeof hideTooltip === 'function') {
+                hideTooltip();
+            }
+        };
         
         container.appendChild(powerElement);
     });
@@ -341,9 +349,17 @@ function updateAvailableSecondaryPowers(powerset) {
             powerElement.onclick = () => selectPower(power, 'secondary');
         }
         
-        // Hover tooltip
-        powerElement.onmouseenter = (e) => showPowerTooltip(e, power);
-        powerElement.onmouseleave = () => hideTooltip();
+        // Hover tooltip - use available power tooltip (base values only)
+        powerElement.onmouseenter = (e) => {
+            if (typeof showAvailablePowerTooltip === 'function') {
+                showAvailablePowerTooltip(e, power);
+            }
+        };
+        powerElement.onmouseleave = () => {
+            if (typeof hideTooltip === 'function') {
+                hideTooltip();
+            }
+        };
         
         container.appendChild(powerElement);
     });
@@ -451,7 +467,8 @@ function selectPower(powerData, category) {
         slots: [null], // Start with 1 empty slot
         maxSlots: powerData.maxSlots,
         allowedEnhancements: powerData.allowedEnhancements,
-        effects: powerData.effects
+        effects: powerData.effects,
+        isActive: false  // For buffs like Aim, Build Up
     };
     
     // Add to build
@@ -591,12 +608,18 @@ function updatePoolPowersColumn() {
                 <div class="enhancement-slots"></div>
             `;
             
-            // Add tooltip - get original power data
-            const originalPower = getOriginalPowerData(power.name, 'pool', poolData.id);
-            if (originalPower) {
-                powerElement.onmouseenter = (e) => showPowerTooltip(e, originalPower, true);
-                powerElement.onmouseleave = () => hideTooltip();
-            }
+            // Add tooltip - use unified tooltip system
+            powerElement.onmouseenter = (e) => {
+                const originalPower = getOriginalPowerData(power.name, 'pool', poolData.id);
+                if (originalPower && typeof showPowerTooltip === 'function') {
+                    showPowerTooltip(e, power, originalPower);
+                }
+            };
+            powerElement.onmouseleave = () => {
+                if (typeof hideTooltip === 'function') {
+                    hideTooltip();
+                }
+            };
             
             poolGroup.appendChild(powerElement);
             poolPowerNames.push(power.name);
@@ -622,20 +645,47 @@ function addPowerToColumn(power, category) {
     const powerElement = document.createElement('div');
     powerElement.className = 'selected-power';
     powerElement.dataset.powerName = power.name;
+    
+    // Check if this is a buff power (has tohitBuff or damageBuff)
+    const isBuffPower = power.effects && (power.effects.tohitBuff || power.effects.damageBuff);
+    
     powerElement.innerHTML = `
         <div class="selected-power-header">
             <span class="selected-power-name">${power.name}</span>
+            ${isBuffPower ? '<input type="checkbox" class="power-toggle" title="Toggle active"></input>' : ''}
             <span class="selected-power-level">Level ${power.level}</span>
         </div>
         <div class="enhancement-slots"></div>
     `;
     
-    // Add tooltip - get original power data to show effects
-    const originalPower = getOriginalPowerData(power.name, category);
-    if (originalPower) {
-        powerElement.onmouseenter = (e) => showPowerTooltip(e, originalPower, true);
-        powerElement.onmouseleave = () => hideTooltip();
+    // Add toggle handler for buff powers
+    if (isBuffPower) {
+        const checkbox = powerElement.querySelector('.power-toggle');
+        checkbox.checked = power.isActive || false;
+        checkbox.addEventListener('change', (e) => {
+            e.stopPropagation();
+            power.isActive = checkbox.checked;
+            console.log(`${power.name} active: ${power.isActive}`);
+            // Recalculate stats to update Final column values
+            if (typeof recalculateStats === 'function') {
+                recalculateStats();
+            }
+        });
     }
+    
+    // Add tooltip - use unified tooltip system to show Base/Enhanced/Final stats
+    powerElement.onmouseenter = (e) => {
+        const originalPower = getOriginalPowerData(power.name, category);
+        if (originalPower && typeof showPowerTooltip === 'function') {
+            // Pass the power from build and original definition
+            showPowerTooltip(e, power, originalPower);
+        }
+    };
+    powerElement.onmouseleave = () => {
+        if (typeof hideTooltip === 'function') {
+            hideTooltip();
+        }
+    };
     
     // Add to column
     container.appendChild(powerElement);
@@ -799,251 +849,9 @@ function formatPowersetName(powersetId) {
         .join(' ');
 }
 
-/**
- * Show detailed power tooltip
- * @param {Event} event - Mouse event
- * @param {Object} power - Power data
- * @param {boolean} showEnhancements - Whether to show enhancement bonuses
- */
-function showPowerTooltip(event, power, showEnhancements = false) {
-    const tooltip = document.getElementById('tooltip');
-    if (!tooltip) {
-        console.error('Tooltip element not found!');
-        return;
-    }
-    
-    if (!power) {
-        console.error('Power data is null!');
-        return;
-    }
-    
-    let html = `<div class="tooltip-title">${power.name}</div>`;
-    
-    // Power type
-    if (power.type) {
-        html += `<div class="tooltip-section">`;
-        html += `<div class="tooltip-label">Type</div>`;
-        html += `<div class="tooltip-value">${formatPowerType(power.type)}</div>`;
-        html += `</div>`;
-    }
-    
-    // Description
-    if (power.description) {
-        html += `<div class="tooltip-section">`;
-        html += `<div class="tooltip-desc">${power.description}</div>`;
-        html += `</div>`;
-    }
-    
-    // Effects
-    if (power.effects) {
-        html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
-        
-        // Note: Enhancement bonuses placeholder
-        if (showEnhancements) {
-            html += `<div style="font-size: 11px; color: var(--accent); margin-bottom: 6px; font-style: italic;">With Enhancements</div>`;
-        }
-        
-        // Damage
-        if (power.effects.damage) {
-            const dmg = power.effects.damage;
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Damage:</span> `;
-            html += `<span class="tooltip-value">${dmg.type} (scale ${dmg.scale})</span>`;
-            html += `</div>`;
-        }
-        
-        // DoT Damage
-        if (power.effects.dotDamage) {
-            const dot = power.effects.dotDamage;
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">DoT:</span> `;
-            html += `<span class="tooltip-value">${dot.type} (${dot.scale} × ${dot.ticks} ticks)</span>`;
-            html += `</div>`;
-        }
-        
-        // Accuracy
-        if (power.effects.accuracy !== undefined) {
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Accuracy:</span> `;
-            html += `<span class="tooltip-value">${(power.effects.accuracy * 100).toFixed(0)}%</span>`;
-            html += `</div>`;
-        }
-        
-        // Range
-        if (power.effects.range !== undefined) {
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Range:</span> `;
-            html += `<span class="tooltip-value">${power.effects.range} ft</span>`;
-            html += `</div>`;
-        }
-        
-        // Radius (for AoE)
-        if (power.effects.radius !== undefined) {
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Radius:</span> `;
-            html += `<span class="tooltip-value">${power.effects.radius} ft</span>`;
-            html += `</div>`;
-        }
-        
-        // Cone
-        if (power.effects.cone) {
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Cone:</span> `;
-            html += `<span class="tooltip-value">${power.effects.cone.range} ft × ${power.effects.cone.arc}°</span>`;
-            html += `</div>`;
-        }
-        
-        // Recharge
-        if (power.effects.recharge !== undefined) {
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Recharge:</span> `;
-            html += `<span class="tooltip-value">${power.effects.recharge}s</span>`;
-            html += `</div>`;
-        }
-        
-        // Endurance
-        if (power.effects.endurance !== undefined) {
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Endurance:</span> `;
-            html += `<span class="tooltip-value">${power.effects.endurance.toFixed(2)}</span>`;
-            html += `</div>`;
-        }
-        
-        // Duration
-        if (power.effects.duration !== undefined) {
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Duration:</span> `;
-            html += `<span class="tooltip-value">${power.effects.duration}s</span>`;
-            html += `</div>`;
-        }
-        
-        // Hold/Immobilize/etc
-        if (power.effects.immobilize) {
-            const imm = power.effects.immobilize;
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Immobilize:</span> `;
-            html += `<span class="tooltip-value">Mag ${imm.magnitude} (${imm.duration}s)</span>`;
-            html += `</div>`;
-        }
-        
-        // Defense
-        if (power.effects.defense) {
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Defense:</span> `;
-            html += `<span class="tooltip-value">+${(power.effects.defense * 100).toFixed(1)}%</span>`;
-            html += `</div>`;
-        }
-        
-        // Resistance
-        if (power.effects.resistance) {
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Resistance:</span> `;
-            html += `<span class="tooltip-value">+${(power.effects.resistance * 100).toFixed(1)}%</span>`;
-            html += `</div>`;
-        }
-        
-        // Regeneration
-        if (power.effects.regeneration !== undefined) {
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Regeneration:</span> `;
-            html += `<span class="tooltip-value">+${(power.effects.regeneration * 100).toFixed(1)}%</span>`;
-            html += `</div>`;
-        }
-        
-        // Recovery
-        if (power.effects.recovery !== undefined) {
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Recovery:</span> `;
-            html += `<span class="tooltip-value">+${(power.effects.recovery * 100).toFixed(1)}%</span>`;
-            html += `</div>`;
-        }
-        
-        // Buffs
-        if (power.effects.tohitBuff !== undefined) {
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">To-Hit Buff:</span> `;
-            html += `<span class="tooltip-value">+${(power.effects.tohitBuff * 100).toFixed(1)}%</span>`;
-            html += `</div>`;
-        }
-        
-        if (power.effects.damageBuff !== undefined) {
-            html += `<div class="tooltip-stat">`;
-            html += `<span class="tooltip-label">Damage Buff:</span> `;
-            html += `<span class="tooltip-value">+${(power.effects.damageBuff * 100).toFixed(1)}%</span>`;
-            html += `</div>`;
-        }
-        
-        html += `</div>`;
-    }
-    
-    tooltip.innerHTML = html;
-    positionTooltip(tooltip, event);
-    tooltip.classList.add('visible');
-}
+// Power tooltip functions moved to unified-tooltips.js
 
-/**
- * Hide tooltip
- */
-function hideTooltip() {
-    const tooltip = document.getElementById('tooltip');
-    if (tooltip) {
-        tooltip.classList.remove('visible');
-    }
-}
-
-/**
- * Format power type for display
- * @param {string} type - Power type
- * @returns {string} Formatted type
- */
-function formatPowerType(type) {
-    const typeMap = {
-        'ranged-single': 'Ranged (Single Target)',
-        'ranged-aoe': 'Ranged (Area of Effect)',
-        'location-aoe': 'Location AoE',
-        'pbaoe': 'Point Blank AoE',
-        'cone': 'Cone',
-        'melee': 'Melee',
-        'self-buff': 'Self Buff',
-        'self-heal': 'Self Heal',
-        'toggle-aura': 'Toggle Aura',
-        'ranged-snipe': 'Ranged Sniper'
-    };
-    
-    return typeMap[type] || type;
-}
-
-/**
- * Position tooltip near mouse cursor
- * @param {HTMLElement} tooltip - Tooltip element
- * @param {Event} event - Mouse event
- */
-function positionTooltip(tooltip, event) {
-    const offset = 10;
-    let x = event.clientX + offset;
-    let y = event.clientY + offset;
-    
-    // Set initial position
-    tooltip.style.left = x + 'px';
-    tooltip.style.top = y + 'px';
-    
-    // Get tooltip dimensions for edge detection
-    const rect = tooltip.getBoundingClientRect();
-    
-    // Adjust if tooltip goes off right edge
-    if (rect.right > window.innerWidth) {
-        x = event.clientX - rect.width - offset;
-    }
-    
-    // Adjust if tooltip goes off bottom edge
-    if (rect.bottom > window.innerHeight) {
-        y = event.clientY - rect.height - offset;
-    }
-    
-    // Apply final position
-    tooltip.style.left = x + 'px';
-    tooltip.style.top = y + 'px';
-}
+// Tooltip utility functions moved to unified-tooltips.js
 
 // Initialize on page load
 window.addEventListener('DOMContentLoaded', function() {
@@ -1302,9 +1110,11 @@ function openPoolPowerModal() {
                 });
             }
             
-            // Add tooltip (base values for modal)
+            // Add tooltip (available power - base values only)
             powerOption.addEventListener('mouseenter', (e) => {
-                showPowerTooltip(e, power, false);
+                if (typeof showAvailablePowerTooltip === 'function') {
+                    showAvailablePowerTooltip(e, power);
+                }
             });
             powerOption.addEventListener('mouseleave', () => {
                 hideTooltip();

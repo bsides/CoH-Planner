@@ -97,11 +97,23 @@ function getStatColorClass(statName) {
 }
 
 /**
- * Update global IO level
+ * Update global IO level with validation
  */
 function updateGlobalIOLevel() {
-    AppState.globalIOLevel = parseInt(document.getElementById('globalIOLevel').value);
-    document.getElementById('globalIOLevelDisplay').textContent = `Level ${AppState.globalIOLevel}`;
+    const input = document.getElementById('globalIOLevel');
+    let value = parseInt(input.value);
+    
+    // Validate and clamp to range
+    if (isNaN(value) || value < 10) {
+        value = 10;
+    } else if (value > 53) {
+        value = 53;
+    }
+    
+    // Update input if it was corrected
+    input.value = value;
+    AppState.globalIOLevel = value;
+    Build.settings.globalIOLevel = value;
     
     // Update display if Generic IO view is active
     if (document.getElementById('selectionViewGeneric').classList.contains('active')) {

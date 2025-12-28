@@ -101,7 +101,7 @@ function loadSetsForCategory(category) {
     // Filter sets by category
     let setsToShow = [];
     if (category === 'io-set') {
-        setsToShow = ['positrons', 'bombardment', 'thunderstrike'];
+        setsToShow = ['positrons', 'thunderstrike', 'crushing-impact', 'eradication', 'ruin'];
     } else if (category === 'very-rare') {
         setsToShow = ['apocalypse', 'ragnarok'];
     } else if (category === 'event') {
@@ -117,7 +117,7 @@ function loadSetsForCategory(category) {
         const set = IO_SETS[setId];
         if (!set) return;
         
-        const iconPath = getSetIcon(setId);
+        const iconPath = getSetIcon(setId) || 'img/Enhancements/Damage.png';
         const purpleClass = set.purple ? ' purple' : '';
         
         html += `
@@ -188,7 +188,7 @@ function addEnhancement(setId, pieceNum) {
     if (success) {
         // Update UI
         updatePowerSlots(AppState.currentPowerName);
-        updateStatsDisplay();
+        recalculateStats();
         closeModal();
     }
 }
@@ -291,7 +291,7 @@ function addGenericIO(aspect, aspectName) {
     if (success) {
         // Update UI
         updatePowerSlots(AppState.currentPowerName);
-        updateStatsDisplay();
+        recalculateStats();
         closeModal();
     }
 }
@@ -510,12 +510,13 @@ function showSetTooltip(event, setId) {
     if (!set) return;
     
     const tooltip = document.getElementById('tooltip');
+    const bonusList = set.bonuses.map(b => `<li>${b.desc}</li>`).join('');
     const html = `
         <div class="tooltip-title">${set.name}</div>
         <div class="tooltip-section">
             <div class="tooltip-label">Set Bonuses</div>
             <ul class="bonus-list">
-                ${set.bonuses.map(b => `<li>${b}</li>`).join('')}
+                ${bonusList}
             </ul>
         </div>
     `;
@@ -555,6 +556,7 @@ function showPieceTooltip(event, setId, pieceNum) {
 
 /**
  * Show enhanced tooltip for set piece in icon grid
+ * Uses unified tooltip system
  * @param {Event} event - Mouse event
  * @param {string} setId - Set identifier
  * @param {number} pieceNum - Piece number
@@ -563,28 +565,10 @@ function showSetPieceTooltip(event, setId, pieceNum) {
     const set = IO_SETS[setId];
     if (!set) return;
     
-    const piece = set.pieces.find(p => p.num === pieceNum);
-    if (!piece) return;
-    
-    const tooltip = document.getElementById('tooltip');
-    const html = `
-        <div class="tooltip-title">${set.name}</div>
-        <div class="tooltip-section">
-            <div class="tooltip-label">${piece.name} (Piece ${piece.num})</div>
-            <div class="tooltip-value">${piece.values}</div>
-        </div>
-        <div class="tooltip-section" style="margin-top: 8px;">
-            <div class="tooltip-label">Set Bonuses (${set.pieces.length} pieces)</div>
-            <ul class="bonus-list">
-                ${set.bonuses.map(b => `<li>${b}</li>`).join('')}
-            </ul>
-        </div>
-        ${piece.unique ? '<div class="tooltip-section"><div class="tooltip-value" style="color: var(--warning)">⚠ Unique</div></div>' : ''}
-    `;
-    
-    tooltip.innerHTML = html;
-    positionTooltip(tooltip, event);
-    tooltip.classList.add('visible');
+    // Use unified tooltip system (defined in unified-tooltips.js)
+    if (typeof showSetTooltip === 'function') {
+        showSetTooltip(event, set, 0); // 0 = none slotted yet in modal view
+    }
 }
 
 /**

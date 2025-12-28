@@ -326,30 +326,52 @@ function untrackSetBonus(setId, pieceNum) {
 
 /**
  * Get active set bonuses for display
- * @returns {Array} Array of active bonus descriptions
+ * @returns {Array} Array of active bonus objects
  */
 function getActiveSetBonuses() {
     const bonuses = [];
     
     for (const [setId, tracking] of Object.entries(Build.sets)) {
         const set = IO_SETS[setId];
-        if (!set) continue;
+        if (!set || !set.bonuses) continue;
         
         const count = tracking.count;
         
-        // Add bonuses for 2-6 pieces
-        for (let i = 2; i <= count && i <= 6; i++) {
-            if (set.bonuses[i - 2]) { // bonuses array is 0-indexed
+        // Check each bonus level
+        set.bonuses.forEach(bonus => {
+            if (count >= bonus.pieces) {
                 bonuses.push({
+                    setId: setId,
                     setName: set.name,
-                    pieces: i,
-                    bonus: set.bonuses[i - 2]
+                    pieces: bonus.pieces,
+                    stat: bonus.stat,
+                    value: bonus.value,
+                    desc: bonus.desc
                 });
             }
-        }
+        });
     }
     
     return bonuses;
+}
+
+/**
+ * Calculate total set bonuses and apply to CharacterStats
+ */
+function calculateSetBonuses() {
+    const bonuses = getActiveSetBonuses();
+    
+    // Group bonuses by stat
+    const statTotals = {};
+    
+    bonuses.forEach(bonus => {
+        if (!statTotals[bonus.stat]) {
+            statTotals[bonus.stat] = 0;
+        }
+        statTotals[bonus.stat] += bonus.value;
+    });
+    
+    return statTotals;
 }
 
 // ============================================
