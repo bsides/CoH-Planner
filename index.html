@@ -240,7 +240,7 @@
     <script src="js/data/powersets.js"></script>
     
     <!-- Blaster Primary Powersets (Alphabetical) -->
-    <script src="js/data/powersets/archery.js"></script>
+    <script src="js/data/powersets/archery.js?v=2"></script>
     <script src="js/data/powersets/assault-rifle.js"></script>
     <script src="js/data/powersets/beam-rifle.js"></script>
     <script src="js/data/powersets/dark-blast.js"></script>
@@ -402,6 +402,9 @@
     <script src="js/data/powersets/thugs.js"></script>
     <!-- Note: Mastermind secondaries use Defender/Controller primaries (already loaded above) -->
     
+    <!-- Powerset Auto-Loader (registers all loaded powersets) -->
+    <script src="js/data/powersets-loader.js"></script>
+    
     <script src="js/data/power-pools.js"></script>
     <script src="js/data/io-sets.js"></script>
     <script src="js/data/enhancements.js"></script>
@@ -409,9 +412,14 @@
     <script src="js/app.js"></script>
     <script src="js/build.js"></script>
     <script src="js/icons.js"></script>
+    <script src="js/damage-calculation.js"></script>  <!-- Damage calculation with level tables -->
     <script src="js/ui.js"></script>  <!-- MOVED BEFORE character-creator.js -->
+    <script src="js/enhancement-values.js"></script>  <!-- Enhancement value parsing and calculations -->
     <script src="js/tooltips/unified-tooltips.js"></script>
+    <script src="js/tooltips/tooltip-improvements.js"></script>
     <script src="js/character-creator.js"></script>
+    <script src="js/enhancement-filtering.js"></script>
+    <script src="js/drag-selection.js"></script>
     <script src="js/enhancement-selector.js"></script>
     <script src="js/rule-of-five.js"></script>
     <script src="js/stats.js"></script>
