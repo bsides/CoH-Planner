@@ -39,6 +39,7 @@ const MARTIAL_ARTS_POWERSET = {
                     scale: 3.1350000000000002
                 }
             }
+        }
         },
         {name: "Thunder Kick",
             available: 0,
@@ -69,7 +70,8 @@ const MARTIAL_ARTS_POWERSET = {
                     ],
                     scale: 2.319
                 }
-            },
+            }
+        },
         {name: "Cobra Strike",
             available: 1,
             tier: 1,
@@ -99,7 +101,8 @@ const MARTIAL_ARTS_POWERSET = {
                     ],
                     scale: 4.8109
                 }
-            },
+            }
+        },
         {name: "Focus Chi",
             available: 5,
             tier: 3,
@@ -119,7 +122,8 @@ const MARTIAL_ARTS_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Crane Kick",
             available: 7,
             tier: 3,
@@ -149,7 +153,8 @@ const MARTIAL_ARTS_POWERSET = {
                     ],
                     scale: 4.8109
                 }
-            },
+            }
+        },
         {name: "Warriors Challenge",
             available: 11,
             tier: 4,
@@ -168,7 +173,8 @@ const MARTIAL_ARTS_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Crippling Axe Kick",
             available: 17,
             tier: 4,
@@ -200,7 +206,8 @@ const MARTIAL_ARTS_POWERSET = {
                 },
                 buffDuration: 8.0,
                 defenseDebuff: 1.0
-            },
+            }
+        },
         {name: "Dragon's Tail",
             available: 21,
             tier: 5,
@@ -230,7 +237,8 @@ const MARTIAL_ARTS_POWERSET = {
                     ],
                     scale: 2.6271999999999998
                 }
-            },
+            }
+        },
         {name: "Eagles Claw",
             available: 25,
             tier: 5,

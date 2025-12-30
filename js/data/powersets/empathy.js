@@ -28,6 +28,7 @@ const EMPATHY_POWERSET = {
                 endurance: 13.0,
                 cast: 2.27
             }
+        }
         },
         {name: "Healing Aura",
             available: 0,
@@ -47,7 +48,8 @@ const EMPATHY_POWERSET = {
                 recharge: 8.0,
                 endurance: 13.0,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Absorb Pain",
             available: 1,
             tier: 1,
@@ -67,7 +69,8 @@ const EMPATHY_POWERSET = {
                 endurance: 0.52,
                 cast: 2.27,
                 buffDuration: 20.0
-            },
+            }
+        },
         {name: "Resurrect",
             available: 5,
             tier: 3,
@@ -87,7 +90,8 @@ const EMPATHY_POWERSET = {
                 endurance: 26.0,
                 cast: 3.2,
                 buffDuration: 0.5
-            },
+            }
+        },
         {name: "Clear Mind",
             available: 7,
             tier: 3,
@@ -109,7 +113,8 @@ const EMPATHY_POWERSET = {
                 stun: 1.0,
                 stunDuration: 90.0,
                 buffDuration: 90.0
-            },
+            }
+        },
         {name: "Fortitude",
             available: 11,
             tier: 4,
@@ -130,7 +135,8 @@ const EMPATHY_POWERSET = {
                 cast: 2.27,
                 tohitBuff: 1.5,
                 buffDuration: 120.0
-            },
+            }
+        },
         {name: "Recovery Aura",
             available: 17,
             tier: 4,
@@ -150,7 +156,8 @@ const EMPATHY_POWERSET = {
                 endurance: 26.0,
                 cast: 2.03,
                 buffDuration: 90.0
-            },
+            }
+        },
         {name: "Regeneration Aura",
             available: 21,
             tier: 5,
@@ -170,7 +177,8 @@ const EMPATHY_POWERSET = {
                 endurance: 26.0,
                 cast: 2.03,
                 buffDuration: 90.0
-            },
+            }
+        },
         {name: "Adrenalin Boost",
             available: 25,
             tier: 5,

@@ -35,6 +35,7 @@ const DARKNESS_MANIPULATION_POWERSET = {
                 buffDuration: 9.2,
                 tohitDebuff: 0.75
             }
+        }
         },
         {name: "Smite",
             available: 0,
@@ -67,7 +68,8 @@ const DARKNESS_MANIPULATION_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Death Shroud",
             available: 3,
             tier: 2,
@@ -90,7 +92,8 @@ const DARKNESS_MANIPULATION_POWERSET = {
                     type: "Negative",
                     scale: 0.2
                 }
-            },
+            }
+        },
         {name: "Shadow Maul",
             available: 9,
             tier: 3,
@@ -125,7 +128,8 @@ const DARKNESS_MANIPULATION_POWERSET = {
                 },
                 buffDuration: 2.0,
                 tohitDebuff: 0.75
-            },
+            }
+        },
         {name: "Soul Drain",
             available: 15,
             tier: 4,
@@ -150,7 +154,8 @@ const DARKNESS_MANIPULATION_POWERSET = {
                 },
                 tohitBuff: 1.0,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Touch of the Beyond",
             available: 19,
             tier: 4,
@@ -169,7 +174,8 @@ const DARKNESS_MANIPULATION_POWERSET = {
                 recharge: 10.0,
                 endurance: 5.2,
                 cast: 1.17
-            },
+            }
+        },
         {name: "Dark Consumption",
             available: 23,
             tier: 5,
@@ -193,7 +199,8 @@ const DARKNESS_MANIPULATION_POWERSET = {
                     scale: 0.8
                 },
                 buffDuration: 8.53
-            },
+            }
+        },
         {name: "Dark Pit",
             available: 27,
             tier: 5,
@@ -215,7 +222,8 @@ const DARKNESS_MANIPULATION_POWERSET = {
                 cast: 1.07,
                 stun: 3.0,
                 buffDuration: 8.57
-            },
+            }
+        },
         {name: "Midnight Grasp",
             available: 29,
             tier: 5,

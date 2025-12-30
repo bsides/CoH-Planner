@@ -39,6 +39,7 @@ const DEMON_SUMMONING_POWERSET = {
                 },
                 buffDuration: 3.1
             }
+        }
         },
         {name: "Summon Demonlings",
             available: 0,
@@ -58,7 +59,8 @@ const DEMON_SUMMONING_POWERSET = {
                 recharge: 5.0,
                 endurance: 5.46,
                 cast: 2.0
-            },
+            }
+        },
         {name: "Lash",
             available: 1,
             tier: 1,
@@ -87,7 +89,8 @@ const DEMON_SUMMONING_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            },
+            }
+        },
         {name: "Enchant Demon",
             available: 5,
             tier: 3,
@@ -107,7 +110,8 @@ const DEMON_SUMMONING_POWERSET = {
                 recharge: 6.0,
                 endurance: 11.375,
                 cast: 2.17
-            },
+            }
+        },
         {name: "Crack Whip",
             available: 7,
             tier: 3,
@@ -138,7 +142,8 @@ const DEMON_SUMMONING_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 6.0
-            },
+            }
+        },
         {name: "Summon Demons",
             available: 11,
             tier: 4,
@@ -157,7 +162,8 @@ const DEMON_SUMMONING_POWERSET = {
                 recharge: 10.0,
                 endurance: 9.62,
                 cast: 2.0
-            },
+            }
+        },
         {name: "Hell on Earth",
             available: 17,
             tier: 4,
@@ -178,7 +184,8 @@ const DEMON_SUMMONING_POWERSET = {
                 cast: 2.03,
                 tohitBuff: 1.0,
                 buffDuration: 90.0
-            },
+            }
+        },
         {name: "Summon Demon Prince",
             available: 21,
             tier: 5,
@@ -197,7 +204,8 @@ const DEMON_SUMMONING_POWERSET = {
                 recharge: 15.0,
                 endurance: 13.18,
                 cast: 2.0
-            },
+            }
+        },
         {name: "Abyssal Empowerment",
             available: 25,
             tier: 5,

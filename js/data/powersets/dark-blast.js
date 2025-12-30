@@ -35,6 +35,7 @@ const DARK_BLAST_POWERSET = {
                 buffDuration: 3.6,
                 tohitDebuff: 0.75
             }
+        }
         },
         {name: "Umbral Torrent",
             available: 1,
@@ -62,7 +63,8 @@ const DARK_BLAST_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Aim",
             available: 5,
             tier: 3,
@@ -82,7 +84,8 @@ const DARK_BLAST_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 5.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Moonbeam",
             available: 7,
             tier: 3,
@@ -101,7 +104,8 @@ const DARK_BLAST_POWERSET = {
                 recharge: 12.0,
                 endurance: 14.352,
                 cast: 1.33
-            },
+            }
+        },
         {name: "Tenebrous Tentacles",
             available: 11,
             tier: 4,
@@ -133,7 +137,8 @@ const DARK_BLAST_POWERSET = {
                 },
                 buffDuration: 7.1,
                 tohitDebuff: 0.75
-            },
+            }
+        },
         {name: "Abyssal Gaze",
             available: 17,
             tier: 4,
@@ -159,7 +164,8 @@ const DARK_BLAST_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Life Drain",
             available: 21,
             tier: 5,
@@ -184,7 +190,8 @@ const DARK_BLAST_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Blackstar",
             available: 25,
             tier: 5,

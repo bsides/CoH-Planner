@@ -36,6 +36,7 @@ const FORCE_FIELD_POWERSET = {
                 },
                 buffDuration: 240.0
             }
+        }
         },
         {name: "Personal Force Field",
             available: 0,
@@ -55,7 +56,8 @@ const FORCE_FIELD_POWERSET = {
                 endurance: 0.13,
                 cast: 2.03,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Repulsion Bolt",
             available: 1,
             tier: 1,
@@ -79,7 +81,8 @@ const FORCE_FIELD_POWERSET = {
                     scale: 0.2
                 },
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Insulation Shield",
             available: 5,
             tier: 3,
@@ -102,7 +105,8 @@ const FORCE_FIELD_POWERSET = {
                 buffDuration: 240.0,
                 stun: 1.0,
                 stunDuration: 90.0
-            },
+            }
+        },
         {name: "Detention Field",
             available: 7,
             tier: 3,
@@ -122,7 +126,8 @@ const FORCE_FIELD_POWERSET = {
                 endurance: 10.4,
                 cast: 2.07,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Dispersion Bubble",
             available: 11,
             tier: 4,
@@ -144,7 +149,8 @@ const FORCE_FIELD_POWERSET = {
                 buffDuration: 15.0,
                 stun: 1.0,
                 stunDuration: 15.0
-            },
+            }
+        },
         {name: "Repulsion Field",
             available: 17,
             tier: 4,
@@ -163,7 +169,8 @@ const FORCE_FIELD_POWERSET = {
                 recharge: 20.0,
                 endurance: 0.1625,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Force Bomb",
             available: 21,
             tier: 5,
@@ -188,7 +195,8 @@ const FORCE_FIELD_POWERSET = {
                     scale: 0.6
                 },
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Damping Bubble",
             available: 25,
             tier: 5,

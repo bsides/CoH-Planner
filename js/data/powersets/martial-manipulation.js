@@ -25,6 +25,7 @@ const MARTIAL_MANIPULATION_POWERSET = {
             effects: {
                 accuracy: 1.0
             }
+        }
         },
         {name: "Ki Push",
             available: 0,
@@ -49,7 +50,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                     scale: 2.1409000000000002
                 },
                 buffDuration: 2.0
-            },
+            }
+        },
         {name: "Martial Combat",
             available: 0,
             tier: 1,
@@ -58,7 +60,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
             allowedSetCategories: [],
             description: "Your mastery of Martial Combat allows you to draw on the physical energy stored within your body to perform remarkable feats. You deliver damage to your enemies via withering kicks and punches, while your preternatural senses keep you moving faster and striking harder than any who oppose you.",
             shortHelp: "Martial Combat",
-            icon: "martial_manipulation_set.png"},
+            icon: "martial_manipulation_set.png"}
+        },
         {name: "Storm Kick",
             available: 0,
             tier: 1,
@@ -87,7 +90,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 1.5
-            },
+            }
+        },
         {name: "Burst of Speed",
             available: 9,
             tier: 3,
@@ -107,7 +111,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                 endurance: 13.52,
                 cast: 1.0,
                 buffDuration: 2.0
-            },
+            }
+        },
         {name: "Dragon's Tail",
             available: 15,
             tier: 4,
@@ -131,7 +136,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                     scale: 2.0936
                 },
                 buffDuration: 9.0
-            },
+            }
+        },
         {name: "Reaction Time",
             available: 19,
             tier: 4,
@@ -150,7 +156,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                 recharge: 10.0,
                 cast: 1.83,
                 buffDuration: 5.0
-            },
+            }
+        },
         {name: "Inner Will",
             available: 23,
             tier: 5,
@@ -170,7 +177,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                 stun: 1.0,
                 stunDuration: 30.0,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Throw Sand",
             available: 27,
             tier: 5,
@@ -193,7 +201,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                 cast: 1.07,
                 stun: 3.0,
                 buffDuration: 20.0
-            },
+            }
+        },
         {name: "Eagles Claw",
             available: 29,
             tier: 5,

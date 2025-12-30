@@ -26,6 +26,7 @@ const WILLPOWER_POWERSET = {
                 accuracy: 1.0,
                 buffDuration: 10.25
             }
+        }
         },
         {name: "Mind Over Body",
             available: 0,
@@ -45,7 +46,8 @@ const WILLPOWER_POWERSET = {
                 endurance: 0.104,
                 cast: 0.67,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Fast Healing",
             available: 3,
             tier: 2,
@@ -61,7 +63,8 @@ const WILLPOWER_POWERSET = {
             effects: {
                 accuracy: 1.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Indomitable Will",
             available: 9,
             tier: 3,
@@ -84,7 +87,8 @@ const WILLPOWER_POWERSET = {
                 buffDuration: 0.75,
                 tohitBuff: 0.3,
                 defenseBuff: 0.3
-            },
+            }
+        },
         {name: "Rise to the Challenge",
             available: 15,
             tier: 4,
@@ -105,7 +109,8 @@ const WILLPOWER_POWERSET = {
                 cast: 3.0,
                 tohitDebuff: 0.5,
                 buffDuration: 1.0
-            },
+            }
+        },
         {name: "Quick Recovery",
             available: 19,
             tier: 4,
@@ -121,7 +126,8 @@ const WILLPOWER_POWERSET = {
             effects: {
                 accuracy: 1.0,
                 buffDuration: 10.25
-            },
+            }
+        },
         {name: "Heightened Senses",
             available: 23,
             tier: 5,
@@ -141,7 +147,8 @@ const WILLPOWER_POWERSET = {
                 cast: 0.67,
                 buffDuration: 0.75,
                 defenseBuff: 0.5
-            },
+            }
+        },
         {name: "Resurgence",
             available: 27,
             tier: 5,
@@ -161,7 +168,8 @@ const WILLPOWER_POWERSET = {
                 buffDuration: 0.5,
                 tohitBuff: 3.0,
                 tohitDebuff: 3.0
-            },
+            }
+        },
         {name: "Strength of Will",
             available: 29,
             tier: 5,

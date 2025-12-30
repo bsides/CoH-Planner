@@ -30,6 +30,7 @@ const NINJITSU_POWERSET = {
                 buffDuration: 0.75,
                 defenseBuff: 0.5
             }
+        }
         },
         {name: "Ninja Reflexes",
             available: 0,
@@ -50,7 +51,8 @@ const NINJITSU_POWERSET = {
                 cast: 1.53,
                 buffDuration: 0.75,
                 defenseBuff: 0.5
-            },
+            }
+        },
         {name: "Shinobi-Iri",
             available: 3,
             tier: 2,
@@ -68,7 +70,8 @@ const NINJITSU_POWERSET = {
                 recharge: 2.0,
                 endurance: 0.13,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Kuji-In Rin",
             available: 9,
             tier: 3,
@@ -96,7 +99,8 @@ const NINJITSU_POWERSET = {
                 buffDuration: 120.0,
                 tohitBuff: 0.3,
                 defenseBuff: 0.3
-            },
+            }
+        },
         {name: "Seishinteki Kyoyo",
             available: 15,
             tier: 4,
@@ -113,7 +117,8 @@ const NINJITSU_POWERSET = {
                 accuracy: 1.0,
                 recharge: 60.0,
                 cast: 1.83
-            },
+            }
+        },
         {name: "Kuji-In Sha",
             available: 19,
             tier: 4,
@@ -137,7 +142,8 @@ const NINJITSU_POWERSET = {
                     ticks: 30
                 },
                 buffDuration: 60.0
-            },
+            }
+        },
         {name: "Bo Ryaku",
             available: 23,
             tier: 5,
@@ -153,7 +159,8 @@ const NINJITSU_POWERSET = {
             effects: {
                 accuracy: 1.0,
                 buffDuration: 10.25
-            },
+            }
+        },
         {name: "Blinding Powder",
             available: 27,
             tier: 5,
@@ -176,7 +183,8 @@ const NINJITSU_POWERSET = {
                 cast: 1.07,
                 buffDuration: 20.0,
                 tohitDebuff: 1.0
-            },
+            }
+        },
         {name: "Kuji-In Retsu",
             available: 29,
             tier: 5,

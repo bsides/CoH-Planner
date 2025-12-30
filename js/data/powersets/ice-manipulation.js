@@ -35,6 +35,7 @@ const ICE_MANIPULATION_POWERSET = {
                 },
                 buffDuration: 9.2
             }
+        }
         },
         {name: "Frozen Fists",
             available: 0,
@@ -66,7 +67,8 @@ const ICE_MANIPULATION_POWERSET = {
                     scale: 3.2908
                 },
                 buffDuration: 5.0
-            },
+            }
+        },
         {name: "Ice Sword",
             available: 3,
             tier: 2,
@@ -97,7 +99,8 @@ const ICE_MANIPULATION_POWERSET = {
                     scale: 3.6908
                 },
                 buffDuration: 8.0
-            },
+            }
+        },
         {name: "Frigid Protection",
             available: 9,
             tier: 3,
@@ -116,7 +119,8 @@ const ICE_MANIPULATION_POWERSET = {
                 recharge: 10.0,
                 cast: 0.73,
                 buffDuration: 5.0
-            },
+            }
+        },
         {name: "Build Up",
             available: 15,
             tier: 4,
@@ -136,7 +140,8 @@ const ICE_MANIPULATION_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Ice Patch",
             available: 19,
             tier: 4,
@@ -155,7 +160,8 @@ const ICE_MANIPULATION_POWERSET = {
                 endurance: 10.4,
                 cast: 1.57,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Shiver",
             available: 23,
             tier: 5,
@@ -177,7 +183,8 @@ const ICE_MANIPULATION_POWERSET = {
                 endurance: 10.4,
                 cast: 2.17,
                 buffDuration: 18.0
-            },
+            }
+        },
         {name: "Freezing Touch",
             available: 27,
             tier: 5,
@@ -206,7 +213,8 @@ const ICE_MANIPULATION_POWERSET = {
                     ticks: 10
                 },
                 buffDuration: 6.0
-            },
+            }
+        },
         {name: "Frozen Aura",
             available: 29,
             tier: 5,

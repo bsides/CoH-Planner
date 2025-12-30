@@ -33,6 +33,7 @@ const STONE_MELEE_POWERSET = {
                     scale: 2.141
                 }
             }
+        }
         },
         {name: "Stone Mallet",
             available: 0,
@@ -56,7 +57,8 @@ const STONE_MELEE_POWERSET = {
                     type: "Smashing",
                     scale: 3.4869
                 }
-            },
+            }
+        },
         {name: "Heavy Mallet",
             available: 1,
             tier: 1,
@@ -79,7 +81,8 @@ const STONE_MELEE_POWERSET = {
                     type: "Smashing",
                     scale: 4.301
                 }
-            },
+            }
+        },
         {name: "Build Up",
             available: 5,
             tier: 3,
@@ -99,7 +102,8 @@ const STONE_MELEE_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Fault",
             available: 7,
             tier: 3,
@@ -118,7 +122,8 @@ const STONE_MELEE_POWERSET = {
                 recharge: 20.0,
                 endurance: 10.192,
                 cast: 2.1
-            },
+            }
+        },
         {name: "Confront",
             available: 11,
             tier: 4,
@@ -137,7 +142,8 @@ const STONE_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Seismic Smash",
             available: 17,
             tier: 4,
@@ -160,7 +166,8 @@ const STONE_MELEE_POWERSET = {
                     type: "Smashing",
                     scale: 5.8099
                 }
-            },
+            }
+        },
         {name: "Hurl Boulder",
             available: 21,
             tier: 5,
@@ -184,7 +191,8 @@ const STONE_MELEE_POWERSET = {
                     scale: 3.6159
                 },
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Tremor",
             available: 25,
             tier: 5,

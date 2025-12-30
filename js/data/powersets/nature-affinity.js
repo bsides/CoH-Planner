@@ -30,6 +30,7 @@ const NATURE_AFFINITY_POWERSET = {
                 cast: 1.0,
                 buffDuration: 30.0
             }
+        }
         },
         {name: "Regrowth",
             available: 0,
@@ -52,7 +53,8 @@ const NATURE_AFFINITY_POWERSET = {
                 endurance: 13.52,
                 cast: 2.0,
                 buffDuration: 4.1
-            },
+            }
+        },
         {name: "Wild Growth",
             available: 1,
             tier: 1,
@@ -72,7 +74,8 @@ const NATURE_AFFINITY_POWERSET = {
                 endurance: 15.6,
                 cast: 2.17,
                 buffDuration: 90.0
-            },
+            }
+        },
         {name: "Spore Cloud",
             available: 5,
             tier: 3,
@@ -94,7 +97,8 @@ const NATURE_AFFINITY_POWERSET = {
                 cast: 3.1,
                 tohitDebuff: 1.5,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Lifegiving Spores",
             available: 7,
             tier: 3,
@@ -113,7 +117,8 @@ const NATURE_AFFINITY_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.26,
                 cast: 2.33
-            },
+            }
+        },
         {name: "Wild Bastion",
             available: 11,
             tier: 4,
@@ -133,7 +138,8 @@ const NATURE_AFFINITY_POWERSET = {
                 endurance: 13.0,
                 cast: 2.27,
                 buffDuration: 60.0
-            },
+            }
+        },
         {name: "Rebirth",
             available: 17,
             tier: 4,
@@ -152,7 +158,8 @@ const NATURE_AFFINITY_POWERSET = {
                 recharge: 180.0,
                 endurance: 26.0,
                 cast: 3.0
-            },
+            }
+        },
         {name: "Entangling Aura",
             available: 21,
             tier: 5,
@@ -171,7 +178,8 @@ const NATURE_AFFINITY_POWERSET = {
                 recharge: 20.0,
                 endurance: 1.3,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Overgrowth",
             available: 25,
             tier: 5,

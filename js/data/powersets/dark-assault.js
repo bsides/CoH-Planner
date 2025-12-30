@@ -34,6 +34,7 @@ const DARK_ASSAULT_POWERSET = {
                 tohitDebuff: 0.75,
                 buffDuration: 6.0
             }
+        }
         },
         {name: "Smite",
             available: 0,
@@ -66,7 +67,8 @@ const DARK_ASSAULT_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Gloom",
             available: 3,
             tier: 2,
@@ -92,7 +94,8 @@ const DARK_ASSAULT_POWERSET = {
                 },
                 buffDuration: 3.6,
                 tohitDebuff: 0.75
-            },
+            }
+        },
         {name: "Night Fall",
             available: 9,
             tier: 3,
@@ -120,7 +123,8 @@ const DARK_ASSAULT_POWERSET = {
                 },
                 buffDuration: 2.8,
                 tohitDebuff: 0.75
-            },
+            }
+        },
         {name: "Gather Shadows",
             available: 15,
             tier: 4,
@@ -143,7 +147,8 @@ const DARK_ASSAULT_POWERSET = {
                 stunDuration: 10.0,
                 tohitBuff: 0.5,
                 defenseBuff: 0.5
-            },
+            }
+        },
         {name: "Engulfing Darkness",
             available: 19,
             tier: 4,
@@ -173,7 +178,8 @@ const DARK_ASSAULT_POWERSET = {
                 },
                 buffDuration: 3.1,
                 tohitDebuff: 0.75
-            },
+            }
+        },
         {name: "Life Drain",
             available: 23,
             tier: 5,
@@ -198,7 +204,8 @@ const DARK_ASSAULT_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Moon Beam",
             available: 27,
             tier: 5,
@@ -217,7 +224,8 @@ const DARK_ASSAULT_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 1.33
-            },
+            }
+        },
         {name: "Midnight Grasp",
             available: 29,
             tier: 5,

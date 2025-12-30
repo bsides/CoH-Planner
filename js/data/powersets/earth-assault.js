@@ -32,6 +32,7 @@ const EARTH_ASSAULT_POWERSET = {
                     scale: 3.48
                 }
             }
+        }
         },
         {name: "Stone Spears",
             available: 0,
@@ -55,7 +56,8 @@ const EARTH_ASSAULT_POWERSET = {
                     type: "Lethal",
                     scale: 2.2601
                 }
-            },
+            }
+        },
         {name: "Tremor",
             available: 3,
             tier: 2,
@@ -78,7 +80,8 @@ const EARTH_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 1.9881
                 }
-            },
+            }
+        },
         {name: "Hurl Boulder",
             available: 9,
             tier: 3,
@@ -102,7 +105,8 @@ const EARTH_ASSAULT_POWERSET = {
                     scale: 4.2101
                 },
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Power Up",
             available: 15,
             tier: 4,
@@ -125,7 +129,8 @@ const EARTH_ASSAULT_POWERSET = {
                 stunDuration: 10.0,
                 tohitBuff: 0.5,
                 defenseBuff: 0.5
-            },
+            }
+        },
         {name: "Heavy Mallet",
             available: 19,
             tier: 4,
@@ -148,7 +153,8 @@ const EARTH_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 4.901
                 }
-            },
+            }
+        },
         {name: "Seismic Smash",
             available: 23,
             tier: 5,
@@ -171,7 +177,8 @@ const EARTH_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 5.8100000000000005
                 }
-            },
+            }
+        },
         {name: "Mud Pots",
             available: 27,
             tier: 5,
@@ -195,7 +202,8 @@ const EARTH_ASSAULT_POWERSET = {
                     scale: 0.13
                 },
                 buffDuration: 5.0
-            },
+            }
+        },
         {name: "Fissure",
             available: 29,
             tier: 5,

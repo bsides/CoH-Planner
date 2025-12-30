@@ -30,6 +30,7 @@ const ICE_ARMOR_POWERSET = {
                 buffDuration: 0.75,
                 defenseBuff: 0.4
             }
+        }
         },
         {name: "Hoarfrost",
             available: 0,
@@ -54,7 +55,8 @@ const ICE_ARMOR_POWERSET = {
                     ticks: 60
                 },
                 buffDuration: 120.0
-            },
+            }
+        },
         {name: "Rime",
             available: 0,
             tier: 1,
@@ -78,7 +80,8 @@ const ICE_ARMOR_POWERSET = {
                     ticks: 30
                 },
                 buffDuration: 60.0
-            },
+            }
+        },
         {name: "Chilling Embrace",
             available: 3,
             tier: 2,
@@ -98,7 +101,8 @@ const ICE_ARMOR_POWERSET = {
                 endurance: 0.13,
                 cast: 0.73,
                 buffDuration: 5.0
-            },
+            }
+        },
         {name: "Wet Ice",
             available: 9,
             tier: 3,
@@ -121,7 +125,8 @@ const ICE_ARMOR_POWERSET = {
                 stunDuration: 0.75,
                 tohitBuff: 0.3,
                 defenseBuff: 0.4
-            },
+            }
+        },
         {name: "Glacial Armor",
             available: 15,
             tier: 4,
@@ -141,7 +146,8 @@ const ICE_ARMOR_POWERSET = {
                 cast: 2.03,
                 buffDuration: 0.75,
                 defenseBuff: 0.4
-            },
+            }
+        },
         {name: "Energy Absorption",
             available: 19,
             tier: 4,
@@ -160,7 +166,8 @@ const ICE_ARMOR_POWERSET = {
                 recharge: 60.0,
                 endurance: 13.0,
                 cast: 1.33
-            },
+            }
+        },
         {name: "Permafrost",
             available: 23,
             tier: 5,
@@ -206,7 +213,8 @@ const ICE_ARMOR_POWERSET = {
                     ]
                 },
                 buffDuration: 10.25
-            },
+            }
+        },
         {name: "Icicles",
             available: 27,
             tier: 5,
@@ -236,7 +244,8 @@ const ICE_ARMOR_POWERSET = {
                     ],
                     scale: 0.29000000000000004
                 }
-            },
+            }
+        },
         {name: "Icy Bastion",
             available: 29,
             tier: 5,

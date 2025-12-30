@@ -28,6 +28,7 @@ const DARK_ARMOR_POWERSET = {
                 cast: 0.67,
                 buffDuration: 0.75
             }
+        }
         },
         {name: "Death Shroud",
             available: 0,
@@ -51,7 +52,8 @@ const DARK_ARMOR_POWERSET = {
                     type: "Negative",
                     scale: 0.2
                 }
-            },
+            }
+        },
         {name: "Murky Cloud",
             available: 3,
             tier: 2,
@@ -70,7 +72,8 @@ const DARK_ARMOR_POWERSET = {
                 endurance: 0.104,
                 cast: 1.17,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Obsidian Shield",
             available: 9,
             tier: 3,
@@ -93,7 +96,8 @@ const DARK_ARMOR_POWERSET = {
                 stunDuration: 0.75,
                 tohitBuff: 0.3,
                 defenseBuff: 0.3
-            },
+            }
+        },
         {name: "Dark Regeneration",
             available: 15,
             tier: 4,
@@ -116,7 +120,8 @@ const DARK_ARMOR_POWERSET = {
                     type: "Negative",
                     scale: 0.2
                 }
-            },
+            }
+        },
         {name: "Obscure Sustenance",
             available: 15,
             tier: 4,
@@ -136,7 +141,8 @@ const DARK_ARMOR_POWERSET = {
                 cast: 1.93,
                 buffDuration: 10.0,
                 tohitBuff: 0.75
-            },
+            }
+        },
         {name: "Cloak of Darkness",
             available: 19,
             tier: 4,
@@ -155,7 +161,8 @@ const DARK_ARMOR_POWERSET = {
                 endurance: 0.13,
                 cast: 1.17,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Cloak of Fear",
             available: 23,
             tier: 5,
@@ -174,7 +181,8 @@ const DARK_ARMOR_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.26,
                 cast: 1.17
-            },
+            }
+        },
         {name: "Oppressive Gloom",
             available: 27,
             tier: 5,
@@ -194,7 +202,8 @@ const DARK_ARMOR_POWERSET = {
                 endurance: 0.156,
                 cast: 1.17,
                 stun: 2.0
-            },
+            }
+        },
         {name: "Soul Transfer",
             available: 29,
             tier: 5,

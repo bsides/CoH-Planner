@@ -33,6 +33,7 @@ const FIERY_AURA_POWERSET = {
                     scale: 0.319
                 }
             }
+        }
         },
         {name: "Fire Shield",
             available: 0,
@@ -54,7 +55,8 @@ const FIERY_AURA_POWERSET = {
                 buffDuration: 0.75,
                 stun: 1.0,
                 stunDuration: 0.75
-            },
+            }
+        },
         {name: "Phoenix Rising",
             available: 0,
             tier: 1,
@@ -70,7 +72,8 @@ const FIERY_AURA_POWERSET = {
             effects: {
                 accuracy: 1.0,
                 buffDuration: 0.5
-            },
+            }
+        },
         {name: "Healing Flames",
             available: 3,
             tier: 2,
@@ -94,7 +97,8 @@ const FIERY_AURA_POWERSET = {
                     ticks: 30
                 },
                 buffDuration: 60.0
-            },
+            }
+        },
         {name: "Temperature Protection",
             available: 9,
             tier: 3,
@@ -122,7 +126,8 @@ const FIERY_AURA_POWERSET = {
                     ]
                 },
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Plasma Shield",
             available: 15,
             tier: 4,
@@ -143,7 +148,8 @@ const FIERY_AURA_POWERSET = {
                 buffDuration: 0.75,
                 tohitBuff: 0.3,
                 defenseBuff: 0.3
-            },
+            }
+        },
         {name: "Consume",
             available: 19,
             tier: 4,
@@ -163,7 +169,8 @@ const FIERY_AURA_POWERSET = {
                 endurance: 0.52,
                 cast: 2.03,
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Burn",
             available: 23,
             tier: 5,
@@ -186,7 +193,8 @@ const FIERY_AURA_POWERSET = {
                     type: "Fire",
                     scale: 1.44
                 }
-            },
+            }
+        },
         {name: "Fiery Embrace",
             available: 27,
             tier: 5,

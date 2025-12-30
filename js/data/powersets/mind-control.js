@@ -34,6 +34,7 @@ const MIND_CONTROL_POWERSET = {
                 },
                 buffDuration: 10.0
             }
+        }
         },
         {name: "Mesmerize",
             available: 0,
@@ -57,7 +58,8 @@ const MIND_CONTROL_POWERSET = {
                     type: "Psionic",
                     scale: 1.809
                 }
-            },
+            }
+        },
         {name: "Dominate",
             available: 1,
             tier: 1,
@@ -80,7 +82,8 @@ const MIND_CONTROL_POWERSET = {
                     type: "Psionic",
                     scale: 1.745
                 }
-            },
+            }
+        },
         {name: "Confuse",
             available: 5,
             tier: 3,
@@ -99,7 +102,8 @@ const MIND_CONTROL_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 2.0
-            },
+            }
+        },
         {name: "Mass Hypnosis",
             available: 7,
             tier: 3,
@@ -119,7 +123,8 @@ const MIND_CONTROL_POWERSET = {
                 recharge: 45.0,
                 endurance: 15.6,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Telekinesis",
             available: 11,
             tier: 4,
@@ -140,7 +145,8 @@ const MIND_CONTROL_POWERSET = {
                 endurance: 0.26,
                 cast: 1.13,
                 buffDuration: 1.5
-            },
+            }
+        },
         {name: "Total Domination",
             available: 17,
             tier: 4,
@@ -160,7 +166,8 @@ const MIND_CONTROL_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Terrify",
             available: 21,
             tier: 5,
@@ -185,7 +192,8 @@ const MIND_CONTROL_POWERSET = {
                     type: "Psionic",
                     scale: 1.7437
                 }
-            },
+            }
+        },
         {name: "Mass Confusion",
             available: 25,
             tier: 5,

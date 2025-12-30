@@ -29,6 +29,7 @@ const KINETICS_POWERSET = {
                 cast: 1.93,
                 buffDuration: 30.0
             }
+        }
         },
         {name: "Transfusion",
             available: 0,
@@ -49,7 +50,8 @@ const KINETICS_POWERSET = {
                 endurance: 7.8,
                 cast: 1.17,
                 buffDuration: 20.0
-            },
+            }
+        },
         {name: "Repel",
             available: 1,
             tier: 1,
@@ -69,7 +71,8 @@ const KINETICS_POWERSET = {
                 endurance: 0.325,
                 cast: 1.07,
                 buffDuration: 0.5
-            },
+            }
+        },
         {name: "Siphon Speed",
             available: 5,
             tier: 3,
@@ -89,7 +92,8 @@ const KINETICS_POWERSET = {
                 endurance: 7.8,
                 cast: 1.93,
                 buffDuration: 60.0
-            },
+            }
+        },
         {name: "Increase Density",
             available: 7,
             tier: 3,
@@ -124,7 +128,8 @@ const KINETICS_POWERSET = {
                 buffDuration: 60.0,
                 stun: 1.0,
                 stunDuration: 60.0
-            },
+            }
+        },
         {name: "Speed Boost",
             available: 11,
             tier: 4,
@@ -145,7 +150,8 @@ const KINETICS_POWERSET = {
                 endurance: 7.8,
                 cast: 1.0,
                 buffDuration: 120.0
-            },
+            }
+        },
         {name: "Inertial Reduction",
             available: 17,
             tier: 4,
@@ -165,7 +171,8 @@ const KINETICS_POWERSET = {
                 endurance: 23.4,
                 cast: 2.03,
                 buffDuration: 60.0
-            },
+            }
+        },
         {name: "Transference",
             available: 21,
             tier: 5,
@@ -184,7 +191,8 @@ const KINETICS_POWERSET = {
                 recharge: 30.0,
                 endurance: 2.6,
                 cast: 2.27
-            },
+            }
+        },
         {name: "Fulcrum Shift",
             available: 25,
             tier: 5,

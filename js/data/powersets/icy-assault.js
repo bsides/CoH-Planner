@@ -41,6 +41,7 @@ const ICY_ASSAULT_POWERSET = {
                 },
                 buffDuration: 6.0
             }
+        }
         },
         {name: "Ice Sword",
             available: 0,
@@ -72,7 +73,8 @@ const ICY_ASSAULT_POWERSET = {
                     scale: 3.691
                 },
                 buffDuration: 8.0
-            },
+            }
+        },
         {name: "Ice Sword Circle",
             available: 3,
             tier: 2,
@@ -103,7 +105,8 @@ const ICY_ASSAULT_POWERSET = {
                     scale: 2.9894
                 },
                 buffDuration: 8.0
-            },
+            }
+        },
         {name: "Ice Blast",
             available: 9,
             tier: 3,
@@ -134,7 +137,8 @@ const ICY_ASSAULT_POWERSET = {
                     scale: 2.66
                 },
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Power Up",
             available: 15,
             tier: 4,
@@ -157,7 +161,8 @@ const ICY_ASSAULT_POWERSET = {
                 stunDuration: 10.0,
                 tohitBuff: 0.5,
                 defenseBuff: 0.5
-            },
+            }
+        },
         {name: "Frost Breath",
             available: 19,
             tier: 4,
@@ -184,7 +189,8 @@ const ICY_ASSAULT_POWERSET = {
                     ticks: 1
                 },
                 buffDuration: 0.6
-            },
+            }
+        },
         {name: "Chilling Embrace",
             available: 23,
             tier: 5,
@@ -208,7 +214,8 @@ const ICY_ASSAULT_POWERSET = {
                     scale: 0.14
                 },
                 buffDuration: 5.0
-            },
+            }
+        },
         {name: "Ice Slash",
             available: 27,
             tier: 5,
@@ -239,7 +246,8 @@ const ICY_ASSAULT_POWERSET = {
                     scale: 5.441000000000001
                 },
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Bitter Ice Blast",
             available: 29,
             tier: 5,

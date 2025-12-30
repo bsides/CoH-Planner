@@ -32,6 +32,7 @@ const MARTIAL_ASSAULT_POWERSET = {
                     scale: 2.26
                 }
             }
+        }
         },
         {name: "Thunder Kick",
             available: 0,
@@ -56,7 +57,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                     scale: 2.6220999999999997
                 },
                 stun: 3.0
-            },
+            }
+        },
         {name: "Trick Shot",
             available: 3,
             tier: 2,
@@ -80,7 +82,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                     type: "Lethal",
                     scale: 2.5
                 }
-            },
+            }
+        },
         {name: "Spinning Kick",
             available: 9,
             tier: 3,
@@ -105,7 +108,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 2.7464
                 }
-            },
+            }
+        },
         {name: "Envenomed Blades",
             available: 15,
             tier: 4,
@@ -125,7 +129,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 0.12,
                 buffDuration: 40.0
-            },
+            }
+        },
         {name: "Dragon's Tail",
             available: 19,
             tier: 4,
@@ -148,7 +153,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 2.7914
                 }
-            },
+            }
+        },
         {name: "Caltrops",
             available: 23,
             tier: 5,
@@ -168,7 +174,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                 endurance: 7.8,
                 cast: 1.07,
                 buffDuration: 45.0
-            },
+            }
+        },
         {name: "Masterful Throw",
             available: 27,
             tier: 5,
@@ -187,7 +194,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 1.33
-            },
+            }
+        },
         {name: "Explosive Shuriken",
             available: 29,
             tier: 5,

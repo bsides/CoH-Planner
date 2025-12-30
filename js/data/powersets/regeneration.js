@@ -26,6 +26,7 @@ const REGENERATION_POWERSET = {
                 accuracy: 1.0,
                 buffDuration: 10.0
             }
+        }
         },
         {name: "Reconstruction",
             available: 0,
@@ -50,7 +51,8 @@ const REGENERATION_POWERSET = {
                     ticks: 30
                 },
                 buffDuration: 60.0
-            },
+            }
+        },
         {name: "Quick Recovery",
             available: 3,
             tier: 2,
@@ -66,7 +68,8 @@ const REGENERATION_POWERSET = {
             effects: {
                 accuracy: 1.0,
                 buffDuration: 10.25
-            },
+            }
+        },
         {name: "Ailment Resistance",
             available: 9,
             tier: 3,
@@ -85,7 +88,8 @@ const REGENERATION_POWERSET = {
                 buffDuration: 10.3,
                 tohitBuff: 0.2,
                 defenseBuff: 0.2
-            },
+            }
+        },
         {name: "Integration",
             available: 15,
             tier: 4,
@@ -108,7 +112,8 @@ const REGENERATION_POWERSET = {
                 stunDuration: 0.75,
                 tohitBuff: 0.3,
                 defenseBuff: 0.3
-            },
+            }
+        },
         {name: "Resilience",
             available: 19,
             tier: 4,
@@ -126,7 +131,8 @@ const REGENERATION_POWERSET = {
                 stun: 1.0,
                 stunDuration: 10.25,
                 buffDuration: 10.25
-            },
+            }
+        },
         {name: "Instant Healing",
             available: 23,
             tier: 5,
@@ -145,7 +151,8 @@ const REGENERATION_POWERSET = {
                 endurance: 10.4,
                 cast: 1.17,
                 buffDuration: 90.0
-            },
+            }
+        },
         {name: "Reactive Regeneration",
             available: 23,
             tier: 5,
@@ -163,7 +170,8 @@ const REGENERATION_POWERSET = {
                 recharge: 10.0,
                 endurance: 0.52,
                 cast: 1.17
-            },
+            }
+        },
         {name: "Second Wind",
             available: 27,
             tier: 5,
@@ -181,7 +189,8 @@ const REGENERATION_POWERSET = {
                 recharge: 360.0,
                 endurance: 10.4,
                 cast: 0.73
-            },
+            }
+        },
         {name: "Moment of Glory",
             available: 29,
             tier: 5,

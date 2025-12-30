@@ -42,6 +42,7 @@ const PLANT_MANIPULATION_POWERSET = {
                 },
                 buffDuration: 9.2
             }
+        }
         },
         {name: "Skewer",
             available: 0,
@@ -72,7 +73,8 @@ const PLANT_MANIPULATION_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 2.0
-            },
+            }
+        },
         {name: "Strangler",
             available: 3,
             tier: 2,
@@ -97,7 +99,8 @@ const PLANT_MANIPULATION_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.2
-            },
+            }
+        },
         {name: "Toxins",
             available: 9,
             tier: 3,
@@ -117,7 +120,8 @@ const PLANT_MANIPULATION_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Spore Cloud",
             available: 15,
             tier: 4,
@@ -139,7 +143,8 @@ const PLANT_MANIPULATION_POWERSET = {
                 cast: 3.1,
                 tohitDebuff: 0.75,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Wild Fortress",
             available: 19,
             tier: 4,
@@ -162,7 +167,8 @@ const PLANT_MANIPULATION_POWERSET = {
                     ticks: 1
                 },
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Ripper",
             available: 23,
             tier: 5,
@@ -194,7 +200,8 @@ const PLANT_MANIPULATION_POWERSET = {
                 },
                 buffDuration: 4.1,
                 defenseDebuff: 3.0
-            },
+            }
+        },
         {name: "Vines",
             available: 27,
             tier: 5,
@@ -214,7 +221,8 @@ const PLANT_MANIPULATION_POWERSET = {
                 recharge: 90.0,
                 endurance: 20.18,
                 cast: 1.17
-            },
+            }
+        },
         {name: "Thorn Burst",
             available: 29,
             tier: 5,

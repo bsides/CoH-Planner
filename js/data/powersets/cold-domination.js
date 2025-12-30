@@ -42,6 +42,7 @@ const COLD_DOMINATION_POWERSET = {
                 },
                 buffDuration: 240.0
             }
+        }
         },
         {name: "Infrigidate",
             available: 0,
@@ -68,7 +69,8 @@ const COLD_DOMINATION_POWERSET = {
                 },
                 buffDuration: 20.0,
                 defenseDebuff: 2.5
-            },
+            }
+        },
         {name: "Snow Storm",
             available: 1,
             tier: 1,
@@ -89,7 +91,8 @@ const COLD_DOMINATION_POWERSET = {
                 endurance: 0.26,
                 cast: 2.03,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Glacial Shield",
             available: 5,
             tier: 3,
@@ -115,7 +118,8 @@ const COLD_DOMINATION_POWERSET = {
                     ticks: 120
                 },
                 buffDuration: 240.0
-            },
+            }
+        },
         {name: "Frostwork",
             available: 7,
             tier: 3,
@@ -140,7 +144,8 @@ const COLD_DOMINATION_POWERSET = {
                     ticks: 60
                 },
                 buffDuration: 120.0
-            },
+            }
+        },
         {name: "Arctic Fog",
             available: 11,
             tier: 4,
@@ -160,7 +165,8 @@ const COLD_DOMINATION_POWERSET = {
                 endurance: 0.26,
                 cast: 1.87,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Benumb",
             available: 17,
             tier: 4,
@@ -180,7 +186,8 @@ const COLD_DOMINATION_POWERSET = {
                 endurance: 13.0,
                 cast: 2.07,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Sleet",
             available: 21,
             tier: 5,
@@ -200,7 +207,8 @@ const COLD_DOMINATION_POWERSET = {
                 endurance: 18.2,
                 cast: 2.03,
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Heat Loss",
             available: 25,
             tier: 5,

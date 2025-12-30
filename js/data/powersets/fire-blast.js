@@ -38,6 +38,7 @@ const FIRE_BLAST_POWERSET = {
                 },
                 buffDuration: 3.1
             }
+        }
         },
         {name: "Fire Ball",
             available: 1,
@@ -75,7 +76,8 @@ const FIRE_BLAST_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 2.1
-            },
+            }
+        },
         {name: "Rain of Fire",
             available: 5,
             tier: 3,
@@ -95,7 +97,8 @@ const FIRE_BLAST_POWERSET = {
                 endurance: 26.0,
                 cast: 2.03,
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Fire Breath",
             available: 7,
             tier: 3,
@@ -122,7 +125,8 @@ const FIRE_BLAST_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 2.1
-            },
+            }
+        },
         {name: "Aim",
             available: 11,
             tier: 4,
@@ -142,7 +146,8 @@ const FIRE_BLAST_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 5.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Blaze",
             available: 17,
             tier: 4,
@@ -171,7 +176,8 @@ const FIRE_BLAST_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.1
-            },
+            }
+        },
         {name: "Blazing Bolt",
             available: 21,
             tier: 5,
@@ -190,7 +196,8 @@ const FIRE_BLAST_POWERSET = {
                 recharge: 12.0,
                 endurance: 14.352,
                 cast: 1.67
-            },
+            }
+        },
         {name: "Inferno",
             available: 25,
             tier: 5,

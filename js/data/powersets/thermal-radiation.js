@@ -48,6 +48,7 @@ const THERMAL_RADIATION_POWERSET = {
                 },
                 buffDuration: 240.0
             }
+        }
         },
         {name: "Warmth",
             available: 0,
@@ -67,7 +68,8 @@ const THERMAL_RADIATION_POWERSET = {
                 recharge: 8.0,
                 endurance: 13.0,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Cauterize",
             available: 1,
             tier: 1,
@@ -86,7 +88,8 @@ const THERMAL_RADIATION_POWERSET = {
                 recharge: 4.0,
                 endurance: 13.0,
                 cast: 2.27
-            },
+            }
+        },
         {name: "Plasma Shield",
             available: 5,
             tier: 3,
@@ -122,7 +125,8 @@ const THERMAL_RADIATION_POWERSET = {
                     ]
                 },
                 buffDuration: 240.0
-            },
+            }
+        },
         {name: "Power of the Phoenix",
             available: 7,
             tier: 3,
@@ -142,7 +146,8 @@ const THERMAL_RADIATION_POWERSET = {
                 endurance: 49.4,
                 cast: 1.67,
                 buffDuration: 0.5
-            },
+            }
+        },
         {name: "Thaw",
             available: 11,
             tier: 4,
@@ -169,7 +174,8 @@ const THERMAL_RADIATION_POWERSET = {
                 stun: 1.0,
                 stunDuration: 90.0,
                 buffDuration: 90.0
-            },
+            }
+        },
         {name: "Forge",
             available: 17,
             tier: 4,
@@ -190,7 +196,8 @@ const THERMAL_RADIATION_POWERSET = {
                 cast: 2.27,
                 tohitBuff: 2.0,
                 buffDuration: 120.0
-            },
+            }
+        },
         {name: "Heat Exhaustion",
             available: 21,
             tier: 5,
@@ -210,7 +217,8 @@ const THERMAL_RADIATION_POWERSET = {
                 endurance: 13.0,
                 cast: 2.07,
                 buffDuration: 40.0
-            },
+            }
+        },
         {name: "Melt Armor",
             available: 25,
             tier: 5,

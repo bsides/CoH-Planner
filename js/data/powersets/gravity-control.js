@@ -35,6 +35,7 @@ const GRAVITY_CONTROL_POWERSET = {
                 },
                 buffDuration: 9.2
             }
+        }
         },
         {name: "Lift",
             available: 0,
@@ -59,7 +60,8 @@ const GRAVITY_CONTROL_POWERSET = {
                     scale: 5.011500000000001
                 },
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Gravity Distortion",
             available: 1,
             tier: 1,
@@ -84,7 +86,8 @@ const GRAVITY_CONTROL_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.2
-            },
+            }
+        },
         {name: "Propel",
             available: 5,
             tier: 3,
@@ -108,7 +111,8 @@ const GRAVITY_CONTROL_POWERSET = {
                     type: "Smashing",
                     scale: 5.5635
                 }
-            },
+            }
+        },
         {name: "Crushing Field",
             available: 7,
             tier: 3,
@@ -134,7 +138,8 @@ const GRAVITY_CONTROL_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 5.2
-            },
+            }
+        },
         {name: "Dimension Shift",
             available: 11,
             tier: 4,
@@ -154,7 +159,8 @@ const GRAVITY_CONTROL_POWERSET = {
                 endurance: 15.6,
                 cast: 1.17,
                 buffDuration: 20.0
-            },
+            }
+        },
         {name: "Gravity Distortion Field",
             available: 17,
             tier: 4,
@@ -173,7 +179,8 @@ const GRAVITY_CONTROL_POWERSET = {
                 recharge: 240.0,
                 endurance: 15.6,
                 cast: 1.83
-            },
+            }
+        },
         {name: "Wormhole",
             available: 21,
             tier: 5,
@@ -195,7 +202,8 @@ const GRAVITY_CONTROL_POWERSET = {
                 cast: 3.0,
                 buffDuration: 1.5,
                 stun: 4.0
-            },
+            }
+        },
         {name: "Singularity",
             available: 25,
             tier: 5,

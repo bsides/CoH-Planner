@@ -35,6 +35,7 @@ const TACTICAL_ARROW_POWERSET = {
                 },
                 buffDuration: 0.75
             }
+        }
         },
         {name: "Glue Arrow",
             available: 0,
@@ -54,7 +55,8 @@ const TACTICAL_ARROW_POWERSET = {
                 recharge: 45.0,
                 endurance: 7.8,
                 cast: 1.16
-            },
+            }
+        },
         {name: "Ice Arrow",
             available: 3,
             tier: 2,
@@ -79,7 +81,8 @@ const TACTICAL_ARROW_POWERSET = {
                     ticks: 8
                 },
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Upshot",
             available: 9,
             tier: 3,
@@ -99,7 +102,8 @@ const TACTICAL_ARROW_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 1.5,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Flash Arrow",
             available: 15,
             tier: 4,
@@ -121,7 +125,8 @@ const TACTICAL_ARROW_POWERSET = {
                 cast: 1.0,
                 buffDuration: 60.0,
                 tohitDebuff: 0.7
-            },
+            }
+        },
         {name: "Eagle Eye",
             available: 19,
             tier: 4,
@@ -140,7 +145,8 @@ const TACTICAL_ARROW_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Gymnastics",
             available: 23,
             tier: 5,
@@ -158,7 +164,8 @@ const TACTICAL_ARROW_POWERSET = {
                 recharge: 10.0,
                 endurance: 0.13,
                 buffDuration: 0.5
-            },
+            }
+        },
         {name: "ESD Arrow",
             available: 27,
             tier: 5,
@@ -183,7 +190,8 @@ const TACTICAL_ARROW_POWERSET = {
                     scale: 1.64
                 },
                 stun: 3.0
-            },
+            }
+        },
         {name: "Oil Slick Arrow",
             available: 29,
             tier: 5,

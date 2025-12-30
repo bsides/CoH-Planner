@@ -32,6 +32,7 @@ const FIERY_ASSAULT_POWERSET = {
                     scale: 2.0978
                 }
             }
+        }
         },
         {name: "Incinerate",
             available: 0,
@@ -57,7 +58,8 @@ const FIERY_ASSAULT_POWERSET = {
                     ticks: 9
                 },
                 buffDuration: 4.6
-            },
+            }
+        },
         {name: "Fire Breath",
             available: 3,
             tier: 2,
@@ -84,7 +86,8 @@ const FIERY_ASSAULT_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 2.1
-            },
+            }
+        },
         {name: "Fire Blast",
             available: 9,
             tier: 3,
@@ -113,7 +116,8 @@ const FIERY_ASSAULT_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            },
+            }
+        },
         {name: "Embrace of Fire",
             available: 15,
             tier: 4,
@@ -132,7 +136,8 @@ const FIERY_ASSAULT_POWERSET = {
                 endurance: 7.8,
                 cast: 0.73,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Combustion",
             available: 19,
             tier: 4,
@@ -161,7 +166,8 @@ const FIERY_ASSAULT_POWERSET = {
                     ticks: 7
                 },
                 buffDuration: 7.1
-            },
+            }
+        },
         {name: "Consume",
             available: 23,
             tier: 5,
@@ -181,7 +187,8 @@ const FIERY_ASSAULT_POWERSET = {
                 endurance: 0.52,
                 cast: 2.03,
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Blazing Bolt",
             available: 27,
             tier: 5,
@@ -200,7 +207,8 @@ const FIERY_ASSAULT_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 1.67
-            },
+            }
+        },
         {name: "Blaze",
             available: 29,
             tier: 5,

@@ -29,6 +29,7 @@ const TITAN_WEAPONS_POWERSET = {
                 endurance: 8.7838,
                 cast: 2.0
             }
+        }
         },
         {name: "Defensive Sweep",
             available: 0,
@@ -50,7 +51,8 @@ const TITAN_WEAPONS_POWERSET = {
                 recharge: 4.0,
                 endurance: 5.356,
                 cast: 2.2
-            },
+            }
+        },
         {name: "Titan Sweep",
             available: 1,
             tier: 1,
@@ -71,7 +73,8 @@ const TITAN_WEAPONS_POWERSET = {
                 recharge: 10.0,
                 endurance: 10.4982,
                 cast: 2.43
-            },
+            }
+        },
         {name: "Follow Through",
             available: 5,
             tier: 3,
@@ -102,7 +105,8 @@ const TITAN_WEAPONS_POWERSET = {
                     scale: 9.841099999999999
                 },
                 stun: 3.0
-            },
+            }
+        },
         {name: "Build Momentum",
             available: 7,
             tier: 3,
@@ -122,7 +126,8 @@ const TITAN_WEAPONS_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Confront",
             available: 11,
             tier: 4,
@@ -141,7 +146,8 @@ const TITAN_WEAPONS_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Rend Armor",
             available: 17,
             tier: 4,
@@ -160,7 +166,8 @@ const TITAN_WEAPONS_POWERSET = {
                 recharge: 16.0,
                 endurance: 15.6395,
                 cast: 2.3
-            },
+            }
+        },
         {name: "Whirling Smash",
             available: 21,
             tier: 5,
@@ -190,7 +197,8 @@ const TITAN_WEAPONS_POWERSET = {
                     ],
                     scale: 4.916
                 }
-            },
+            }
+        },
         {name: "Arc of Destruction",
             available: 25,
             tier: 5,

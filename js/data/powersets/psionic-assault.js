@@ -34,6 +34,7 @@ const PSIONIC_ASSAULT_POWERSET = {
                 },
                 buffDuration: 6.0
             }
+        }
         },
         {name: "Psionic Dart",
             available: 0,
@@ -58,7 +59,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                     scale: 1.9409999999999998
                 },
                 buffDuration: 5.0
-            },
+            }
+        },
         {name: "Telekinetic Thrust",
             available: 3,
             tier: 2,
@@ -88,7 +90,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                     ],
                     scale: 2.86
                 }
-            },
+            }
+        },
         {name: "Mental Blast",
             available: 9,
             tier: 3,
@@ -112,7 +115,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                     scale: 3.5290999999999997
                 },
                 buffDuration: 6.0
-            },
+            }
+        },
         {name: "Psychic Scream",
             available: 15,
             tier: 4,
@@ -138,7 +142,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                     scale: 2.3617
                 },
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Drain Psyche",
             available: 19,
             tier: 4,
@@ -158,7 +163,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                 endurance: 13.0,
                 cast: 1.33,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Subdue",
             available: 23,
             tier: 5,
@@ -181,7 +187,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                     type: "Psionic",
                     scale: 3.5476
                 }
-            },
+            }
+        },
         {name: "Psionic Lance",
             available: 27,
             tier: 5,
@@ -200,7 +207,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 1.33
-            },
+            }
+        },
         {name: "Psychic Shockwave",
             available: 29,
             tier: 5,

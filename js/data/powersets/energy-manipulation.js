@@ -40,6 +40,7 @@ const ENERGY_MANIPULATION_POWERSET = {
                 },
                 stun: 2.0
             }
+        }
         },
         {name: "Power Thrust",
             available: 0,
@@ -70,7 +71,8 @@ const ENERGY_MANIPULATION_POWERSET = {
                     ],
                     scale: 2.1399
                 }
-            },
+            }
+        },
         {name: "Build Up",
             available: 3,
             tier: 2,
@@ -90,7 +92,8 @@ const ENERGY_MANIPULATION_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Bone Smasher",
             available: 9,
             tier: 3,
@@ -121,7 +124,8 @@ const ENERGY_MANIPULATION_POWERSET = {
                     scale: 4.61
                 },
                 stun: 3.0
-            },
+            }
+        },
         {name: "Energize",
             available: 15,
             tier: 4,
@@ -142,7 +146,8 @@ const ENERGY_MANIPULATION_POWERSET = {
                 buffDuration: 60.0,
                 stun: 1.0,
                 stunDuration: 60.0
-            },
+            }
+        },
         {name: "Stun",
             available: 19,
             tier: 4,
@@ -161,7 +166,8 @@ const ENERGY_MANIPULATION_POWERSET = {
                 recharge: 12.0,
                 endurance: 10.192,
                 cast: 1.8
-            },
+            }
+        },
         {name: "Power Boost",
             available: 23,
             tier: 5,
@@ -184,7 +190,8 @@ const ENERGY_MANIPULATION_POWERSET = {
                 stunDuration: 15.0,
                 tohitBuff: 0.66,
                 defenseBuff: 0.66
-            },
+            }
+        },
         {name: "Boost Range",
             available: 27,
             tier: 5,
@@ -203,7 +210,8 @@ const ENERGY_MANIPULATION_POWERSET = {
                 endurance: 13.0,
                 cast: 1.17,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Total Focus",
             available: 29,
             tier: 5,

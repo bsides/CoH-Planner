@@ -34,6 +34,7 @@ const EARTH_CONTROL_POWERSET = {
                 defenseDebuff: 2.0,
                 buffDuration: 12.0
             }
+        }
         },
         {name: "Stone Prison",
             available: 0,
@@ -60,7 +61,8 @@ const EARTH_CONTROL_POWERSET = {
                 },
                 buffDuration: 9.2,
                 defenseDebuff: 2.0
-            },
+            }
+        },
         {name: "Stone Cages",
             available: 1,
             tier: 1,
@@ -87,7 +89,8 @@ const EARTH_CONTROL_POWERSET = {
                 },
                 buffDuration: 5.2,
                 defenseDebuff: 2.0
-            },
+            }
+        },
         {name: "Quicksand",
             available: 5,
             tier: 3,
@@ -107,7 +110,8 @@ const EARTH_CONTROL_POWERSET = {
                 endurance: 7.8,
                 cast: 3.1,
                 buffDuration: 45.0
-            },
+            }
+        },
         {name: "Salt Crystals",
             available: 7,
             tier: 3,
@@ -128,7 +132,8 @@ const EARTH_CONTROL_POWERSET = {
                 cast: 1.07,
                 defenseDebuff: 2.0,
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Stalagmites",
             available: 11,
             tier: 4,
@@ -155,7 +160,8 @@ const EARTH_CONTROL_POWERSET = {
                 stun: 4.0,
                 defenseDebuff: 2.0,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Earthquake",
             available: 17,
             tier: 4,
@@ -175,7 +181,8 @@ const EARTH_CONTROL_POWERSET = {
                 endurance: 10.4,
                 cast: 2.03,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Volcanic Gasses",
             available: 21,
             tier: 5,
@@ -195,7 +202,8 @@ const EARTH_CONTROL_POWERSET = {
                 endurance: 18.2,
                 cast: 1.17,
                 buffDuration: 60.0
-            },
+            }
+        },
         {name: "Animate Stone",
             available: 25,
             tier: 5,

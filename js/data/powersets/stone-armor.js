@@ -30,6 +30,7 @@ const STONE_ARMOR_POWERSET = {
                 buffDuration: 0.75,
                 defenseBuff: 0.4
             }
+        }
         },
         {name: "Stone Skin",
             available: 0,
@@ -51,7 +52,8 @@ const STONE_ARMOR_POWERSET = {
                     ticks: 5
                 },
                 buffDuration: 10.25
-            },
+            }
+        },
         {name: "Earth's Embrace",
             available: 3,
             tier: 2,
@@ -75,7 +77,8 @@ const STONE_ARMOR_POWERSET = {
                     ticks: 30
                 },
                 buffDuration: 60.0
-            },
+            }
+        },
         {name: "Mud Pots",
             available: 9,
             tier: 3,
@@ -99,7 +102,8 @@ const STONE_ARMOR_POWERSET = {
                     scale: 0.18
                 },
                 buffDuration: 5.0
-            },
+            }
+        },
         {name: "Rooted",
             available: 15,
             tier: 4,
@@ -122,7 +126,8 @@ const STONE_ARMOR_POWERSET = {
                 stun: 1.0,
                 stunDuration: 0.75,
                 tohitBuff: 0.3
-            },
+            }
+        },
         {name: "Crystal Armor",
             available: 19,
             tier: 4,
@@ -142,7 +147,8 @@ const STONE_ARMOR_POWERSET = {
                 cast: 1.0,
                 buffDuration: 0.75,
                 defenseBuff: 0.4
-            },
+            }
+        },
         {name: "Minerals",
             available: 23,
             tier: 5,
@@ -161,7 +167,8 @@ const STONE_ARMOR_POWERSET = {
                 endurance: 0.104,
                 cast: 0.73,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Brimstone Armor",
             available: 27,
             tier: 5,
@@ -180,7 +187,8 @@ const STONE_ARMOR_POWERSET = {
                 endurance: 0.104,
                 cast: 0.73,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Geode",
             available: 29,
             tier: 5,

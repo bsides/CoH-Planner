@@ -35,6 +35,7 @@ const FIRE_CONTROL_POWERSET = {
                 },
                 buffDuration: 4.2
             }
+        }
         },
         {name: "Ring of Fire",
             available: 0,
@@ -60,7 +61,8 @@ const FIRE_CONTROL_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 9.2
-            },
+            }
+        },
         {name: "Fire Cages",
             available: 1,
             tier: 1,
@@ -86,7 +88,8 @@ const FIRE_CONTROL_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 5.2
-            },
+            }
+        },
         {name: "Smoke",
             available: 5,
             tier: 3,
@@ -108,7 +111,8 @@ const FIRE_CONTROL_POWERSET = {
                 cast: 1.17,
                 buffDuration: 60.0,
                 tohitDebuff: 0.5
-            },
+            }
+        },
         {name: "Hot Feet",
             available: 7,
             tier: 3,
@@ -132,7 +136,8 @@ const FIRE_CONTROL_POWERSET = {
                     scale: 0.5746
                 },
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Flashfire",
             available: 11,
             tier: 4,
@@ -159,7 +164,8 @@ const FIRE_CONTROL_POWERSET = {
                 },
                 buffDuration: 4.0,
                 stun: 4.0
-            },
+            }
+        },
         {name: "Cinders",
             available: 17,
             tier: 4,
@@ -178,7 +184,8 @@ const FIRE_CONTROL_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 1.07
-            },
+            }
+        },
         {name: "Bonfire",
             available: 21,
             tier: 5,
@@ -198,7 +205,8 @@ const FIRE_CONTROL_POWERSET = {
                 endurance: 13.0,
                 cast: 3.07,
                 buffDuration: 45.0
-            },
+            }
+        },
         {name: "Fire Imps",
             available: 25,
             tier: 5,

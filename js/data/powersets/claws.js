@@ -39,6 +39,7 @@ const CLAWS_POWERSET = {
                     scale: 6.4197999999999995
                 }
             }
+        }
         },
         {name: "Swipe",
             available: 0,
@@ -69,7 +70,8 @@ const CLAWS_POWERSET = {
                     ],
                     scale: 4.8829
                 }
-            },
+            }
+        },
         {name: "Slash",
             available: 1,
             tier: 1,
@@ -101,7 +103,8 @@ const CLAWS_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Spin",
             available: 5,
             tier: 3,
@@ -131,7 +134,8 @@ const CLAWS_POWERSET = {
                     ],
                     scale: 8.3286
                 }
-            },
+            }
+        },
         {name: "Follow Up",
             available: 7,
             tier: 3,
@@ -163,7 +167,8 @@ const CLAWS_POWERSET = {
                 },
                 tohitBuff: 1.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Confront",
             available: 11,
             tier: 4,
@@ -182,7 +187,8 @@ const CLAWS_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Focus",
             available: 17,
             tier: 4,
@@ -212,7 +218,8 @@ const CLAWS_POWERSET = {
                     ],
                     scale: 7.155299999999999
                 }
-            },
+            }
+        },
         {name: "Eviscerate",
             available: 21,
             tier: 5,
@@ -244,7 +251,8 @@ const CLAWS_POWERSET = {
                     ],
                     scale: 8.6773
                 }
-            },
+            }
+        },
         {name: "Shockwave",
             available: 25,
             tier: 5,

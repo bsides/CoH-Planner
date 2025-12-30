@@ -40,6 +40,7 @@ const SONIC_MANIPULATION_POWERSET = {
                 },
                 buffDuration: 2.0
             }
+        }
         },
         {name: "Strident Echo",
             available: 0,
@@ -72,7 +73,8 @@ const SONIC_MANIPULATION_POWERSET = {
                     ]
                 },
                 buffDuration: 2.1
-            },
+            }
+        },
         {name: "Echo Chamber",
             available: 3,
             tier: 2,
@@ -95,7 +97,8 @@ const SONIC_MANIPULATION_POWERSET = {
                     type: "Energy",
                     scale: 2.729
                 }
-            },
+            }
+        },
         {name: "Sound Booster",
             available: 9,
             tier: 3,
@@ -117,7 +120,8 @@ const SONIC_MANIPULATION_POWERSET = {
                 buffDuration: 10.0,
                 stun: 1.0,
                 stunDuration: 10.0
-            },
+            }
+        },
         {name: "Deafening Wave",
             available: 15,
             tier: 4,
@@ -147,7 +151,8 @@ const SONIC_MANIPULATION_POWERSET = {
                     ],
                     scale: 1.9018
                 }
-            },
+            }
+        },
         {name: "Sound Barrier",
             available: 19,
             tier: 4,
@@ -177,7 +182,8 @@ const SONIC_MANIPULATION_POWERSET = {
                     ]
                 },
                 buffDuration: 2.25
-            },
+            }
+        },
         {name: "Disruption Aura",
             available: 23,
             tier: 5,
@@ -197,7 +203,8 @@ const SONIC_MANIPULATION_POWERSET = {
                 endurance: 1.04,
                 cast: 1.97,
                 buffDuration: 2.25
-            },
+            }
+        },
         {name: "Sound Cannon",
             available: 27,
             tier: 5,
@@ -219,7 +226,8 @@ const SONIC_MANIPULATION_POWERSET = {
                 endurance: 20.18,
                 cast: 1.5,
                 stun: 3.0
-            },
+            }
+        },
         {name: "Earsplitter",
             available: 29,
             tier: 5,

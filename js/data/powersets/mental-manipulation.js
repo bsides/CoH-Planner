@@ -33,6 +33,7 @@ const MENTAL_MANIPULATION_POWERSET = {
                 },
                 buffDuration: 6.0
             }
+        }
         },
         {name: "Subdual",
             available: 0,
@@ -58,7 +59,8 @@ const MENTAL_MANIPULATION_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 9.2
-            },
+            }
+        },
         {name: "World of Confusion",
             available: 3,
             tier: 2,
@@ -81,7 +83,8 @@ const MENTAL_MANIPULATION_POWERSET = {
                     type: "Psionic",
                     scale: 0.12
                 }
-            },
+            }
+        },
         {name: "Psychic Scream",
             available: 9,
             tier: 3,
@@ -107,7 +110,8 @@ const MENTAL_MANIPULATION_POWERSET = {
                     scale: 2.0434
                 },
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Concentration",
             available: 15,
             tier: 4,
@@ -127,7 +131,8 @@ const MENTAL_MANIPULATION_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Drain Psyche",
             available: 19,
             tier: 4,
@@ -147,7 +152,8 @@ const MENTAL_MANIPULATION_POWERSET = {
                 endurance: 13.0,
                 cast: 1.33,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Scare",
             available: 23,
             tier: 5,
@@ -167,7 +173,8 @@ const MENTAL_MANIPULATION_POWERSET = {
                 endurance: 10.4,
                 cast: 2.67,
                 buffDuration: 10.17
-            },
+            }
+        },
         {name: "Psychic Shockwave",
             available: 27,
             tier: 5,
@@ -192,7 +199,8 @@ const MENTAL_MANIPULATION_POWERSET = {
                 },
                 stun: 2.0,
                 buffDuration: 20.0
-            },
+            }
+        },
         {name: "Telekinetic Thrust",
             available: 29,
             tier: 5,

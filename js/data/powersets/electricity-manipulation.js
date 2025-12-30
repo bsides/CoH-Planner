@@ -41,6 +41,7 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                 },
                 buffDuration: 2.0
             }
+        }
         },
         {name: "Electric Fence",
             available: 0,
@@ -66,7 +67,8 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 8.2
-            },
+            }
+        },
         {name: "Build Up",
             available: 3,
             tier: 2,
@@ -86,7 +88,8 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Havoc Punch",
             available: 9,
             tier: 3,
@@ -117,7 +120,8 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                     scale: 4.609999999999999
                 },
                 buffDuration: 4.0
-            },
+            }
+        },
         {name: "Thunder Strike",
             available: 15,
             tier: 4,
@@ -138,7 +142,8 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                 endurance: 18.512,
                 cast: 2.53,
                 buffDuration: 10.8
-            },
+            }
+        },
         {name: "Dynamo",
             available: 19,
             tier: 4,
@@ -160,7 +165,8 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                     type: "Energy",
                     scale: 0.30820000000000003
                 }
-            },
+            }
+        },
         {name: "Power Sink",
             available: 23,
             tier: 5,
@@ -180,7 +186,8 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                 endurance: 13.0,
                 cast: 2.03,
                 buffDuration: 4.0
-            },
+            }
+        },
         {name: "Force of Thunder",
             available: 27,
             tier: 5,
@@ -200,7 +207,8 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                 endurance: 14.0,
                 cast: 1.23,
                 buffDuration: 8.73
-            },
+            }
+        },
         {name: "Shocking Grasp",
             available: 29,
             tier: 5,

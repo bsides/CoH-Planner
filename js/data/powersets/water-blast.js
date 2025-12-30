@@ -42,6 +42,7 @@ const WATER_BLAST_POWERSET = {
                 defenseDebuff: 1.0,
                 buffDuration: 8.0
             }
+        }
         },
         {name: "Hydro Blast",
             available: 0,
@@ -73,7 +74,8 @@ const WATER_BLAST_POWERSET = {
                     scale: 3.3292
                 },
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Water Burst",
             available: 1,
             tier: 1,
@@ -105,7 +107,8 @@ const WATER_BLAST_POWERSET = {
                     scale: 2.2616
                 },
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Whirlpool",
             available: 5,
             tier: 3,
@@ -125,7 +128,8 @@ const WATER_BLAST_POWERSET = {
                 endurance: 15.6,
                 cast: 2.03,
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Tidal Forces",
             available: 7,
             tier: 3,
@@ -145,7 +149,8 @@ const WATER_BLAST_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 5.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Dehydrate",
             available: 11,
             tier: 4,
@@ -182,7 +187,8 @@ const WATER_BLAST_POWERSET = {
                 },
                 buffDuration: 4.1,
                 defenseDebuff: 1.0
-            },
+            }
+        },
         {name: "Water Jet",
             available: 17,
             tier: 4,
@@ -201,7 +207,8 @@ const WATER_BLAST_POWERSET = {
                 recharge: 10.0,
                 endurance: 10.192,
                 cast: 1.43
-            },
+            }
+        },
         {name: "Steam Spray",
             available: 21,
             tier: 5,
@@ -229,7 +236,8 @@ const WATER_BLAST_POWERSET = {
                 },
                 buffDuration: 0.6,
                 defenseDebuff: 1.0
-            },
+            }
+        },
         {name: "Geyser",
             available: 25,
             tier: 5,

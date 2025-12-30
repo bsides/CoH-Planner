@@ -48,6 +48,7 @@ const PSIONIC_MELEE_POWERSET = {
                 },
                 buffDuration: 6.0
             }
+        }
         },
         {name: "Psi Blade",
             available: 0,
@@ -86,7 +87,8 @@ const PSIONIC_MELEE_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 6.0
-            },
+            }
+        },
         {name: "Telekinetic Blow",
             available: 1,
             tier: 1,
@@ -124,7 +126,8 @@ const PSIONIC_MELEE_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            },
+            }
+        },
         {name: "Concentration",
             available: 5,
             tier: 3,
@@ -144,7 +147,8 @@ const PSIONIC_MELEE_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Psi Blade Sweep",
             available: 7,
             tier: 3,
@@ -185,7 +189,8 @@ const PSIONIC_MELEE_POWERSET = {
                 },
                 buffDuration: 6.0,
                 stun: 3.0
-            },
+            }
+        },
         {name: "Confront",
             available: 11,
             tier: 4,
@@ -204,7 +209,8 @@ const PSIONIC_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Boggle",
             available: 17,
             tier: 4,
@@ -223,7 +229,8 @@ const PSIONIC_MELEE_POWERSET = {
                 recharge: 20.0,
                 endurance: 7.8,
                 cast: 2.0
-            },
+            }
+        },
         {name: "Greater Psi Blade",
             available: 21,
             tier: 5,
@@ -256,7 +263,8 @@ const PSIONIC_MELEE_POWERSET = {
                     scale: 17.776699999999998
                 },
                 buffDuration: 6.0
-            },
+            }
+        },
         {name: "Mass Levitate",
             available: 25,
             tier: 5,

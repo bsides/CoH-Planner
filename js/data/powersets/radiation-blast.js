@@ -35,6 +35,7 @@ const RADIATION_BLAST_POWERSET = {
                 defenseDebuff: 1.0,
                 buffDuration: 3.0
             }
+        }
         },
         {name: "X-Ray Beam",
             available: 0,
@@ -60,7 +61,8 @@ const RADIATION_BLAST_POWERSET = {
                 },
                 defenseDebuff: 2.0,
                 buffDuration: 6.0
-            },
+            }
+        },
         {name: "Irradiate",
             available: 1,
             tier: 1,
@@ -86,7 +88,8 @@ const RADIATION_BLAST_POWERSET = {
                 },
                 buffDuration: 4.6,
                 defenseDebuff: 3.0
-            },
+            }
+        },
         {name: "Electron Haze",
             available: 5,
             tier: 3,
@@ -113,7 +116,8 @@ const RADIATION_BLAST_POWERSET = {
                 },
                 defenseDebuff: 2.0,
                 buffDuration: 8.0
-            },
+            }
+        },
         {name: "Aim",
             available: 7,
             tier: 3,
@@ -133,7 +137,8 @@ const RADIATION_BLAST_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 5.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Proton Volley",
             available: 11,
             tier: 4,
@@ -152,7 +157,8 @@ const RADIATION_BLAST_POWERSET = {
                 recharge: 12.0,
                 endurance: 14.352,
                 cast: 1.33
-            },
+            }
+        },
         {name: "Cosmic Burst",
             available: 17,
             tier: 4,
@@ -178,7 +184,8 @@ const RADIATION_BLAST_POWERSET = {
                 stun: 3.0,
                 defenseDebuff: 3.0,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Neutron Bomb",
             available: 21,
             tier: 5,
@@ -204,7 +211,8 @@ const RADIATION_BLAST_POWERSET = {
                 },
                 defenseDebuff: 2.0,
                 buffDuration: 16.0
-            },
+            }
+        },
         {name: "Atomic Blast",
             available: 25,
             tier: 5,

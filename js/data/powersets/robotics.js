@@ -29,6 +29,7 @@ const ROBOTICS_POWERSET = {
                 endurance: 5.46,
                 cast: 2.03
             }
+        }
         },
         {name: "Pulse Rifle Blast",
             available: 0,
@@ -53,7 +54,8 @@ const ROBOTICS_POWERSET = {
                     scale: 2.26
                 },
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Pulse Rifle Burst",
             available: 1,
             tier: 1,
@@ -77,7 +79,8 @@ const ROBOTICS_POWERSET = {
                     scale: 3.13
                 },
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Equip Robot",
             available: 5,
             tier: 3,
@@ -98,7 +101,8 @@ const ROBOTICS_POWERSET = {
                 endurance: 11.375,
                 cast: 2.03,
                 buffDuration: 5.6
-            },
+            }
+        },
         {name: "Photon Grenade",
             available: 7,
             tier: 3,
@@ -123,7 +127,8 @@ const ROBOTICS_POWERSET = {
                     scale: 1.6213
                 },
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Protector Bots",
             available: 11,
             tier: 4,
@@ -142,7 +147,8 @@ const ROBOTICS_POWERSET = {
                 recharge: 10.0,
                 endurance: 9.62,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Maintenance Drone",
             available: 17,
             tier: 4,
@@ -161,7 +167,8 @@ const ROBOTICS_POWERSET = {
                 recharge: 120.0,
                 endurance: 16.25,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Assault Bot",
             available: 21,
             tier: 5,
@@ -180,7 +187,8 @@ const ROBOTICS_POWERSET = {
                 recharge: 15.0,
                 endurance: 13.18,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Upgrade Robot",
             available: 25,
             tier: 5,

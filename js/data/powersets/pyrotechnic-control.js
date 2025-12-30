@@ -40,6 +40,7 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                     scale: 3.2536000000000005
                 }
             }
+        }
         },
         {name: "Sparkling Cage",
             available: 0,
@@ -72,7 +73,8 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                     ]
                 },
                 buffDuration: 9.2
-            },
+            }
+        },
         {name: "Sparkling Chain",
             available: 1,
             tier: 1,
@@ -93,7 +95,8 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                 endurance: 13.0,
                 cast: 1.03,
                 buffDuration: 1.1
-            },
+            }
+        },
         {name: "Glittering Column",
             available: 5,
             tier: 3,
@@ -113,7 +116,8 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                 endurance: 7.8,
                 cast: 1.17,
                 buffDuration: 7.0
-            },
+            }
+        },
         {name: "Hypnotizing Lights",
             available: 7,
             tier: 3,
@@ -134,7 +138,8 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                 recharge: 45.0,
                 endurance: 8.582,
                 cast: 1.67
-            },
+            }
+        },
         {name: "Brilliant Barrage",
             available: 11,
             tier: 4,
@@ -154,7 +159,8 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                 recharge: 90.0,
                 endurance: 15.6,
                 cast: 1.67
-            },
+            }
+        },
         {name: "Incendiary Aura",
             available: 17,
             tier: 4,
@@ -176,7 +182,8 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                 tohitDebuff: 1.25,
                 buffDuration: 0.45,
                 defenseDebuff: 0.75
-            },
+            }
+        },
         {name: "Explosive Bouquet",
             available: 21,
             tier: 5,
@@ -196,7 +203,8 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 2.93
-            },
+            }
+        },
         {name: "Catherine Wheel",
             available: 25,
             tier: 5,

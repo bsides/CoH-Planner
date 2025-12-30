@@ -41,6 +41,7 @@ const ENERGY_AURA_POWERSET = {
                 },
                 buffDuration: 10.25
             }
+        }
         },
         {name: "Kinetic Shield",
             available: 0,
@@ -61,7 +62,8 @@ const ENERGY_AURA_POWERSET = {
                 cast: 0.73,
                 buffDuration: 0.75,
                 defenseBuff: 0.5
-            },
+            }
+        },
         {name: "Power Shield",
             available: 3,
             tier: 2,
@@ -81,7 +83,8 @@ const ENERGY_AURA_POWERSET = {
                 cast: 1.67,
                 buffDuration: 0.75,
                 defenseBuff: 0.5
-            },
+            }
+        },
         {name: "Entropic Aura",
             available: 9,
             tier: 3,
@@ -101,7 +104,8 @@ const ENERGY_AURA_POWERSET = {
                 endurance: 0.52,
                 cast: 0.73,
                 buffDuration: 2.0
-            },
+            }
+        },
         {name: "Energy Protection",
             available: 15,
             tier: 4,
@@ -135,7 +139,8 @@ const ENERGY_AURA_POWERSET = {
                     ]
                 },
                 buffDuration: 10.25
-            },
+            }
+        },
         {name: "Energy Cloak",
             available: 19,
             tier: 4,
@@ -154,7 +159,8 @@ const ENERGY_AURA_POWERSET = {
                 endurance: 0.13,
                 cast: 0.73,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Energize",
             available: 23,
             tier: 5,
@@ -173,7 +179,8 @@ const ENERGY_AURA_POWERSET = {
                 endurance: 10.4,
                 cast: 1.17,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Energy Drain",
             available: 27,
             tier: 5,
@@ -192,7 +199,8 @@ const ENERGY_AURA_POWERSET = {
                 recharge: 60.0,
                 endurance: 13.0,
                 cast: 2.37
-            },
+            }
+        },
         {name: "Overload",
             available: 29,
             tier: 5,

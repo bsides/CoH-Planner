@@ -41,6 +41,7 @@ const BROAD_SWORD_POWERSET = {
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
             }
+        }
         },
         {name: "Slash",
             available: 0,
@@ -73,7 +74,8 @@ const BROAD_SWORD_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 6.0
-            },
+            }
+        },
         {name: "Slice",
             available: 1,
             tier: 1,
@@ -107,7 +109,8 @@ const BROAD_SWORD_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Build Up",
             available: 5,
             tier: 3,
@@ -127,7 +130,8 @@ const BROAD_SWORD_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Parry",
             available: 7,
             tier: 3,
@@ -158,7 +162,8 @@ const BROAD_SWORD_POWERSET = {
                     scale: 5.7998
                 },
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Confront",
             available: 11,
             tier: 4,
@@ -177,7 +182,8 @@ const BROAD_SWORD_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Whirling Sword",
             available: 17,
             tier: 4,
@@ -221,7 +227,8 @@ const BROAD_SWORD_POWERSET = {
                 },
                 buffDuration: 2.1,
                 defenseDebuff: 1.0
-            },
+            }
+        },
         {name: "Disembowel",
             available: 21,
             tier: 5,
@@ -253,7 +260,8 @@ const BROAD_SWORD_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Head Splitter",
             available: 25,
             tier: 5,

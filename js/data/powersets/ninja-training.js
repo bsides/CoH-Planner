@@ -35,6 +35,7 @@ const NINJA_TRAINING_POWERSET = {
                 },
                 buffDuration: 3.1
             }
+        }
         },
         {name: "Sting of the Wasp",
             available: 0,
@@ -60,7 +61,8 @@ const NINJA_TRAINING_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Choking Powder",
             available: 3,
             tier: 2,
@@ -85,7 +87,8 @@ const NINJA_TRAINING_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.2
-            },
+            }
+        },
         {name: "Shinobi",
             available: 9,
             tier: 3,
@@ -104,7 +107,8 @@ const NINJA_TRAINING_POWERSET = {
                 endurance: 0.13,
                 buffDuration: 0.75,
                 tohitBuff: 0.5
-            },
+            }
+        },
         {name: "The Lotus Drops",
             available: 15,
             tier: 4,
@@ -134,7 +138,8 @@ const NINJA_TRAINING_POWERSET = {
                 },
                 buffDuration: 2.1,
                 defenseDebuff: 1.0
-            },
+            }
+        },
         {name: "Kuji-In Toh",
             available: 19,
             tier: 4,
@@ -158,7 +163,8 @@ const NINJA_TRAINING_POWERSET = {
                     ticks: 105
                 },
                 buffDuration: 210.0
-            },
+            }
+        },
         {name: "Smoke Flash",
             available: 23,
             tier: 5,
@@ -178,7 +184,8 @@ const NINJA_TRAINING_POWERSET = {
                 endurance: 2.6,
                 cast: 1.83,
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Blinding Powder",
             available: 27,
             tier: 5,
@@ -201,7 +208,8 @@ const NINJA_TRAINING_POWERSET = {
                 cast: 1.07,
                 tohitDebuff: 1.0,
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Golden Dragonfly",
             available: 29,
             tier: 5,

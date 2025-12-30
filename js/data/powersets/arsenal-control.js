@@ -33,6 +33,7 @@ const ARSENAL_CONTROL_POWERSET = {
                 },
                 buffDuration: 12.0
             }
+        }
         },
         {name: "Tranquilizer",
             available: 0,
@@ -57,7 +58,8 @@ const ARSENAL_CONTROL_POWERSET = {
                     scale: 1.54
                 },
                 buffDuration: 5.0
-            },
+            }
+        },
         {name: "Sleep Grenade",
             available: 1,
             tier: 1,
@@ -77,7 +79,8 @@ const ARSENAL_CONTROL_POWERSET = {
                 endurance: 15.6,
                 cast: 1.87,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Liquid Nitrogen",
             available: 5,
             tier: 3,
@@ -97,7 +100,8 @@ const ARSENAL_CONTROL_POWERSET = {
                 endurance: 10.4,
                 cast: 2.0,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Cloaking Device",
             available: 7,
             tier: 3,
@@ -116,7 +120,8 @@ const ARSENAL_CONTROL_POWERSET = {
                 endurance: 0.182,
                 cast: 0.73,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Smoke Canister",
             available: 11,
             tier: 4,
@@ -136,7 +141,8 @@ const ARSENAL_CONTROL_POWERSET = {
                 endurance: 16.64,
                 cast: 1.4,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Flash Bang",
             available: 17,
             tier: 4,
@@ -163,7 +169,8 @@ const ARSENAL_CONTROL_POWERSET = {
                 tohitDebuff: 0.5,
                 buffDuration: 20.0,
                 stun: 4.0
-            },
+            }
+        },
         {name: "Tear Gas",
             available: 21,
             tier: 5,
@@ -183,7 +190,8 @@ const ARSENAL_CONTROL_POWERSET = {
                 endurance: 15.6,
                 cast: 1.87,
                 buffDuration: 60.0
-            },
+            }
+        },
         {name: "Tri-Cannon",
             available: 25,
             tier: 5,

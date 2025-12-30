@@ -39,6 +39,7 @@ const FIERY_MELEE_POWERSET = {
                 buffDuration: 3.1,
                 defenseDebuff: 0.5
             }
+        }
         },
         {name: "Scorch",
             available: 0,
@@ -68,7 +69,8 @@ const FIERY_MELEE_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 2.1
-            },
+            }
+        },
         {name: "Cremate",
             available: 1,
             tier: 1,
@@ -97,7 +99,8 @@ const FIERY_MELEE_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            },
+            }
+        },
         {name: "Build Up",
             available: 5,
             tier: 3,
@@ -117,7 +120,8 @@ const FIERY_MELEE_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Breath of Fire",
             available: 7,
             tier: 3,
@@ -144,7 +148,8 @@ const FIERY_MELEE_POWERSET = {
                     ticks: 1
                 },
                 buffDuration: 0.6
-            },
+            }
+        },
         {name: "Confront",
             available: 11,
             tier: 4,
@@ -163,7 +168,8 @@ const FIERY_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Fire Sword Circle",
             available: 17,
             tier: 4,
@@ -193,7 +199,8 @@ const FIERY_MELEE_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 0.5
-            },
+            }
+        },
         {name: "Incinerate",
             available: 21,
             tier: 5,
@@ -218,7 +225,8 @@ const FIERY_MELEE_POWERSET = {
                     ticks: 9
                 },
                 buffDuration: 4.6
-            },
+            }
+        },
         {name: "Greater Fire Sword",
             available: 25,
             tier: 5,

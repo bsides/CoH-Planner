@@ -41,6 +41,7 @@ const SAVAGE_MELEE_POWERSET = {
                 },
                 buffDuration: 10.0
             }
+        }
         },
         {name: "Savage Strike",
             available: 0,
@@ -73,7 +74,8 @@ const SAVAGE_MELEE_POWERSET = {
                     ]
                 },
                 buffDuration: 0.4
-            },
+            }
+        },
         {name: "Shred",
             available: 1,
             tier: 1,
@@ -108,7 +110,8 @@ const SAVAGE_MELEE_POWERSET = {
                 },
                 buffDuration: 2.0,
                 defenseDebuff: 1.2
-            },
+            }
+        },
         {name: "Blood Thirst",
             available: 5,
             tier: 3,
@@ -128,7 +131,8 @@ const SAVAGE_MELEE_POWERSET = {
                 cast: 2.0,
                 tohitBuff: 1.0,
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Vicious Slash",
             available: 7,
             tier: 3,
@@ -158,7 +162,8 @@ const SAVAGE_MELEE_POWERSET = {
                     ],
                     scale: 4.5389
                 }
-            },
+            }
+        },
         {name: "Confront",
             available: 11,
             tier: 4,
@@ -177,7 +182,8 @@ const SAVAGE_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Rending Flurry",
             available: 17,
             tier: 4,
@@ -196,7 +202,8 @@ const SAVAGE_MELEE_POWERSET = {
                 recharge: 14.0,
                 endurance: 13.52,
                 cast: 2.17
-            },
+            }
+        },
         {name: "Hemorrhage",
             available: 21,
             tier: 5,
@@ -232,7 +239,8 @@ const SAVAGE_MELEE_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.1
-            },
+            }
+        },
         {name: "Savage Leap",
             available: 25,
             tier: 5,

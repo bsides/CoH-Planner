@@ -35,6 +35,7 @@ const BEAST_MASTERY_POWERSET = {
                 buffDuration: 3.1,
                 defenseDebuff: 1.0
             }
+        }
         },
         {name: "Summon Wolves",
             available: 0,
@@ -54,7 +55,8 @@ const BEAST_MASTERY_POWERSET = {
                 recharge: 5.0,
                 endurance: 5.46,
                 cast: 1.97
-            },
+            }
+        },
         {name: "Call Hawk",
             available: 1,
             tier: 1,
@@ -80,7 +82,8 @@ const BEAST_MASTERY_POWERSET = {
                 },
                 buffDuration: 1.3,
                 tohitDebuff: 0.75
-            },
+            }
+        },
         {name: "Train Beasts",
             available: 5,
             tier: 3,
@@ -100,7 +103,8 @@ const BEAST_MASTERY_POWERSET = {
                 recharge: 6.0,
                 endurance: 11.375,
                 cast: 1.67
-            },
+            }
+        },
         {name: "Call Ravens",
             available: 7,
             tier: 3,
@@ -128,7 +132,8 @@ const BEAST_MASTERY_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 1.0
-            },
+            }
+        },
         {name: "Summon Lions",
             available: 11,
             tier: 4,
@@ -147,7 +152,8 @@ const BEAST_MASTERY_POWERSET = {
                 recharge: 10.0,
                 endurance: 9.62,
                 cast: 2.0
-            },
+            }
+        },
         {name: "Fortify Pack",
             available: 17,
             tier: 4,
@@ -167,7 +173,8 @@ const BEAST_MASTERY_POWERSET = {
                 endurance: 16.25,
                 cast: 2.27,
                 buffDuration: 60.0
-            },
+            }
+        },
         {name: "Summon Dire Wolf",
             available: 21,
             tier: 5,
@@ -186,7 +193,8 @@ const BEAST_MASTERY_POWERSET = {
                 recharge: 15.0,
                 endurance: 13.18,
                 cast: 2.0
-            },
+            }
+        },
         {name: "Tame Beasts",
             available: 25,
             tier: 5,

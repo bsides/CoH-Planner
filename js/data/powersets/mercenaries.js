@@ -36,6 +36,7 @@ const MERCENARIES_POWERSET = {
                 buffDuration: 0.91,
                 defenseDebuff: 1.0
             }
+        }
         },
         {name: "Soldiers",
             available: 0,
@@ -55,7 +56,8 @@ const MERCENARIES_POWERSET = {
                 recharge: 5.0,
                 endurance: 5.46,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Slug",
             available: 1,
             tier: 1,
@@ -79,7 +81,8 @@ const MERCENARIES_POWERSET = {
                     scale: 3.529
                 },
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Equip Mercenary",
             available: 5,
             tier: 3,
@@ -100,7 +103,8 @@ const MERCENARIES_POWERSET = {
                 endurance: 11.375,
                 cast: 1.3,
                 buffDuration: 3.5
-            },
+            }
+        },
         {name: "M30 Grenade",
             available: 7,
             tier: 3,
@@ -132,7 +136,8 @@ const MERCENARIES_POWERSET = {
                     scale: 1.5781999999999998
                 },
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Spec Ops",
             available: 11,
             tier: 4,
@@ -151,7 +156,8 @@ const MERCENARIES_POWERSET = {
                 recharge: 10.0,
                 endurance: 9.62,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Serum",
             available: 17,
             tier: 4,
@@ -174,7 +180,8 @@ const MERCENARIES_POWERSET = {
                 stun: 1.0,
                 stunDuration: 60.0,
                 tohitBuff: 1.0
-            },
+            }
+        },
         {name: "Commando",
             available: 21,
             tier: 5,
@@ -193,7 +200,8 @@ const MERCENARIES_POWERSET = {
                 recharge: 15.0,
                 endurance: 13.18,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Tactical Upgrade",
             available: 25,
             tier: 5,

@@ -35,6 +35,7 @@ const SEISMIC_BLAST_POWERSET = {
                 defenseDebuff: 0.5,
                 buffDuration: 3.0
             }
+        }
         },
         {name: "Seismic Shockwaves",
             available: 0,
@@ -51,7 +52,8 @@ const SEISMIC_BLAST_POWERSET = {
             maxTargets: 1,
             effects: {
                 accuracy: 0.8
-            },
+            }
+        },
         {name: "Shatter",
             available: 0,
             tier: 1,
@@ -76,7 +78,8 @@ const SEISMIC_BLAST_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 6.0
-            },
+            }
+        },
         {name: "Rock Shards",
             available: 1,
             tier: 1,
@@ -97,7 +100,8 @@ const SEISMIC_BLAST_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 1.07
-            },
+            }
+        },
         {name: "Entomb",
             available: 5,
             tier: 3,
@@ -122,7 +126,8 @@ const SEISMIC_BLAST_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Seismic Force",
             available: 7,
             tier: 3,
@@ -142,7 +147,8 @@ const SEISMIC_BLAST_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 5.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Upthrust",
             available: 11,
             tier: 4,
@@ -168,7 +174,8 @@ const SEISMIC_BLAST_POWERSET = {
                 },
                 defenseDebuff: 0.7,
                 buffDuration: 16.0
-            },
+            }
+        },
         {name: "Tombstone",
             available: 17,
             tier: 4,
@@ -187,7 +194,8 @@ const SEISMIC_BLAST_POWERSET = {
                 recharge: 12.0,
                 endurance: 14.352,
                 cast: 1.67
-            },
+            }
+        },
         {name: "Stalagmite",
             available: 21,
             tier: 5,
@@ -206,7 +214,8 @@ const SEISMIC_BLAST_POWERSET = {
                 recharge: 8.0,
                 endurance: 10.192,
                 cast: 1.0
-            },
+            }
+        },
         {name: "Meteor",
             available: 25,
             tier: 5,

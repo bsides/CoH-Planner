@@ -35,6 +35,7 @@ const STORM_SUMMONING_POWERSET = {
                     scale: 0.1
                 }
             }
+        }
         },
         {name: "O2 Boost",
             available: 0,
@@ -57,7 +58,8 @@ const STORM_SUMMONING_POWERSET = {
                 buffDuration: 60.0,
                 stun: 1.0,
                 stunDuration: 60.0
-            },
+            }
+        },
         {name: "Snow Storm",
             available: 1,
             tier: 1,
@@ -78,7 +80,8 @@ const STORM_SUMMONING_POWERSET = {
                 endurance: 0.26,
                 cast: 2.03,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Steamy Mist",
             available: 5,
             tier: 3,
@@ -98,7 +101,8 @@ const STORM_SUMMONING_POWERSET = {
                 endurance: 0.26,
                 cast: 1.87,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Freezing Rain",
             available: 7,
             tier: 3,
@@ -118,7 +122,8 @@ const STORM_SUMMONING_POWERSET = {
                 endurance: 18.2,
                 cast: 2.03,
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Hurricane",
             available: 11,
             tier: 4,
@@ -139,7 +144,8 @@ const STORM_SUMMONING_POWERSET = {
                 cast: 2.03,
                 tohitDebuff: 3.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Thunder Clap",
             available: 17,
             tier: 4,
@@ -159,7 +165,8 @@ const STORM_SUMMONING_POWERSET = {
                 endurance: 10.4,
                 cast: 2.37,
                 stun: 2.0
-            },
+            }
+        },
         {name: "Tornado",
             available: 21,
             tier: 5,
@@ -179,7 +186,8 @@ const STORM_SUMMONING_POWERSET = {
                 endurance: 20.8,
                 cast: 1.17,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Lightning Storm",
             available: 25,
             tier: 5,

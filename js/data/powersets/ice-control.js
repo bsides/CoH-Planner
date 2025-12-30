@@ -34,6 +34,7 @@ const ICE_CONTROL_POWERSET = {
                 },
                 buffDuration: 12.0
             }
+        }
         },
         {name: "Chilblain",
             available: 0,
@@ -59,7 +60,8 @@ const ICE_CONTROL_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 9.2
-            },
+            }
+        },
         {name: "Frostbite",
             available: 1,
             tier: 1,
@@ -85,7 +87,8 @@ const ICE_CONTROL_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 5.2
-            },
+            }
+        },
         {name: "Arctic Air",
             available: 5,
             tier: 3,
@@ -105,7 +108,8 @@ const ICE_CONTROL_POWERSET = {
                 endurance: 2.08,
                 cast: 2.03,
                 buffDuration: 2.25
-            },
+            }
+        },
         {name: "Cold Snap",
             available: 7,
             tier: 3,
@@ -127,7 +131,8 @@ const ICE_CONTROL_POWERSET = {
                 endurance: 10.4,
                 cast: 2.17,
                 buffDuration: 18.0
-            },
+            }
+        },
         {name: "Ice Slick",
             available: 11,
             tier: 4,
@@ -147,7 +152,8 @@ const ICE_CONTROL_POWERSET = {
                 endurance: 10.4,
                 cast: 1.67,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Flash Freeze",
             available: 17,
             tier: 4,
@@ -171,7 +177,8 @@ const ICE_CONTROL_POWERSET = {
                     type: "Cold",
                     scale: 0.2
                 }
-            },
+            }
+        },
         {name: "Glacier",
             available: 21,
             tier: 5,
@@ -191,7 +198,8 @@ const ICE_CONTROL_POWERSET = {
                 endurance: 8.528,
                 cast: 2.03,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Jack Frost",
             available: 25,
             tier: 5,

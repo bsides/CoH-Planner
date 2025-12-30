@@ -29,6 +29,7 @@ const ELECTRIC_ARMOR_POWERSET = {
                 cast: 0.67,
                 buffDuration: 0.75
             }
+        }
         },
         {name: "Lightning Field",
             available: 0,
@@ -52,7 +53,8 @@ const ELECTRIC_ARMOR_POWERSET = {
                     type: "Energy",
                     scale: 0.2
                 }
-            },
+            }
+        },
         {name: "Conductive Shield",
             available: 3,
             tier: 2,
@@ -71,7 +73,8 @@ const ELECTRIC_ARMOR_POWERSET = {
                 endurance: 0.13,
                 cast: 0.67,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Static Shield",
             available: 9,
             tier: 3,
@@ -89,7 +92,8 @@ const ELECTRIC_ARMOR_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.104,
                 cast: 1.17
-            },
+            }
+        },
         {name: "Grounded",
             available: 15,
             tier: 4,
@@ -104,7 +108,8 @@ const ELECTRIC_ARMOR_POWERSET = {
             effectArea: "SingleTarget",
             effects: {
                 accuracy: 1.0
-            },
+            }
+        },
         {name: "Energize",
             available: 19,
             tier: 4,
@@ -123,7 +128,8 @@ const ELECTRIC_ARMOR_POWERSET = {
                 endurance: 10.4,
                 cast: 1.17,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Lightning Reflexes",
             available: 23,
             tier: 5,
@@ -139,7 +145,8 @@ const ELECTRIC_ARMOR_POWERSET = {
             effects: {
                 accuracy: 1.0,
                 buffDuration: 10.25
-            },
+            }
+        },
         {name: "Power Sink",
             available: 27,
             tier: 5,
@@ -158,7 +165,8 @@ const ELECTRIC_ARMOR_POWERSET = {
                 recharge: 60.0,
                 endurance: 13.0,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Power Surge",
             available: 29,
             tier: 5,

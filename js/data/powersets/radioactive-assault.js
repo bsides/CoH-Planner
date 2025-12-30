@@ -42,6 +42,7 @@ const RADIOACTIVE_ASSAULT_POWERSET = {
                 defenseDebuff: 1.39,
                 buffDuration: 10.0
             }
+        }
         },
         {name: "Neutrino Bolt",
             available: 0,
@@ -67,7 +68,8 @@ const RADIOACTIVE_ASSAULT_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 3.0
-            },
+            }
+        },
         {name: "X-Ray Beam",
             available: 3,
             tier: 2,
@@ -92,7 +94,8 @@ const RADIOACTIVE_ASSAULT_POWERSET = {
                 },
                 defenseDebuff: 2.0,
                 buffDuration: 6.0
-            },
+            }
+        },
         {name: "Electron Haze",
             available: 9,
             tier: 3,
@@ -119,7 +122,8 @@ const RADIOACTIVE_ASSAULT_POWERSET = {
                 },
                 defenseDebuff: 2.0,
                 buffDuration: 8.0
-            },
+            }
+        },
         {name: "Fusion",
             available: 15,
             tier: 4,
@@ -139,7 +143,8 @@ const RADIOACTIVE_ASSAULT_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Radiation Siphon",
             available: 19,
             tier: 4,
@@ -171,7 +176,8 @@ const RADIOACTIVE_ASSAULT_POWERSET = {
                 },
                 defenseDebuff: 1.5,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Atom Smasher",
             available: 23,
             tier: 5,
@@ -204,7 +210,8 @@ const RADIOACTIVE_ASSAULT_POWERSET = {
                 defenseDebuff: 1.2,
                 buffDuration: 10.0,
                 stun: 2.0
-            },
+            }
+        },
         {name: "Proton Volley",
             available: 27,
             tier: 5,
@@ -223,7 +230,8 @@ const RADIOACTIVE_ASSAULT_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 1.33
-            },
+            }
+        },
         {name: "Devastating Blow",
             available: 29,
             tier: 5,

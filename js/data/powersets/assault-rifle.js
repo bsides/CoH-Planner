@@ -35,6 +35,7 @@ const ASSAULT_RIFLE_POWERSET = {
                 buffDuration: 0.91,
                 defenseDebuff: 1.0
             }
+        }
         },
         {name: "Slug",
             available: 0,
@@ -58,7 +59,8 @@ const ASSAULT_RIFLE_POWERSET = {
                     type: "Lethal",
                     scale: 3.3402
                 }
-            },
+            }
+        },
         {name: "Buckshot",
             available: 1,
             tier: 1,
@@ -83,7 +85,8 @@ const ASSAULT_RIFLE_POWERSET = {
                     type: "Lethal",
                     scale: 1.5351
                 }
-            },
+            }
+        },
         {name: "M30 Grenade",
             available: 5,
             tier: 3,
@@ -114,7 +117,8 @@ const ASSAULT_RIFLE_POWERSET = {
                     ],
                     scale: 3.782
                 }
-            },
+            }
+        },
         {name: "Beanbag",
             available: 7,
             tier: 3,
@@ -138,7 +142,8 @@ const ASSAULT_RIFLE_POWERSET = {
                     scale: 2.41
                 },
                 stun: 3.0
-            },
+            }
+        },
         {name: "Sniper Rifle",
             available: 11,
             tier: 4,
@@ -157,7 +162,8 @@ const ASSAULT_RIFLE_POWERSET = {
                 recharge: 12.0,
                 endurance: 14.352,
                 cast: 1.17
-            },
+            }
+        },
         {name: "Flamethrower",
             available: 17,
             tier: 4,
@@ -184,7 +190,8 @@ const ASSAULT_RIFLE_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.7
-            },
+            }
+        },
         {name: "Ignite",
             available: 21,
             tier: 5,
@@ -213,7 +220,8 @@ const ASSAULT_RIFLE_POWERSET = {
                     ticks: 21
                 },
                 buffDuration: 5.25
-            },
+            }
+        },
         {name: "Full Auto",
             available: 25,
             tier: 5,

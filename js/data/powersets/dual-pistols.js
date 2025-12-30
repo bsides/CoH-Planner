@@ -28,6 +28,7 @@ const DUAL_PISTOLS_POWERSET = {
                 cast: 0.63,
                 buffDuration: 0.75
             }
+        }
         },
         {name: "Cryo Ammunition",
             available: -1,
@@ -46,7 +47,8 @@ const DUAL_PISTOLS_POWERSET = {
                 recharge: 4.0,
                 cast: 0.63,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Incendiary Ammunition",
             available: -1,
             tier: 2,
@@ -64,7 +66,8 @@ const DUAL_PISTOLS_POWERSET = {
                 recharge: 4.0,
                 cast: 0.63,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Dual Wield",
             available: 0,
             tier: 1,
@@ -104,7 +107,8 @@ const DUAL_PISTOLS_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            },
+            }
+        },
         {name: "Pistols",
             available: 0,
             tier: 1,
@@ -145,7 +149,8 @@ const DUAL_PISTOLS_POWERSET = {
                 },
                 buffDuration: 2.1,
                 defenseDebuff: 1.0
-            },
+            }
+        },
         {name: "Empty Clips",
             available: 1,
             tier: 1,
@@ -186,7 +191,8 @@ const DUAL_PISTOLS_POWERSET = {
                 },
                 buffDuration: 1.6,
                 defenseDebuff: 1.0
-            },
+            }
+        },
         {name: "Swap Ammo",
             available: 5,
             tier: 3,
@@ -202,7 +208,8 @@ const DUAL_PISTOLS_POWERSET = {
             effects: {
                 accuracy: 1.0,
                 buffDuration: 2.25
-            },
+            }
+        },
         {name: "Bullet Rain",
             available: 7,
             tier: 3,
@@ -241,7 +248,8 @@ const DUAL_PISTOLS_POWERSET = {
                     ]
                 },
                 buffDuration: 1.1
-            },
+            }
+        },
         {name: "Suppressive Fire",
             available: 11,
             tier: 4,
@@ -260,7 +268,8 @@ const DUAL_PISTOLS_POWERSET = {
                 recharge: 20.0,
                 endurance: 10.192,
                 cast: 1.5
-            },
+            }
+        },
         {name: "Executioner's Shot",
             available: 17,
             tier: 4,
@@ -301,7 +310,8 @@ const DUAL_PISTOLS_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 1.25
-            },
+            }
+        },
         {name: "Piercing Rounds",
             available: 21,
             tier: 5,
@@ -343,7 +353,8 @@ const DUAL_PISTOLS_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 2.1
-            },
+            }
+        },
         {name: "Hail of Bullets",
             available: 25,
             tier: 5,

@@ -36,6 +36,7 @@ const SAVAGE_ASSAULT_POWERSET = {
                 buffDuration: 3.1,
                 defenseDebuff: 1.0
             }
+        }
         },
         {name: "Maiming Slash",
             available: 0,
@@ -65,7 +66,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            },
+            }
+        },
         {name: "Vicious Slash",
             available: 3,
             tier: 2,
@@ -94,7 +96,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            },
+            }
+        },
         {name: "Unkindness",
             available: 9,
             tier: 3,
@@ -122,7 +125,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 1.0
-            },
+            }
+        },
         {name: "Spot Prey",
             available: 15,
             tier: 4,
@@ -142,7 +146,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 5.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Rending Flurry",
             available: 19,
             tier: 4,
@@ -161,7 +166,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                 recharge: 14.0,
                 endurance: 13.52,
                 cast: 2.17
-            },
+            }
+        },
         {name: "Blood Craze",
             available: 23,
             tier: 5,
@@ -180,7 +186,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                 endurance: 7.8,
                 cast: 2.0,
                 buffDuration: 9.1
-            },
+            }
+        },
         {name: "Call Hawk",
             available: 27,
             tier: 5,
@@ -206,7 +213,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                 },
                 buffDuration: 1.3,
                 tohitDebuff: 0.75
-            },
+            }
+        },
         {name: "Feral Charge",
             available: 29,
             tier: 5,

@@ -35,6 +35,7 @@ const DARKNESS_CONTROL_POWERSET = {
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
             }
+        }
         },
         {name: "Shadowy Binds",
             available: 0,
@@ -61,7 +62,8 @@ const DARKNESS_CONTROL_POWERSET = {
                 },
                 buffDuration: 9.2,
                 tohitDebuff: 0.75
-            },
+            }
+        },
         {name: "Living Shadows",
             available: 1,
             tier: 1,
@@ -89,7 +91,8 @@ const DARKNESS_CONTROL_POWERSET = {
                 },
                 buffDuration: 5.2,
                 tohitDebuff: 0.75
-            },
+            }
+        },
         {name: "Possess",
             available: 5,
             tier: 3,
@@ -108,7 +111,8 @@ const DARKNESS_CONTROL_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 2.33
-            },
+            }
+        },
         {name: "Fearsome Stare",
             available: 7,
             tier: 3,
@@ -131,7 +135,8 @@ const DARKNESS_CONTROL_POWERSET = {
                 cast: 2.03,
                 tohitDebuff: 1.5,
                 buffDuration: 20.0
-            },
+            }
+        },
         {name: "Heart of Darkness",
             available: 11,
             tier: 4,
@@ -158,7 +163,8 @@ const DARKNESS_CONTROL_POWERSET = {
                 buffDuration: 4.1,
                 stun: 1.0,
                 tohitDebuff: 0.75
-            },
+            }
+        },
         {name: "Haunt",
             available: 17,
             tier: 4,
@@ -178,7 +184,8 @@ const DARKNESS_CONTROL_POWERSET = {
                 endurance: 10.4,
                 cast: 2.33,
                 buffDuration: 1.0
-            },
+            }
+        },
         {name: "Shadow Field",
             available: 21,
             tier: 5,
@@ -198,7 +205,8 @@ const DARKNESS_CONTROL_POWERSET = {
                 endurance: 15.6,
                 cast: 2.67,
                 buffDuration: 45.0
-            },
+            }
+        },
         {name: "Umbra Beast",
             available: 25,
             tier: 5,

@@ -32,6 +32,7 @@ const EARTH_MANIPULATION_POWERSET = {
                     scale: 4.0908999999999995
                 }
             }
+        }
         },
         {name: "Stone Prison",
             available: 0,
@@ -58,7 +59,8 @@ const EARTH_MANIPULATION_POWERSET = {
                 },
                 buffDuration: 9.2,
                 defenseDebuff: 1.0
-            },
+            }
+        },
         {name: "Salt Crystals",
             available: 3,
             tier: 2,
@@ -79,7 +81,8 @@ const EARTH_MANIPULATION_POWERSET = {
                 cast: 1.07,
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Build Up",
             available: 9,
             tier: 3,
@@ -99,7 +102,8 @@ const EARTH_MANIPULATION_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Tremor",
             available: 15,
             tier: 4,
@@ -122,7 +126,8 @@ const EARTH_MANIPULATION_POWERSET = {
                     type: "Smashing",
                     scale: 2.1324
                 }
-            },
+            }
+        },
         {name: "Mud Bath",
             available: 19,
             tier: 4,
@@ -141,7 +146,8 @@ const EARTH_MANIPULATION_POWERSET = {
                 recharge: 4.0,
                 cast: 2.03,
                 buffDuration: 5.0
-            },
+            }
+        },
         {name: "Beryl Crystals",
             available: 23,
             tier: 5,
@@ -161,7 +167,8 @@ const EARTH_MANIPULATION_POWERSET = {
                 cast: 0.73,
                 buffDuration: 0.75,
                 tohitBuff: 1.0
-            },
+            }
+        },
         {name: "Fracture",
             available: 27,
             tier: 5,
@@ -184,7 +191,8 @@ const EARTH_MANIPULATION_POWERSET = {
                 defenseDebuff: 1.0,
                 buffDuration: 10.0,
                 stun: 3.0
-            },
+            }
+        },
         {name: "Seismic Smash",
             available: 29,
             tier: 5,

@@ -42,6 +42,7 @@ const SONIC_ATTACK_POWERSET = {
                 },
                 buffDuration: 1.05
             }
+        }
         },
         {name: "Shriek",
             available: 0,
@@ -73,7 +74,8 @@ const SONIC_ATTACK_POWERSET = {
                     scale: 2.06
                 },
                 buffDuration: 8.0
-            },
+            }
+        },
         {name: "Howl",
             available: 1,
             tier: 1,
@@ -106,7 +108,8 @@ const SONIC_ATTACK_POWERSET = {
                     scale: 3.2604999999999995
                 },
                 buffDuration: 8.0
-            },
+            }
+        },
         {name: "Shockwave",
             available: 5,
             tier: 3,
@@ -138,7 +141,8 @@ const SONIC_ATTACK_POWERSET = {
                     ],
                     scale: 1.6852
                 }
-            },
+            }
+        },
         {name: "Shout",
             available: 7,
             tier: 3,
@@ -169,7 +173,8 @@ const SONIC_ATTACK_POWERSET = {
                     scale: 4.16
                 },
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Amplify",
             available: 11,
             tier: 4,
@@ -189,7 +194,8 @@ const SONIC_ATTACK_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 5.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Sirens Song",
             available: 17,
             tier: 4,
@@ -214,7 +220,8 @@ const SONIC_ATTACK_POWERSET = {
                     type: "Energy",
                     scale: 0.9546
                 }
-            },
+            }
+        },
         {name: "Screech",
             available: 21,
             tier: 5,
@@ -246,7 +253,8 @@ const SONIC_ATTACK_POWERSET = {
                 },
                 stun: 3.0,
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Dreadful Wail",
             available: 25,
             tier: 5,

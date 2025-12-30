@@ -42,6 +42,7 @@ const PLANT_CONTROL_POWERSET = {
                 },
                 buffDuration: 9.2
             }
+        }
         },
         {name: "Strangler",
             available: 0,
@@ -67,7 +68,8 @@ const PLANT_CONTROL_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.2
-            },
+            }
+        },
         {name: "Roots",
             available: 1,
             tier: 1,
@@ -100,7 +102,8 @@ const PLANT_CONTROL_POWERSET = {
                     ]
                 },
                 buffDuration: 5.2
-            },
+            }
+        },
         {name: "Spore Burst",
             available: 5,
             tier: 3,
@@ -120,7 +123,8 @@ const PLANT_CONTROL_POWERSET = {
                 recharge: 45.0,
                 endurance: 13.0,
                 cast: 1.37
-            },
+            }
+        },
         {name: "Seeds of Confusion",
             available: 7,
             tier: 3,
@@ -141,7 +145,8 @@ const PLANT_CONTROL_POWERSET = {
                 recharge: 6.0,
                 endurance: 15.6,
                 cast: 1.07
-            },
+            }
+        },
         {name: "Spirit Tree",
             available: 11,
             tier: 4,
@@ -161,7 +166,8 @@ const PLANT_CONTROL_POWERSET = {
                 endurance: 13.0,
                 cast: 1.67,
                 buffDuration: 60.0
-            },
+            }
+        },
         {name: "Vines",
             available: 17,
             tier: 4,
@@ -180,7 +186,8 @@ const PLANT_CONTROL_POWERSET = {
                 recharge: 240.0,
                 endurance: 15.6,
                 cast: 2.1
-            },
+            }
+        },
         {name: "Carrion Creepers",
             available: 21,
             tier: 5,
@@ -200,7 +207,8 @@ const PLANT_CONTROL_POWERSET = {
                 endurance: 26.0,
                 cast: 1.17,
                 buffDuration: 120.0
-            },
+            }
+        },
         {name: "Fly Trap",
             available: 25,
             tier: 5,

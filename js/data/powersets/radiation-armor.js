@@ -29,6 +29,7 @@ const RADIATION_ARMOR_POWERSET = {
                 cast: 0.67,
                 buffDuration: 0.75
             }
+        }
         },
         {name: "Gamma Boost",
             available: 0,
@@ -45,7 +46,8 @@ const RADIATION_ARMOR_POWERSET = {
             effects: {
                 accuracy: 1.0,
                 buffDuration: 1.25
-            },
+            }
+        },
         {name: "Proton Armor",
             available: 3,
             tier: 2,
@@ -64,7 +66,8 @@ const RADIATION_ARMOR_POWERSET = {
                 endurance: 0.13,
                 cast: 0.67,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Fallout Shelter",
             available: 9,
             tier: 3,
@@ -86,7 +89,8 @@ const RADIATION_ARMOR_POWERSET = {
                 stunDuration: 0.75,
                 buffDuration: 0.75,
                 tohitBuff: 0.3
-            },
+            }
+        },
         {name: "Radiation Therapy",
             available: 15,
             tier: 4,
@@ -105,7 +109,8 @@ const RADIATION_ARMOR_POWERSET = {
                 recharge: 60.0,
                 endurance: 13.0,
                 cast: 1.03
-            },
+            }
+        },
         {name: "Beta Decay",
             available: 19,
             tier: 4,
@@ -127,7 +132,8 @@ const RADIATION_ARMOR_POWERSET = {
                 tohitDebuff: 0.75,
                 buffDuration: 1.0,
                 defenseDebuff: 1.5
-            },
+            }
+        },
         {name: "Particle Shielding",
             available: 23,
             tier: 5,
@@ -146,7 +152,8 @@ const RADIATION_ARMOR_POWERSET = {
                 endurance: 10.4,
                 cast: 0.73,
                 buffDuration: 60.0
-            },
+            }
+        },
         {name: "Ground Zero",
             available: 27,
             tier: 5,
@@ -165,7 +172,8 @@ const RADIATION_ARMOR_POWERSET = {
                 recharge: 90.0,
                 endurance: 13.0,
                 cast: 3.0
-            },
+            }
+        },
         {name: "Meltdown",
             available: 29,
             tier: 5,

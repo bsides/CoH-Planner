@@ -35,6 +35,7 @@ const POISON_POWERSET = {
                 },
                 buffDuration: 60.0
             }
+        }
         },
         {name: "Envenom",
             available: 0,
@@ -57,7 +58,8 @@ const POISON_POWERSET = {
                 cast: 1.33,
                 defenseDebuff: 1.5,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Weaken",
             available: 1,
             tier: 1,
@@ -79,7 +81,8 @@ const POISON_POWERSET = {
                 cast: 2.07,
                 buffDuration: 30.0,
                 tohitDebuff: 0.75
-            },
+            }
+        },
         {name: "Neurotoxic Breath",
             available: 5,
             tier: 3,
@@ -101,7 +104,8 @@ const POISON_POWERSET = {
                 endurance: 10.4,
                 cast: 2.67,
                 buffDuration: 20.0
-            },
+            }
+        },
         {name: "Elixir of Life",
             available: 7,
             tier: 3,
@@ -128,7 +132,8 @@ const POISON_POWERSET = {
                 buffDuration: 0.5,
                 tohitBuff: 3.0,
                 tohitDebuff: 3.0
-            },
+            }
+        },
         {name: "Antidote",
             available: 11,
             tier: 4,
@@ -162,7 +167,8 @@ const POISON_POWERSET = {
                 stun: 1.0,
                 stunDuration: 90.0,
                 buffDuration: 90.0
-            },
+            }
+        },
         {name: "Paralytic Poison",
             available: 17,
             tier: 4,
@@ -181,7 +187,8 @@ const POISON_POWERSET = {
                 recharge: 16.0,
                 endurance: 7.8,
                 cast: 2.0
-            },
+            }
+        },
         {name: "Poison Trap",
             available: 21,
             tier: 5,
@@ -200,7 +207,8 @@ const POISON_POWERSET = {
                 endurance: 10.4,
                 cast: 1.0,
                 buffDuration: 260.0
-            },
+            }
+        },
         {name: "Venomous Gas",
             available: 25,
             tier: 5,

@@ -30,6 +30,7 @@ const SUPER_REFLEXES_POWERSET = {
                 buffDuration: 0.75,
                 defenseBuff: 0.4
             }
+        }
         },
         {name: "Focused Senses",
             available: 0,
@@ -50,7 +51,8 @@ const SUPER_REFLEXES_POWERSET = {
                 cast: 2.03,
                 buffDuration: 0.75,
                 defenseBuff: 0.4
-            },
+            }
+        },
         {name: "Agile",
             available: 3,
             tier: 2,
@@ -67,7 +69,8 @@ const SUPER_REFLEXES_POWERSET = {
                 accuracy: 1.0,
                 buffDuration: 0.75,
                 defenseBuff: 0.2
-            },
+            }
+        },
         {name: "Practiced Brawler",
             available: 9,
             tier: 3,
@@ -90,7 +93,8 @@ const SUPER_REFLEXES_POWERSET = {
                 stunDuration: 120.0,
                 tohitBuff: 0.3,
                 defenseBuff: 0.3
-            },
+            }
+        },
         {name: "Dodge",
             available: 15,
             tier: 4,
@@ -107,7 +111,8 @@ const SUPER_REFLEXES_POWERSET = {
                 accuracy: 1.0,
                 buffDuration: 0.75,
                 defenseBuff: 0.2
-            },
+            }
+        },
         {name: "Quickness",
             available: 19,
             tier: 4,
@@ -123,7 +128,8 @@ const SUPER_REFLEXES_POWERSET = {
             effects: {
                 accuracy: 1.0,
                 buffDuration: 10.25
-            },
+            }
+        },
         {name: "Lucky",
             available: 23,
             tier: 5,
@@ -140,7 +146,8 @@ const SUPER_REFLEXES_POWERSET = {
                 accuracy: 1.0,
                 buffDuration: 0.75,
                 defenseBuff: 0.2
-            },
+            }
+        },
         {name: "Evasion",
             available: 27,
             tier: 5,
@@ -160,7 +167,8 @@ const SUPER_REFLEXES_POWERSET = {
                 cast: 3.0,
                 buffDuration: 0.75,
                 defenseBuff: 0.4
-            },
+            }
+        },
         {name: "Elude",
             available: 29,
             tier: 5,

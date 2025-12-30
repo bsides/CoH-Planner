@@ -44,6 +44,7 @@ const RADIATION_MELEE_POWERSET = {
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
             }
+        }
         },
         {name: "Radioactive Smash",
             available: 0,
@@ -78,7 +79,8 @@ const RADIATION_MELEE_POWERSET = {
                 },
                 defenseDebuff: 1.5,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Proton Sweep",
             available: 1,
             tier: 1,
@@ -116,7 +118,8 @@ const RADIATION_MELEE_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 1.2
-            },
+            }
+        },
         {name: "Fusion",
             available: 5,
             tier: 3,
@@ -136,7 +139,8 @@ const RADIATION_MELEE_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Radiation Siphon",
             available: 7,
             tier: 3,
@@ -170,7 +174,8 @@ const RADIATION_MELEE_POWERSET = {
                 },
                 defenseDebuff: 1.5,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Confront",
             available: 11,
             tier: 4,
@@ -189,7 +194,8 @@ const RADIATION_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Irradiated Ground",
             available: 17,
             tier: 4,
@@ -208,7 +214,8 @@ const RADIATION_MELEE_POWERSET = {
                 recharge: 4.0,
                 endurance: 2.6,
                 cast: 2.03
-            },
+            }
+        },
         {name: "Devastating Blow",
             available: 21,
             tier: 5,
@@ -243,7 +250,8 @@ const RADIATION_MELEE_POWERSET = {
                 defenseDebuff: 2.0,
                 buffDuration: 10.0,
                 stun: 3.0
-            },
+            }
+        },
         {name: "Atom Smasher",
             available: 25,
             tier: 5,

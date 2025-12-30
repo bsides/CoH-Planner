@@ -33,6 +33,7 @@ const ELECTRICAL_BLAST_POWERSET = {
                     scale: 2.2602
                 }
             }
+        }
         },
         {name: "Lightning Bolt",
             available: 0,
@@ -56,7 +57,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                     type: "Energy",
                     scale: 3.5292
                 }
-            },
+            }
+        },
         {name: "Ball Lightning",
             available: 1,
             tier: 1,
@@ -86,7 +88,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 2.2
-            },
+            }
+        },
         {name: "Short Circuit",
             available: 5,
             tier: 3,
@@ -111,7 +114,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 1.5
-            },
+            }
+        },
         {name: "Charge Up",
             available: 7,
             tier: 3,
@@ -131,7 +135,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 4.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Zapp",
             available: 11,
             tier: 4,
@@ -150,7 +155,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                 recharge: 12.0,
                 endurance: 14.352,
                 cast: 1.33
-            },
+            }
+        },
         {name: "Tesla Cage",
             available: 17,
             tier: 4,
@@ -175,7 +181,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                     scale: 0.18130000000000002
                 },
                 buffDuration: 8.0
-            },
+            }
+        },
         {name: "Voltaic Sentinel",
             available: 21,
             tier: 5,
@@ -194,7 +201,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                 recharge: 10.0,
                 endurance: 0.52,
                 cast: 3.1
-            },
+            }
+        },
         {name: "Thunderous Blast",
             available: 25,
             tier: 5,

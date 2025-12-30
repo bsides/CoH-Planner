@@ -35,6 +35,7 @@ const ARSENAL_ASSAULT_POWERSET = {
                 buffDuration: 0.91,
                 defenseDebuff: 1.0
             }
+        }
         },
         {name: "Buttstroke",
             available: 0,
@@ -58,7 +59,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 3.179
                 }
-            },
+            }
+        },
         {name: "Buckshot",
             available: 3,
             tier: 2,
@@ -83,7 +85,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                     type: "Lethal",
                     scale: 1.5351
                 }
-            },
+            }
+        },
         {name: "Elbow Strike",
             available: 9,
             tier: 3,
@@ -106,7 +109,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 3.909
                 }
-            },
+            }
+        },
         {name: "Power Up",
             available: 15,
             tier: 4,
@@ -129,7 +133,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                 stunDuration: 10.0,
                 tohitBuff: 0.5,
                 defenseBuff: 0.5
-            },
+            }
+        },
         {name: "Trip Mine",
             available: 19,
             tier: 4,
@@ -148,7 +153,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                 endurance: 18.512,
                 cast: 1.93,
                 buffDuration: 170.0
-            },
+            }
+        },
         {name: "Targeting Drone",
             available: 23,
             tier: 5,
@@ -168,7 +174,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 0.75
-            },
+            }
+        },
         {name: "Sniper Rifle",
             available: 27,
             tier: 5,
@@ -187,7 +194,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 1.17
-            },
+            }
+        },
         {name: "Ignite",
             available: 29,
             tier: 5,

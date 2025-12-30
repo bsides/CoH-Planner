@@ -46,6 +46,7 @@ const QUILLS_POWERSET = {
                 },
                 buffDuration: 4.0
             }
+        }
         },
         {name: "Lunge",
             available: 0,
@@ -82,7 +83,8 @@ const QUILLS_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 6.0
-            },
+            }
+        },
         {name: "Spines",
             available: 0,
             tier: 1,
@@ -91,7 +93,8 @@ const QUILLS_POWERSET = {
             allowedSetCategories: [],
             description: "Spines protrude from your body and can deal damage in melee or at very short ranges. Spines are hollow and hold a neural toxin that deals additional Toxic damage and can Slow or Immobilize your enemies. The toxin is cumulative, and multiple hits will affect a target more strongly. Very few foes have resistance to Spine poison. Like all scrapper powers, all Spine attacks can sometimes land a critical hit for double damage.",
             shortHelp: "Spines",
-            icon: "quills_set.png"},
+            icon: "quills_set.png"}
+        },
         {name: "Spine Burst",
             available: 1,
             tier: 1,
@@ -127,7 +130,8 @@ const QUILLS_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Build Up",
             available: 5,
             tier: 3,
@@ -147,7 +151,8 @@ const QUILLS_POWERSET = {
                 cast: 0.73,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Impale",
             available: 7,
             tier: 3,
@@ -183,7 +188,8 @@ const QUILLS_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 15.0
-            },
+            }
+        },
         {name: "Confront",
             available: 11,
             tier: 4,
@@ -210,7 +216,8 @@ const QUILLS_POWERSET = {
                     scale: 0.6358
                 },
                 buffDuration: 3.0
-            },
+            }
+        },
         {name: "Ripper",
             available: 21,
             tier: 5,
@@ -248,7 +255,8 @@ const QUILLS_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Throw Spines",
             available: 25,
             tier: 5,

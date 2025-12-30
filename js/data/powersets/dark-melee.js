@@ -43,6 +43,7 @@ const DARK_MELEE_POWERSET = {
                 tohitDebuff: 0.75,
                 buffDuration: 6.0
             }
+        }
         },
         {name: "Smite",
             available: 0,
@@ -77,7 +78,8 @@ const DARK_MELEE_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Shadow Maul",
             available: 1,
             tier: 1,
@@ -119,7 +121,8 @@ const DARK_MELEE_POWERSET = {
                 },
                 buffDuration: 2.0,
                 tohitDebuff: 0.75
-            },
+            }
+        },
         {name: "Touch of Fear",
             available: 5,
             tier: 3,
@@ -139,7 +142,8 @@ const DARK_MELEE_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 1.97
-            },
+            }
+        },
         {name: "Siphon Life",
             available: 7,
             tier: 3,
@@ -171,7 +175,8 @@ const DARK_MELEE_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Confront",
             available: 11,
             tier: 4,
@@ -190,7 +195,8 @@ const DARK_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Dark Consumption",
             available: 17,
             tier: 4,
@@ -220,7 +226,8 @@ const DARK_MELEE_POWERSET = {
                     ],
                     scale: 3.3909
                 }
-            },
+            }
+        },
         {name: "Soul Drain",
             available: 21,
             tier: 5,
@@ -252,7 +259,8 @@ const DARK_MELEE_POWERSET = {
                 },
                 tohitBuff: 1.0,
                 buffDuration: 30.0
-            },
+            }
+        },
         {name: "Midnight Grasp",
             available: 25,
             tier: 5,

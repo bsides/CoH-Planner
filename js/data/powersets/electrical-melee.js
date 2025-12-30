@@ -41,6 +41,7 @@ const ELECTRICAL_MELEE_POWERSET = {
                 },
                 buffDuration: 2.0
             }
+        }
         },
         {name: "Havoc Punch",
             available: 0,
@@ -72,7 +73,8 @@ const ELECTRICAL_MELEE_POWERSET = {
                     scale: 3.0099
                 },
                 buffDuration: 4.0
-            },
+            }
+        },
         {name: "Jacobs Ladder",
             available: 1,
             tier: 1,
@@ -98,7 +100,8 @@ const ELECTRICAL_MELEE_POWERSET = {
                     scale: 3.0986000000000002
                 },
                 buffDuration: 2.0
-            },
+            }
+        },
         {name: "Build Up",
             available: 5,
             tier: 3,
@@ -118,7 +121,8 @@ const ELECTRICAL_MELEE_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            },
+            }
+        },
         {name: "Thunder Strike",
             available: 7,
             tier: 3,
@@ -138,7 +142,8 @@ const ELECTRICAL_MELEE_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 2.53
-            },
+            }
+        },
         {name: "Confront",
             available: 11,
             tier: 4,
@@ -157,7 +162,8 @@ const ELECTRICAL_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            },
+            }
+        },
         {name: "Chain Induction",
             available: 17,
             tier: 4,
@@ -181,7 +187,8 @@ const ELECTRICAL_MELEE_POWERSET = {
                     scale: 2.9798999999999998
                 },
                 buffDuration: 2.0
-            },
+            }
+        },
         {name: "Lightning Clap",
             available: 21,
             tier: 5,
@@ -201,7 +208,8 @@ const ELECTRICAL_MELEE_POWERSET = {
                 endurance: 13.0,
                 cast: 1.23,
                 stun: 2.0
-            },
+            }
+        },
         {name: "Lightning Rod",
             available: 25,
             tier: 5,

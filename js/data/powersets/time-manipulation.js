@@ -30,6 +30,7 @@ const TIME_MANIPULATION_POWERSET = {
                 cast: 2.03,
                 buffDuration: 30.0
             }
+        }
         },
         {name: "Time Crawl",
             available: 0,
@@ -50,7 +51,8 @@ const TIME_MANIPULATION_POWERSET = {
                 endurance: 10.4,
                 cast: 1.6,
                 buffDuration: 20.0
-            },
+            }
+        },
         {name: "Time's Juncture",
             available: 1,
             tier: 1,
@@ -71,7 +73,8 @@ const TIME_MANIPULATION_POWERSET = {
                 cast: 0.67,
                 tohitDebuff: 1.5,
                 buffDuration: 1.0
-            },
+            }
+        },
         {name: "Temporal Selection",
             available: 5,
             tier: 3,
@@ -91,7 +94,8 @@ const TIME_MANIPULATION_POWERSET = {
                 endurance: 10.4,
                 cast: 2.27,
                 buffDuration: 120.0
-            },
+            }
+        },
         {name: "Distortion Field",
             available: 7,
             tier: 3,
@@ -111,7 +115,8 @@ const TIME_MANIPULATION_POWERSET = {
                 endurance: 14.56,
                 cast: 2.03,
                 buffDuration: 45.0
-            },
+            }
+        },
         {name: "Time Stop",
             available: 11,
             tier: 4,
@@ -131,7 +136,8 @@ const TIME_MANIPULATION_POWERSET = {
                 endurance: 8.84,
                 cast: 2.17,
                 buffDuration: 20.0
-            },
+            }
+        },
         {name: "Farsight",
             available: 17,
             tier: 4,
@@ -152,7 +158,8 @@ const TIME_MANIPULATION_POWERSET = {
                 cast: 2.03,
                 buffDuration: 120.0,
                 tohitBuff: 1.0
-            },
+            }
+        },
         {name: "Slowed Response",
             available: 21,
             tier: 5,
@@ -174,7 +181,8 @@ const TIME_MANIPULATION_POWERSET = {
                 cast: 2.27,
                 buffDuration: 30.0,
                 defenseDebuff: 2.5
-            },
+            }
+        },
         {name: "Chrono Shift",
             available: 25,
             tier: 5,
