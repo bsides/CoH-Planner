@@ -193,7 +193,7 @@ function showEnhancementPieceTooltip(event, setId, pieceNum) {
     const tooltip = document.getElementById('tooltip');
     if (!tooltip) return;
     
-    tooltip.innerHTML = generateEnhancementPieceTooltipHTML(set, setId, piece);
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + generateEnhancementPieceTooltipHTML(set, setId, piece);
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
 }
@@ -229,6 +229,27 @@ function getStatInfoFromEnhancement(enhClass) {
     return map[enhClass] || null;
 }
 
+// Fallback mapping for effect keys when allowedEnhancements is not provided
+const EFFECT_KEY_INFO = {
+    tohitBuff: { name: '+ToHit', format: v => '+' + (v * 100).toFixed(1) + '%', color: 'stat-tohit' },
+    damageBuff: { name: '+Damage', format: v => '+' + (v * 100).toFixed(1) + '%', color: 'stat-damage' },
+    defenseBuff: { name: '+Defense', format: v => '+' + (v * 100).toFixed(1) + '%', color: 'stat-defense' },
+    resistanceBuff: { name: '+Resistance', format: v => '+' + (v * 100).toFixed(1) + '%', color: 'stat-resistance' },
+    tohitDebuff: { name: '-ToHit', format: v => '-' + (v * 100).toFixed(1) + '%', color: 'stat-tohit' },
+    defenseDebuff: { name: '-Defense', format: v => '-' + (v * 100).toFixed(1) + '%', color: 'stat-defense' },
+    heal: { name: 'Healing', format: v => v.toFixed(2), color: 'stat-healing' },
+    accuracy: { name: 'Accuracy', format: v => (v * 100).toFixed(0) + '%', color: 'stat-accuracy' },
+    recharge: { name: 'Recharge', format: v => v.toFixed(1) + 's', color: 'stat-recharge' },
+    endurance: { name: 'Endurance', format: v => v.toFixed(2), color: 'stat-endurance' },
+    range: { name: 'Range', format: v => v.toFixed(0) + ' ft', color: 'stat-range' },
+    cast: { name: 'Cast Time', format: v => v.toFixed(2) + 's', color: 'stat-cast' },
+    buffDuration: { name: 'Duration', format: v => v.toFixed(1) + 's', color: 'stat-duration' },
+    stun: { name: 'Stun Magnitude', format: v => 'Mag ' + v.toFixed(0), color: 'stat-stun' },
+    stunDuration: { name: 'Stun Duration', format: v => v.toFixed(1) + 's', color: 'stat-stun' },
+    armor: { name: 'Armor', format: v => v.toFixed(2), color: 'stat-defense' },
+    absorption: { name: 'Absorption', format: v => v.toFixed(2), color: 'stat-defense' }
+};
+
 /**
  * Generate improved power tooltip with horizontal table layout
  * @param {Object} power - Power from build (or null for available powers)
@@ -238,6 +259,8 @@ function getStatInfoFromEnhancement(enhClass) {
  */
 function generateImprovedPowerTooltipHTML(power, basePower, showModified = false) {
     if (!basePower) return '';
+    // Debug: log base power to help trace where tooltip data comes from
+    console.debug('generateImprovedPowerTooltipHTML - basePower:', basePower);
     
     let html = `<div class="tooltip-title">${basePower.name}</div>`;
     
@@ -252,6 +275,82 @@ function generateImprovedPowerTooltipHTML(power, basePower, showModified = false
     if (basePower.shortHelp) {
         html += `<div class="tooltip-section">`;
         html += `<div class="tooltip-value" style="font-size: 11px; color: var(--accent);">${basePower.shortHelp}</div>`;
+        html += `</div>`;
+    }
+
+    // Extract implicit effects mentioned in shortHelp/description (e.g., "-Res", "-Speed", "-Fly")
+    const implicitEffects = (function extractImplicitEffects(bp) {
+        const out = [];
+        if (!bp) return out;
+        const text = ((bp.shortHelp || '') + ' ' + (bp.description || '')).toLowerCase();
+        const effects = bp.effects || {};
+
+        // Map implicit label => candidate effect keys to look up in bp.effects
+        const IMPLICIT_MAP = [
+            { regex: /(-|\b)(res|resist|resistance)\b/, name: '-Resistance', keys: ['resistance','resistanceDebuff','resist','resistReduction'] },
+            { regex: /(-|\b)(speed|slow)\b/, name: '-Speed', keys: ['slow','speed','movementSpeed','runSpeed','slowAmount'] },
+            { regex: /(-|\b)(fly|cannot fly|no fly|no flying)\b/, name: '-Fly', keys: ['noFly','disableFly','canFly','flyDisabled'] },
+            { regex: /(-|\b)(to hit|to-hit|tohit)\b/, name: '-To Hit', keys: ['tohitDebuff','tohit'] },
+            { regex: /(-|\b)(defen[cs]e|def)\b/, name: '-Defense', keys: ['defenseDebuff','defenseBuff'] },
+            { regex: /(-|\b)(regen|regeneration)\b/, name: '-Regen', keys: ['regen','regeneration','regenDebuff'] },
+            { regex: /(-|\b)(heal|healing)\b/, name: '+Heal', keys: ['heal','healing'] }
+        ];
+
+        IMPLICIT_MAP.forEach(entry => {
+            if (entry.regex.test(text)) {
+                // Try to find a numeric value from effects using candidate keys
+                let found = null;
+                for (const k of entry.keys) {
+                    if (effects[k] !== undefined) {
+                        found = { key: k, value: effects[k] };
+                        break;
+                    }
+                }
+
+                out.push({ name: entry.name, found });
+            }
+        });
+
+        return out;
+    })(basePower);
+
+    if (implicitEffects.length > 0) {
+        html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
+        html += `<div class="tooltip-label" style="margin-bottom: 6px;">Notable Effects</div>`;
+
+        implicitEffects.forEach(e => {
+            let right = 'Applies';
+            if (e.found) {
+                const val = e.found.value;
+                // Format objects (e.g., resistance: {lethal:0.2})
+                if (typeof val === 'object' && val !== null) {
+                    // Join entries
+                    const parts = Object.entries(val).map(([k,v]) => {
+                        if (typeof v === 'number') return `${k}: ${ (v*100).toFixed(0) }%`;
+                        return `${k}: ${v}`;
+                    });
+                    right = parts.join(' • ');
+                } else if (typeof val === 'number') {
+                    // If value looks like a fraction (<5), treat as scale; otherwise raw
+                    if (Math.abs(val) <= 5) {
+                        // Percent-style
+                        right = `${(val * 100).toFixed(1)}%`;
+                    } else {
+                        right = `${val}`;
+                    }
+                } else if (typeof val === 'boolean') {
+                    right = val ? 'Yes' : 'No';
+                } else {
+                    right = String(val);
+                }
+            }
+
+            html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+            html += `<span style="opacity: 0.8;">${e.name}:</span>`;
+            html += `<span style="font-weight: 600;">${right}</span>`;
+            html += `</div>`;
+        });
+
         html += `</div>`;
     }
     
@@ -429,7 +528,92 @@ function generateImprovedPowerTooltipHTML(power, basePower, showModified = false
             html += `</div>`;
         }
     }
-    
+
+    // Fallback: if no allowedEnhancements were present or nothing matched,
+    // scan basePower.effects for relevant keys (useful for buffs/debuffs/armor)
+    if ((!basePower.allowedEnhancements || basePower.allowedEnhancements.length === 0) && basePower.effects) {
+        const fallbackStats = [];
+        const effects = basePower.effects;
+
+        Object.keys(EFFECT_KEY_INFO).forEach(key => {
+            if (effects[key] !== undefined) {
+                let rawValue = effects[key];
+                if (typeof rawValue === 'object' && rawValue.scale !== undefined) rawValue = rawValue.scale;
+
+                const info = EFFECT_KEY_INFO[key];
+                // Compute enhanced/final values similarly to above if requested
+                let baseValue = rawValue;
+                if ((key === 'tohitDebuff' || key === 'defenseDebuff' || key === 'tohitBuff' || key === 'damageBuff' || key === 'defenseBuff') &&
+                    typeof calculateBuffDebuffValue === 'function') {
+                    const archetypeId = Build.archetype?.id;
+                    baseValue = calculateBuffDebuffValue(rawValue, archetypeId);
+                }
+
+                let enhancedValue = baseValue;
+                let finalValue = baseValue;
+                if (showModified && power && typeof calculatePowerEnhancementBonuses === 'function') {
+                    const bonuses = calculatePowerEnhancementBonuses(power);
+                    // Try to apply a sensible mapping from key to bonus
+                    if (key === 'accuracy') enhancedValue = baseValue * (1 + (bonuses.accuracy || 0));
+                    else if (key === 'recharge') enhancedValue = baseValue / (1 + (bonuses.recharge || 0));
+                    else if (key === 'endurance') enhancedValue = baseValue / (1 + (bonuses.endurance || 0));
+                    else if (key === 'range') enhancedValue = baseValue * (1 + (bonuses.range || 0));
+                    else if (key === 'tohitBuff') enhancedValue = baseValue * (1 + (bonuses.tohitBuff || 0));
+                    else if (key === 'damageBuff') enhancedValue = baseValue * (1 + (bonuses.damageBuff || 0));
+
+                    // Apply global stats for final value where applicable
+                    const stats = CharacterStats || {};
+                    if (key === 'accuracy') finalValue = enhancedValue * (1 + (stats.accuracy || 0) / 100);
+                    else if (key === 'recharge') finalValue = enhancedValue / (1 + (stats.recharge || 0) / 100);
+                    else finalValue = enhancedValue;
+                }
+
+                fallbackStats.push({
+                    name: info.name,
+                    color: info.color,
+                    base: info.format(baseValue),
+                    enhanced: info.format(enhancedValue),
+                    final: info.format(finalValue)
+                });
+            }
+        });
+
+        if (fallbackStats.length > 0) {
+            html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
+            html += `<table style="width: 100%; font-size: 11px; border-collapse: collapse;">`;
+            html += `<thead>`;
+            html += `<tr style="border-bottom: 1px solid var(--border);">`;
+            html += `<th style="text-align: left; padding: 4px 8px 4px 0; opacity: 0.6;"></th>`;
+            if (showModified) {
+                html += `<th style="text-align: right; padding: 4px 8px; opacity: 0.6;">Base</th>`;
+                html += `<th style="text-align: right; padding: 4px 8px; opacity: 0.6;">Enhanced</th>`;
+                html += `<th style="text-align: right; padding: 4px 8px; opacity: 0.6;">Final</th>`;
+            } else {
+                html += `<th style="text-align: right; padding: 4px 8px; opacity: 0.6;">Value</th>`;
+            }
+            html += `</tr>`;
+            html += `</thead>`;
+            html += `<tbody>`;
+
+            fallbackStats.forEach(stat => {
+                html += `<tr>`;
+                html += `<td class="${stat.color}" style="padding: 4px 0; font-weight: 600;">${stat.name}</td>`;
+                if (showModified) {
+                    html += `<td style="text-align: right; padding: 4px 8px;">${stat.base}</td>`;
+                    html += `<td style="text-align: right; padding: 4px 8px;">${stat.enhanced}</td>`;
+                    html += `<td class="${stat.color}" style="text-align: right; padding: 4px 8px; font-weight: 600;">${stat.final}</td>`;
+                } else {
+                    html += `<td class="${stat.color}" style="text-align: right; padding: 4px 8px; font-weight: 600;">${stat.base}</td>`;
+                }
+                html += `</tr>`;
+            });
+
+            html += `</tbody>`;
+            html += `</table>`;
+            html += `</div>`;
+        }
+        }
+
     // Show available level
     html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 4px; margin-top: 4px;">`;
     html += `<div style="font-size: 9px; opacity: 0.6; text-align: center;">Available at Level ${basePower.available}</div>`;
@@ -453,7 +637,7 @@ function showImprovedPowerTooltip(event, power, basePower) {
     // Determine if we should show modified values (columns 2-4 have power object)
     const showModified = power !== null && power !== undefined;
     
-    tooltip.innerHTML = generateImprovedPowerTooltipHTML(power, basePower, showModified);
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + generateImprovedPowerTooltipHTML(power, basePower, showModified);
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
 }

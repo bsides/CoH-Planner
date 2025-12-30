@@ -1,4 +1,14 @@
 /**
+ * Unified Tooltip System
+ * Handles all tooltips for the City of Heroes Planner
+ * UPDATED: Now uses new power data fields (description, shortHelp, targetType, etc.)
+ */
+
+// ============================================
+// AVAILABLE POWER TOOLTIPS (Column 1)
+// ============================================
+
+/**
  * Generate tooltip HTML for an available power (Column 1)
  * Shows description and base values only
  * @param {Object} basePower - Original power definition
@@ -9,17 +19,47 @@ function generateAvailablePowerTooltipHTML(basePower) {
     
     let html = `<div class="tooltip-title">${basePower.name}</div>`;
     
-    // Show description
-    if (basePower.description) {
-        html += `<div class="tooltip-section">`;
-        html += `<div class="tooltip-desc" style="font-size: 11px; font-style: italic; opacity: 0.9; line-height: 1.4;">${basePower.description}</div>`;
+    // Show power type and targeting (compact, one line)
+    const typeInfo = [];
+    if (basePower.powerType) typeInfo.push(basePower.powerType);
+    if (basePower.targetType) typeInfo.push(basePower.targetType);
+    if (basePower.effectArea && basePower.effectArea !== 'SingleTarget') {
+        typeInfo.push(basePower.effectArea);
+    }
+    
+    if (typeInfo.length > 0) {
+        html += `<div class="tooltip-section" style="padding-bottom: 4px;">`;
+        html += `<div style="font-size: 10px; opacity: 0.6;">${typeInfo.join(' • ')}</div>`;
         html += `</div>`;
     }
     
-    // Show short help if available
+    // Show short help (this is the best summary line!)
     if (basePower.shortHelp) {
         html += `<div class="tooltip-section">`;
-        html += `<div class="tooltip-value" style="font-size: 11px; color: var(--accent);">${basePower.shortHelp}</div>`;
+        html += `<div style="font-size: 11px; color: var(--accent); font-weight: 500;">${basePower.shortHelp}</div>`;
+        html += `</div>`;
+    }
+    
+    // Show full description
+    if (basePower.description) {
+        html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
+        html += `<div style="font-size: 11px; font-style: italic; opacity: 0.9; line-height: 1.4;">${basePower.description}</div>`;
+        html += `</div>`;
+    }
+    
+    // Show targeting details (arc, max targets) if present
+    const targetingDetails = [];
+    if (basePower.maxTargets) {
+        targetingDetails.push(`Max Targets: ${basePower.maxTargets}`);
+    }
+    if (basePower.arc) {
+        const degrees = (basePower.arc * 180 / Math.PI).toFixed(0);
+        targetingDetails.push(`Arc: ${degrees}°`);
+    }
+    
+    if (targetingDetails.length > 0) {
+        html += `<div class="tooltip-section">`;
+        html += `<div style="font-size: 10px; opacity: 0.7;">${targetingDetails.join(' • ')}</div>`;
         html += `</div>`;
     }
     
@@ -30,122 +70,125 @@ function generateAvailablePowerTooltipHTML(basePower) {
         
         const effects = basePower.effects;
         
-        // Helper function to format effect name nicely
-        const formatEffectName = (key) => {
-            const nameMap = {
-                'accuracy': 'Accuracy',
-                'damage': 'Damage Scale',
-                'recharge': 'Recharge Time',
-                'endurance': 'Endurance Cost',
-                'range': 'Range',
-                'radius': 'Radius',
-                'cast': 'Cast Time',
-                'dotDamage': 'DoT Damage',
-                'dotTicks': 'DoT Ticks',
-                'tohitBuff': 'ToHit Buff',
-                'tohitDebuff': 'ToHit Debuff',
-                'damageBuff': 'Damage Buff',
-                'damageDebuff': 'Damage Debuff',
-                'defenseBuff': 'Defense Buff',
-                'defenseDebuff': 'Defense Debuff',
-                'resistanceBuff': 'Resistance Buff',
-                'resistanceDebuff': 'Resistance Debuff',
-                'rechargeBuff': 'Recharge Buff',
-                'rechargeDebuff': 'Recharge Debuff',
-                'speedBuff': 'Speed Buff',
-                'slow': 'Slow',
-                'buffDuration': 'Buff Duration',
-                'duration': 'Duration',
-                'heal': 'Heal',
-                'absorption': 'Absorption'
-            };
-            return nameMap[key] || key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1');
-        };
+        // Show damage (handles single type, multiple types, and DoT)
+        if (effects.damage) {
+            const dmg = effects.damage;
+            html += `<div style="margin-bottom: 4px;">`;
+            
+            if (dmg.type) {
+                // Single damage type
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px;">`;
+                html += `<span style="opacity: 0.8;">${dmg.type} Damage:</span>`;
+                html += `<span style="font-weight: 600;">${dmg.scale.toFixed(2)}</span>`;
+                html += `</div>`;
+            } else if (dmg.types) {
+                // Multiple damage types
+                html += `<div style="font-size: 11px; opacity: 0.8; margin-bottom: 2px;">Damage (${dmg.scale.toFixed(2)} total):</div>`;
+                dmg.types.forEach(type => {
+                    html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding-left: 12px;">`;
+                    html += `<span style="opacity: 0.7;">${type.type}:</span>`;
+                    html += `<span style="font-weight: 600;">${type.scale.toFixed(2)}</span>`;
+                    html += `</div>`;
+                });
+            }
+            
+            html += `</div>`;
+        }
         
-        // Helper function to format effect value
-        const formatEffectValue = (key, value) => {
-            // Percentage values (buffs/debuffs)
-            if (key.includes('Buff') || key.includes('Debuff') || key === 'slow') {
-                // Debuffs should show as negative (matching in-game display)
-                const isDebuff = key.includes('Debuff') || key === 'slow';
-                const displayValue = isDebuff ? -value : value;
-                const sign = displayValue > 0 ? '+' : '';
-                const color = isDebuff ? '#ff6b6b' : 'var(--accent)';
-                return `<span style="font-weight: 600; color: ${color};">${sign}${(displayValue * 100).toFixed(0)}%</span>`;
+        // Show DoT damage
+        if (effects.dotDamage) {
+            const dot = effects.dotDamage;
+            html += `<div style="margin-bottom: 4px;">`;
+            
+            if (dot.type) {
+                // Single DoT type
+                const totalDot = dot.scale * dot.ticks;
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px;">`;
+                html += `<span style="opacity: 0.8;">${dot.type} DoT:</span>`;
+                html += `<span style="font-weight: 600;">${totalDot.toFixed(2)}</span>`;
+                html += `</div>`;
+                html += `<div style="font-size: 10px; opacity: 0.6; padding-left: 12px;">`;
+                html += `${dot.scale.toFixed(3)} × ${dot.ticks} ticks`;
+                html += `</div>`;
+            } else if (dot.types) {
+                // Multiple DoT types
+                html += `<div style="font-size: 11px; opacity: 0.8; margin-bottom: 2px;">DoT:</div>`;
+                dot.types.forEach(type => {
+                    const totalDot = type.scale * type.ticks;
+                    html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding-left: 12px;">`;
+                    html += `<span style="opacity: 0.7;">${type.type}:</span>`;
+                    html += `<span style="font-weight: 600;">${totalDot.toFixed(2)}</span>`;
+                    html += `</div>`;
+                });
             }
             
-            // Accuracy
-            if (key === 'accuracy') {
-                return `<span style="font-weight: 600;">${(value * 100).toFixed(0)}%</span>`;
-            }
-            
-            // Time values
-            if (key.includes('Time') || key === 'recharge' || key === 'cast' || key.includes('Duration')) {
-                return `<span style="font-weight: 600;">${value.toFixed(1)}s</span>`;
-            }
-            
-            // Distance values
-            if (key === 'range' || key === 'radius') {
-                return `<span style="font-weight: 600;">${value.toFixed(0)} ft</span>`;
-            }
-            
-            // Damage object
-            if (key === 'damage' && typeof value === 'object') {
-                return `<span style="font-weight: 600;">${value.scale.toFixed(2)}</span>`;
-            }
-            
-            // Default numeric
-            return `<span style="font-weight: 600;">${value.toFixed(2)}</span>`;
-        };
+            html += `</div>`;
+        }
         
-        // Order effects in a logical way
-        const effectOrder = [
-            'damage', 'accuracy', 'tohitBuff', 'damageBuff', 'rechargeBuff', 'speedBuff',
-            'tohitDebuff', 'damageDebuff', 'defenseBuff', 'defenseDebuff',
-            'resistanceBuff', 'resistanceDebuff', 'rechargeDebuff', 'slow',
-            'heal', 'absorption',
-            'recharge', 'endurance', 'range', 'radius',
-            'cast', 'duration', 'buffDuration',
-            'dotDamage', 'dotTicks'
+        // Other common stats
+        const statDisplay = [
+            { key: 'accuracy', label: 'Accuracy', format: v => `${(v * 100).toFixed(0)}%` },
+            { key: 'range', label: 'Range', format: v => `${v.toFixed(0)} ft` },
+            { key: 'recharge', label: 'Recharge', format: v => `${v.toFixed(1)}s` },
+            { key: 'endurance', label: 'Endurance', format: v => `${v.toFixed(2)}` },
+            { key: 'cast', label: 'Cast Time', format: v => `${v.toFixed(2)}s` }
         ];
         
-        // Show effects in order
-        let shownAny = false;
-        effectOrder.forEach(key => {
+        statDisplay.forEach(({ key, label, format }) => {
             if (effects[key] !== undefined) {
-                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 3px 0;">`;
-                html += `<span style="opacity: 0.8;">${formatEffectName(key)}:</span>`;
-                html += formatEffectValue(key, effects[key]);
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+                html += `<span style="opacity: 0.8;">${label}:</span>`;
+                html += `<span style="font-weight: 600;">${format(effects[key])}</span>`;
                 html += `</div>`;
-                shownAny = true;
             }
         });
         
-        // Show any remaining effects not in our ordered list
-        Object.keys(effects).forEach(key => {
-            if (!effectOrder.includes(key)) {
-                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 3px 0;">`;
-                html += `<span style="opacity: 0.8;">${formatEffectName(key)}:</span>`;
-                const value = effects[key];
-                if (typeof value === 'object') {
-                    html += `<span style="font-weight: 600;">${JSON.stringify(value)}</span>`;
-                } else {
-                    html += formatEffectValue(key, value);
-                }
+        // Buffs
+        const buffDisplay = [
+            { key: 'tohitBuff', label: 'ToHit Buff' },
+            { key: 'damageBuff', label: 'Damage Buff' },
+            { key: 'defenseBuff', label: 'Defense Buff' },
+            { key: 'resistanceBuff', label: 'Resistance Buff' }
+        ];
+        
+        buffDisplay.forEach(({ key, label }) => {
+            if (effects[key] !== undefined) {
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+                html += `<span style="opacity: 0.8;">${label}:</span>`;
+                html += `<span style="font-weight: 600; color: var(--accent);">+${(effects[key] * 100).toFixed(0)}%</span>`;
                 html += `</div>`;
-                shownAny = true;
             }
         });
         
-        if (!shownAny) {
-            html += `<div style="opacity: 0.6; font-style: italic; font-size: 11px;">No numeric effects</div>`;
+        // Buff duration
+        if (effects.buffDuration !== undefined) {
+            html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+            html += `<span style="opacity: 0.8;">Duration:</span>`;
+            html += `<span style="font-weight: 600;">${effects.buffDuration.toFixed(1)}s</span>`;
+            html += `</div>`;
+        }
+        
+        // Control effects (stun, hold, etc.)
+        if (effects.stun !== undefined) {
+            html += `<div style="margin-top: 4px; padding-top: 4px; border-top: 1px solid rgba(255,255,255,0.1);">`;
+            html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+            html += `<span style="opacity: 0.8;">Stun Magnitude:</span>`;
+            html += `<span style="font-weight: 600; color: #ffa500;">Mag ${effects.stun.toFixed(0)}</span>`;
+            html += `</div>`;
+            if (effects.stunDuration !== undefined) {
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+                html += `<span style="opacity: 0.8;">Stun Duration:</span>`;
+                html += `<span style="font-weight: 600;">${effects.stunDuration.toFixed(1)}s</span>`;
+                html += `</div>`;
+            }
+            html += `</div>`;
         }
         
         html += `</div>`;
     }
     
     // Show available level
-    html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
+    html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 6px; margin-top: 8px;">`;
     html += `<div style="font-size: 10px; opacity: 0.7; text-align: center;">Available at Level ${basePower.available}</div>`;
     html += `</div>`;
     
@@ -161,15 +204,10 @@ function showAvailablePowerTooltip(event, basePower) {
     const tooltip = document.getElementById('tooltip');
     if (!tooltip) return;
     
-    tooltip.innerHTML = generateAvailablePowerTooltipHTML(basePower);
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + generateAvailablePowerTooltipHTML(basePower);
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
 }
-
-/**
- * Unified Tooltip System
- * Handles all tooltips for the City of Heroes Planner
- */
 
 // ============================================
 // ENHANCEMENT SET TOOLTIPS
@@ -283,13 +321,13 @@ function showSetTooltip(event, set, currentPieces = 0) {
     const tooltip = document.getElementById('tooltip');
     if (!tooltip) return;
     
-    tooltip.innerHTML = generateSetTooltipHTML(set, currentPieces);
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + generateSetTooltipHTML(set, currentPieces);
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
 }
 
 // ============================================
-// POWER TOOLTIPS
+// ACTIVE POWER TOOLTIPS (Column 2/3)
 // ============================================
 
 /**
@@ -367,25 +405,24 @@ function generatePowerTooltipHTML(power, basePower) {
     
     let html = `<div class="tooltip-title">${basePower.name}</div>`;
     
-    // Show type if available
-    if (basePower.type) {
-        html += `<div class="tooltip-section">`;
-        html += `<div class="tooltip-label">Type</div>`;
-        html += `<div class="tooltip-value">${basePower.type}</div>`;
+    // Show power type and targeting (compact)
+    const typeInfo = [];
+    if (basePower.powerType) typeInfo.push(basePower.powerType);
+    if (basePower.targetType) typeInfo.push(basePower.targetType);
+    if (basePower.effectArea && basePower.effectArea !== 'SingleTarget') {
+        typeInfo.push(basePower.effectArea);
+    }
+    
+    if (typeInfo.length > 0) {
+        html += `<div class="tooltip-section" style="padding-bottom: 4px;">`;
+        html += `<div style="font-size: 10px; opacity: 0.6;">${typeInfo.join(' • ')}</div>`;
         html += `</div>`;
     }
     
-    // Show description
-    if (basePower.description) {
-        html += `<div class="tooltip-section">`;
-        html += `<div class="tooltip-desc" style="font-size: 11px; font-style: italic; opacity: 0.9;">${basePower.description}</div>`;
-        html += `</div>`;
-    }
-    
-    // Show short help if available
+    // Show short help
     if (basePower.shortHelp) {
         html += `<div class="tooltip-section">`;
-        html += `<div class="tooltip-value" style="font-size: 11px; color: var(--accent);">${basePower.shortHelp}</div>`;
+        html += `<div style="font-size: 11px; color: var(--accent); font-weight: 500;">${basePower.shortHelp}</div>`;
         html += `</div>`;
     }
     
@@ -403,8 +440,11 @@ function generatePowerTooltipHTML(power, basePower) {
         const enhancedStats = calculateEnhancedPowerStats(power, basePower);
         const finalStats = calculateFinalPowerStats(enhancedStats, power);
         
+        // Check for DoT damage
+        const hasDotDamage = basePower.effects?.dotDamage !== undefined;
+        
         // Only show stats that exist for this power
-        const hasStats = baseStats.damage > 0 || baseStats.recharge > 0 || baseStats.endurance > 0;
+        const hasStats = baseStats.damage > 0 || hasDotDamage || baseStats.recharge > 0 || baseStats.endurance > 0;
         
         if (hasStats) {
             html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
@@ -423,6 +463,40 @@ function generatePowerTooltipHTML(power, basePower) {
                 html += `<div>${enhancedStats.damage.toFixed(2)}</div>`;
                 html += `<div style="color: var(--accent); font-weight: 600;">${finalStats.damage.toFixed(2)}</div>`;
                 html += `</div>`;
+                html += `</div>`;
+            }
+            
+            // DoT Damage
+            if (hasDotDamage) {
+                const dot = basePower.effects.dotDamage;
+                html += `<div class="power-stat-row" style="margin-bottom: 6px;">`;
+                html += `<div style="font-weight: 600; font-size: 11px; margin-bottom: 2px;">DoT Damage</div>`;
+                
+                if (dot.type) {
+                    // Single DoT type
+                    const totalDot = dot.scale * dot.ticks;
+                    html += `<div style="font-size: 11px; padding-left: 12px;">`;
+                    html += `<div style="display: flex; justify-content: space-between;">`;
+                    html += `<span style="opacity: 0.7;">${dot.type}:</span>`;
+                    html += `<span style="font-weight: 600; color: var(--accent);">${totalDot.toFixed(2)}</span>`;
+                    html += `</div>`;
+                    html += `<div style="font-size: 10px; opacity: 0.6;">`;
+                    html += `${dot.scale.toFixed(3)} × ${dot.ticks} ticks`;
+                    html += `</div>`;
+                    html += `</div>`;
+                } else if (dot.types) {
+                    // Multiple DoT types
+                    html += `<div style="font-size: 11px; padding-left: 12px;">`;
+                    dot.types.forEach(type => {
+                        const totalDot = type.scale * type.ticks;
+                        html += `<div style="display: flex; justify-content: space-between; margin-bottom: 2px;">`;
+                        html += `<span style="opacity: 0.7;">${type.type}:</span>`;
+                        html += `<span style="font-weight: 600; color: var(--accent);">${totalDot.toFixed(2)}</span>`;
+                        html += `</div>`;
+                    });
+                    html += `</div>`;
+                }
+                
                 html += `</div>`;
             }
             
@@ -528,7 +602,7 @@ function showPowerTooltip(event, power, basePower) {
     const tooltip = document.getElementById('tooltip');
     if (!tooltip) return;
     
-    tooltip.innerHTML = generatePowerTooltipHTML(power, basePower);
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + generatePowerTooltipHTML(power, basePower);
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
 }
@@ -572,9 +646,6 @@ function getStatContributors(stat) {
             }
         });
     }
-    
-    // TODO: Add passive power bonuses
-    // TODO: Add active power bonuses (if toggled on)
     
     return contributors;
 }
@@ -674,7 +745,7 @@ function showStatTooltip(event, statName, statKey, totalValue) {
     const tooltip = document.getElementById('tooltip');
     if (!tooltip) return;
     
-    tooltip.innerHTML = generateStatTooltipHTML(statName, statKey, totalValue);
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + generateStatTooltipHTML(statName, statKey, totalValue);
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
 }

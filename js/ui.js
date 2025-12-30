@@ -9,6 +9,39 @@
 // ============================================
 
 /**
+ * Return the HTML block for tooltip interaction hints.
+ * Kept in `ui.js` so other tooltip builders can reuse it.
+ */
+function getTooltipHintsHtml() {
+    return `
+        <div class="tooltip-hints">
+            <div class="hints-grid">
+                <div class="hints-left">
+                    <div class="hint-row">
+                        <div class="hint-key">Left Click</div>
+                        <div class="hint-desc">Add or replace enhancement</div>
+                    </div>
+                    <div class="hint-row">
+                        <div class="hint-key">Shift + Left Click</div>
+                        <div class="hint-desc">Add next piece from set</div>
+                    </div>
+                </div>
+                <div class="hints-right">
+                    <div class="hint-row">
+                        <div class="hint-key">Right Click</div>
+                        <div class="hint-desc">Remove enhancement but keep slot</div>
+                    </div>
+                    <div class="hint-row">
+                        <div class="hint-key">Shift + Right Click</div>
+                        <div class="hint-desc">Remove slot entirely</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+/**
  * Update the display of a power's enhancement slots
  * @param {string} powerName - Power name
  */
@@ -496,7 +529,7 @@ function showEnhancementTooltip(event, enhancement, powerName) {
         `;
     }
     
-    tooltip.innerHTML = html;
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + html;
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
 }

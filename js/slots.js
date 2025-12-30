@@ -111,19 +111,43 @@ function createGhostSlot(index, power) {
  * @returns {HTMLElement} Icon element
  */
 function renderEnhancementIcon(slot) {
-    // Use the centralized icon generation from icons.js
-    if (typeof createEnhancementIconElement === 'function') {
-        const iconElement = createEnhancementIconElement(slot);
-        if (iconElement) {
-            return iconElement;
-        }
-    }
-    
-    // Fallback to simple img element if icons.js not available
     const icon = document.createElement('img');
     icon.className = 'enhancement-icon';
-    icon.src = 'img/Enhancements/Damage.png';
-    icon.alt = 'Enhancement';
+    
+    if (slot.type === 'io-set') {
+        // IO Set piece
+        const set = IO_SETS[slot.setId];
+        icon.src = getSetIconPath(slot.setId) || 'img/Enhancements/Damage.png';
+        icon.onerror = function() { this.onerror = null; this.src = 'img/Enhancements/Damage.png'; };
+        icon.alt = set ? set.name : 'IO Set';
+    } else if (slot.type === 'io-generic') {
+        // Common IO
+        icon.src = getAspectIconPath(slot.aspect) || 'img/Enhancements/Damage.png';
+        icon.onerror = function() { this.onerror = null; this.src = 'img/Enhancements/Damage.png'; };
+        icon.alt = `${slot.aspect} IO`;
+    } else if (slot.type === 'origin') {
+        // TO/DO/SO - use layered icon
+        const layered = document.createElement('div');
+        layered.className = 'enhancement-icon-layered';
+        
+        const base = document.createElement('img');
+        base.className = 'enhancement-icon-base';
+        base.src = getAspectIconPath(slot.aspect) || 'img/Enhancements/Damage.png';
+        
+        const overlay = document.createElement('img');
+        overlay.className = 'enhancement-icon-overlay';
+        overlay.src = getOriginOverlayPath(slot.tier) || '';
+        
+        layered.appendChild(base);
+        layered.appendChild(overlay);
+        return layered;
+    } else if (slot.type === 'hamidon') {
+        // Hamidon Origin
+        icon.src = 'img/Enhancements/Hamidon.png';
+        icon.onerror = function() { this.onerror = null; this.src = 'img/Enhancements/Damage.png'; };
+        icon.alt = 'Hamidon Enhancement';
+    }
+    
     return icon;
 }
 
@@ -180,7 +204,7 @@ function showCommonIOTooltip(event, slot) {
     html += `<div class="tooltip-value">+${(value * 100).toFixed(1)}%</div>`;
     html += `</div>`;
     
-    tooltip.innerHTML = html;
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + html;
     if (typeof positionTooltip === 'function') {
         positionTooltip(tooltip, event);
     }
@@ -205,7 +229,7 @@ function showOriginEnhancementTooltip(event, slot) {
     html += `<div class="tooltip-value">+${(slot.value * 100).toFixed(1)}%</div>`;
     html += `</div>`;
     
-    tooltip.innerHTML = html;
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + html;
     if (typeof positionTooltip === 'function') {
         positionTooltip(tooltip, event);
     }
@@ -229,7 +253,7 @@ function showHamidonTooltip(event, slot) {
     }
     html += `</div>`;
     
-    tooltip.innerHTML = html;
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + html;
     if (typeof positionTooltip === 'function') {
         positionTooltip(tooltip, event);
     }
@@ -303,5 +327,55 @@ function addSlotToPower(powerName) {
     console.log(`Added slot to ${powerName} (${power.slots.length}/${power.maxSlots})`);
 }
 
-// Note: Icon path functions removed - now using centralized functions from icons.js
-// Functions getSetIcon(), getAspectIcon(), and getOriginOverlay() are used instead
+/**
+ * Get set icon path
+ * @param {string} setId - Set ID
+ * @returns {string} Icon path
+ */
+function getSetIconPath(setId) {
+    // Map set IDs to icon paths
+    const iconMap = {
+        'thunderstrike': 'img/Enhancements/Damage.png',
+        'positrons': 'img/Enhancements/Damage.png',
+        'crushing-impact': 'img/Enhancements/Damage.png',
+        // Add more as needed
+    };
+    
+    return iconMap[setId] || 'img/Enhancements/Damage.png';
+}
+
+/**
+ * Get aspect icon path
+ * @param {string} aspect - Aspect name
+ * @returns {string} Icon path
+ */
+function getAspectIconPath(aspect) {
+    const normalized = aspect.toLowerCase().replace(/ /g, '');
+    const iconMap = {
+        'damage': 'img/Enhancements/Damage.png',
+        'accuracy': 'img/Enhancements/Accuracy.png',
+        'recharge': 'img/Enhancements/Recharge.png',
+        'endurance': 'img/Enhancements/Endurance.png',
+        'defense': 'img/Enhancements/Defense.png',
+        'resistance': 'img/Enhancements/Resistance.png',
+        'healing': 'img/Enhancements/Healing.png',
+        'range': 'img/Enhancements/Range.png'
+    };
+    
+    return iconMap[normalized] || 'img/Enhancements/Damage.png';
+}
+
+/**
+ * Get origin overlay path
+ * @param {number} tier - Tier (0=TO, 1=DO, 2=SO)
+ * @returns {string} Overlay path
+ */
+function getOriginOverlayPath(tier) {
+    const overlayMap = {
+        0: 'img/Overlays/TO.png',
+        1: 'img/Overlays/DO.png',
+        2: 'img/Overlays/SO.png'
+    };
+    
+    return overlayMap[tier] || '';
+}

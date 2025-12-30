@@ -15,6 +15,8 @@ const AppState = {
     currentPowerName: '',
     currentPowerSet: '',
     currentSlotIndex: 0,
+    // View history stack for modal navigation
+    viewStack: [],
     
     // IO level settings
     globalIOLevel: 50,
@@ -115,10 +117,7 @@ function updateGlobalIOLevel() {
     AppState.globalIOLevel = value;
     Build.settings.globalIOLevel = value;
     
-    // Update display if Generic IO view is active
-    if (document.getElementById('selectionViewGeneric').classList.contains('active')) {
-        updateGenericDisplay();
-    }
+    // If Common IO is shown inline, consumer code can re-render as needed.
 }
 
 /**

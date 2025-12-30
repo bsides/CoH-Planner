@@ -271,6 +271,32 @@ function calculatePowerDamage(power, basePower) {
             damageTypeName = 'Lethal';
         }
     }
+
+    // If the power also applies DoT, include DoT type in the type string
+    if (basePower.effects && basePower.effects.dotDamage) {
+        try {
+            const dot = basePower.effects.dotDamage;
+            let dotTypeName = '';
+            if (typeof dot === 'object') {
+                if (dot.types) {
+                    dotTypeName = dot.types.map(t => t.type).join('/');
+                } else if (dot.type) {
+                    dotTypeName = dot.type;
+                }
+            } else if (typeof dot === 'string') {
+                dotTypeName = dot;
+            }
+
+            if (dotTypeName) {
+                // Avoid duplicating if main damage already mentions the same type
+                if (!damageTypeName.includes(dotTypeName)) {
+                    damageTypeName = `${damageTypeName} + DoT(${dotTypeName})`;
+                }
+            }
+        } catch (e) {
+            // Fail silently — don't break damage calc on unexpected dot formats
+        }
+    }
     
     // Determine damage type (melee, ranged, or aoe)
     let damageType = 'melee';

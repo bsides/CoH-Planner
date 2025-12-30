@@ -18,7 +18,14 @@ function openPicker(powerName, powerSet) {
     AppState.currentPowerSet = powerSet;
     document.getElementById('modalTitle').textContent = `${powerName} - Choose an enhancement`;
     document.getElementById('modal').classList.add('active');
-    showCategoryView();
+    // Open directly into the selection view (category screen removed)
+    AppState.currentView = 'selection';
+    AppState.viewStack = [];
+    document.getElementById('categoryView')?.classList?.add('hidden');
+    document.getElementById('selectionViewSets').classList.add('active');
+    document.getElementById('backBtn').classList.remove('visible');
+    // Load default group (all sets)
+    loadSetsForCategory('io-set');
 }
 
 /**
@@ -32,22 +39,50 @@ function closeModal() {
  * Show category selection view
  */
 function showCategoryView() {
-    AppState.currentView = 'category';
+    // Category view removed; fall back to default selection view (All Sets)
+    AppState.currentView = 'selection';
     AppState.currentCategory = null;
-    document.getElementById('categoryView').classList.remove('hidden');
-    document.getElementById('selectionViewSets').classList.remove('active');
-    document.getElementById('selectionViewGeneric').classList.remove('active');
-    document.getElementById('selectionViewSpecial').classList.remove('active');
-    document.getElementById('selectionViewSO').classList.remove('active');
+    document.getElementById('selectionViewSets').classList.add('active');
     document.getElementById('backBtn').classList.remove('visible');
+    loadSetsForCategory('io-set');
 }
 
 /**
  * Go back to category view
  */
 function goBack() {
-    if (AppState.currentView === 'selection') {
-        showCategoryView();
+    // Pop previous view from stack and restore; if none, close modal
+    const prev = AppState.viewStack && AppState.viewStack.length ? AppState.viewStack.pop() : null;
+    if (!prev) {
+        closeModal();
+        return;
+    }
+    restoreModalView(prev);
+}
+
+/**
+ * Restore modal view by id key
+ * @param {string} viewKey - 'sets'|'generic'|'special'|'so'
+ */
+function restoreModalView(viewKey) {
+    // Always restore into the main sets view and render the appropriate content
+    document.getElementById('selectionViewSets').classList.add('active');
+    const setsPanel = document.querySelector('#selectionViewSets .sets-panel');
+    setsPanel.dataset.listenersAttached = 'false';
+    if (viewKey === 'generic') {
+        renderGenericRow(setsPanel);
+    } else if (viewKey === 'special') {
+        renderSpecialRow(setsPanel);
+    } else if (viewKey === 'so') {
+        renderOriginRows(setsPanel);
+    } else {
+        loadSetsForCategory('io-set');
+    }
+    // Show back button when there is history
+    if (AppState.viewStack && AppState.viewStack.length) {
+        document.getElementById('backBtn').classList.add('visible');
+    } else {
+        document.getElementById('backBtn').classList.remove('visible');
     }
 }
 
@@ -62,28 +97,21 @@ function goBack() {
 function selectCategory(category) {
     AppState.currentCategory = category;
     AppState.currentView = 'selection';
-    document.getElementById('categoryView').classList.add('hidden');
     document.getElementById('backBtn').classList.add('visible');
     
     // Hide all selection views
-    document.getElementById('selectionViewSets').classList.remove('active');
-    document.getElementById('selectionViewGeneric').classList.remove('active');
-    document.getElementById('selectionViewSpecial').classList.remove('active');
-    document.getElementById('selectionViewSO').classList.remove('active');
-    
-    // Show appropriate view
+    // Always use the sets view and render the requested category inline
+    document.getElementById('selectionViewSets').classList.add('active');
+    const setsPanel = document.querySelector('#selectionViewSets .sets-panel');
+    setsPanel.dataset.listenersAttached = 'false';
     if (category === 'io-set' || category === 'very-rare' || category === 'event' || category === 'archetype') {
-        document.getElementById('selectionViewSets').classList.add('active');
         loadSetsForCategory(category);
     } else if (category === 'io-generic') {
-        document.getElementById('selectionViewGeneric').classList.add('active');
-        loadGenericIcons();
+        renderGenericRow(setsPanel);
     } else if (category === 'special') {
-        document.getElementById('selectionViewSpecial').classList.add('active');
-        loadHamidonIcons();
+        renderSpecialRow(setsPanel);
     } else if (category === 'to-do-so') {
-        document.getElementById('selectionViewSO').classList.add('active');
-        loadOriginIcons();
+        renderOriginRows(setsPanel);
     }
 }
 
@@ -116,11 +144,190 @@ function loadSetsForCategory(category) {
     AppState.currentCompatibleSets = compatibleSets;
     AppState.currentTypeFilter = null;
     
+    // Store allowed set categories for later filtering of generic/special/origin rows
+    const result = findPower(AppState.currentPowerName);
+    AppState.currentAllowedSetCategories = result ? (result.power.allowedSetCategories || []) : [];
+
+    // Ensure group filter events are wired
+    setupGroupFilterEvents(typesPanel);
     // Generate type filter buttons
     generateTypeFilterButtons(typesPanel, compatibleSets);
     
     // Render sets
     renderSetsList(setsPanel, compatibleSets);
+}
+
+/**
+ * Check if an enhancement aspect is allowed for the current power
+ * Uses ENHANCEMENT_TO_SET_TYPE_MAP when available; if unknown, allow by default
+ */
+function isAspectAllowedByPower(aspectName) {
+    const allowed = AppState.currentAllowedSetCategories || [];
+    if (!allowed || !allowed.length) return true;
+    const mapped = ENHANCEMENT_TO_SET_TYPE_MAP[aspectName];
+    if (!mapped || !mapped.length) return true;
+    return mapped.some(m => allowed.includes(m));
+}
+
+/**
+ * Render a single-row Common IO section inside the sets panel
+ */
+function renderGenericRow(setsPanel) {
+    const aspects = [
+        { id: 'damage', name: 'Damage' },
+        { id: 'accuracy', name: 'Accuracy' },
+        { id: 'recharge', name: 'Recharge' },
+        { id: 'endurance', name: 'Endurance' },
+        { id: 'defense', name: 'Defense' },
+        { id: 'resistance', name: 'Resistance' },
+        { id: 'healing', name: 'Healing' },
+        { id: 'tohit', name: 'To Hit Buff' },
+        { id: 'range', name: 'Range' },
+        { id: 'hold', name: 'Hold' },
+        { id: 'stun', name: 'Stun' },
+        { id: 'immobilize', name: 'Immobilize' },
+        { id: 'sleep', name: 'Sleep' },
+        { id: 'confuse', name: 'Confuse' },
+        { id: 'fear', name: 'Fear' },
+        { id: 'knockback', name: 'Knockback' },
+        { id: 'fly', name: 'Flight' },
+        { id: 'jump', name: 'Jump' },
+        { id: 'run', name: 'Run' }
+    ];
+
+    let html = `<div class="set-row">
+                    <div class="set-row-header">Common IO</div>
+                    <div class="set-pieces-grid common-io-grid">`;
+
+    aspects.forEach(aspect => {
+        const iconPath = getAspectIcon(aspect.id);
+        const allowed = isAspectAllowedByPower(aspect.name);
+        const disabledClass = allowed ? '' : ' disabled';
+        html += `
+            <div class="set-piece-icon${disabledClass}" data-aspect-id="${aspect.id}" data-aspect-name="${aspect.name}">
+                <div class="enhancement-icon-layered">
+                    <img src="${iconPath}" class="enhancement-icon-base">
+                    <img src="img/Overlay/IO.png" class="enhancement-icon-overlay">
+                </div>
+                <div class="set-piece-number">${aspect.name}</div>
+            </div>`;
+    });
+
+    html += `</div></div>`;
+    setsPanel.innerHTML = html;
+
+    // Wire click handlers (delegated)
+    setsPanel.querySelector('.common-io-grid').addEventListener('click', (e) => {
+        const el = e.target.closest('.set-piece-icon');
+        if (!el || el.classList.contains('disabled')) return;
+        const aspectId = el.dataset.aspectId;
+        const aspectName = el.dataset.aspectName;
+        addGenericIO(aspectId, aspectName);
+    });
+}
+
+/**
+ * Render a single-row Special (Hamidon) section
+ */
+function renderSpecialRow(setsPanel) {
+    const hamiTypes = [
+        { id: 'nucleolus', name: 'Nucleolus', aspects: ['Damage', 'Accuracy'] },
+        { id: 'centriole', name: 'Centriole', aspects: ['Damage', 'Range'] },
+        { id: 'enzyme', name: 'Enzyme', aspects: ['To Hit Buff', 'Defense Debuff'] },
+        { id: 'lysosome', name: 'Lysosome', aspects: ['Accuracy', 'To Hit Debuff'] },
+        { id: 'membrane', name: 'Membrane', aspects: ['Recharge', 'Defense Debuff'] },
+        { id: 'peroxisome', name: 'Peroxisome', aspects: ['Damage', 'Mez'] },
+        { id: 'cytoskeleton', name: 'Cytoskeleton', aspects: ['Defense', 'To Hit Buff'] },
+        { id: 'endoplasm', name: 'Endoplasm', aspects: ['Accuracy', 'Mez'] },
+        { id: 'golgi', name: 'Golgi', aspects: ['Healing', 'Endurance'] },
+        { id: 'microfilament', name: 'Microfilament', aspects: ['Travel', 'Endurance'] },
+        { id: 'ribosome', name: 'Ribosome', aspects: ['Resist', 'Endurance'] }
+    ];
+
+    let html = `<div class="set-row">
+                    <div class="set-row-header">Special</div>
+                    <div class="set-pieces-grid special-grid-inline">`;
+
+    hamiTypes.forEach(hami => {
+        const iconPath = `img/Enhancements/HO${hami.name}.png`;
+        // Determine allowed by checking any aspect mapping
+        const allowed = hami.aspects.some(a => isAspectAllowedByPower(a));
+        const disabledClass = allowed ? '' : ' disabled';
+        html += `
+            <div class="set-piece-icon${disabledClass}" data-hami-id="${hami.id}">
+                <img src="${iconPath}" style="width:48px;height:48px;">
+                <div class="set-piece-number">${hami.name}</div>
+            </div>`;
+    });
+
+    html += `</div></div>`;
+    setsPanel.innerHTML = html;
+
+    setsPanel.querySelector('.special-grid-inline').addEventListener('click', (e) => {
+        const el = e.target.closest('.set-piece-icon');
+        if (!el || el.classList.contains('disabled')) return;
+        const hamiId = el.dataset.hamiId;
+        addSpecialEnhancement(hamiId);
+    });
+}
+
+/**
+ * Render SO/DO/TO as three rows (Single Origin, Dual Origin, Training)
+ */
+function renderOriginRows(setsPanel) {
+    const tiers = [
+        { tier: 2, name: 'Single Origin' },
+        { tier: 1, name: 'Dual Origin' },
+        { tier: 0, name: 'Training' }
+    ];
+
+    const aspects = [
+        { id: 'damage', name: 'Damage' },
+        { id: 'accuracy', name: 'Accuracy' },
+        { id: 'recharge', name: 'Recharge' },
+        { id: 'endurance', name: 'Endurance' },
+        { id: 'defense', name: 'Defense' },
+        { id: 'resistance', name: 'Resistance' },
+        { id: 'healing', name: 'Healing' },
+        { id: 'range', name: 'Range' }
+    ];
+
+    let html = '';
+    tiers.forEach(t => {
+        html += `<div class="set-row">
+                    <div class="set-row-header">${t.name}</div>
+                    <div class="set-pieces-grid origin-grid-tier-${t.tier}">`;
+
+        aspects.forEach(aspect => {
+            const iconPath = getAspectIcon(aspect.id);
+            const allowed = isAspectAllowedByPower(aspect.name);
+            const disabledClass = allowed ? '' : ' disabled';
+            html += `
+                <div class="set-piece-icon${disabledClass}" data-tier="${t.tier}" data-aspect-id="${aspect.id}" data-aspect-name="${aspect.name}">
+                    <div class="enhancement-icon-layered">
+                        <img src="${iconPath}" class="enhancement-icon-base">
+                        <img src="${getOriginOverlay(t.tier)}" class="enhancement-icon-overlay">
+                    </div>
+                    <div class="set-piece-number">${aspect.name}</div>
+                </div>`;
+        });
+
+        html += `</div></div>`;
+    });
+
+    setsPanel.innerHTML = html;
+
+    // Delegated click
+    setsPanel.addEventListener('click', function originClickHandler(e) {
+        const el = e.target.closest('.set-piece-icon');
+        if (!el || el.classList.contains('disabled')) return;
+        if (el.dataset.tier !== undefined) {
+            const tier = parseInt(el.dataset.tier);
+            const aspect = el.dataset.aspectId;
+            const aspectName = el.dataset.aspectName;
+            addSO(tier, tier === 2 ? 'Single Origin' : tier === 1 ? 'Dual Origin' : 'Training', aspect, aspectName);
+        }
+    });
 }
 
 /**
@@ -142,18 +349,19 @@ function generateTypeFilterButtons(typesPanel, compatibleSets) {
     const sortedTypes = Object.entries(typeCounts)
         .sort((a, b) => b[1] - a[1]);
     
-    let html = '<div class="types-title">Types</div>';
-    
-    // "All" button - use data attribute instead of onclick
-    html += `<div class="type-option selected" data-type-filter="all">All (${compatibleSets.length})</div>`;
-    
-    // Type buttons - use data attributes
+    // Put buttons inside the types-list subpanel (render only actual subcategories)
+    const typesList = typesPanel.querySelector('.types-list') || typesPanel;
+    let html = '';
+    // Render subcategory buttons (no single 'All' button here)
     sortedTypes.forEach(([type, count]) => {
         html += `<div class="type-option" data-type-filter="${type}">${type} (${count})</div>`;
     });
-    
-    typesPanel.innerHTML = html;
-    
+    // Ensure 'Universal Damage' appears as a prominent filter when applicable
+    const hasUniversal = compatibleSets.some(({ set }) => /universal/i.test(set.type));
+    if (hasUniversal && !sortedTypes.some(([t]) => /universal/i.test(t))) {
+        html += `<div class="type-option" data-type-filter="Universal Damage">Universal Damage (1+)</div>`;
+    }
+    typesList.innerHTML = html;
     // Set up event delegation for type filter clicks
     setupTypeFilterEvents(typesPanel);
 }
@@ -163,32 +371,71 @@ function generateTypeFilterButtons(typesPanel, compatibleSets) {
  */
 function setupTypeFilterEvents(typesPanel) {
     // Check if listeners are already set up
-    if (typesPanel.dataset.listenersAttached === 'true') {
-        return;
-    }
-    
+    const typesList = typesPanel.querySelector('.types-list') || typesPanel;
+    if (typesList.dataset.listenersAttached === 'true') return;
     // Mark as having listeners attached
-    typesPanel.dataset.listenersAttached = 'true';
-    
+    typesList.dataset.listenersAttached = 'true';
     // Click handler
-    typesPanel.addEventListener('click', (e) => {
+    typesList.addEventListener('click', (e) => {
         const button = e.target.closest('.type-option');
         if (!button) return;
-        
+
         const typeFilter = button.dataset.typeFilter;
-        
+
         // Update button styles
-        typesPanel.querySelectorAll('.type-option').forEach(btn => {
-            btn.classList.remove('selected');
-        });
+        typesList.querySelectorAll('.type-option').forEach(btn => btn.classList.remove('selected'));
         button.classList.add('selected');
-        
+
         // Filter and render
         const type = typeFilter === 'all' ? null : typeFilter;
         AppState.currentTypeFilter = type;
         const filtered = filterSetsByType(AppState.currentCompatibleSets, type);
         const setsPanel = document.querySelector('#selectionViewSets .sets-panel');
         renderSetsList(setsPanel, filtered);
+    });
+}
+
+/**
+ * Setup group filter buttons (Very Rare, Event, Special, IO generic, TO/DO/SO)
+ */
+function setupGroupFilterEvents(typesPanel) {
+    const groupPanel = typesPanel.querySelector('.group-filters');
+    if (!groupPanel) return;
+    if (groupPanel.dataset.listenersAttached === 'true') return;
+    groupPanel.dataset.listenersAttached = 'true';
+
+    groupPanel.addEventListener('click', (e) => {
+        const btn = e.target.closest('.group-filter-option');
+        if (!btn) return;
+        // Update button styles
+        groupPanel.querySelectorAll('.group-filter-option').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+
+        const category = btn.dataset.category || 'io-set';
+        // Push current view key onto history (use AppState.currentView)
+        AppState.viewStack = AppState.viewStack || [];
+        AppState.viewStack.push(AppState.currentView || 'selection');
+        // Show back button
+        document.getElementById('backBtn').classList.add('visible');
+
+        // All rendering now happens inside the main sets view
+        const setsPanel = document.querySelector('#selectionViewSets .sets-panel');
+        // Clear any previous listenersAttached flag so new content can wire handlers
+        setsPanel.dataset.listenersAttached = 'false';
+
+        if (category === 'io-generic') {
+            // Render common IO in a single row
+            renderGenericRow(setsPanel);
+        } else if (category === 'special') {
+            // Render special (Hamidon) in a single row
+            renderSpecialRow(setsPanel);
+        } else if (category === 'to-do-so') {
+            // Render SO/DO/TO as three rows
+            renderOriginRows(setsPanel);
+        } else {
+            // Default to sets view and load matching sets
+            loadSetsForCategory(category);
+        }
     });
 }
 
@@ -229,7 +476,7 @@ function renderSetsList(setsPanel, setsToShow) {
                 <div class="set-piece-icon${uniqueClass}${procClass}" 
                      data-set-id="${setId}"
                      data-piece-num="${piece.num}">
-                    <img src="${iconPath}" alt="${set.name}">
+                    <img src="${iconPath}" alt="${set.name}" onerror="this.onerror=null;this.src='img/Enhancements/Damage.png'">
                     <div class="set-piece-number">${piece.num}</div>
                 </div>
             `;
@@ -413,7 +660,7 @@ function showGenericTooltip(event, aspectId, aspectName) {
         </div>
     `;
     
-    tooltip.innerHTML = html;
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + html;
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
 }
@@ -508,7 +755,7 @@ function showHamidonTooltip(event, hamiId, hamiName) {
         </div>
     `;
     
-    tooltip.innerHTML = html;
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + html;
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
 }
@@ -610,7 +857,7 @@ function showOriginTooltip(event, tier, tierName, aspectName, value) {
         </div>
     `;
     
-    tooltip.innerHTML = html;
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + html;
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
 }
@@ -666,7 +913,7 @@ function showSetTooltip(event, setId) {
         </div>
     `;
     
-    tooltip.innerHTML = html;
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + html;
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
 }
@@ -694,7 +941,7 @@ function showPieceTooltip(event, setId, pieceNum) {
         ${piece.unique ? '<div class="tooltip-section"><div class="tooltip-value" style="color: var(--warning)">⚠ Unique - Only one per build</div></div>' : ''}
     `;
     
-    tooltip.innerHTML = html;
+    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + html;
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
 }

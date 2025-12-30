@@ -467,6 +467,8 @@ function selectPower(powerData, category) {
         slots: [null], // Start with 1 empty slot
         maxSlots: powerData.maxSlots,
         allowedEnhancements: powerData.allowedEnhancements,
+        // New field: allowedSetCategories comes from the powerset data (used by enhancement filtering)
+        allowedSetCategories: powerData.allowedSetCategories || null,
         effects: powerData.effects,
         isActive: false  // For buffs like Aim, Build Up
     };

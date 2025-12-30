@@ -13,12 +13,12 @@
  * Map enhancement aspect to base icon filename
  */
 
+// Return overlay path using canonical overlay filenames from ORIGIN_OVERLAYS
 function getOriginOverlay(tier) {
-    const origin = Build.settings.origin.toLowerCase();
-    if (tier === 0) return 'img/Overlay/Training.png';
-    if (tier === 1) return `img/Overlay/${origin.charAt(0).toUpperCase() + origin.slice(1)}DO.png`;
-    if (tier === 2) return `img/Overlay/${origin.charAt(0).toUpperCase() + origin.slice(1)}SO.png`;
-    return 'img/Overlay/NatSO.png';
+    const origin = (Build && Build.settings && Build.settings.origin) ? Build.settings.origin.toLowerCase() : 'natural';
+    const key = tier === 0 ? '0' : `${tier}-${origin}`;
+    const file = ORIGIN_OVERLAYS[key] || 'NatSO.png';
+    return `img/Overlay/${file}`;
 }
 const ASPECT_ICONS = {
     'damage': 'Damage.png',
@@ -94,6 +94,9 @@ const IO_SET_ICONS = {
     'winters-bite': 'EO_WintersBite.png',
     'blasters-wrath': 'AO_Blaster1.png',
     'defiant-barrage': 'AO_Blaster2.png'
+    ,
+    // Fallback mapping for sets with missing icon files
+    'cupids_crush': 'sCrushingimpact.png'
 };
 
 // ============================================
@@ -186,6 +189,7 @@ function createEnhancementIconElement(enhancement) {
         img.src = iconInfo.path;
         img.className = 'enhancement-icon';
         img.alt = enhancement.name || 'Enhancement';
+        img.onerror = function() { this.onerror = null; this.src = 'img/Enhancements/Damage.png'; };
         return img;
     }
     
@@ -219,12 +223,12 @@ function createEnhancementIconElement(enhancement) {
 function getSetIcon(setId) {
     // Use icon from IO_SETS data if available
     if (typeof IO_SETS !== 'undefined' && IO_SETS[setId] && IO_SETS[setId].icon) {
-        return `img/Sets/${IO_SETS[setId].icon}`;
+        return `img/Enhancements/${IO_SETS[setId].icon}`;
     }
     
     // Fallback to hardcoded mapping for backwards compatibility
     const iconFile = IO_SET_ICONS[setId];
-    return iconFile ? `img/Sets/${iconFile}` : 'img/Enhancements/Damage.png';
+    return iconFile ? `img/Enhancements/${iconFile}` : 'img/Enhancements/Damage.png';
 }
 
 /**
