@@ -9,19 +9,7 @@ const ENERGY_BLAST_POWERSET = {
     description: "Energy Blast powerset",
     icon: "energy-blast_set.png",
     powers: [
-        {
-            name: "Energy Blast",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Energy Blast allows you to hurl bolts of energy at your foes, and can often send them flying with Knockback.",
-            shortHelp: "Energy Blast",
-            icon: "energy_blast_set.png"
-        },
-        {
-            name: "Power Blast",
+        {name: "Power Blast",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -43,19 +31,15 @@ const ENERGY_BLAST_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 2.8891999999999998
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 2.8891999999999998},
+        {type: "Smashing",
                             scale: 0.64
                         }
                     ],
                     scale: 3.5292
                 }
-            }
-        },
-        {
-            name: "Power Bolt",
+            },
+        {name: "Power Bolt",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -77,19 +61,15 @@ const ENERGY_BLAST_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 2.0602
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 2.0602},
+        {type: "Smashing",
                             scale: 0.2
                         }
                     ],
                     scale: 2.2602
                 }
-            }
-        },
-        {
-            name: "Energy Torrent",
+            },
+        {name: "Energy Torrent",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -113,19 +93,15 @@ const ENERGY_BLAST_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 1.3445
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 1.3445},
+        {type: "Smashing",
                             scale: 0.3
                         }
                     ],
                     scale: 1.6445
                 }
-            }
-        },
-        {
-            name: "Power Burst",
+            },
+        {name: "Power Burst",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -147,19 +123,15 @@ const ENERGY_BLAST_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 3.3203
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 3.3203},
+        {type: "Smashing",
                             scale: 1.0
                         }
                     ],
                     scale: 4.3203
                 }
-            }
-        },
-        {
-            name: "Sniper Blast",
+            },
+        {name: "Sniper Blast",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -177,10 +149,8 @@ const ENERGY_BLAST_POWERSET = {
                 recharge: 12.0,
                 endurance: 14.352,
                 cast: 1.33
-            }
-        },
-        {
-            name: "Aim",
+            },
+        {name: "Aim",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -199,10 +169,8 @@ const ENERGY_BLAST_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 5.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Power Push",
+            },
+        {name: "Power Push",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -224,19 +192,15 @@ const ENERGY_BLAST_POWERSET = {
                     types: [
                         {
                             type: "Smashing",
-                            scale: 0.33
-                        },
-                        {
-                            type: "Energy",
+                            scale: 0.33},
+        {type: "Energy",
                             scale: 0.156
                         }
                     ],
                     scale: 0.486
                 }
-            }
-        },
-        {
-            name: "Explosive Blast",
+            },
+        {name: "Explosive Blast",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -259,19 +223,15 @@ const ENERGY_BLAST_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 3.2887
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 3.2887},
+        {type: "Smashing",
                             scale: 0.5
                         }
                     ],
                     scale: 3.7887
                 }
-            }
-        },
-        {
-            name: "Nova",
+            },
+        {name: "Nova",
             available: 25,
             tier: 5,
             maxSlots: 6,

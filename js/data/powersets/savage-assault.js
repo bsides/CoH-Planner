@@ -35,10 +35,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Maiming Slash",
+            },
+        {name: "Maiming Slash",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -66,21 +64,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            }
-        },
-        {
-            name: "Savage Assault",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Command wild animals and Tear at your foes with your own animalistic attacks that primarily inflict Lethal damage and cause additional damage over time. Call Swarm, Maiming Slash, Vicious Slash, Unkindness and Feral Charge all grant stacks of Blood Frenzy. Each stack of this buff grants a small recharge buff and endurance cost discount. You may have up to 5 stacks of Blood Frenzy active at a time. Blood Frenzy can be maintained, or it can be consumed to empower Rending Flurry and Call Hawk. Using one of these consumers while you have 5 stacks of Blood Frenzy offers an additional benefit to these powers, but will also leave you Exhausted for a short time. While Exhausted you cannot build Blood Frenzy.",
-            shortHelp: "Savage Assault",
-            icon: "savage_assault_set.png"
-        },
-        {
-            name: "Vicious Slash",
+            },
+        {name: "Vicious Slash",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -108,10 +93,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            }
-        },
-        {
-            name: "Unkindness",
+            },
+        {name: "Unkindness",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -138,10 +121,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Spot Prey",
+            },
+        {name: "Spot Prey",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -160,10 +141,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 5.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Rending Flurry",
+            },
+        {name: "Rending Flurry",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -181,10 +160,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                 recharge: 14.0,
                 endurance: 13.52,
                 cast: 2.17
-            }
-        },
-        {
-            name: "Blood Craze",
+            },
+        {name: "Blood Craze",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -202,10 +179,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                 endurance: 7.8,
                 cast: 2.0,
                 buffDuration: 9.1
-            }
-        },
-        {
-            name: "Call Hawk",
+            },
+        {name: "Call Hawk",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -230,10 +205,8 @@ const SAVAGE_ASSAULT_POWERSET = {
                 },
                 buffDuration: 1.3,
                 tohitDebuff: 0.75
-            }
-        },
-        {
-            name: "Feral Charge",
+            },
+        {name: "Feral Charge",
             available: 29,
             tier: 5,
             maxSlots: 6,

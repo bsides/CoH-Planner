@@ -9,19 +9,7 @@ const COLD_DOMINATION_POWERSET = {
     description: "Cold Domination powerset",
     icon: "cold-domination_set.png",
     powers: [
-        {
-            name: "Cold Domination",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Cold Domination powers allow you to manipulate cold and ice to protect your allies and weaken your enemies.",
-            shortHelp: "Cold Domination",
-            icon: "cold_domination_set.png"
-        },
-        {
-            name: "Ice Shield",
+        {name: "Ice Shield",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -45,20 +33,16 @@ const COLD_DOMINATION_POWERSET = {
                         {
                             type: "Cold",
                             scale: 1.25,
-                            ticks: 120
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 120},
+        {type: "Fire",
                             scale: 1.0,
                             ticks: 120
                         }
                     ]
                 },
                 buffDuration: 240.0
-            }
-        },
-        {
-            name: "Infrigidate",
+            },
+        {name: "Infrigidate",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -83,10 +67,8 @@ const COLD_DOMINATION_POWERSET = {
                 },
                 buffDuration: 20.0,
                 defenseDebuff: 2.5
-            }
-        },
-        {
-            name: "Snow Storm",
+            },
+        {name: "Snow Storm",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -106,10 +88,8 @@ const COLD_DOMINATION_POWERSET = {
                 endurance: 0.26,
                 cast: 2.03,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Glacial Shield",
+            },
+        {name: "Glacial Shield",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -134,10 +114,8 @@ const COLD_DOMINATION_POWERSET = {
                     ticks: 120
                 },
                 buffDuration: 240.0
-            }
-        },
-        {
-            name: "Frostwork",
+            },
+        {name: "Frostwork",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -161,10 +139,8 @@ const COLD_DOMINATION_POWERSET = {
                     ticks: 60
                 },
                 buffDuration: 120.0
-            }
-        },
-        {
-            name: "Arctic Fog",
+            },
+        {name: "Arctic Fog",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -183,10 +159,8 @@ const COLD_DOMINATION_POWERSET = {
                 endurance: 0.26,
                 cast: 1.87,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Benumb",
+            },
+        {name: "Benumb",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -205,10 +179,8 @@ const COLD_DOMINATION_POWERSET = {
                 endurance: 13.0,
                 cast: 2.07,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Sleet",
+            },
+        {name: "Sleet",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -227,10 +199,8 @@ const COLD_DOMINATION_POWERSET = {
                 endurance: 18.2,
                 cast: 2.03,
                 buffDuration: 15.0
-            }
-        },
-        {
-            name: "Heat Loss",
+            },
+        {name: "Heat Loss",
             available: 25,
             tier: 5,
             maxSlots: 6,

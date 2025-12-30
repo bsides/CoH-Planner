@@ -9,19 +9,7 @@ const ARSENAL_ASSAULT_POWERSET = {
     description: "Arsenal Assault powerset",
     icon: "arsenal-assault_set.png",
     powers: [
-        {
-            name: "Arsenal Assault",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You use your cutting edge rifle to not only devastate foes from range, but also wield it and other advanced munitions at short range to incapacitate anyone who gets too close",
-            shortHelp: "Arsenal Assault",
-            icon: "assault_rifle_set.png"
-        },
-        {
-            name: "Burst",
+        {name: "Burst",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -46,10 +34,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                 },
                 buffDuration: 0.91,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Buttstroke",
+            },
+        {name: "Buttstroke",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -71,10 +57,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 3.179
                 }
-            }
-        },
-        {
-            name: "Buckshot",
+            },
+        {name: "Buckshot",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -98,10 +82,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                     type: "Lethal",
                     scale: 1.5351
                 }
-            }
-        },
-        {
-            name: "Elbow Strike",
+            },
+        {name: "Elbow Strike",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -123,10 +105,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 3.909
                 }
-            }
-        },
-        {
-            name: "Power Up",
+            },
+        {name: "Power Up",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -148,10 +128,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                 stunDuration: 10.0,
                 tohitBuff: 0.5,
                 defenseBuff: 0.5
-            }
-        },
-        {
-            name: "Trip Mine",
+            },
+        {name: "Trip Mine",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -169,10 +147,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                 endurance: 18.512,
                 cast: 1.93,
                 buffDuration: 170.0
-            }
-        },
-        {
-            name: "Targeting Drone",
+            },
+        {name: "Targeting Drone",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -191,10 +167,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Sniper Rifle",
+            },
+        {name: "Sniper Rifle",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -212,10 +186,8 @@ const ARSENAL_ASSAULT_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 1.17
-            }
-        },
-        {
-            name: "Ignite",
+            },
+        {name: "Ignite",
             available: 29,
             tier: 5,
             maxSlots: 6,

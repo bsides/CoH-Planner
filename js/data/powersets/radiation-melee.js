@@ -32,14 +32,10 @@ const RADIATION_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 3.5414
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 1.1804
-                        },
-                        {
-                            type: "Fire",
+                            scale: 3.5414},
+        {type: "Smashing",
+                            scale: 1.1804},
+        {type: "Fire",
                             scale: 0.378
                         }
                     ],
@@ -47,21 +43,8 @@ const RADIATION_MELEE_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Radiation Melee",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You are able to harness the power of Radiation to crush your foes in close quarters. Radiation Melee attacks have a chance to inflict the Contaminated state on a target for a moderate amount of time. Powers that deal greater damage, have a longer recharge time and animation time have a greater chance to inflict Contaminated. Hitting Contaminated targets with Contaminated Strike, Radioactive Smash, Radiation Siphon and Devastating Blow cause a portion of that power's damage to also hit nearby foes. Radiation Melee attacks primarily deal smashing and energy damage, but this set is also capable of dealing some toxic damage.",
-            shortHelp: "Radiation Melee",
-            icon: "radiation_melee_set.png"
-        },
-        {
-            name: "Radioactive Smash",
+            },
+        {name: "Radioactive Smash",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -83,14 +66,10 @@ const RADIATION_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 5.925000000000001
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 1.975
-                        },
-                        {
-                            type: "Fire",
+                            scale: 5.925000000000001},
+        {type: "Smashing",
+                            scale: 1.975},
+        {type: "Fire",
                             scale: 0.666
                         }
                     ],
@@ -98,10 +77,8 @@ const RADIATION_MELEE_POWERSET = {
                 },
                 defenseDebuff: 1.5,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Proton Sweep",
+            },
+        {name: "Proton Sweep",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -126,15 +103,11 @@ const RADIATION_MELEE_POWERSET = {
                         {
                             type: "Toxic",
                             scale: 1.3429,
-                            ticks: 3
-                        },
-                        {
-                            type: "Energy",
+                            ticks: 3},
+        {type: "Energy",
                             scale: 0.49899999999999994,
-                            ticks: 3
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 3},
+        {type: "Fire",
                             scale: 0.1609,
                             ticks: 3
                         }
@@ -142,10 +115,8 @@ const RADIATION_MELEE_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 1.2
-            }
-        },
-        {
-            name: "Fusion",
+            },
+        {name: "Fusion",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -164,10 +135,8 @@ const RADIATION_MELEE_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Radiation Siphon",
+            },
+        {name: "Radiation Siphon",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -189,14 +158,10 @@ const RADIATION_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 7.9514
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 2.6504000000000003
-                        },
-                        {
-                            type: "Fire",
+                            scale: 7.9514},
+        {type: "Smashing",
+                            scale: 2.6504000000000003},
+        {type: "Fire",
                             scale: 0.882
                         }
                     ],
@@ -204,10 +169,8 @@ const RADIATION_MELEE_POWERSET = {
                 },
                 defenseDebuff: 1.5,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Confront",
+            },
+        {name: "Confront",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -225,10 +188,8 @@ const RADIATION_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Irradiated Ground",
+            },
+        {name: "Irradiated Ground",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -246,10 +207,8 @@ const RADIATION_MELEE_POWERSET = {
                 recharge: 4.0,
                 endurance: 2.6,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Devastating Blow",
+            },
+        {name: "Devastating Blow",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -271,14 +230,10 @@ const RADIATION_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 11.3534
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 3.7844
-                        },
-                        {
-                            type: "Fire",
+                            scale: 11.3534},
+        {type: "Smashing",
+                            scale: 3.7844},
+        {type: "Fire",
                             scale: 1.386
                         }
                     ],
@@ -287,10 +242,8 @@ const RADIATION_MELEE_POWERSET = {
                 defenseDebuff: 2.0,
                 buffDuration: 10.0,
                 stun: 3.0
-            }
-        },
-        {
-            name: "Atom Smasher",
+            },
+        {name: "Atom Smasher",
             available: 25,
             tier: 5,
             maxSlots: 6,
@@ -312,14 +265,10 @@ const RADIATION_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Toxic",
-                            scale: 5.4861
-                        },
-                        {
-                            type: "Energy",
-                            scale: 1.8287
-                        },
-                        {
-                            type: "Fire",
+                            scale: 5.4861},
+        {type: "Energy",
+                            scale: 1.8287},
+        {type: "Fire",
                             scale: 0.6975
                         }
                     ],

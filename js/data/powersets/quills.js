@@ -32,10 +32,8 @@ const QUILLS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 4.7219999999999995
-                        },
-                        {
-                            type: "Fire",
+                            scale: 4.7219999999999995},
+        {type: "Fire",
                             scale: 0.378
                         }
                     ],
@@ -47,10 +45,8 @@ const QUILLS_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 4.0
-            }
-        },
-        {
-            name: "Lunge",
+            },
+        {name: "Lunge",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -72,10 +68,8 @@ const QUILLS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 7.522
-                        },
-                        {
-                            type: "Fire",
+                            scale: 7.522},
+        {type: "Fire",
                             scale: 0.594
                         }
                     ],
@@ -87,10 +81,8 @@ const QUILLS_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 6.0
-            }
-        },
-        {
-            name: "Spines",
+            },
+        {name: "Spines",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -98,10 +90,8 @@ const QUILLS_POWERSET = {
             allowedSetCategories: [],
             description: "Spines protrude from your body and can deal damage in melee or at very short ranges. Spines are hollow and hold a neural toxin that deals additional Toxic damage and can Slow or Immobilize your enemies. The toxin is cumulative, and multiple hits will affect a target more strongly. Very few foes have resistance to Spine poison. Like all scrapper powers, all Spine attacks can sometimes land a critical hit for double damage.",
             shortHelp: "Spines",
-            icon: "quills_set.png"
-        },
-        {
-            name: "Spine Burst",
+            icon: "quills_set.png"},
+        {name: "Spine Burst",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -123,10 +113,8 @@ const QUILLS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 4.6324
-                        },
-                        {
-                            type: "Fire",
+                            scale: 4.6324},
+        {type: "Fire",
                             scale: 0.405
                         }
                     ],
@@ -138,10 +126,8 @@ const QUILLS_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Build Up",
+            },
+        {name: "Build Up",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -160,10 +146,8 @@ const QUILLS_POWERSET = {
                 cast: 0.73,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Impale",
+            },
+        {name: "Impale",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -185,10 +169,8 @@ const QUILLS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 9.762
-                        },
-                        {
-                            type: "Fire",
+                            scale: 9.762},
+        {type: "Fire",
                             scale: 0.738
                         }
                     ],
@@ -200,10 +182,8 @@ const QUILLS_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 15.0
-            }
-        },
-        {
-            name: "Confront",
+            },
+        {name: "Confront",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -221,45 +201,16 @@ const QUILLS_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Quills",
-            available: 17,
-            tier: 4,
-            maxSlots: 6,
-            allowedEnhancements: ["Slow", "EnduranceReduction", "Recharge", "Damage", "Accuracy"],
-            allowedSetCategories: ["Melee AoE Damage", "Scrapper Archetype Sets", "Slow Movement", "Universal Damage Sets"],
-            description: "While this power is active, you will constantly fire dozens of Spines in all directions. These Spines do minor damage, but can poison all foes in close range. Spine poison Slows affected foes.",
-            shortHelp: "Toggle: PBAoE, DoT(Lethal), Foe -Speed, -Recharge",
-            icon: "quills_quills.png",
-            powerType: "Toggle",
-            targetType: "Self",
-            effectArea: "AoE",
-            maxTargets: 10,
-            effects: {
-                accuracy: 1.0,
-                recharge: 15.0,
-                endurance: 1.04,
-                cast: 0.73,
-                damage: {
-                    types: [
-                        {
-                            type: "Lethal",
-                            scale: 0.5683
-                        },
-                        {
-                            type: "Fire",
+            },
+        {type: "Fire",
                             scale: 0.0675
                         }
                     ],
                     scale: 0.6358
                 },
                 buffDuration: 3.0
-            }
-        },
-        {
-            name: "Ripper",
+            },
+        {name: "Ripper",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -283,10 +234,8 @@ const QUILLS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 9.0378
-                        },
-                        {
-                            type: "Fire",
+                            scale: 9.0378},
+        {type: "Fire",
                             scale: 0.765
                         }
                     ],
@@ -298,10 +247,8 @@ const QUILLS_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Throw Spines",
+            },
+        {name: "Throw Spines",
             available: 25,
             tier: 5,
             maxSlots: 6,
@@ -325,10 +272,8 @@ const QUILLS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 4.8675999999999995
-                        },
-                        {
-                            type: "Fire",
+                            scale: 4.8675999999999995},
+        {type: "Fire",
                             scale: 0.4905
                         }
                     ],

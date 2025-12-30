@@ -33,10 +33,8 @@ const ICE_CONTROL_POWERSET = {
                     scale: 3.0291
                 },
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Chilblain",
+            },
+        {name: "Chilblain",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -60,21 +58,8 @@ const ICE_CONTROL_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 9.2
-            }
-        },
-        {
-            name: "Ice Control",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You can draw moisture from the air to create Icy formations. With these abilities, you can control ice with remarkable precision to dominate your foes.",
-            shortHelp: "Ice Control",
-            icon: "ice_control_set.png"
-        },
-        {
-            name: "Frostbite",
+            },
+        {name: "Frostbite",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -99,10 +84,8 @@ const ICE_CONTROL_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 5.2
-            }
-        },
-        {
-            name: "Arctic Air",
+            },
+        {name: "Arctic Air",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -121,10 +104,8 @@ const ICE_CONTROL_POWERSET = {
                 endurance: 2.08,
                 cast: 2.03,
                 buffDuration: 2.25
-            }
-        },
-        {
-            name: "Cold Snap",
+            },
+        {name: "Cold Snap",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -145,10 +126,8 @@ const ICE_CONTROL_POWERSET = {
                 endurance: 10.4,
                 cast: 2.17,
                 buffDuration: 18.0
-            }
-        },
-        {
-            name: "Ice Slick",
+            },
+        {name: "Ice Slick",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -167,10 +146,8 @@ const ICE_CONTROL_POWERSET = {
                 endurance: 10.4,
                 cast: 1.67,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Flash Freeze",
+            },
+        {name: "Flash Freeze",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -193,10 +170,8 @@ const ICE_CONTROL_POWERSET = {
                     type: "Cold",
                     scale: 0.2
                 }
-            }
-        },
-        {
-            name: "Glacier",
+            },
+        {name: "Glacier",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -215,10 +190,8 @@ const ICE_CONTROL_POWERSET = {
                 endurance: 8.528,
                 cast: 2.03,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Jack Frost",
+            },
+        {name: "Jack Frost",
             available: 25,
             tier: 5,
             maxSlots: 6,

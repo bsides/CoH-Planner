@@ -28,21 +28,8 @@ const NINJAS_POWERSET = {
                 recharge: 5.0,
                 endurance: 5.46,
                 cast: 1.7
-            }
-        },
-        {
-            name: "Ninjas",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You are known by many names... Sensei, Shogun, Kage, Lord. What you are is a Master of the most deadly assassins the world has ever seen... You are a Ninja Master. Command your Ninja Henchmen and even train them in new weapons and techniques. Ninjas have superior reflexes and can even super leap. Their training makes them highly resistant to Confusion. Ninja Henchmen cannot be resurrected.",
-            shortHelp: "Ninjas",
-            icon: "ninjas_set.png"
-        },
-        {
-            name: "Snap Shot",
+            },
+        {name: "Snap Shot",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -64,10 +51,8 @@ const NINJAS_POWERSET = {
                     type: "Lethal",
                     scale: 1.8599999999999999
                 }
-            }
-        },
-        {
-            name: "Aimed Shot",
+            },
+        {name: "Aimed Shot",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -89,10 +74,8 @@ const NINJAS_POWERSET = {
                     type: "Lethal",
                     scale: 2.26
                 }
-            }
-        },
-        {
-            name: "Train Ninjas",
+            },
+        {name: "Train Ninjas",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -112,10 +95,8 @@ const NINJAS_POWERSET = {
                 endurance: 11.375,
                 cast: 2.37,
                 buffDuration: 5.0
-            }
-        },
-        {
-            name: "Fistful of Arrows",
+            },
+        {name: "Fistful of Arrows",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -139,10 +120,8 @@ const NINJAS_POWERSET = {
                     type: "Lethal",
                     scale: 1.6225
                 }
-            }
-        },
-        {
-            name: "Call Jounin",
+            },
+        {name: "Call Jounin",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -160,10 +139,8 @@ const NINJAS_POWERSET = {
                 recharge: 10.0,
                 endurance: 9.62,
                 cast: 1.7
-            }
-        },
-        {
-            name: "Smoke Flash",
+            },
+        {name: "Smoke Flash",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -183,10 +160,8 @@ const NINJAS_POWERSET = {
                 endurance: 15.0,
                 cast: 1.17,
                 buffDuration: 3.0
-            }
-        },
-        {
-            name: "Oni",
+            },
+        {name: "Oni",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -204,10 +179,8 @@ const NINJAS_POWERSET = {
                 recharge: 15.0,
                 endurance: 13.18,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Kuji-In Zen",
+            },
+        {name: "Kuji-In Zen",
             available: 25,
             tier: 5,
             maxSlots: 6,

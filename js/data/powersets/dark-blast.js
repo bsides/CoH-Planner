@@ -9,46 +9,7 @@ const DARK_BLAST_POWERSET = {
     description: "Dark Blast powerset",
     icon: "dark-blast_set.png",
     powers: [
-        {
-            name: "Dark Blast",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["EnduranceReduction", "Range", "Recharge", "Damage", "Accuracy"],
-            allowedSetCategories: ["Accurate To-Hit Debuff", "Blaster Archetype Sets", "Ranged Damage", "To Hit Debuff", "Universal Damage Sets"],
-            description: "A long range blast of dark energy. Deals moderate Negative Energy damage and reduces the target's chance to hit.",
-            shortHelp: "Ranged, DMG(Negative), Foe -To Hit",
-            icon: "darkcast_darkblast.png",
-            powerType: "Click",
-            targetType: "Foe (Alive)",
-            effectArea: "SingleTarget",
-            effects: {
-                accuracy: 1.0,
-                range: 80.0,
-                recharge: 4.0,
-                endurance: 5.2,
-                cast: 1.0,
-                damage: {
-                    type: "Negative",
-                    scale: 2.2602
-                },
-                tohitDebuff: 0.75,
-                buffDuration: 6.0
-            }
-        },
-        {
-            name: "Dark Blast",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Dark Blast summons the powers of the Netherworld to defeat your foes. The draining effects of most of these powers can reduce your targets' chance to hit.",
-            shortHelp: "Dark Blast",
-            icon: "dark_blast_set.png"
-        },
-        {
-            name: "Gloom",
+        {name: "Gloom",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -73,10 +34,8 @@ const DARK_BLAST_POWERSET = {
                 },
                 buffDuration: 3.6,
                 tohitDebuff: 0.75
-            }
-        },
-        {
-            name: "Umbral Torrent",
+            },
+        {name: "Umbral Torrent",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -102,10 +61,8 @@ const DARK_BLAST_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Aim",
+            },
+        {name: "Aim",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -124,10 +81,8 @@ const DARK_BLAST_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 5.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Moonbeam",
+            },
+        {name: "Moonbeam",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -145,10 +100,8 @@ const DARK_BLAST_POWERSET = {
                 recharge: 12.0,
                 endurance: 14.352,
                 cast: 1.33
-            }
-        },
-        {
-            name: "Tenebrous Tentacles",
+            },
+        {name: "Tenebrous Tentacles",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -179,10 +132,8 @@ const DARK_BLAST_POWERSET = {
                 },
                 buffDuration: 7.1,
                 tohitDebuff: 0.75
-            }
-        },
-        {
-            name: "Abyssal Gaze",
+            },
+        {name: "Abyssal Gaze",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -207,10 +158,8 @@ const DARK_BLAST_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Life Drain",
+            },
+        {name: "Life Drain",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -234,10 +183,8 @@ const DARK_BLAST_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Blackstar",
+            },
+        {name: "Blackstar",
             available: 25,
             tier: 5,
             maxSlots: 6,

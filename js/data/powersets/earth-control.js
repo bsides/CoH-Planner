@@ -9,19 +9,7 @@ const EARTH_CONTROL_POWERSET = {
     description: "Earth Control powerset",
     icon: "earth-control_set.png",
     powers: [
-        {
-            name: "Earth Control",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You can control the forces of the Earth. You can manipulate earth and stone to defeat your foes. The crushing force of many Earth Powers can reduce a target's Defense. Being of the Earth, many of these powers need to be performed while on the ground.",
-            shortHelp: "Earth Control",
-            icon: "earth_control_set.png"
-        },
-        {
-            name: "Fossilize",
+        {name: "Fossilize",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -45,10 +33,8 @@ const EARTH_CONTROL_POWERSET = {
                 },
                 defenseDebuff: 2.0,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Stone Prison",
+            },
+        {name: "Stone Prison",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -73,10 +59,8 @@ const EARTH_CONTROL_POWERSET = {
                 },
                 buffDuration: 9.2,
                 defenseDebuff: 2.0
-            }
-        },
-        {
-            name: "Stone Cages",
+            },
+        {name: "Stone Cages",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -102,10 +86,8 @@ const EARTH_CONTROL_POWERSET = {
                 },
                 buffDuration: 5.2,
                 defenseDebuff: 2.0
-            }
-        },
-        {
-            name: "Quicksand",
+            },
+        {name: "Quicksand",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -124,10 +106,8 @@ const EARTH_CONTROL_POWERSET = {
                 endurance: 7.8,
                 cast: 3.1,
                 buffDuration: 45.0
-            }
-        },
-        {
-            name: "Salt Crystals",
+            },
+        {name: "Salt Crystals",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -147,10 +127,8 @@ const EARTH_CONTROL_POWERSET = {
                 cast: 1.07,
                 defenseDebuff: 2.0,
                 buffDuration: 15.0
-            }
-        },
-        {
-            name: "Stalagmites",
+            },
+        {name: "Stalagmites",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -176,10 +154,8 @@ const EARTH_CONTROL_POWERSET = {
                 stun: 4.0,
                 defenseDebuff: 2.0,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Earthquake",
+            },
+        {name: "Earthquake",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -198,10 +174,8 @@ const EARTH_CONTROL_POWERSET = {
                 endurance: 10.4,
                 cast: 2.03,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Volcanic Gasses",
+            },
+        {name: "Volcanic Gasses",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -220,10 +194,8 @@ const EARTH_CONTROL_POWERSET = {
                 endurance: 18.2,
                 cast: 1.17,
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Animate Stone",
+            },
+        {name: "Animate Stone",
             available: 25,
             tier: 5,
             maxSlots: 6,

@@ -29,10 +29,8 @@ const ICE_ARMOR_POWERSET = {
                 cast: 0.73,
                 buffDuration: 0.75,
                 defenseBuff: 0.4
-            }
-        },
-        {
-            name: "Hoarfrost",
+            },
+        {name: "Hoarfrost",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -55,21 +53,8 @@ const ICE_ARMOR_POWERSET = {
                     ticks: 60
                 },
                 buffDuration: 120.0
-            }
-        },
-        {
-            name: "Ice Armor",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You can dramatically reduce your core body temperature to form various armors of ice around yourself. You can protect yourself from many different damage types, and you gain exceptional resistance to Cold based attacks. However, this set offers little protection to Fire based powers and no protection against Psionics.",
-            shortHelp: "Ice Armor",
-            icon: "ice_armor_set.png"
-        },
-        {
-            name: "Rime",
+            },
+        {name: "Rime",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -92,10 +77,8 @@ const ICE_ARMOR_POWERSET = {
                     ticks: 30
                 },
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Chilling Embrace",
+            },
+        {name: "Chilling Embrace",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -114,10 +97,8 @@ const ICE_ARMOR_POWERSET = {
                 endurance: 0.13,
                 cast: 0.73,
                 buffDuration: 5.0
-            }
-        },
-        {
-            name: "Wet Ice",
+            },
+        {name: "Wet Ice",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -139,10 +120,8 @@ const ICE_ARMOR_POWERSET = {
                 stunDuration: 0.75,
                 tohitBuff: 0.3,
                 defenseBuff: 0.4
-            }
-        },
-        {
-            name: "Glacial Armor",
+            },
+        {name: "Glacial Armor",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -161,10 +140,8 @@ const ICE_ARMOR_POWERSET = {
                 cast: 2.03,
                 buffDuration: 0.75,
                 defenseBuff: 0.4
-            }
-        },
-        {
-            name: "Energy Absorption",
+            },
+        {name: "Energy Absorption",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -182,10 +159,8 @@ const ICE_ARMOR_POWERSET = {
                 recharge: 60.0,
                 endurance: 13.0,
                 cast: 1.33
-            }
-        },
-        {
-            name: "Permafrost",
+            },
+        {name: "Permafrost",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -204,50 +179,34 @@ const ICE_ARMOR_POWERSET = {
                         {
                             type: "Cold",
                             scale: 3.0,
-                            ticks: 5
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 5},
+        {type: "Fire",
                             scale: 1.25,
-                            ticks: 5
-                        },
-                        {
-                            type: "Smashing",
+                            ticks: 5},
+        {type: "Smashing",
                             scale: 0.5,
-                            ticks: 5
-                        },
-                        {
-                            type: "Lethal",
+                            ticks: 5},
+        {type: "Lethal",
                             scale: 0.5,
-                            ticks: 5
-                        },
-                        {
-                            type: "Energy",
+                            ticks: 5},
+        {type: "Energy",
                             scale: 0.5,
-                            ticks: 5
-                        },
-                        {
-                            type: "Negative",
+                            ticks: 5},
+        {type: "Negative",
                             scale: 0.5,
-                            ticks: 5
-                        },
-                        {
-                            type: "Psionic",
+                            ticks: 5},
+        {type: "Psionic",
                             scale: 0.5,
-                            ticks: 5
-                        },
-                        {
-                            type: "Toxic",
+                            ticks: 5},
+        {type: "Toxic",
                             scale: 0.5,
                             ticks: 5
                         }
                     ]
                 },
                 buffDuration: 10.25
-            }
-        },
-        {
-            name: "Icicles",
+            },
+        {name: "Icicles",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -269,19 +228,15 @@ const ICE_ARMOR_POWERSET = {
                     types: [
                         {
                             type: "Cold",
-                            scale: 0.2
-                        },
-                        {
-                            type: "Fire",
+                            scale: 0.2},
+        {type: "Fire",
                             scale: 0.09
                         }
                     ],
                     scale: 0.29000000000000004
                 }
-            }
-        },
-        {
-            name: "Icy Bastion",
+            },
+        {name: "Icy Bastion",
             available: 29,
             tier: 5,
             maxSlots: 6,

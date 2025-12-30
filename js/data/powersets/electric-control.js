@@ -9,19 +9,7 @@ const ELECTRIC_CONTROL_POWERSET = {
     description: "Electric Control powerset",
     icon: "electric-control_set.png",
     powers: [
-        {
-            name: "Electric Control",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Electricity leaps and sparks at your command. You can use raw electrical power to paralyze, knockdown and drain the endurance of foes.",
-            shortHelp: "Electric Control",
-            icon: "electric_control_set.png"
-        },
-        {
-            name: "Electric Fence",
+        {name: "Electric Fence",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -45,10 +33,8 @@ const ELECTRIC_CONTROL_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 9.2
-            }
-        },
-        {
-            name: "Tesla Cage",
+            },
+        {name: "Tesla Cage",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -71,10 +57,8 @@ const ELECTRIC_CONTROL_POWERSET = {
                     scale: 4.8336
                 },
                 buffDuration: 4.0
-            }
-        },
-        {
-            name: "Chain Fences",
+            },
+        {name: "Chain Fences",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -103,10 +87,8 @@ const ELECTRIC_CONTROL_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 5.2
-            }
-        },
-        {
-            name: "Jolting Chain",
+            },
+        {name: "Jolting Chain",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -130,10 +112,8 @@ const ELECTRIC_CONTROL_POWERSET = {
                     scale: 3.8544
                 },
                 buffDuration: 8.0
-            }
-        },
-        {
-            name: "Conductive Aura",
+            },
+        {name: "Conductive Aura",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -151,10 +131,8 @@ const ELECTRIC_CONTROL_POWERSET = {
                 recharge: 15.0,
                 cast: 2.03,
                 buffDuration: 2.25
-            }
-        },
-        {
-            name: "Static Field",
+            },
+        {name: "Static Field",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -173,10 +151,8 @@ const ELECTRIC_CONTROL_POWERSET = {
                 endurance: 15.6,
                 cast: 2.03,
                 buffDuration: 25.0
-            }
-        },
-        {
-            name: "Tesla Coil",
+            },
+        {name: "Tesla Coil",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -194,10 +170,8 @@ const ELECTRIC_CONTROL_POWERSET = {
                 recharge: 240.0,
                 endurance: 15.6,
                 cast: 1.67
-            }
-        },
-        {
-            name: "Synaptic Overload",
+            },
+        {name: "Synaptic Overload",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -217,10 +191,8 @@ const ELECTRIC_CONTROL_POWERSET = {
                 endurance: 15.6,
                 cast: 2.0,
                 buffDuration: 8.0
-            }
-        },
-        {
-            name: "Gremlins",
+            },
+        {name: "Gremlins",
             available: 25,
             tier: 5,
             maxSlots: 6,

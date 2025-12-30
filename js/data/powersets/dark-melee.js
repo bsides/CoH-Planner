@@ -9,19 +9,7 @@ const DARK_MELEE_POWERSET = {
     description: "Dark Melee powerset",
     icon: "dark-melee_set.png",
     powers: [
-        {
-            name: "Dark Melee",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Dark Melee allows you to focus the powers of the Netherworld to defeat your foes. The draining effects of most of these powers can reduce the target's Accuracy. Like all scrapper powers, all Dark Melee attacks can sometimes land a critical hit for double damage.",
-            shortHelp: "Dark Melee",
-            icon: "dark_melee_set.png"
-        },
-        {
-            name: "Shadow Punch",
+        {name: "Shadow Punch",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -43,14 +31,10 @@ const DARK_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Negative",
-                            scale: 3.9414999999999996
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 0.7804
-                        },
-                        {
-                            type: "Fire",
+                            scale: 3.9414999999999996},
+        {type: "Smashing",
+                            scale: 0.7804},
+        {type: "Fire",
                             scale: 0.378
                         }
                     ],
@@ -58,10 +42,8 @@ const DARK_MELEE_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 6.0
-            }
-        },
-        {
-            name: "Smite",
+            },
+        {name: "Smite",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -83,14 +65,10 @@ const DARK_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Negative",
-                            scale: 5.9481
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 0.6496999999999999
-                        },
-                        {
-                            type: "Fire",
+                            scale: 5.9481},
+        {type: "Smashing",
+                            scale: 0.6496999999999999},
+        {type: "Fire",
                             scale: 0.594
                         }
                     ],
@@ -98,10 +76,8 @@ const DARK_MELEE_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Shadow Maul",
+            },
+        {name: "Shadow Maul",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -130,15 +106,11 @@ const DARK_MELEE_POWERSET = {
                         {
                             type: "Smashing",
                             scale: 0.44079999999999997,
-                            ticks: 3
-                        },
-                        {
-                            type: "Negative",
+                            ticks: 3},
+        {type: "Negative",
                             scale: 0.44079999999999997,
-                            ticks: 3
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 3},
+        {type: "Fire",
                             scale: 0.1821,
                             ticks: 3
                         }
@@ -146,10 +118,8 @@ const DARK_MELEE_POWERSET = {
                 },
                 buffDuration: 2.0,
                 tohitDebuff: 0.75
-            }
-        },
-        {
-            name: "Touch of Fear",
+            },
+        {name: "Touch of Fear",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -168,10 +138,8 @@ const DARK_MELEE_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 1.97
-            }
-        },
-        {
-            name: "Siphon Life",
+            },
+        {name: "Siphon Life",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -193,10 +161,8 @@ const DARK_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Negative",
-                            scale: 10.181799999999999
-                        },
-                        {
-                            type: "Fire",
+                            scale: 10.181799999999999},
+        {type: "Fire",
                             scale: 0.882
                         }
                     ],
@@ -204,10 +170,8 @@ const DARK_MELEE_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Confront",
+            },
+        {name: "Confront",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -225,10 +189,8 @@ const DARK_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Dark Consumption",
+            },
+        {name: "Dark Consumption",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -250,19 +212,15 @@ const DARK_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Negative",
-                            scale: 3.0309
-                        },
-                        {
-                            type: "Fire",
+                            scale: 3.0309},
+        {type: "Fire",
                             scale: 0.36
                         }
                     ],
                     scale: 3.3909
                 }
-            }
-        },
-        {
-            name: "Soul Drain",
+            },
+        {name: "Soul Drain",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -284,10 +242,8 @@ const DARK_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Negative",
-                            scale: 3.7885999999999997
-                        },
-                        {
-                            type: "Fire",
+                            scale: 3.7885999999999997},
+        {type: "Fire",
                             scale: 0.45
                         }
                     ],
@@ -295,10 +251,8 @@ const DARK_MELEE_POWERSET = {
                 },
                 tohitBuff: 1.0,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Midnight Grasp",
+            },
+        {name: "Midnight Grasp",
             available: 25,
             tier: 5,
             maxSlots: 6,
@@ -320,10 +274,8 @@ const DARK_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Negative",
-                            scale: 12.2335
-                        },
-                        {
-                            type: "Fire",
+                            scale: 12.2335},
+        {type: "Fire",
                             scale: 0.9945
                         }
                     ],
@@ -334,10 +286,8 @@ const DARK_MELEE_POWERSET = {
                         {
                             type: "Negative",
                             scale: 0.1889,
-                            ticks: 4
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 4},
+        {type: "Fire",
                             scale: 0.045,
                             ticks: 4
                         }

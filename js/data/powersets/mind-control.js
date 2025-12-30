@@ -33,10 +33,8 @@ const MIND_CONTROL_POWERSET = {
                     scale: 3.2691
                 },
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Mesmerize",
+            },
+        {name: "Mesmerize",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -58,21 +56,8 @@ const MIND_CONTROL_POWERSET = {
                     type: "Psionic",
                     scale: 1.809
                 }
-            }
-        },
-        {
-            name: "Mind Control",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You can manipulate and control your opponent's mind. Since Mental powers directly affect the mind, most tend to be very accurate, and thus very useful against higher level foes. Few foes can resist Psionic powers, but creatures without minds, like machines and robots, are resistant to many of the effects.",
-            shortHelp: "Mind Control",
-            icon: "mind_control_set.png"
-        },
-        {
-            name: "Dominate",
+            },
+        {name: "Dominate",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -94,10 +79,8 @@ const MIND_CONTROL_POWERSET = {
                     type: "Psionic",
                     scale: 1.745
                 }
-            }
-        },
-        {
-            name: "Confuse",
+            },
+        {name: "Confuse",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -115,10 +98,8 @@ const MIND_CONTROL_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 2.0
-            }
-        },
-        {
-            name: "Mass Hypnosis",
+            },
+        {name: "Mass Hypnosis",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -137,10 +118,8 @@ const MIND_CONTROL_POWERSET = {
                 recharge: 45.0,
                 endurance: 15.6,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Telekinesis",
+            },
+        {name: "Telekinesis",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -160,10 +139,8 @@ const MIND_CONTROL_POWERSET = {
                 endurance: 0.26,
                 cast: 1.13,
                 buffDuration: 1.5
-            }
-        },
-        {
-            name: "Total Domination",
+            },
+        {name: "Total Domination",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -182,10 +159,8 @@ const MIND_CONTROL_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Terrify",
+            },
+        {name: "Terrify",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -209,10 +184,8 @@ const MIND_CONTROL_POWERSET = {
                     type: "Psionic",
                     scale: 1.7437
                 }
-            }
-        },
-        {
-            name: "Mass Confusion",
+            },
+        {name: "Mass Confusion",
             available: 25,
             tier: 5,
             maxSlots: 6,

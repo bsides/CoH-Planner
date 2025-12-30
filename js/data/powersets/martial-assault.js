@@ -9,19 +9,7 @@ const MARTIAL_ASSAULT_POWERSET = {
     description: "Martial Assault powerset",
     icon: "martial-assault_set.png",
     powers: [
-        {
-            name: "Martial Assault",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Your mastery of Martial Assault allows you to deliver crippling blows to your enemies and rain blades upon foes who don't dare approach you. You deliver damage to your enemies via withering kicks and punches in melee range, while your skills with thrown blades cut down aggressors from afar. Your attacks have a tendency to knock opponents down or deal additional damage over time as a secondary effect.",
-            shortHelp: "Martial Assault",
-            icon: "martial_assault_set.png"
-        },
-        {
-            name: "Shuriken Throw",
+        {name: "Shuriken Throw",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -43,10 +31,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                     type: "Lethal",
                     scale: 2.26
                 }
-            }
-        },
-        {
-            name: "Thunder Kick",
+            },
+        {name: "Thunder Kick",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -69,10 +55,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                     scale: 2.6220999999999997
                 },
                 stun: 3.0
-            }
-        },
-        {
-            name: "Trick Shot",
+            },
+        {name: "Trick Shot",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -95,10 +79,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                     type: "Lethal",
                     scale: 2.5
                 }
-            }
-        },
-        {
-            name: "Spinning Kick",
+            },
+        {name: "Spinning Kick",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -122,10 +104,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 2.7464
                 }
-            }
-        },
-        {
-            name: "Envenomed Blades",
+            },
+        {name: "Envenomed Blades",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -144,10 +124,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 0.12,
                 buffDuration: 40.0
-            }
-        },
-        {
-            name: "Dragon's Tail",
+            },
+        {name: "Dragon's Tail",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -169,10 +147,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 2.7914
                 }
-            }
-        },
-        {
-            name: "Caltrops",
+            },
+        {name: "Caltrops",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -191,10 +167,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                 endurance: 7.8,
                 cast: 1.07,
                 buffDuration: 45.0
-            }
-        },
-        {
-            name: "Masterful Throw",
+            },
+        {name: "Masterful Throw",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -212,10 +186,8 @@ const MARTIAL_ASSAULT_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 1.33
-            }
-        },
-        {
-            name: "Explosive Shuriken",
+            },
+        {name: "Explosive Shuriken",
             available: 29,
             tier: 5,
             maxSlots: 6,

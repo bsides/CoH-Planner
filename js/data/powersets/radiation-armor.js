@@ -28,10 +28,8 @@ const RADIATION_ARMOR_POWERSET = {
                 endurance: 0.13,
                 cast: 0.67,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Gamma Boost",
+            },
+        {name: "Gamma Boost",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -46,21 +44,8 @@ const RADIATION_ARMOR_POWERSET = {
             effects: {
                 accuracy: 1.0,
                 buffDuration: 1.25
-            }
-        },
-        {
-            name: "Radiation Armor",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Radiation emanates from your body which harms foes, but empowers and shields yourself. You can use this energy to absorb damage, heal from your wounds and debilitate nearby foes.",
-            shortHelp: "Radiation Armor",
-            icon: "radiation_armor_set.png"
-        },
-        {
-            name: "Proton Armor",
+            },
+        {name: "Proton Armor",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -78,10 +63,8 @@ const RADIATION_ARMOR_POWERSET = {
                 endurance: 0.13,
                 cast: 0.67,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Fallout Shelter",
+            },
+        {name: "Fallout Shelter",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -102,10 +85,8 @@ const RADIATION_ARMOR_POWERSET = {
                 stunDuration: 0.75,
                 buffDuration: 0.75,
                 tohitBuff: 0.3
-            }
-        },
-        {
-            name: "Radiation Therapy",
+            },
+        {name: "Radiation Therapy",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -123,10 +104,8 @@ const RADIATION_ARMOR_POWERSET = {
                 recharge: 60.0,
                 endurance: 13.0,
                 cast: 1.03
-            }
-        },
-        {
-            name: "Beta Decay",
+            },
+        {name: "Beta Decay",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -147,10 +126,8 @@ const RADIATION_ARMOR_POWERSET = {
                 tohitDebuff: 0.75,
                 buffDuration: 1.0,
                 defenseDebuff: 1.5
-            }
-        },
-        {
-            name: "Particle Shielding",
+            },
+        {name: "Particle Shielding",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -168,10 +145,8 @@ const RADIATION_ARMOR_POWERSET = {
                 endurance: 10.4,
                 cast: 0.73,
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Ground Zero",
+            },
+        {name: "Ground Zero",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -189,10 +164,8 @@ const RADIATION_ARMOR_POWERSET = {
                 recharge: 90.0,
                 endurance: 13.0,
                 cast: 3.0
-            }
-        },
-        {
-            name: "Meltdown",
+            },
+        {name: "Meltdown",
             available: 29,
             tier: 5,
             maxSlots: 6,

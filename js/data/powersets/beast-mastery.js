@@ -9,19 +9,7 @@ const BEAST_MASTERY_POWERSET = {
     description: "Beast Mastery powerset",
     icon: "beast-mastery_set.png",
     powers: [
-        {
-            name: "Beast Mastery",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Command wild animals to aid you in battle. These beastly allies lack ranged attacks, but make up for it with a specialized focus in melee combat. Call forth wolves, lions, dire wolves, hawks and insects to harass your foes. Additionally, you have a chance to gain a stack of Pack Mentality when you and your pets land a hit on an enemy. Each stack of Pack Mentality will boost the damage of all of your nearby beast henchmen. Pack Mentality can stack up to 10 times and will fade after a short time.",
-            shortHelp: "Beast Mastery",
-            icon: "beast_mastery_set.png"
-        },
-        {
-            name: "Call Swarm",
+        {name: "Call Swarm",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -46,10 +34,8 @@ const BEAST_MASTERY_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Summon Wolves",
+            },
+        {name: "Summon Wolves",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -67,10 +53,8 @@ const BEAST_MASTERY_POWERSET = {
                 recharge: 5.0,
                 endurance: 5.46,
                 cast: 1.97
-            }
-        },
-        {
-            name: "Call Hawk",
+            },
+        {name: "Call Hawk",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -95,10 +79,8 @@ const BEAST_MASTERY_POWERSET = {
                 },
                 buffDuration: 1.3,
                 tohitDebuff: 0.75
-            }
-        },
-        {
-            name: "Train Beasts",
+            },
+        {name: "Train Beasts",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -117,10 +99,8 @@ const BEAST_MASTERY_POWERSET = {
                 recharge: 6.0,
                 endurance: 11.375,
                 cast: 1.67
-            }
-        },
-        {
-            name: "Call Ravens",
+            },
+        {name: "Call Ravens",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -147,10 +127,8 @@ const BEAST_MASTERY_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Summon Lions",
+            },
+        {name: "Summon Lions",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -168,10 +146,8 @@ const BEAST_MASTERY_POWERSET = {
                 recharge: 10.0,
                 endurance: 9.62,
                 cast: 2.0
-            }
-        },
-        {
-            name: "Fortify Pack",
+            },
+        {name: "Fortify Pack",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -190,10 +166,8 @@ const BEAST_MASTERY_POWERSET = {
                 endurance: 16.25,
                 cast: 2.27,
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Summon Dire Wolf",
+            },
+        {name: "Summon Dire Wolf",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -211,10 +185,8 @@ const BEAST_MASTERY_POWERSET = {
                 recharge: 15.0,
                 endurance: 13.18,
                 cast: 2.0
-            }
-        },
-        {
-            name: "Tame Beasts",
+            },
+        {name: "Tame Beasts",
             available: 25,
             tier: 5,
             maxSlots: 6,

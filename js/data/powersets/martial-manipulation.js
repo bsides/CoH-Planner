@@ -24,10 +24,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
             effectArea: "SingleTarget",
             effects: {
                 accuracy: 1.0
-            }
-        },
-        {
-            name: "Ki Push",
+            },
+        {name: "Ki Push",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -50,10 +48,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                     scale: 2.1409000000000002
                 },
                 buffDuration: 2.0
-            }
-        },
-        {
-            name: "Martial Combat",
+            },
+        {name: "Martial Combat",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -61,10 +57,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
             allowedSetCategories: [],
             description: "Your mastery of Martial Combat allows you to draw on the physical energy stored within your body to perform remarkable feats. You deliver damage to your enemies via withering kicks and punches, while your preternatural senses keep you moving faster and striking harder than any who oppose you.",
             shortHelp: "Martial Combat",
-            icon: "martial_manipulation_set.png"
-        },
-        {
-            name: "Storm Kick",
+            icon: "martial_manipulation_set.png"},
+        {name: "Storm Kick",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -92,28 +86,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 1.5
-            }
-        },
-        {
-            name: "Reach for the Limit",
-            available: 3,
-            tier: 2,
-            maxSlots: 0,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You are constantly looking for vulnerabilities in your foes' stances and positioning. Whenever you attack, you have a chance to gain a moderate +ToHit and +Damage bonus for a short duration.",
-            shortHelp: "All Attacks: Chance for +ToHit, +DMG(All)",
-            icon: "martialmanipulation_reachforthelimit.png",
-            powerType: "Auto",
-            targetType: "Self",
-            effectArea: "SingleTarget",
-            effects: {
-                accuracy: 1.0,
-                buffDuration: 10.25
-            }
-        },
-        {
-            name: "Burst of Speed",
+            },
+        {name: "Burst of Speed",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -132,10 +106,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                 endurance: 13.52,
                 cast: 1.0,
                 buffDuration: 2.0
-            }
-        },
-        {
-            name: "Dragon's Tail",
+            },
+        {name: "Dragon's Tail",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -158,10 +130,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                     scale: 2.0936
                 },
                 buffDuration: 9.0
-            }
-        },
-        {
-            name: "Reaction Time",
+            },
+        {name: "Reaction Time",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -179,10 +149,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                 recharge: 10.0,
                 cast: 1.83,
                 buffDuration: 5.0
-            }
-        },
-        {
-            name: "Inner Will",
+            },
+        {name: "Inner Will",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -201,10 +169,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                 stun: 1.0,
                 stunDuration: 30.0,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Throw Sand",
+            },
+        {name: "Throw Sand",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -226,10 +192,8 @@ const MARTIAL_MANIPULATION_POWERSET = {
                 cast: 1.07,
                 stun: 3.0,
                 buffDuration: 20.0
-            }
-        },
-        {
-            name: "Eagles Claw",
+            },
+        {name: "Eagles Claw",
             available: 29,
             tier: 5,
             maxSlots: 6,

@@ -29,36 +29,19 @@ const ENERGY_AURA_POWERSET = {
                         {
                             type: "Smashing",
                             scale: 1.25,
-                            ticks: 5
-                        },
-                        {
-                            type: "Lethal",
+                            ticks: 5},
+        {type: "Lethal",
                             scale: 1.25,
-                            ticks: 5
-                        },
-                        {
-                            type: "Energy",
+                            ticks: 5},
+        {type: "Energy",
                             scale: 1.0,
                             ticks: 5
                         }
                     ]
                 },
                 buffDuration: 10.25
-            }
-        },
-        {
-            name: "Energy Aura",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You can surround yourself in powerful defensive Energy Auras that can deflect your foes' attacks. Like other defensive powers, Energy Auras do not reduce the damage you take, but rather reduce your chance of getting hit by deflecting your foes' attacks. Energy Auras offer good defense to most attack types, but offer superior defense to Energy based attacks. However, Energy Aura offers no defense to Psionic attacks.",
-            shortHelp: "Energy Aura",
-            icon: "energy_aura_set.png"
-        },
-        {
-            name: "Kinetic Shield",
+            },
+        {name: "Kinetic Shield",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -77,10 +60,8 @@ const ENERGY_AURA_POWERSET = {
                 cast: 0.73,
                 buffDuration: 0.75,
                 defenseBuff: 0.5
-            }
-        },
-        {
-            name: "Power Shield",
+            },
+        {name: "Power Shield",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -99,10 +80,8 @@ const ENERGY_AURA_POWERSET = {
                 cast: 1.67,
                 buffDuration: 0.75,
                 defenseBuff: 0.5
-            }
-        },
-        {
-            name: "Entropic Aura",
+            },
+        {name: "Entropic Aura",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -121,10 +100,8 @@ const ENERGY_AURA_POWERSET = {
                 endurance: 0.52,
                 cast: 0.73,
                 buffDuration: 2.0
-            }
-        },
-        {
-            name: "Energy Protection",
+            },
+        {name: "Energy Protection",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -143,30 +120,22 @@ const ENERGY_AURA_POWERSET = {
                         {
                             type: "Energy",
                             scale: 1.25,
-                            ticks: 5
-                        },
-                        {
-                            type: "Negative",
+                            ticks: 5},
+        {type: "Negative",
                             scale: 1.25,
-                            ticks: 5
-                        },
-                        {
-                            type: "Psionic",
+                            ticks: 5},
+        {type: "Psionic",
                             scale: 1.25,
-                            ticks: 5
-                        },
-                        {
-                            type: "Toxic",
+                            ticks: 5},
+        {type: "Toxic",
                             scale: 1.25,
                             ticks: 5
                         }
                     ]
                 },
                 buffDuration: 10.25
-            }
-        },
-        {
-            name: "Energy Cloak",
+            },
+        {name: "Energy Cloak",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -184,10 +153,8 @@ const ENERGY_AURA_POWERSET = {
                 endurance: 0.13,
                 cast: 0.73,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Energize",
+            },
+        {name: "Energize",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -205,10 +172,8 @@ const ENERGY_AURA_POWERSET = {
                 endurance: 10.4,
                 cast: 1.17,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Energy Drain",
+            },
+        {name: "Energy Drain",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -226,10 +191,8 @@ const ENERGY_AURA_POWERSET = {
                 recharge: 60.0,
                 endurance: 13.0,
                 cast: 2.37
-            }
-        },
-        {
-            name: "Overload",
+            },
+        {name: "Overload",
             available: 29,
             tier: 5,
             maxSlots: 6,

@@ -32,20 +32,16 @@ const ICY_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Cold",
-                            scale: 1.968
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 1.968},
+        {type: "Smashing",
                             scale: 0.492
                         }
                     ],
                     scale: 2.46
                 },
                 buffDuration: 6.0
-            }
-        },
-        {
-            name: "Ice Sword",
+            },
+        {name: "Ice Sword",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -67,31 +63,16 @@ const ICY_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Cold",
-                            scale: 2.2337
-                        },
-                        {
-                            type: "Lethal",
+                            scale: 2.2337},
+        {type: "Lethal",
                             scale: 1.4573
                         }
                     ],
                     scale: 3.691
                 },
                 buffDuration: 8.0
-            }
-        },
-        {
-            name: "Icy Assault",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Ice Assault allows the player to use Cold-based attacks. Conjure up frozen melee weapons or hurl deadly shards of Ice. Icy powers are known for their ability to slow an opponent.",
-            shortHelp: "Icy Assault",
-            icon: "icy_assault_set.png"
-        },
-        {
-            name: "Ice Sword Circle",
+            },
+        {name: "Ice Sword Circle",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -113,20 +94,16 @@ const ICY_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 1.4947
-                        },
-                        {
-                            type: "Cold",
+                            scale: 1.4947},
+        {type: "Cold",
                             scale: 1.4947
                         }
                     ],
                     scale: 2.9894
                 },
                 buffDuration: 8.0
-            }
-        },
-        {
-            name: "Ice Blast",
+            },
+        {name: "Ice Blast",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -148,20 +125,16 @@ const ICY_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Cold",
-                            scale: 2.005
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 2.005},
+        {type: "Smashing",
                             scale: 0.655
                         }
                     ],
                     scale: 2.66
                 },
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Power Up",
+            },
+        {name: "Power Up",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -183,10 +156,8 @@ const ICY_ASSAULT_POWERSET = {
                 stunDuration: 10.0,
                 tohitBuff: 0.5,
                 defenseBuff: 0.5
-            }
-        },
-        {
-            name: "Frost Breath",
+            },
+        {name: "Frost Breath",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -212,10 +183,8 @@ const ICY_ASSAULT_POWERSET = {
                     ticks: 1
                 },
                 buffDuration: 0.6
-            }
-        },
-        {
-            name: "Chilling Embrace",
+            },
+        {name: "Chilling Embrace",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -238,10 +207,8 @@ const ICY_ASSAULT_POWERSET = {
                     scale: 0.14
                 },
                 buffDuration: 5.0
-            }
-        },
-        {
-            name: "Ice Slash",
+            },
+        {name: "Ice Slash",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -263,20 +230,16 @@ const ICY_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 2.7205000000000004
-                        },
-                        {
-                            type: "Cold",
+                            scale: 2.7205000000000004},
+        {type: "Cold",
                             scale: 2.7205000000000004
                         }
                     ],
                     scale: 5.441000000000001
                 },
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Bitter Ice Blast",
+            },
+        {name: "Bitter Ice Blast",
             available: 29,
             tier: 5,
             maxSlots: 6,
@@ -298,10 +261,8 @@ const ICY_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Cold",
-                            scale: 2.2086
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 2.2086},
+        {type: "Smashing",
                             scale: 1.7005
                         }
                     ],

@@ -34,21 +34,8 @@ const RADIATION_BLAST_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 3.0
-            }
-        },
-        {
-            name: "Radiation Blast",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Blast your foes with lethal radiation. Radiation Blast powers can bypass normal defenses, and lower your targets' overall Defense.",
-            shortHelp: "Radiation Blast",
-            icon: "radiation_blast_set.png"
-        },
-        {
-            name: "X-Ray Beam",
+            },
+        {name: "X-Ray Beam",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -72,10 +59,8 @@ const RADIATION_BLAST_POWERSET = {
                 },
                 defenseDebuff: 2.0,
                 buffDuration: 6.0
-            }
-        },
-        {
-            name: "Irradiate",
+            },
+        {name: "Irradiate",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -100,10 +85,8 @@ const RADIATION_BLAST_POWERSET = {
                 },
                 buffDuration: 4.6,
                 defenseDebuff: 3.0
-            }
-        },
-        {
-            name: "Electron Haze",
+            },
+        {name: "Electron Haze",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -129,10 +112,8 @@ const RADIATION_BLAST_POWERSET = {
                 },
                 defenseDebuff: 2.0,
                 buffDuration: 8.0
-            }
-        },
-        {
-            name: "Aim",
+            },
+        {name: "Aim",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -151,10 +132,8 @@ const RADIATION_BLAST_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 5.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Proton Volley",
+            },
+        {name: "Proton Volley",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -172,10 +151,8 @@ const RADIATION_BLAST_POWERSET = {
                 recharge: 12.0,
                 endurance: 14.352,
                 cast: 1.33
-            }
-        },
-        {
-            name: "Cosmic Burst",
+            },
+        {name: "Cosmic Burst",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -200,10 +177,8 @@ const RADIATION_BLAST_POWERSET = {
                 stun: 3.0,
                 defenseDebuff: 3.0,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Neutron Bomb",
+            },
+        {name: "Neutron Bomb",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -228,10 +203,8 @@ const RADIATION_BLAST_POWERSET = {
                 },
                 defenseDebuff: 2.0,
                 buffDuration: 16.0
-            }
-        },
-        {
-            name: "Atomic Blast",
+            },
+        {name: "Atomic Blast",
             available: 25,
             tier: 5,
             maxSlots: 6,
@@ -253,10 +226,8 @@ const RADIATION_BLAST_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 3.9424
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 3.9424},
+        {type: "Smashing",
                             scale: 1.4641
                         }
                     ],

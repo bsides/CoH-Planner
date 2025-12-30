@@ -32,14 +32,10 @@ const ICE_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Cold",
-                            scale: 4.3185
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 0.3154
-                        },
-                        {
-                            type: "Fire",
+                            scale: 4.3185},
+        {type: "Smashing",
+                            scale: 0.3154},
+        {type: "Fire",
                             scale: 0.225
                         }
                     ],
@@ -50,31 +46,16 @@ const ICE_MELEE_POWERSET = {
                         {
                             type: "Cold",
                             scale: 0.4,
-                            ticks: 1
-                        },
-                        {
-                            type: "Smashing",
+                            ticks: 1},
+        {type: "Smashing",
                             scale: 0.1,
                             ticks: 1
                         }
                     ]
                 },
                 buffDuration: 0.3
-            }
-        },
-        {
-            name: "Ice Melee",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Ice Melee allows the player to use Cold-based attacks, and even conjure up frozen melee weapons. Ice Melee powers are known for their ability to slow an opponent.",
-            shortHelp: "Ice Melee",
-            icon: "ice_melee_set.png"
-        },
-        {
-            name: "Ice Sword",
+            },
+        {name: "Ice Sword",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -96,24 +77,18 @@ const ICE_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Cold",
-                            scale: 5.7627
-                        },
-                        {
-                            type: "Lethal",
-                            scale: 1.0441
-                        },
-                        {
-                            type: "Fire",
+                            scale: 5.7627},
+        {type: "Lethal",
+                            scale: 1.0441},
+        {type: "Fire",
                             scale: 0.594
                         }
                     ],
                     scale: 7.400799999999999
                 },
                 buffDuration: 8.0
-            }
-        },
-        {
-            name: "Frost",
+            },
+        {name: "Frost",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -142,20 +117,16 @@ const ICE_MELEE_POWERSET = {
                         {
                             type: "Cold",
                             scale: 0.845,
-                            ticks: 5
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 5},
+        {type: "Fire",
                             scale: 0.1215,
                             ticks: 5
                         }
                     ]
                 },
                 buffDuration: 1.1
-            }
-        },
-        {
-            name: "Build Up",
+            },
+        {name: "Build Up",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -174,10 +145,8 @@ const ICE_MELEE_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Ice Patch",
+            },
+        {name: "Ice Patch",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -195,10 +164,8 @@ const ICE_MELEE_POWERSET = {
                 endurance: 10.4,
                 cast: 1.57,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Confront",
+            },
+        {name: "Confront",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -216,10 +183,8 @@ const ICE_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Greater Ice Sword",
+            },
+        {name: "Greater Ice Sword",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -241,24 +206,18 @@ const ICE_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Cold",
-                            scale: 8.2424
-                        },
-                        {
-                            type: "Lethal",
-                            scale: 2.0380000000000003
-                        },
-                        {
-                            type: "Fire",
+                            scale: 8.2424},
+        {type: "Lethal",
+                            scale: 2.0380000000000003},
+        {type: "Fire",
                             scale: 0.882
                         }
                     ],
                     scale: 11.1624
                 },
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Freezing Touch",
+            },
+        {name: "Freezing Touch",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -285,20 +244,16 @@ const ICE_MELEE_POWERSET = {
                         {
                             type: "Cold",
                             scale: 0.5519999999999999,
-                            ticks: 10
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 10},
+        {type: "Fire",
                             scale: 0.1193,
                             ticks: 10
                         }
                     ]
                 },
                 buffDuration: 2.6
-            }
-        },
-        {
-            name: "Frozen Aura",
+            },
+        {name: "Frozen Aura",
             available: 25,
             tier: 5,
             maxSlots: 6,

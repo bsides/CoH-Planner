@@ -32,31 +32,16 @@ const SAVAGE_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 2.5788
-                        },
-                        {
-                            type: "Fire",
+                            scale: 2.5788},
+        {type: "Fire",
                             scale: 0.522
                         }
                     ],
                     scale: 3.1008000000000004
                 },
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Savage Melee",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Tear at your foes with deadly animalistic attacks that primarily inflict Lethal damage and cause additional damage over time. Savage Strike, Maiming Slash, Shred, Vicious Slash and Savage Leap all grant stacks of Blood Frenzy. Each stack of this buff grants a small recharge buff and endurance cost discount. You may have up to 5 stacks of Blood Frenzy active at a time. Blood Frenzy can be maintained, or it can be consumed to empower Rending Flurry, Blood Frenzy and Hemorrhage. Using one of these consumers while you have 5 stacks of Blood Frenzy offers an additional benefit to these powers, but will also leave you Exhausted for a short time. While Exhausted you cannot build Blood Frenzy.",
-            shortHelp: "Savage Melee",
-            icon: "savage_melee_set.png"
-        },
-        {
-            name: "Savage Strike",
+            },
+        {name: "Savage Strike",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -79,20 +64,16 @@ const SAVAGE_MELEE_POWERSET = {
                         {
                             type: "Lethal",
                             scale: 0.9101,
-                            ticks: 1
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 1},
+        {type: "Fire",
                             scale: 0.171,
                             ticks: 1
                         }
                     ]
                 },
                 buffDuration: 0.4
-            }
-        },
-        {
-            name: "Shred",
+            },
+        {name: "Shred",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -117,10 +98,8 @@ const SAVAGE_MELEE_POWERSET = {
                         {
                             type: "Lethal",
                             scale: 0.5091,
-                            ticks: 5
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 5},
+        {type: "Fire",
                             scale: 0.0946,
                             ticks: 5
                         }
@@ -128,10 +107,8 @@ const SAVAGE_MELEE_POWERSET = {
                 },
                 buffDuration: 2.0,
                 defenseDebuff: 1.2
-            }
-        },
-        {
-            name: "Blood Thirst",
+            },
+        {name: "Blood Thirst",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -150,10 +127,8 @@ const SAVAGE_MELEE_POWERSET = {
                 cast: 2.0,
                 tohitBuff: 1.0,
                 buffDuration: 15.0
-            }
-        },
-        {
-            name: "Vicious Slash",
+            },
+        {name: "Vicious Slash",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -175,19 +150,15 @@ const SAVAGE_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 3.7289000000000003
-                        },
-                        {
-                            type: "Fire",
+                            scale: 3.7289000000000003},
+        {type: "Fire",
                             scale: 0.81
                         }
                     ],
                     scale: 4.5389
                 }
-            }
-        },
-        {
-            name: "Confront",
+            },
+        {name: "Confront",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -205,10 +176,8 @@ const SAVAGE_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Rending Flurry",
+            },
+        {name: "Rending Flurry",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -226,10 +195,8 @@ const SAVAGE_MELEE_POWERSET = {
                 recharge: 14.0,
                 endurance: 13.52,
                 cast: 2.17
-            }
-        },
-        {
-            name: "Hemorrhage",
+            },
+        {name: "Hemorrhage",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -251,10 +218,8 @@ const SAVAGE_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 1.4498
-                        },
-                        {
-                            type: "Fire",
+                            scale: 1.4498},
+        {type: "Fire",
                             scale: 0.351
                         }
                     ],
@@ -266,10 +231,8 @@ const SAVAGE_MELEE_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.1
-            }
-        },
-        {
-            name: "Savage Leap",
+            },
+        {name: "Savage Leap",
             available: 25,
             tier: 5,
             maxSlots: 6,

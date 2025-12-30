@@ -9,19 +9,7 @@ const KINETICS_POWERSET = {
     description: "Kinetics powerset",
     icon: "kinetics_set.png",
     powers: [
-        {
-            name: "Kinetics",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You are a master at manipulating and transferring Kinetic energy. You can manipulate the potential energy found in objects to aid your allies or weaken your foes.",
-            shortHelp: "Kinetics",
-            icon: "kinetics_set.png"
-        },
-        {
-            name: "Siphon Power",
+        {name: "Siphon Power",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -40,10 +28,8 @@ const KINETICS_POWERSET = {
                 endurance: 10.4,
                 cast: 1.93,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Transfusion",
+            },
+        {name: "Transfusion",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -62,10 +48,8 @@ const KINETICS_POWERSET = {
                 endurance: 7.8,
                 cast: 1.17,
                 buffDuration: 20.0
-            }
-        },
-        {
-            name: "Repel",
+            },
+        {name: "Repel",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -84,10 +68,8 @@ const KINETICS_POWERSET = {
                 endurance: 0.325,
                 cast: 1.07,
                 buffDuration: 0.5
-            }
-        },
-        {
-            name: "Siphon Speed",
+            },
+        {name: "Siphon Speed",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -106,10 +88,8 @@ const KINETICS_POWERSET = {
                 endurance: 7.8,
                 cast: 1.93,
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Increase Density",
+            },
+        {name: "Increase Density",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -133,10 +113,8 @@ const KINETICS_POWERSET = {
                         {
                             type: "Smashing",
                             scale: 2.5,
-                            ticks: 30
-                        },
-                        {
-                            type: "Energy",
+                            ticks: 30},
+        {type: "Energy",
                             scale: 2.5,
                             ticks: 30
                         }
@@ -145,10 +123,8 @@ const KINETICS_POWERSET = {
                 buffDuration: 60.0,
                 stun: 1.0,
                 stunDuration: 60.0
-            }
-        },
-        {
-            name: "Speed Boost",
+            },
+        {name: "Speed Boost",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -168,10 +144,8 @@ const KINETICS_POWERSET = {
                 endurance: 7.8,
                 cast: 1.0,
                 buffDuration: 120.0
-            }
-        },
-        {
-            name: "Inertial Reduction",
+            },
+        {name: "Inertial Reduction",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -190,10 +164,8 @@ const KINETICS_POWERSET = {
                 endurance: 23.4,
                 cast: 2.03,
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Transference",
+            },
+        {name: "Transference",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -211,10 +183,8 @@ const KINETICS_POWERSET = {
                 recharge: 30.0,
                 endurance: 2.6,
                 cast: 2.27
-            }
-        },
-        {
-            name: "Fulcrum Shift",
+            },
+        {name: "Fulcrum Shift",
             available: 25,
             tier: 5,
             maxSlots: 6,

@@ -33,36 +33,19 @@ const ENERGY_MELEE_POWERSET = {
                         {
                             type: "Energy",
                             scale: 1.0891,
-                            ticks: 1
-                        },
-                        {
-                            type: "Smashing",
+                            ticks: 1},
+        {type: "Smashing",
                             scale: 0.3564,
-                            ticks: 1
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 1},
+        {type: "Fire",
                             scale: 0.297,
                             ticks: 1
                         }
                     ]
                 },
                 buffDuration: 0.3
-            }
-        },
-        {
-            name: "Energy Melee",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You can use Energy Melee to power your blows with pure energy. These focused power attacks often Disorient opponents. Total Focus will enter Energy Focus upon hitting an enemy. Barrage, Power Crash or Energy Transfer are empowered while under Energy Focus.",
-            shortHelp: "Energy Melee",
-            icon: "energy_melee_set.png"
-        },
-        {
-            name: "Energy Punch",
+            },
+        {name: "Energy Punch",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -84,23 +67,17 @@ const ENERGY_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 1.6387
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 0.7022999999999999
-                        },
-                        {
-                            type: "Fire",
+                            scale: 1.6387},
+        {type: "Smashing",
+                            scale: 0.7022999999999999},
+        {type: "Fire",
                             scale: 0.522
                         }
                     ],
                     scale: 2.863
                 }
-            }
-        },
-        {
-            name: "Bone Smasher",
+            },
+        {name: "Bone Smasher",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -122,23 +99,17 @@ const ENERGY_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 2.0780000000000003
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 1.171
-                        },
-                        {
-                            type: "Fire",
+                            scale: 2.0780000000000003},
+        {type: "Smashing",
+                            scale: 1.171},
+        {type: "Fire",
                             scale: 0.738
                         }
                     ],
                     scale: 3.987
                 }
-            }
-        },
-        {
-            name: "Build Up",
+            },
+        {name: "Build Up",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -157,10 +128,8 @@ const ENERGY_MELEE_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Power Crash",
+            },
+        {name: "Power Crash",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -184,23 +153,17 @@ const ENERGY_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 1.4809
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 1.0725
-                        },
-                        {
-                            type: "Fire",
+                            scale: 1.4809},
+        {type: "Smashing",
+                            scale: 1.0725},
+        {type: "Fire",
                             scale: 0.5415
                         }
                     ],
                     scale: 3.0949
                 }
-            }
-        },
-        {
-            name: "Confront",
+            },
+        {name: "Confront",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -218,10 +181,8 @@ const ENERGY_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Whirling Hands",
+            },
+        {name: "Whirling Hands",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -243,23 +204,17 @@ const ENERGY_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 1.4
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 1.0138
-                        },
-                        {
-                            type: "Fire",
+                            scale: 1.4},
+        {type: "Smashing",
+                            scale: 1.0138},
+        {type: "Fire",
                             scale: 0.5318
                         }
                     ],
                     scale: 2.9455999999999998
                 }
-            }
-        },
-        {
-            name: "Total Focus",
+            },
+        {name: "Total Focus",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -281,24 +236,18 @@ const ENERGY_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 4.6396
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 1.8913
-                        },
-                        {
-                            type: "Fire",
+                            scale: 4.6396},
+        {type: "Smashing",
+                            scale: 1.8913},
+        {type: "Fire",
                             scale: 1.602
                         }
                     ],
                     scale: 8.1329
                 },
                 stun: 3.0
-            }
-        },
-        {
-            name: "Energy Transfer",
+            },
+        {name: "Energy Transfer",
             available: 25,
             tier: 5,
             maxSlots: 6,

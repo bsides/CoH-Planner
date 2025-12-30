@@ -9,19 +9,7 @@ const EARTH_ASSAULT_POWERSET = {
     description: "Earth Assault powerset",
     icon: "earth-assault_set.png",
     powers: [
-        {
-            name: "Earth Assault",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "With Earth Assault, you can damage foes with the very ground they walk upon. You can conjure stone weapons, hurl boulders, and even cause magma to erupt from the ground.",
-            shortHelp: "Earth Assault",
-            icon: "earth_assault_set.png"
-        },
-        {
-            name: "Stone Mallet",
+        {name: "Stone Mallet",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -43,10 +31,8 @@ const EARTH_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 3.48
                 }
-            }
-        },
-        {
-            name: "Stone Spears",
+            },
+        {name: "Stone Spears",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -68,10 +54,8 @@ const EARTH_ASSAULT_POWERSET = {
                     type: "Lethal",
                     scale: 2.2601
                 }
-            }
-        },
-        {
-            name: "Tremor",
+            },
+        {name: "Tremor",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -93,10 +77,8 @@ const EARTH_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 1.9881
                 }
-            }
-        },
-        {
-            name: "Hurl Boulder",
+            },
+        {name: "Hurl Boulder",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -119,10 +101,8 @@ const EARTH_ASSAULT_POWERSET = {
                     scale: 4.2101
                 },
                 buffDuration: 15.0
-            }
-        },
-        {
-            name: "Power Up",
+            },
+        {name: "Power Up",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -144,10 +124,8 @@ const EARTH_ASSAULT_POWERSET = {
                 stunDuration: 10.0,
                 tohitBuff: 0.5,
                 defenseBuff: 0.5
-            }
-        },
-        {
-            name: "Heavy Mallet",
+            },
+        {name: "Heavy Mallet",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -169,10 +147,8 @@ const EARTH_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 4.901
                 }
-            }
-        },
-        {
-            name: "Seismic Smash",
+            },
+        {name: "Seismic Smash",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -194,10 +170,8 @@ const EARTH_ASSAULT_POWERSET = {
                     type: "Smashing",
                     scale: 5.8100000000000005
                 }
-            }
-        },
-        {
-            name: "Mud Pots",
+            },
+        {name: "Mud Pots",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -220,10 +194,8 @@ const EARTH_ASSAULT_POWERSET = {
                     scale: 0.13
                 },
                 buffDuration: 5.0
-            }
-        },
-        {
-            name: "Fissure",
+            },
+        {name: "Fissure",
             available: 29,
             tier: 5,
             maxSlots: 6,

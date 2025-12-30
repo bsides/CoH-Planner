@@ -27,10 +27,8 @@ const DUAL_PISTOLS_POWERSET = {
                 recharge: 4.0,
                 cast: 0.63,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Cryo Ammunition",
+            },
+        {name: "Cryo Ammunition",
             available: -1,
             tier: 2,
             maxSlots: 0,
@@ -47,10 +45,8 @@ const DUAL_PISTOLS_POWERSET = {
                 recharge: 4.0,
                 cast: 0.63,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Incendiary Ammunition",
+            },
+        {name: "Incendiary Ammunition",
             available: -1,
             tier: 2,
             maxSlots: 0,
@@ -67,21 +63,8 @@ const DUAL_PISTOLS_POWERSET = {
                 recharge: 4.0,
                 cast: 0.63,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Dual Pistols",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You're a master of akimbo pistols, wielding a high caliber firearm in each hand. Your attacks primarily deal lethal damage and you have a wide variety of attacks, however your strength lies within your ability to use your \"Swap Ammo\" power to change out your ammo mid-battle. Doing so can change your secondary damage type and effects making you an incredibly versatile ranged combatant.",
-            shortHelp: "Dual Pistols",
-            icon: "dual_pistols_set.png"
-        },
-        {
-            name: "Dual Wield",
+            },
+        {name: "Dual Wield",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -103,18 +86,12 @@ const DUAL_PISTOLS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 3.1292999999999997
-                        },
-                        {
-                            type: "Fire",
-                            scale: 0.9388
-                        },
-                        {
-                            type: "Cold",
-                            scale: 0.9388
-                        },
-                        {
-                            type: "Toxic",
+                            scale: 3.1292999999999997},
+        {type: "Fire",
+                            scale: 0.9388},
+        {type: "Cold",
+                            scale: 0.9388},
+        {type: "Toxic",
                             scale: 0.9388
                         }
                     ],
@@ -126,10 +103,8 @@ const DUAL_PISTOLS_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            }
-        },
-        {
-            name: "Pistols",
+            },
+        {name: "Pistols",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -151,18 +126,12 @@ const DUAL_PISTOLS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 2.2601
-                        },
-                        {
-                            type: "Fire",
-                            scale: 0.6779999999999999
-                        },
-                        {
-                            type: "Cold",
-                            scale: 0.6779999999999999
-                        },
-                        {
-                            type: "Toxic",
+                            scale: 2.2601},
+        {type: "Fire",
+                            scale: 0.6779999999999999},
+        {type: "Cold",
+                            scale: 0.6779999999999999},
+        {type: "Toxic",
                             scale: 0.6779999999999999
                         }
                     ],
@@ -175,10 +144,8 @@ const DUAL_PISTOLS_POWERSET = {
                 },
                 buffDuration: 2.1,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Empty Clips",
+            },
+        {name: "Empty Clips",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -203,20 +170,14 @@ const DUAL_PISTOLS_POWERSET = {
                         {
                             type: "Lethal",
                             scale: 0.48790000000000006,
-                            ticks: 3
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 3},
+        {type: "Fire",
                             scale: 0.2594,
-                            ticks: 3
-                        },
-                        {
-                            type: "Cold",
+                            ticks: 3},
+        {type: "Cold",
                             scale: 0.1464,
-                            ticks: 3
-                        },
-                        {
-                            type: "Toxic",
+                            ticks: 3},
+        {type: "Toxic",
                             scale: 0.1464,
                             ticks: 3
                         }
@@ -224,10 +185,8 @@ const DUAL_PISTOLS_POWERSET = {
                 },
                 buffDuration: 1.6,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Swap Ammo",
+            },
+        {name: "Swap Ammo",
             available: 5,
             tier: 3,
             maxSlots: 0,
@@ -242,10 +201,8 @@ const DUAL_PISTOLS_POWERSET = {
             effects: {
                 accuracy: 1.0,
                 buffDuration: 2.25
-            }
-        },
-        {
-            name: "Bullet Rain",
+            },
+        {name: "Bullet Rain",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -269,30 +226,22 @@ const DUAL_PISTOLS_POWERSET = {
                         {
                             type: "Lethal",
                             scale: 1.0957,
-                            ticks: 2
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 2},
+        {type: "Fire",
                             scale: 0.2831,
-                            ticks: 2
-                        },
-                        {
-                            type: "Cold",
+                            ticks: 2},
+        {type: "Cold",
                             scale: 0.1701,
-                            ticks: 2
-                        },
-                        {
-                            type: "Toxic",
+                            ticks: 2},
+        {type: "Toxic",
                             scale: 0.1701,
                             ticks: 2
                         }
                     ]
                 },
                 buffDuration: 1.1
-            }
-        },
-        {
-            name: "Suppressive Fire",
+            },
+        {name: "Suppressive Fire",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -310,10 +259,8 @@ const DUAL_PISTOLS_POWERSET = {
                 recharge: 20.0,
                 endurance: 10.192,
                 cast: 1.5
-            }
-        },
-        {
-            name: "Executioner's Shot",
+            },
+        {name: "Executioner's Shot",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -335,18 +282,12 @@ const DUAL_PISTOLS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 4.0893
-                        },
-                        {
-                            type: "Fire",
-                            scale: 1.2268
-                        },
-                        {
-                            type: "Cold",
-                            scale: 1.2268
-                        },
-                        {
-                            type: "Toxic",
+                            scale: 4.0893},
+        {type: "Fire",
+                            scale: 1.2268},
+        {type: "Cold",
+                            scale: 1.2268},
+        {type: "Toxic",
                             scale: 1.2268
                         }
                     ],
@@ -359,10 +300,8 @@ const DUAL_PISTOLS_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 1.25
-            }
-        },
-        {
-            name: "Piercing Rounds",
+            },
+        {name: "Piercing Rounds",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -386,18 +325,12 @@ const DUAL_PISTOLS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 4.5920000000000005
-                        },
-                        {
-                            type: "Fire",
-                            scale: 1.3776
-                        },
-                        {
-                            type: "Cold",
-                            scale: 1.3776
-                        },
-                        {
-                            type: "Toxic",
+                            scale: 4.5920000000000005},
+        {type: "Fire",
+                            scale: 1.3776},
+        {type: "Cold",
+                            scale: 1.3776},
+        {type: "Toxic",
                             scale: 1.3026
                         }
                     ],
@@ -409,10 +342,8 @@ const DUAL_PISTOLS_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 2.1
-            }
-        },
-        {
-            name: "Hail of Bullets",
+            },
+        {name: "Hail of Bullets",
             available: 25,
             tier: 5,
             maxSlots: 6,
@@ -435,20 +366,14 @@ const DUAL_PISTOLS_POWERSET = {
                         {
                             type: "Lethal",
                             scale: 0.6443,
-                            ticks: 11
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 11},
+        {type: "Fire",
                             scale: 0.393,
-                            ticks: 11
-                        },
-                        {
-                            type: "Cold",
+                            ticks: 11},
+        {type: "Cold",
                             scale: 0.193,
-                            ticks: 11
-                        },
-                        {
-                            type: "Toxic",
+                            ticks: 11},
+        {type: "Toxic",
                             scale: 0.193,
                             ticks: 11
                         }

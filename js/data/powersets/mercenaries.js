@@ -35,21 +35,8 @@ const MERCENARIES_POWERSET = {
                 },
                 buffDuration: 0.91,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Mercenaries",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Despite their reputations, Mercenaries are extremely loyal and dedicated soldiers. They are the best at what they do, and they always follow orders, exactly what a Mastermind needs. Mercenaries typically use conventional weapons and all Mercenaries have body armor that gives them resistance to smashing and lethal damage and their training makes them resistant to Confusion and Placate",
-            shortHelp: "Mercenaries",
-            icon: "mercenaries_set.png"
-        },
-        {
-            name: "Soldiers",
+            },
+        {name: "Soldiers",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -67,10 +54,8 @@ const MERCENARIES_POWERSET = {
                 recharge: 5.0,
                 endurance: 5.46,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Slug",
+            },
+        {name: "Slug",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -93,10 +78,8 @@ const MERCENARIES_POWERSET = {
                     scale: 3.529
                 },
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Equip Mercenary",
+            },
+        {name: "Equip Mercenary",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -116,10 +99,8 @@ const MERCENARIES_POWERSET = {
                 endurance: 11.375,
                 cast: 1.3,
                 buffDuration: 3.5
-            }
-        },
-        {
-            name: "M30 Grenade",
+            },
+        {name: "M30 Grenade",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -142,20 +123,16 @@ const MERCENARIES_POWERSET = {
                     types: [
                         {
                             type: "Fire",
-                            scale: 1.0574
-                        },
-                        {
-                            type: "Lethal",
+                            scale: 1.0574},
+        {type: "Lethal",
                             scale: 0.5207999999999999
                         }
                     ],
                     scale: 1.5781999999999998
                 },
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Spec Ops",
+            },
+        {name: "Spec Ops",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -173,10 +150,8 @@ const MERCENARIES_POWERSET = {
                 recharge: 10.0,
                 endurance: 9.62,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Serum",
+            },
+        {name: "Serum",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -198,10 +173,8 @@ const MERCENARIES_POWERSET = {
                 stun: 1.0,
                 stunDuration: 60.0,
                 tohitBuff: 1.0
-            }
-        },
-        {
-            name: "Commando",
+            },
+        {name: "Commando",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -219,10 +192,8 @@ const MERCENARIES_POWERSET = {
                 recharge: 15.0,
                 endurance: 13.18,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Tactical Upgrade",
+            },
+        {name: "Tactical Upgrade",
             available: 25,
             tier: 5,
             maxSlots: 6,

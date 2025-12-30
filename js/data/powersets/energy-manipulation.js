@@ -9,19 +9,7 @@ const ENERGY_MANIPULATION_POWERSET = {
     description: "Energy Manipulation powerset",
     icon: "energy-manipulation_set.png",
     powers: [
-        {
-            name: "Energy Manipulation",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Energy Manipulation allows you to channel energy to deliver deadly blows. These powers also help you focus your power to increase your own abilities.",
-            shortHelp: "Energy Manipulation",
-            icon: "energy_manipulation_set.png"
-        },
-        {
-            name: "Energy Punch",
+        {name: "Energy Punch",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -43,20 +31,16 @@ const ENERGY_MANIPULATION_POWERSET = {
                     types: [
                         {
                             type: "Smashing",
-                            scale: 1.7046000000000001
-                        },
-                        {
-                            type: "Energy",
+                            scale: 1.7046000000000001},
+        {type: "Energy",
                             scale: 1.6364
                         }
                     ],
                     scale: 3.341
                 },
                 stun: 2.0
-            }
-        },
-        {
-            name: "Power Thrust",
+            },
+        {name: "Power Thrust",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -78,19 +62,15 @@ const ENERGY_MANIPULATION_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 1.7399
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 1.7399},
+        {type: "Smashing",
                             scale: 0.4
                         }
                     ],
                     scale: 2.1399
                 }
-            }
-        },
-        {
-            name: "Build Up",
+            },
+        {name: "Build Up",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -109,10 +89,8 @@ const ENERGY_MANIPULATION_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Bone Smasher",
+            },
+        {name: "Bone Smasher",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -134,20 +112,16 @@ const ENERGY_MANIPULATION_POWERSET = {
                     types: [
                         {
                             type: "Smashing",
-                            scale: 3.2270000000000003
-                        },
-                        {
-                            type: "Energy",
+                            scale: 3.2270000000000003},
+        {type: "Energy",
                             scale: 1.383
                         }
                     ],
                     scale: 4.61
                 },
                 stun: 3.0
-            }
-        },
-        {
-            name: "Energize",
+            },
+        {name: "Energize",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -167,10 +141,8 @@ const ENERGY_MANIPULATION_POWERSET = {
                 buffDuration: 60.0,
                 stun: 1.0,
                 stunDuration: 60.0
-            }
-        },
-        {
-            name: "Stun",
+            },
+        {name: "Stun",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -188,10 +160,8 @@ const ENERGY_MANIPULATION_POWERSET = {
                 recharge: 12.0,
                 endurance: 10.192,
                 cast: 1.8
-            }
-        },
-        {
-            name: "Power Boost",
+            },
+        {name: "Power Boost",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -213,10 +183,8 @@ const ENERGY_MANIPULATION_POWERSET = {
                 stunDuration: 15.0,
                 tohitBuff: 0.66,
                 defenseBuff: 0.66
-            }
-        },
-        {
-            name: "Boost Range",
+            },
+        {name: "Boost Range",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -234,10 +202,8 @@ const ENERGY_MANIPULATION_POWERSET = {
                 endurance: 13.0,
                 cast: 1.17,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Total Focus",
+            },
+        {name: "Total Focus",
             available: 29,
             tier: 5,
             maxSlots: 6,
@@ -259,10 +225,8 @@ const ENERGY_MANIPULATION_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 4.696400000000001
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 4.696400000000001},
+        {type: "Smashing",
                             scale: 1.8346
                         }
                     ],

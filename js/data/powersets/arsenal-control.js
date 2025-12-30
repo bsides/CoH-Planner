@@ -9,19 +9,7 @@ const ARSENAL_CONTROL_POWERSET = {
     description: "Arsenal Control powerset",
     icon: "arsenal-control_set.png",
     powers: [
-        {
-            name: "Arsenal Control",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Armed with a state-of-the-art multipurpose rifle, you are able to deliver a wide variety of payloads to control your enemies and render them incapable of responding.",
-            shortHelp: "Arsenal Control",
-            icon: "assault_rifle_set.png"
-        },
-        {
-            name: "Cryo Freeze Ray",
+        {name: "Cryo Freeze Ray",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -44,10 +32,8 @@ const ARSENAL_CONTROL_POWERSET = {
                     scale: 2.8890000000000002
                 },
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Tranquilizer",
+            },
+        {name: "Tranquilizer",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -70,10 +56,8 @@ const ARSENAL_CONTROL_POWERSET = {
                     scale: 1.54
                 },
                 buffDuration: 5.0
-            }
-        },
-        {
-            name: "Sleep Grenade",
+            },
+        {name: "Sleep Grenade",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -92,10 +76,8 @@ const ARSENAL_CONTROL_POWERSET = {
                 endurance: 15.6,
                 cast: 1.87,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Liquid Nitrogen",
+            },
+        {name: "Liquid Nitrogen",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -114,10 +96,8 @@ const ARSENAL_CONTROL_POWERSET = {
                 endurance: 10.4,
                 cast: 2.0,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Cloaking Device",
+            },
+        {name: "Cloaking Device",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -135,10 +115,8 @@ const ARSENAL_CONTROL_POWERSET = {
                 endurance: 0.182,
                 cast: 0.73,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Smoke Canister",
+            },
+        {name: "Smoke Canister",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -157,10 +135,8 @@ const ARSENAL_CONTROL_POWERSET = {
                 endurance: 16.64,
                 cast: 1.4,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Flash Bang",
+            },
+        {name: "Flash Bang",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -186,10 +162,8 @@ const ARSENAL_CONTROL_POWERSET = {
                 tohitDebuff: 0.5,
                 buffDuration: 20.0,
                 stun: 4.0
-            }
-        },
-        {
-            name: "Tear Gas",
+            },
+        {name: "Tear Gas",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -208,10 +182,8 @@ const ARSENAL_CONTROL_POWERSET = {
                 endurance: 15.6,
                 cast: 1.87,
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Tri-Cannon",
+            },
+        {name: "Tri-Cannon",
             available: 25,
             tier: 5,
             maxSlots: 6,

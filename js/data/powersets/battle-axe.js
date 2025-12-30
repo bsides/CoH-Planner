@@ -9,19 +9,7 @@ const BATTLE_AXE_POWERSET = {
     description: "Battle Axe powerset",
     icon: "battle-axe_set.png",
     powers: [
-        {
-            name: "Battle Axe",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You can wield a Battle Axe and master a variety of powerful Lethal attacks. Battle Axe is a slow but powerful weapon that has a tendency to send foes flying. This massive weapon has a bonus to hit.",
-            shortHelp: "Battle Axe",
-            icon: "battle_axe_set.png"
-        },
-        {
-            name: "Beheader",
+        {name: "Beheader",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -43,10 +31,8 @@ const BATTLE_AXE_POWERSET = {
                     type: "Lethal",
                     scale: 2.26
                 }
-            }
-        },
-        {
-            name: "Chop",
+            },
+        {name: "Chop",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -68,10 +54,8 @@ const BATTLE_AXE_POWERSET = {
                     type: "Lethal",
                     scale: 3.2
                 }
-            }
-        },
-        {
-            name: "Gash",
+            },
+        {name: "Gash",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -93,10 +77,8 @@ const BATTLE_AXE_POWERSET = {
                     type: "Lethal",
                     scale: 3.649
                 }
-            }
-        },
-        {
-            name: "Build Up",
+            },
+        {name: "Build Up",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -115,10 +97,8 @@ const BATTLE_AXE_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Pendulum",
+            },
+        {name: "Pendulum",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -141,10 +121,8 @@ const BATTLE_AXE_POWERSET = {
                     type: "Lethal",
                     scale: 2.5170000000000003
                 }
-            }
-        },
-        {
-            name: "Confront",
+            },
+        {name: "Confront",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -162,10 +140,8 @@ const BATTLE_AXE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Swoop",
+            },
+        {name: "Swoop",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -187,10 +163,8 @@ const BATTLE_AXE_POWERSET = {
                     type: "Lethal",
                     scale: 4.119
                 }
-            }
-        },
-        {
-            name: "Axe Cyclone",
+            },
+        {name: "Axe Cyclone",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -213,10 +187,8 @@ const BATTLE_AXE_POWERSET = {
                     scale: 1.0
                 },
                 buffDuration: 0.15
-            }
-        },
-        {
-            name: "Cleave",
+            },
+        {name: "Cleave",
             available: 25,
             tier: 5,
             maxSlots: 6,

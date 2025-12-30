@@ -32,21 +32,8 @@ const ILLUSION_CONTROL_POWERSET = {
                     type: "Psionic",
                     scale: 4.8936
                 }
-            }
-        },
-        {
-            name: "Illusion Control",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You can manipulate light and sound to manifest all sorts of Illusions, aiding your allies as well as deceiving your foes.",
-            shortHelp: "Illusion Control",
-            icon: "illusion_control_set.png"
-        },
-        {
-            name: "Spectral Wounds",
+            },
+        {name: "Spectral Wounds",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -69,10 +56,8 @@ const ILLUSION_CONTROL_POWERSET = {
                     scale: 4.7235
                 },
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Deceive",
+            },
+        {name: "Deceive",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -90,10 +75,8 @@ const ILLUSION_CONTROL_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 2.0
-            }
-        },
-        {
-            name: "Flash",
+            },
+        {name: "Flash",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -111,10 +94,8 @@ const ILLUSION_CONTROL_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 3.0
-            }
-        },
-        {
-            name: "Superior Invisibility",
+            },
+        {name: "Superior Invisibility",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -132,10 +113,8 @@ const ILLUSION_CONTROL_POWERSET = {
                 endurance: 0.182,
                 cast: 0.73,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Group Invisibility",
+            },
+        {name: "Group Invisibility",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -154,10 +133,8 @@ const ILLUSION_CONTROL_POWERSET = {
                 endurance: 10.4,
                 cast: 2.03,
                 buffDuration: 120.0
-            }
-        },
-        {
-            name: "Phantom Army",
+            },
+        {name: "Phantom Army",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -176,10 +153,8 @@ const ILLUSION_CONTROL_POWERSET = {
                 endurance: 26.0,
                 cast: 3.1,
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Spectral Terror",
+            },
+        {name: "Spectral Terror",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -198,10 +173,8 @@ const ILLUSION_CONTROL_POWERSET = {
                 endurance: 16.64,
                 cast: 3.2,
                 buffDuration: 45.0
-            }
-        },
-        {
-            name: "Phantasm",
+            },
+        {name: "Phantasm",
             available: 25,
             tier: 5,
             maxSlots: 6,

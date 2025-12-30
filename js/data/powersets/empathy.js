@@ -9,19 +9,7 @@ const EMPATHY_POWERSET = {
     description: "Empathy powerset",
     icon: "empathy_set.png",
     powers: [
-        {
-            name: "Empathy",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Empathy gives you the ability to heal and aid allies as well as yourself. Empathy has no offensive powers, but its heals and buffs are unmatched.",
-            shortHelp: "Empathy",
-            icon: "empathy_set.png"
-        },
-        {
-            name: "Heal Other",
+        {name: "Heal Other",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -39,10 +27,8 @@ const EMPATHY_POWERSET = {
                 recharge: 4.0,
                 endurance: 13.0,
                 cast: 2.27
-            }
-        },
-        {
-            name: "Healing Aura",
+            },
+        {name: "Healing Aura",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -60,10 +46,8 @@ const EMPATHY_POWERSET = {
                 recharge: 8.0,
                 endurance: 13.0,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Absorb Pain",
+            },
+        {name: "Absorb Pain",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -82,10 +66,8 @@ const EMPATHY_POWERSET = {
                 endurance: 0.52,
                 cast: 2.27,
                 buffDuration: 20.0
-            }
-        },
-        {
-            name: "Resurrect",
+            },
+        {name: "Resurrect",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -104,10 +86,8 @@ const EMPATHY_POWERSET = {
                 endurance: 26.0,
                 cast: 3.2,
                 buffDuration: 0.5
-            }
-        },
-        {
-            name: "Clear Mind",
+            },
+        {name: "Clear Mind",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -128,10 +108,8 @@ const EMPATHY_POWERSET = {
                 stun: 1.0,
                 stunDuration: 90.0,
                 buffDuration: 90.0
-            }
-        },
-        {
-            name: "Fortitude",
+            },
+        {name: "Fortitude",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -151,10 +129,8 @@ const EMPATHY_POWERSET = {
                 cast: 2.27,
                 tohitBuff: 1.5,
                 buffDuration: 120.0
-            }
-        },
-        {
-            name: "Recovery Aura",
+            },
+        {name: "Recovery Aura",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -173,10 +149,8 @@ const EMPATHY_POWERSET = {
                 endurance: 26.0,
                 cast: 2.03,
                 buffDuration: 90.0
-            }
-        },
-        {
-            name: "Regeneration Aura",
+            },
+        {name: "Regeneration Aura",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -195,10 +169,8 @@ const EMPATHY_POWERSET = {
                 endurance: 26.0,
                 cast: 2.03,
                 buffDuration: 90.0
-            }
-        },
-        {
-            name: "Adrenalin Boost",
+            },
+        {name: "Adrenalin Boost",
             available: 25,
             tier: 5,
             maxSlots: 6,

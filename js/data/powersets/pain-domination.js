@@ -28,21 +28,8 @@ const PAIN_DOMINATION_POWERSET = {
                 recharge: 8.0,
                 endurance: 13.0,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Pain Domination",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Pain Domination gives a character the ability to manipulate, nullify and amplify pain. Ultimately this grants the user powerful healing, buffing and debuffing powers. It's healing output is unmatched!",
-            shortHelp: "Pain Domination",
-            icon: "pain_domination_set.png"
-        },
-        {
-            name: "Soothe",
+            },
+        {name: "Soothe",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -60,10 +47,8 @@ const PAIN_DOMINATION_POWERSET = {
                 recharge: 4.0,
                 endurance: 13.0,
                 cast: 2.27
-            }
-        },
-        {
-            name: "Share Pain",
+            },
+        {name: "Share Pain",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -82,10 +67,8 @@ const PAIN_DOMINATION_POWERSET = {
                 endurance: 0.52,
                 cast: 2.27,
                 buffDuration: 15.0
-            }
-        },
-        {
-            name: "Conduit of Pain",
+            },
+        {name: "Conduit of Pain",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -106,10 +89,8 @@ const PAIN_DOMINATION_POWERSET = {
                 buffDuration: 0.5,
                 tohitBuff: 2.0,
                 tohitDebuff: 2.0
-            }
-        },
-        {
-            name: "Enforced Morale",
+            },
+        {name: "Enforced Morale",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -130,10 +111,8 @@ const PAIN_DOMINATION_POWERSET = {
                 stun: 1.0,
                 stunDuration: 90.0,
                 buffDuration: 90.0
-            }
-        },
-        {
-            name: "Soothing Aura",
+            },
+        {name: "Soothing Aura",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -151,10 +130,8 @@ const PAIN_DOMINATION_POWERSET = {
                 recharge: 10.0,
                 endurance: 0.78,
                 cast: 1.67
-            }
-        },
-        {
-            name: "World of Pain",
+            },
+        {name: "World of Pain",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -174,10 +151,8 @@ const PAIN_DOMINATION_POWERSET = {
                 cast: 2.03,
                 tohitBuff: 1.0,
                 buffDuration: 90.0
-            }
-        },
-        {
-            name: "Anguishing Cry",
+            },
+        {name: "Anguishing Cry",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -197,10 +172,8 @@ const PAIN_DOMINATION_POWERSET = {
                 cast: 1.97,
                 defenseDebuff: 3.0,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Painbringer",
+            },
+        {name: "Painbringer",
             available: 25,
             tier: 5,
             maxSlots: 6,

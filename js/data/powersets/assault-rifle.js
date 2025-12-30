@@ -9,19 +9,7 @@ const ASSAULT_RIFLE_POWERSET = {
     description: "Assault Rifle powerset",
     icon: "assault-rifle_set.png",
     powers: [
-        {
-            name: "Assault Rifle",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "The Assault Rifle is a state-of-the-art piece of hardware. It is equipped to handle an impressive arsenal of munitions and firing modes. The Assault Rifle is also equipped with the latest in targeting technology, and is a very accurate weapon.",
-            shortHelp: "Assault Rifle",
-            icon: "assault_rifle_set.png"
-        },
-        {
-            name: "Burst",
+        {name: "Burst",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -46,10 +34,8 @@ const ASSAULT_RIFLE_POWERSET = {
                 },
                 buffDuration: 0.91,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Slug",
+            },
+        {name: "Slug",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -71,10 +57,8 @@ const ASSAULT_RIFLE_POWERSET = {
                     type: "Lethal",
                     scale: 3.3402
                 }
-            }
-        },
-        {
-            name: "Buckshot",
+            },
+        {name: "Buckshot",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -98,10 +82,8 @@ const ASSAULT_RIFLE_POWERSET = {
                     type: "Lethal",
                     scale: 1.5351
                 }
-            }
-        },
-        {
-            name: "M30 Grenade",
+            },
+        {name: "M30 Grenade",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -124,19 +106,15 @@ const ASSAULT_RIFLE_POWERSET = {
                     types: [
                         {
                             type: "Fire",
-                            scale: 2.0032
-                        },
-                        {
-                            type: "Lethal",
+                            scale: 2.0032},
+        {type: "Lethal",
                             scale: 1.7788
                         }
                     ],
                     scale: 3.782
                 }
-            }
-        },
-        {
-            name: "Beanbag",
+            },
+        {name: "Beanbag",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -159,10 +137,8 @@ const ASSAULT_RIFLE_POWERSET = {
                     scale: 2.41
                 },
                 stun: 3.0
-            }
-        },
-        {
-            name: "Sniper Rifle",
+            },
+        {name: "Sniper Rifle",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -180,10 +156,8 @@ const ASSAULT_RIFLE_POWERSET = {
                 recharge: 12.0,
                 endurance: 14.352,
                 cast: 1.17
-            }
-        },
-        {
-            name: "Flamethrower",
+            },
+        {name: "Flamethrower",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -209,10 +183,8 @@ const ASSAULT_RIFLE_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.7
-            }
-        },
-        {
-            name: "Ignite",
+            },
+        {name: "Ignite",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -240,10 +212,8 @@ const ASSAULT_RIFLE_POWERSET = {
                     ticks: 21
                 },
                 buffDuration: 5.25
-            }
-        },
-        {
-            name: "Full Auto",
+            },
+        {name: "Full Auto",
             available: 25,
             tier: 5,
             maxSlots: 6,

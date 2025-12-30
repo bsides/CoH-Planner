@@ -9,19 +9,7 @@ const MARTIAL_ARTS_POWERSET = {
     description: "Martial Arts powerset",
     icon: "martial-arts_set.png",
     powers: [
-        {
-            name: "Martial Arts",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "A compilation of various fighting techniques from around the world, Martial Arts makes you a master in the art of hand to hand combat. Martial Artists tend to be very accurate with their strikes. Like all scrapper powers, all Martial Arts attacks can sometimes land a critical hit for double damage.",
-            shortHelp: "Martial Arts",
-            icon: "martial_arts_set.png"
-        },
-        {
-            name: "Storm Kick",
+        {name: "Storm Kick",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -43,19 +31,15 @@ const MARTIAL_ARTS_POWERSET = {
                     types: [
                         {
                             type: "Smashing",
-                            scale: 2.5410000000000004
-                        },
-                        {
-                            type: "Fire",
+                            scale: 2.5410000000000004},
+        {type: "Fire",
                             scale: 0.594
                         }
                     ],
                     scale: 3.1350000000000002
                 }
-            }
-        },
-        {
-            name: "Thunder Kick",
+            },
+        {name: "Thunder Kick",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -77,19 +61,15 @@ const MARTIAL_ARTS_POWERSET = {
                     types: [
                         {
                             type: "Smashing",
-                            scale: 1.9409999999999998
-                        },
-                        {
-                            type: "Fire",
+                            scale: 1.9409999999999998},
+        {type: "Fire",
                             scale: 0.378
                         }
                     ],
                     scale: 2.319
                 }
-            }
-        },
-        {
-            name: "Cobra Strike",
+            },
+        {name: "Cobra Strike",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -111,19 +91,15 @@ const MARTIAL_ARTS_POWERSET = {
                     types: [
                         {
                             type: "Smashing",
-                            scale: 3.9289
-                        },
-                        {
-                            type: "Fire",
+                            scale: 3.9289},
+        {type: "Fire",
                             scale: 0.882
                         }
                     ],
                     scale: 4.8109
                 }
-            }
-        },
-        {
-            name: "Focus Chi",
+            },
+        {name: "Focus Chi",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -142,10 +118,8 @@ const MARTIAL_ARTS_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Crane Kick",
+            },
+        {name: "Crane Kick",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -167,19 +141,15 @@ const MARTIAL_ARTS_POWERSET = {
                     types: [
                         {
                             type: "Smashing",
-                            scale: 3.9289
-                        },
-                        {
-                            type: "Fire",
+                            scale: 3.9289},
+        {type: "Fire",
                             scale: 0.882
                         }
                     ],
                     scale: 4.8109
                 }
-            }
-        },
-        {
-            name: "Warriors Challenge",
+            },
+        {name: "Warriors Challenge",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -197,10 +167,8 @@ const MARTIAL_ARTS_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Crippling Axe Kick",
+            },
+        {name: "Crippling Axe Kick",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -222,10 +190,8 @@ const MARTIAL_ARTS_POWERSET = {
                     types: [
                         {
                             type: "Smashing",
-                            scale: 4.0799
-                        },
-                        {
-                            type: "Fire",
+                            scale: 4.0799},
+        {type: "Fire",
                             scale: 0.954
                         }
                     ],
@@ -233,10 +199,8 @@ const MARTIAL_ARTS_POWERSET = {
                 },
                 buffDuration: 8.0,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Dragon's Tail",
+            },
+        {name: "Dragon's Tail",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -258,19 +222,15 @@ const MARTIAL_ARTS_POWERSET = {
                     types: [
                         {
                             type: "Smashing",
-                            scale: 2.0953999999999997
-                        },
-                        {
-                            type: "Fire",
+                            scale: 2.0953999999999997},
+        {type: "Fire",
                             scale: 0.5318
                         }
                     ],
                     scale: 2.6271999999999998
                 }
-            }
-        },
-        {
-            name: "Eagles Claw",
+            },
+        {name: "Eagles Claw",
             available: 25,
             tier: 5,
             maxSlots: 6,
@@ -292,10 +252,8 @@ const MARTIAL_ARTS_POWERSET = {
                     types: [
                         {
                             type: "Smashing",
-                            scale: 4.930999999999999
-                        },
-                        {
-                            type: "Fire",
+                            scale: 4.930999999999999},
+        {type: "Fire",
                             scale: 1.026
                         }
                     ],

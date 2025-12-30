@@ -32,20 +32,16 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 2.3810000000000002
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 2.3810000000000002},
+        {type: "Smashing",
                             scale: 0.96
                         }
                     ],
                     scale: 3.341
                 },
                 buffDuration: 2.0
-            }
-        },
-        {
-            name: "Electric Fence",
+            },
+        {name: "Electric Fence",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -69,21 +65,8 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 8.2
-            }
-        },
-        {
-            name: "Electricity Manipulation",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Electricity Manipulation empowers you with various electrical melee attack and support powers. Electricity Manipulation powers can drain foes' Endurance and temporarily halt their Endurance recovery. Some powers return a portion of drained Endurance to you.",
-            shortHelp: "Electricity Manipulation",
-            icon: "electricity_manipulation_set.png"
-        },
-        {
-            name: "Build Up",
+            },
+        {name: "Build Up",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -102,10 +85,8 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Havoc Punch",
+            },
+        {name: "Havoc Punch",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -127,20 +108,16 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 4.01
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 4.01},
+        {type: "Smashing",
                             scale: 0.6
                         }
                     ],
                     scale: 4.609999999999999
                 },
                 buffDuration: 4.0
-            }
-        },
-        {
-            name: "Thunder Strike",
+            },
+        {name: "Thunder Strike",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -160,10 +137,8 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                 endurance: 18.512,
                 cast: 2.53,
                 buffDuration: 10.8
-            }
-        },
-        {
-            name: "Dynamo",
+            },
+        {name: "Dynamo",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -184,10 +159,8 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                     type: "Energy",
                     scale: 0.30820000000000003
                 }
-            }
-        },
-        {
-            name: "Power Sink",
+            },
+        {name: "Power Sink",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -206,10 +179,8 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                 endurance: 13.0,
                 cast: 2.03,
                 buffDuration: 4.0
-            }
-        },
-        {
-            name: "Force of Thunder",
+            },
+        {name: "Force of Thunder",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -228,10 +199,8 @@ const ELECTRICITY_MANIPULATION_POWERSET = {
                 endurance: 14.0,
                 cast: 1.23,
                 buffDuration: 8.73
-            }
-        },
-        {
-            name: "Shocking Grasp",
+            },
+        {name: "Shocking Grasp",
             available: 29,
             tier: 5,
             maxSlots: 6,

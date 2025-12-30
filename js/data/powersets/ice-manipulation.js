@@ -34,10 +34,8 @@ const ICE_MANIPULATION_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 9.2
-            }
-        },
-        {
-            name: "Frozen Fists",
+            },
+        {name: "Frozen Fists",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -59,31 +57,16 @@ const ICE_MANIPULATION_POWERSET = {
                     types: [
                         {
                             type: "Cold",
-                            scale: 2.2908
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 2.2908},
+        {type: "Smashing",
                             scale: 1.0
                         }
                     ],
                     scale: 3.2908
                 },
                 buffDuration: 5.0
-            }
-        },
-        {
-            name: "Ice Manipulation",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Ice Manipulation lets you surround yourself with various manifestations of ice and cold, assaulting and freezing nearby foes. Ice Manipulation powers are known to Slow opponents.",
-            shortHelp: "Ice Manipulation",
-            icon: "ice_manipulation_set.png"
-        },
-        {
-            name: "Ice Sword",
+            },
+        {name: "Ice Sword",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -105,20 +88,16 @@ const ICE_MANIPULATION_POWERSET = {
                     types: [
                         {
                             type: "Cold",
-                            scale: 2.7308
-                        },
-                        {
-                            type: "Lethal",
+                            scale: 2.7308},
+        {type: "Lethal",
                             scale: 0.96
                         }
                     ],
                     scale: 3.6908
                 },
                 buffDuration: 8.0
-            }
-        },
-        {
-            name: "Frigid Protection",
+            },
+        {name: "Frigid Protection",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -136,10 +115,8 @@ const ICE_MANIPULATION_POWERSET = {
                 recharge: 10.0,
                 cast: 0.73,
                 buffDuration: 5.0
-            }
-        },
-        {
-            name: "Build Up",
+            },
+        {name: "Build Up",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -158,10 +135,8 @@ const ICE_MANIPULATION_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Ice Patch",
+            },
+        {name: "Ice Patch",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -179,10 +154,8 @@ const ICE_MANIPULATION_POWERSET = {
                 endurance: 10.4,
                 cast: 1.57,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Shiver",
+            },
+        {name: "Shiver",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -203,10 +176,8 @@ const ICE_MANIPULATION_POWERSET = {
                 endurance: 10.4,
                 cast: 2.17,
                 buffDuration: 18.0
-            }
-        },
-        {
-            name: "Freezing Touch",
+            },
+        {name: "Freezing Touch",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -234,10 +205,8 @@ const ICE_MANIPULATION_POWERSET = {
                     ticks: 10
                 },
                 buffDuration: 6.0
-            }
-        },
-        {
-            name: "Frozen Aura",
+            },
+        {name: "Frozen Aura",
             available: 29,
             tier: 5,
             maxSlots: 6,

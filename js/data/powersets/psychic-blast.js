@@ -32,10 +32,8 @@ const PSYCHIC_BLAST_POWERSET = {
                     type: "Psionic",
                     scale: 2.2602
                 }
-            }
-        },
-        {
-            name: "Mental Blast",
+            },
+        {name: "Mental Blast",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -58,21 +56,8 @@ const PSYCHIC_BLAST_POWERSET = {
                     scale: 3.5292
                 },
                 buffDuration: 6.0
-            }
-        },
-        {
-            name: "Psychic Blast",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Blast villains with an array of offensive, long range Psionic powers. While few living beings can resist their effects, Creatures without minds, like machines and robots, are not affected as strongly.",
-            shortHelp: "Psychic Blast",
-            icon: "psychic_blast_set.png"
-        },
-        {
-            name: "Telekinetic Blast",
+            },
+        {name: "Telekinetic Blast",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -94,19 +79,15 @@ const PSYCHIC_BLAST_POWERSET = {
                     types: [
                         {
                             type: "Psionic",
-                            scale: 3.0002
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 3.0002},
+        {type: "Smashing",
                             scale: 0.46
                         }
                     ],
                     scale: 3.4602
                 }
-            }
-        },
-        {
-            name: "Psionic Darts",
+            },
+        {name: "Psionic Darts",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -131,10 +112,8 @@ const PSYCHIC_BLAST_POWERSET = {
                     scale: 1.4087999999999998
                 },
                 buffDuration: 6.0
-            }
-        },
-        {
-            name: "Psychic Focus",
+            },
+        {name: "Psychic Focus",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -153,10 +132,8 @@ const PSYCHIC_BLAST_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 5.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Psionic Lance",
+            },
+        {name: "Psionic Lance",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -174,10 +151,8 @@ const PSYCHIC_BLAST_POWERSET = {
                 recharge: 12.0,
                 endurance: 14.352,
                 cast: 1.33
-            }
-        },
-        {
-            name: "Psionic Tornado",
+            },
+        {name: "Psionic Tornado",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -201,10 +176,8 @@ const PSYCHIC_BLAST_POWERSET = {
                     scale: 1.8634
                 },
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Scramble Minds",
+            },
+        {name: "Scramble Minds",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -227,10 +200,8 @@ const PSYCHIC_BLAST_POWERSET = {
                     type: "Psionic",
                     scale: 4.0862
                 }
-            }
-        },
-        {
-            name: "Psychic Wail",
+            },
+        {name: "Psychic Wail",
             available: 25,
             tier: 5,
             maxSlots: 6,

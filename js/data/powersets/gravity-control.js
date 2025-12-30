@@ -34,21 +34,8 @@ const GRAVITY_CONTROL_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 9.2
-            }
-        },
-        {
-            name: "Gravity Control",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "This power set allows you to manipulate the forces of gravity to control your foes. Enemies have little defense against Gravity powers.",
-            shortHelp: "Gravity Control",
-            icon: "gravity_control_set.png"
-        },
-        {
-            name: "Lift",
+            },
+        {name: "Lift",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -71,10 +58,8 @@ const GRAVITY_CONTROL_POWERSET = {
                     scale: 5.011500000000001
                 },
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Gravity Distortion",
+            },
+        {name: "Gravity Distortion",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -98,10 +83,8 @@ const GRAVITY_CONTROL_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.2
-            }
-        },
-        {
-            name: "Propel",
+            },
+        {name: "Propel",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -124,10 +107,8 @@ const GRAVITY_CONTROL_POWERSET = {
                     type: "Smashing",
                     scale: 5.5635
                 }
-            }
-        },
-        {
-            name: "Crushing Field",
+            },
+        {name: "Crushing Field",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -152,10 +133,8 @@ const GRAVITY_CONTROL_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 5.2
-            }
-        },
-        {
-            name: "Dimension Shift",
+            },
+        {name: "Dimension Shift",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -174,10 +153,8 @@ const GRAVITY_CONTROL_POWERSET = {
                 endurance: 15.6,
                 cast: 1.17,
                 buffDuration: 20.0
-            }
-        },
-        {
-            name: "Gravity Distortion Field",
+            },
+        {name: "Gravity Distortion Field",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -195,10 +172,8 @@ const GRAVITY_CONTROL_POWERSET = {
                 recharge: 240.0,
                 endurance: 15.6,
                 cast: 1.83
-            }
-        },
-        {
-            name: "Wormhole",
+            },
+        {name: "Wormhole",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -219,10 +194,8 @@ const GRAVITY_CONTROL_POWERSET = {
                 cast: 3.0,
                 buffDuration: 1.5,
                 stun: 4.0
-            }
-        },
-        {
-            name: "Singularity",
+            },
+        {name: "Singularity",
             available: 25,
             tier: 5,
             maxSlots: 6,

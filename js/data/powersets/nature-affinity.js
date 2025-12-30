@@ -29,21 +29,8 @@ const NATURE_AFFINITY_POWERSET = {
                 endurance: 8.528,
                 cast: 1.0,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Nature Affinity",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You have command over the forces of nature and are able to call forth primal energies to aid your allies and hinder your foes. Many of your powers place a Bloom effect on you and your allies. Each stack of Bloom boosts healing effects on the affected targets by a 4% for 30 seconds. Bloom can stack up to 5 times.",
-            shortHelp: "Nature Affinity",
-            icon: "nature_affinity_set.png"
-        },
-        {
-            name: "Regrowth",
+            },
+        {name: "Regrowth",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -64,10 +51,8 @@ const NATURE_AFFINITY_POWERSET = {
                 endurance: 13.52,
                 cast: 2.0,
                 buffDuration: 4.1
-            }
-        },
-        {
-            name: "Wild Growth",
+            },
+        {name: "Wild Growth",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -86,10 +71,8 @@ const NATURE_AFFINITY_POWERSET = {
                 endurance: 15.6,
                 cast: 2.17,
                 buffDuration: 90.0
-            }
-        },
-        {
-            name: "Spore Cloud",
+            },
+        {name: "Spore Cloud",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -110,10 +93,8 @@ const NATURE_AFFINITY_POWERSET = {
                 cast: 3.1,
                 tohitDebuff: 1.5,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Lifegiving Spores",
+            },
+        {name: "Lifegiving Spores",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -131,10 +112,8 @@ const NATURE_AFFINITY_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.26,
                 cast: 2.33
-            }
-        },
-        {
-            name: "Wild Bastion",
+            },
+        {name: "Wild Bastion",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -153,10 +132,8 @@ const NATURE_AFFINITY_POWERSET = {
                 endurance: 13.0,
                 cast: 2.27,
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Rebirth",
+            },
+        {name: "Rebirth",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -174,10 +151,8 @@ const NATURE_AFFINITY_POWERSET = {
                 recharge: 180.0,
                 endurance: 26.0,
                 cast: 3.0
-            }
-        },
-        {
-            name: "Entangling Aura",
+            },
+        {name: "Entangling Aura",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -195,10 +170,8 @@ const NATURE_AFFINITY_POWERSET = {
                 recharge: 20.0,
                 endurance: 1.3,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Overgrowth",
+            },
+        {name: "Overgrowth",
             available: 25,
             tier: 5,
             maxSlots: 6,

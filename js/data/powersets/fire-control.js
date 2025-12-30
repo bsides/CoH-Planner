@@ -34,21 +34,8 @@ const FIRE_CONTROL_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.2
-            }
-        },
-        {
-            name: "Fire Control",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You can control the essence of fire to entrap, scorch, and manipulate your foes with smoke and flame.",
-            shortHelp: "Fire Control",
-            icon: "fire_control_set.png"
-        },
-        {
-            name: "Ring of Fire",
+            },
+        {name: "Ring of Fire",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -72,10 +59,8 @@ const FIRE_CONTROL_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 9.2
-            }
-        },
-        {
-            name: "Fire Cages",
+            },
+        {name: "Fire Cages",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -100,10 +85,8 @@ const FIRE_CONTROL_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 5.2
-            }
-        },
-        {
-            name: "Smoke",
+            },
+        {name: "Smoke",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -124,10 +107,8 @@ const FIRE_CONTROL_POWERSET = {
                 cast: 1.17,
                 buffDuration: 60.0,
                 tohitDebuff: 0.5
-            }
-        },
-        {
-            name: "Hot Feet",
+            },
+        {name: "Hot Feet",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -150,10 +131,8 @@ const FIRE_CONTROL_POWERSET = {
                     scale: 0.5746
                 },
                 buffDuration: 15.0
-            }
-        },
-        {
-            name: "Flashfire",
+            },
+        {name: "Flashfire",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -179,10 +158,8 @@ const FIRE_CONTROL_POWERSET = {
                 },
                 buffDuration: 4.0,
                 stun: 4.0
-            }
-        },
-        {
-            name: "Cinders",
+            },
+        {name: "Cinders",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -200,10 +177,8 @@ const FIRE_CONTROL_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 1.07
-            }
-        },
-        {
-            name: "Bonfire",
+            },
+        {name: "Bonfire",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -222,10 +197,8 @@ const FIRE_CONTROL_POWERSET = {
                 endurance: 13.0,
                 cast: 3.07,
                 buffDuration: 45.0
-            }
-        },
-        {
-            name: "Fire Imps",
+            },
+        {name: "Fire Imps",
             available: 25,
             tier: 5,
             maxSlots: 6,

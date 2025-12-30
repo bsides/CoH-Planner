@@ -9,19 +9,7 @@ const MARINE_AFFINITY_POWERSET = {
     description: "Marine Affinity powerset",
     icon: "marine-affinity_set.png",
     powers: [
-        {
-            name: "Marine Affinity",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Command the various powers of the ocean to buff your allies, and wash away your enemies.",
-            shortHelp: "Marine Affinity",
-            icon: "nature_affinity_set.png"
-        },
-        {
-            name: "Shoal Rush",
+        {name: "Shoal Rush",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -43,10 +31,8 @@ const MARINE_AFFINITY_POWERSET = {
                 cast: 2.17,
                 defenseDebuff: 1.6,
                 buffDuration: 20.0
-            }
-        },
-        {
-            name: "Soothing Wave",
+            },
+        {name: "Soothing Wave",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -66,10 +52,8 @@ const MARINE_AFFINITY_POWERSET = {
                 recharge: 10.0,
                 endurance: 13.52,
                 cast: 2.0
-            }
-        },
-        {
-            name: "Toroidal Bubble",
+            },
+        {name: "Toroidal Bubble",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -92,50 +76,34 @@ const MARINE_AFFINITY_POWERSET = {
                         {
                             type: "Smashing",
                             scale: 2.5,
-                            ticks: 30
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 30},
+        {type: "Fire",
                             scale: 2.5,
-                            ticks: 30
-                        },
-                        {
-                            type: "Lethal",
+                            ticks: 30},
+        {type: "Lethal",
                             scale: 1.25,
-                            ticks: 30
-                        },
-                        {
-                            type: "Cold",
+                            ticks: 30},
+        {type: "Cold",
                             scale: 1.25,
-                            ticks: 30
-                        },
-                        {
-                            type: "Energy",
+                            ticks: 30},
+        {type: "Energy",
                             scale: 1.25,
-                            ticks: 30
-                        },
-                        {
-                            type: "Negative",
+                            ticks: 30},
+        {type: "Negative",
                             scale: 1.25,
-                            ticks: 30
-                        },
-                        {
-                            type: "Psionic",
+                            ticks: 30},
+        {type: "Psionic",
                             scale: 1.25,
-                            ticks: 30
-                        },
-                        {
-                            type: "Toxic",
+                            ticks: 30},
+        {type: "Toxic",
                             scale: 1.25,
                             ticks: 30
                         }
                     ]
                 },
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Whitecap",
+            },
+        {name: "Whitecap",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -153,10 +121,8 @@ const MARINE_AFFINITY_POWERSET = {
                 recharge: 30.0,
                 endurance: 18.0,
                 cast: 2.0
-            }
-        },
-        {
-            name: "Tide Pool",
+            },
+        {name: "Tide Pool",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -175,10 +141,8 @@ const MARINE_AFFINITY_POWERSET = {
                 endurance: 13.0,
                 cast: 2.33,
                 buffDuration: 240.0
-            }
-        },
-        {
-            name: "Brine",
+            },
+        {name: "Brine",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -197,10 +161,8 @@ const MARINE_AFFINITY_POWERSET = {
                 endurance: 7.0,
                 cast: 2.07,
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Shifting Tides",
+            },
+        {name: "Shifting Tides",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -224,10 +186,8 @@ const MARINE_AFFINITY_POWERSET = {
                     scale: 0.5
                 },
                 buffDuration: 2.0
-            }
-        },
-        {
-            name: "Barrier Reef",
+            },
+        {name: "Barrier Reef",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -246,10 +206,8 @@ const MARINE_AFFINITY_POWERSET = {
                 endurance: 13.52,
                 cast: 2.37,
                 buffDuration: 240.0
-            }
-        },
-        {
-            name: "Power of the Depths",
+            },
+        {name: "Power of the Depths",
             available: 25,
             tier: 5,
             maxSlots: 6,

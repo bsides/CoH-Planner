@@ -32,14 +32,10 @@ const PSIONIC_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Psionic",
-                            scale: 4.4449
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 0.515
-                        },
-                        {
-                            type: "Fire",
+                            scale: 4.4449},
+        {type: "Smashing",
+                            scale: 0.515},
+        {type: "Fire",
                             scale: 0.378
                         }
                     ],
@@ -51,10 +47,8 @@ const PSIONIC_MELEE_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 6.0
-            }
-        },
-        {
-            name: "Psi Blade",
+            },
+        {name: "Psi Blade",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -76,14 +70,10 @@ const PSIONIC_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Psionic",
-                            scale: 5.8141
-                        },
-                        {
-                            type: "Lethal",
-                            scale: 0.6677
-                        },
-                        {
-                            type: "Fire",
+                            scale: 5.8141},
+        {type: "Lethal",
+                            scale: 0.6677},
+        {type: "Fire",
                             scale: 0.513
                         }
                     ],
@@ -95,21 +85,8 @@ const PSIONIC_MELEE_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 6.0
-            }
-        },
-        {
-            name: "Psionic Melee",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You are able to strike at foes with psychic projections including deadly psi blades. Psionic Melee provides excellent crowd control by dominating the minds of its victims. Your psionic damaging attacks have a chance to grant you Insight into your enemies. While you have Insight, your psionic damage powers cause additional psionic damage over time and your Boggle and Psi Blade Sweep powers become more potent.",
-            shortHelp: "Psionic Melee",
-            icon: "psionic_melee_set.png"
-        },
-        {
-            name: "Telekinetic Blow",
+            },
+        {name: "Telekinetic Blow",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -131,14 +108,10 @@ const PSIONIC_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Psionic",
-                            scale: 8.0806
-                        },
-                        {
-                            type: "Smashing",
-                            scale: 0.8972
-                        },
-                        {
-                            type: "Fire",
+                            scale: 8.0806},
+        {type: "Smashing",
+                            scale: 0.8972},
+        {type: "Fire",
                             scale: 0.81
                         }
                     ],
@@ -150,10 +123,8 @@ const PSIONIC_MELEE_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            }
-        },
-        {
-            name: "Concentration",
+            },
+        {name: "Concentration",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -172,10 +143,8 @@ const PSIONIC_MELEE_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Psi Blade Sweep",
+            },
+        {name: "Psi Blade Sweep",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -199,14 +168,10 @@ const PSIONIC_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Psionic",
-                            scale: 6.773999999999999
-                        },
-                        {
-                            type: "Lethal",
-                            scale: 0.762
-                        },
-                        {
-                            type: "Fire",
+                            scale: 6.773999999999999},
+        {type: "Lethal",
+                            scale: 0.762},
+        {type: "Fire",
                             scale: 0.648
                         }
                     ],
@@ -219,10 +184,8 @@ const PSIONIC_MELEE_POWERSET = {
                 },
                 buffDuration: 6.0,
                 stun: 3.0
-            }
-        },
-        {
-            name: "Confront",
+            },
+        {name: "Confront",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -240,10 +203,8 @@ const PSIONIC_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Boggle",
+            },
+        {name: "Boggle",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -261,10 +222,8 @@ const PSIONIC_MELEE_POWERSET = {
                 recharge: 20.0,
                 endurance: 7.8,
                 cast: 2.0
-            }
-        },
-        {
-            name: "Greater Psi Blade",
+            },
+        {name: "Greater Psi Blade",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -286,24 +245,18 @@ const PSIONIC_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Psionic",
-                            scale: 15.1572
-                        },
-                        {
-                            type: "Lethal",
-                            scale: 1.3775
-                        },
-                        {
-                            type: "Fire",
+                            scale: 15.1572},
+        {type: "Lethal",
+                            scale: 1.3775},
+        {type: "Fire",
                             scale: 1.242
                         }
                     ],
                     scale: 17.776699999999998
                 },
                 buffDuration: 6.0
-            }
-        },
-        {
-            name: "Mass Levitate",
+            },
+        {name: "Mass Levitate",
             available: 25,
             tier: 5,
             maxSlots: 6,
@@ -325,10 +278,8 @@ const PSIONIC_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Smashing",
-                            scale: 6.4597999999999995
-                        },
-                        {
-                            type: "Fire",
+                            scale: 6.4597999999999995},
+        {type: "Fire",
                             scale: 0.639
                         }
                     ],

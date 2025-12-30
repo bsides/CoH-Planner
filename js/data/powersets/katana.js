@@ -37,10 +37,8 @@ const KATANA_POWERSET = {
                         {
                             type: "Lethal",
                             scale: 1.409,
-                            ticks: 1
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 1},
+        {type: "Fire",
                             scale: 0.189,
                             ticks: 1
                         }
@@ -48,21 +46,8 @@ const KATANA_POWERSET = {
                 },
                 buffDuration: 0.3,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Katana",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Wield a Katana and master a variety of powerful Lethal attacks. A quick and elegant weapon, the Katana is faster than a Broad Sword, and can reduce an enemy's Defense. The Katana is a fine blade that always has a bonus to Accuracy. Like all scrapper powers, all Katana attacks can sometimes land a critical hit for double damage.",
-            shortHelp: "Katana",
-            icon: "katana_set.png"
-        },
-        {
-            name: "Sting of the Wasp",
+            },
+        {name: "Sting of the Wasp",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -84,10 +69,8 @@ const KATANA_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 6.3178
-                        },
-                        {
-                            type: "Fire",
+                            scale: 6.3178},
+        {type: "Fire",
                             scale: 0.522
                         }
                     ],
@@ -95,10 +78,8 @@ const KATANA_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Flashing Steel",
+            },
+        {name: "Flashing Steel",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -122,10 +103,8 @@ const KATANA_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 5.1668
-                        },
-                        {
-                            type: "Fire",
+                            scale: 5.1668},
+        {type: "Fire",
                             scale: 0.4455
                         }
                     ],
@@ -133,10 +112,8 @@ const KATANA_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Build Up",
+            },
+        {name: "Build Up",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -155,10 +132,8 @@ const KATANA_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Divine Avalanche",
+            },
+        {name: "Divine Avalanche",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -180,20 +155,16 @@ const KATANA_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 5.4218
-                        },
-                        {
-                            type: "Fire",
+                            scale: 5.4218},
+        {type: "Fire",
                             scale: 0.378
                         }
                     ],
                     scale: 5.7998
                 },
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Calling the Wolf",
+            },
+        {name: "Calling the Wolf",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -211,10 +182,8 @@ const KATANA_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "The Lotus Drops",
+            },
+        {name: "The Lotus Drops",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -236,10 +205,8 @@ const KATANA_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 5.561
-                        },
-                        {
-                            type: "Fire",
+                            scale: 5.561},
+        {type: "Fire",
                             scale: 0.45
                         }
                     ],
@@ -250,10 +217,8 @@ const KATANA_POWERSET = {
                         {
                             type: "Lethal",
                             scale: 0.12,
-                            ticks: 2
-                        },
-                        {
-                            type: "Fire",
+                            ticks: 2},
+        {type: "Fire",
                             scale: 0.054,
                             ticks: 2
                         }
@@ -261,10 +226,8 @@ const KATANA_POWERSET = {
                 },
                 buffDuration: 2.1,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Soaring Dragon",
+            },
+        {name: "Soaring Dragon",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -286,10 +249,8 @@ const KATANA_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 8.7818
-                        },
-                        {
-                            type: "Fire",
+                            scale: 8.7818},
+        {type: "Fire",
                             scale: 0.81
                         }
                     ],
@@ -297,10 +258,8 @@ const KATANA_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Golden Dragonfly",
+            },
+        {name: "Golden Dragonfly",
             available: 25,
             tier: 5,
             maxSlots: 6,
@@ -324,10 +283,8 @@ const KATANA_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 8.881799999999998
-                        },
-                        {
-                            type: "Fire",
+                            scale: 8.881799999999998},
+        {type: "Fire",
                             scale: 1.026
                         }
                     ],

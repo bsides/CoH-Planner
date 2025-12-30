@@ -9,19 +9,7 @@ const DARK_ASSAULT_POWERSET = {
     description: "Dark Assault powerset",
     icon: "dark-assault_set.png",
     powers: [
-        {
-            name: "Dark Assault",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Blind and drain your foes with dark energies. Dark Assault allows you to pummel your foes with heavy hitting melee attacks as well as several ranged attacks. Many of Dark Assaults powers reduce their victims' chance to hit.",
-            shortHelp: "Dark Assault",
-            icon: "dark_assault_set.png"
-        },
-        {
-            name: "Dark Blast",
+        {name: "Dark Blast",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -45,10 +33,8 @@ const DARK_ASSAULT_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 6.0
-            }
-        },
-        {
-            name: "Smite",
+            },
+        {name: "Smite",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -70,10 +56,8 @@ const DARK_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Negative",
-                            scale: 2.2892
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 2.2892},
+        {type: "Smashing",
                             scale: 0.7497
                         }
                     ],
@@ -81,10 +65,8 @@ const DARK_ASSAULT_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Gloom",
+            },
+        {name: "Gloom",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -109,10 +91,8 @@ const DARK_ASSAULT_POWERSET = {
                 },
                 buffDuration: 3.6,
                 tohitDebuff: 0.75
-            }
-        },
-        {
-            name: "Night Fall",
+            },
+        {name: "Night Fall",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -139,10 +119,8 @@ const DARK_ASSAULT_POWERSET = {
                 },
                 buffDuration: 2.8,
                 tohitDebuff: 0.75
-            }
-        },
-        {
-            name: "Gather Shadows",
+            },
+        {name: "Gather Shadows",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -164,10 +142,8 @@ const DARK_ASSAULT_POWERSET = {
                 stunDuration: 10.0,
                 tohitBuff: 0.5,
                 defenseBuff: 0.5
-            }
-        },
-        {
-            name: "Engulfing Darkness",
+            },
+        {name: "Engulfing Darkness",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -196,10 +172,8 @@ const DARK_ASSAULT_POWERSET = {
                 },
                 buffDuration: 3.1,
                 tohitDebuff: 0.75
-            }
-        },
-        {
-            name: "Life Drain",
+            },
+        {name: "Life Drain",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -223,10 +197,8 @@ const DARK_ASSAULT_POWERSET = {
                 },
                 tohitDebuff: 0.75,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Moon Beam",
+            },
+        {name: "Moon Beam",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -244,10 +216,8 @@ const DARK_ASSAULT_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 1.33
-            }
-        },
-        {
-            name: "Midnight Grasp",
+            },
+        {name: "Midnight Grasp",
             available: 29,
             tier: 5,
             maxSlots: 6,

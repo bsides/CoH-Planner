@@ -32,21 +32,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                     type: "Energy",
                     scale: 2.2602
                 }
-            }
-        },
-        {
-            name: "Electrical Blast",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Electrical Blast endows you with ranged electrical attack powers. Electrical powers can drain foes' Endurance and can often temporarily halt their Endurance recovery. This can be quite effective against higher level foes and Bosses. As you drain endurance, Electrical Blast powers can even sometimes Shock targets do deal bonus damage, hinder recovery, and transfer this Endurance back to you.",
-            shortHelp: "Electrical Blast",
-            icon: "electrical_blast_set.png"
-        },
-        {
-            name: "Lightning Bolt",
+            },
+        {name: "Lightning Bolt",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -68,10 +55,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                     type: "Energy",
                     scale: 3.5292
                 }
-            }
-        },
-        {
-            name: "Ball Lightning",
+            },
+        {name: "Ball Lightning",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -100,10 +85,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 2.2
-            }
-        },
-        {
-            name: "Short Circuit",
+            },
+        {name: "Short Circuit",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -127,10 +110,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 1.5
-            }
-        },
-        {
-            name: "Charge Up",
+            },
+        {name: "Charge Up",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -149,10 +130,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 4.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Zapp",
+            },
+        {name: "Zapp",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -170,10 +149,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                 recharge: 12.0,
                 endurance: 14.352,
                 cast: 1.33
-            }
-        },
-        {
-            name: "Tesla Cage",
+            },
+        {name: "Tesla Cage",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -197,10 +174,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                     scale: 0.18130000000000002
                 },
                 buffDuration: 8.0
-            }
-        },
-        {
-            name: "Voltaic Sentinel",
+            },
+        {name: "Voltaic Sentinel",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -218,10 +193,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                 recharge: 10.0,
                 endurance: 0.52,
                 cast: 3.1
-            }
-        },
-        {
-            name: "Thunderous Blast",
+            },
+        {name: "Thunderous Blast",
             available: 25,
             tier: 5,
             maxSlots: 6,
@@ -244,10 +217,8 @@ const ELECTRICAL_BLAST_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 4.9475999999999996
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 4.9475999999999996},
+        {type: "Smashing",
                             scale: 1.0
                         }
                     ],

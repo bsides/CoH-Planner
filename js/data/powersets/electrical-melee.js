@@ -32,31 +32,16 @@ const ELECTRICAL_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 1.1606
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 1.1606},
+        {type: "Smashing",
                             scale: 0.7804
                         }
                     ],
                     scale: 1.941
                 },
                 buffDuration: 2.0
-            }
-        },
-        {
-            name: "Electrical Melee",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Electricity surges through your body and you can channel this electricity through your fists. Electrical Melee allows you to pummel your foes with various melee attack powers while jolting them with a powerful electric current. Electric Melee powers can drain foes' Endurance and temporarily halt their Endurance recovery. Some powers may even return a portion of drained Endurance back to you.",
-            shortHelp: "Electrical Melee",
-            icon: "electrical_melee_set.png"
-        },
-        {
-            name: "Havoc Punch",
+            },
+        {name: "Havoc Punch",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -78,20 +63,16 @@ const ELECTRICAL_MELEE_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 1.8139
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 1.8139},
+        {type: "Smashing",
                             scale: 1.1960000000000002
                         }
                     ],
                     scale: 3.0099
                 },
                 buffDuration: 4.0
-            }
-        },
-        {
-            name: "Jacobs Ladder",
+            },
+        {name: "Jacobs Ladder",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -116,10 +97,8 @@ const ELECTRICAL_MELEE_POWERSET = {
                     scale: 3.0986000000000002
                 },
                 buffDuration: 2.0
-            }
-        },
-        {
-            name: "Build Up",
+            },
+        {name: "Build Up",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -138,10 +117,8 @@ const ELECTRICAL_MELEE_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Thunder Strike",
+            },
+        {name: "Thunder Strike",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -160,10 +137,8 @@ const ELECTRICAL_MELEE_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 2.53
-            }
-        },
-        {
-            name: "Confront",
+            },
+        {name: "Confront",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -181,10 +156,8 @@ const ELECTRICAL_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Chain Induction",
+            },
+        {name: "Chain Induction",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -207,10 +180,8 @@ const ELECTRICAL_MELEE_POWERSET = {
                     scale: 2.9798999999999998
                 },
                 buffDuration: 2.0
-            }
-        },
-        {
-            name: "Lightning Clap",
+            },
+        {name: "Lightning Clap",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -229,10 +200,8 @@ const ELECTRICAL_MELEE_POWERSET = {
                 endurance: 13.0,
                 cast: 1.23,
                 stun: 2.0
-            }
-        },
-        {
-            name: "Lightning Rod",
+            },
+        {name: "Lightning Rod",
             available: 25,
             tier: 5,
             maxSlots: 6,

@@ -33,21 +33,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                     scale: 3.5789999999999997
                 },
                 buffDuration: 6.0
-            }
-        },
-        {
-            name: "Psionic Assault",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Blast your enemies with an array of offensive Psionic powers. Few living beings can resist their effects. Creatures without minds, however, like machines and robots, are much more resistant.",
-            shortHelp: "Psionic Assault",
-            icon: "psionic_assault_set.png"
-        },
-        {
-            name: "Psionic Dart",
+            },
+        {name: "Psionic Dart",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -70,10 +57,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                     scale: 1.9409999999999998
                 },
                 buffDuration: 5.0
-            }
-        },
-        {
-            name: "Telekinetic Thrust",
+            },
+        {name: "Telekinetic Thrust",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -95,19 +80,15 @@ const PSIONIC_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Psionic",
-                            scale: 2.145
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 2.145},
+        {type: "Smashing",
                             scale: 0.715
                         }
                     ],
                     scale: 2.86
                 }
-            }
-        },
-        {
-            name: "Mental Blast",
+            },
+        {name: "Mental Blast",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -130,10 +111,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                     scale: 3.5290999999999997
                 },
                 buffDuration: 6.0
-            }
-        },
-        {
-            name: "Psychic Scream",
+            },
+        {name: "Psychic Scream",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -158,10 +137,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                     scale: 2.3617
                 },
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Drain Psyche",
+            },
+        {name: "Drain Psyche",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -180,10 +157,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                 endurance: 13.0,
                 cast: 1.33,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Subdue",
+            },
+        {name: "Subdue",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -205,10 +180,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                     type: "Psionic",
                     scale: 3.5476
                 }
-            }
-        },
-        {
-            name: "Psionic Lance",
+            },
+        {name: "Psionic Lance",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -226,10 +199,8 @@ const PSIONIC_ASSAULT_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 1.33
-            }
-        },
-        {
-            name: "Psychic Shockwave",
+            },
+        {name: "Psychic Shockwave",
             available: 29,
             tier: 5,
             maxSlots: 6,

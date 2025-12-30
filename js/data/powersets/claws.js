@@ -9,19 +9,7 @@ const CLAWS_POWERSET = {
     description: "Claws powerset",
     icon: "claws_set.png",
     powers: [
-        {
-            name: "Claws",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Claws are bones or blades that extend from your hands and cause Lethal damage. The lightweight, natural feel of claws gives this power set a reduced Endurance cost and faster attack rate than other Scrapper melee sets. Like all scrapper powers, all Claw attacks can sometimes land a critical hit for double damage.",
-            shortHelp: "Claws",
-            icon: "claws_set.png"
-        },
-        {
-            name: "Strike",
+        {name: "Strike",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -43,19 +31,15 @@ const CLAWS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 5.9338
-                        },
-                        {
-                            type: "Fire",
+                            scale: 5.9338},
+        {type: "Fire",
                             scale: 0.486
                         }
                     ],
                     scale: 6.4197999999999995
                 }
-            }
-        },
-        {
-            name: "Swipe",
+            },
+        {name: "Swipe",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -77,19 +61,15 @@ const CLAWS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 4.4059
-                        },
-                        {
-                            type: "Fire",
+                            scale: 4.4059},
+        {type: "Fire",
                             scale: 0.47700000000000004
                         }
                     ],
                     scale: 4.8829
                 }
-            }
-        },
-        {
-            name: "Slash",
+            },
+        {name: "Slash",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -111,10 +91,8 @@ const CLAWS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 7.0059000000000005
-                        },
-                        {
-                            type: "Fire",
+                            scale: 7.0059000000000005},
+        {type: "Fire",
                             scale: 0.594
                         }
                     ],
@@ -122,10 +100,8 @@ const CLAWS_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Spin",
+            },
+        {name: "Spin",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -147,19 +123,15 @@ const CLAWS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 7.6176
-                        },
-                        {
-                            type: "Fire",
+                            scale: 7.6176},
+        {type: "Fire",
                             scale: 0.711
                         }
                     ],
                     scale: 8.3286
                 }
-            }
-        },
-        {
-            name: "Follow Up",
+            },
+        {name: "Follow Up",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -181,10 +153,8 @@ const CLAWS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 5.3218000000000005
-                        },
-                        {
-                            type: "Fire",
+                            scale: 5.3218000000000005},
+        {type: "Fire",
                             scale: 0.36
                         }
                     ],
@@ -192,10 +162,8 @@ const CLAWS_POWERSET = {
                 },
                 tohitBuff: 1.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Confront",
+            },
+        {name: "Confront",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -213,10 +181,8 @@ const CLAWS_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Focus",
+            },
+        {name: "Focus",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -238,19 +204,15 @@ const CLAWS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 6.529799999999999
-                        },
-                        {
-                            type: "Fire",
+                            scale: 6.529799999999999},
+        {type: "Fire",
                             scale: 0.6255
                         }
                     ],
                     scale: 7.155299999999999
                 }
-            }
-        },
-        {
-            name: "Eviscerate",
+            },
+        {name: "Eviscerate",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -274,19 +236,15 @@ const CLAWS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 7.7818000000000005
-                        },
-                        {
-                            type: "Fire",
+                            scale: 7.7818000000000005},
+        {type: "Fire",
                             scale: 0.8955
                         }
                     ],
                     scale: 8.6773
                 }
-            }
-        },
-        {
-            name: "Shockwave",
+            },
+        {name: "Shockwave",
             available: 25,
             tier: 5,
             maxSlots: 6,
@@ -310,10 +268,8 @@ const CLAWS_POWERSET = {
                     types: [
                         {
                             type: "Lethal",
-                            scale: 4.4022
-                        },
-                        {
-                            type: "Fire",
+                            scale: 4.4022},
+        {type: "Fire",
                             scale: 0.4725
                         }
                     ],

@@ -33,31 +33,16 @@ const PLANT_CONTROL_POWERSET = {
                         {
                             type: "Lethal",
                             scale: 0.51,
-                            ticks: 4
-                        },
-                        {
-                            type: "Smashing",
+                            ticks: 4},
+        {type: "Smashing",
                             scale: 0.31000000000000005,
                             ticks: 4
                         }
                     ]
                 },
                 buffDuration: 9.2
-            }
-        },
-        {
-            name: "Plant Control",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You can call forth and control the power of plants and flora to control your foes. Animate and control vines, roots and spores to entrap, entwine and utterly dominate your foes. Many Plant Control powers are only effective if the target is near the ground.",
-            shortHelp: "Plant Control",
-            icon: "plant_control_set.png"
-        },
-        {
-            name: "Strangler",
+            },
+        {name: "Strangler",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -81,10 +66,8 @@ const PLANT_CONTROL_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.2
-            }
-        },
-        {
-            name: "Roots",
+            },
+        {name: "Roots",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -108,20 +91,16 @@ const PLANT_CONTROL_POWERSET = {
                         {
                             type: "Lethal",
                             scale: 0.385,
-                            ticks: 2
-                        },
-                        {
-                            type: "Smashing",
+                            ticks: 2},
+        {type: "Smashing",
                             scale: 0.185,
                             ticks: 2
                         }
                     ]
                 },
                 buffDuration: 5.2
-            }
-        },
-        {
-            name: "Spore Burst",
+            },
+        {name: "Spore Burst",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -140,10 +119,8 @@ const PLANT_CONTROL_POWERSET = {
                 recharge: 45.0,
                 endurance: 13.0,
                 cast: 1.37
-            }
-        },
-        {
-            name: "Seeds of Confusion",
+            },
+        {name: "Seeds of Confusion",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -163,10 +140,8 @@ const PLANT_CONTROL_POWERSET = {
                 recharge: 6.0,
                 endurance: 15.6,
                 cast: 1.07
-            }
-        },
-        {
-            name: "Spirit Tree",
+            },
+        {name: "Spirit Tree",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -185,10 +160,8 @@ const PLANT_CONTROL_POWERSET = {
                 endurance: 13.0,
                 cast: 1.67,
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Vines",
+            },
+        {name: "Vines",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -206,10 +179,8 @@ const PLANT_CONTROL_POWERSET = {
                 recharge: 240.0,
                 endurance: 15.6,
                 cast: 2.1
-            }
-        },
-        {
-            name: "Carrion Creepers",
+            },
+        {name: "Carrion Creepers",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -228,10 +199,8 @@ const PLANT_CONTROL_POWERSET = {
                 endurance: 26.0,
                 cast: 1.17,
                 buffDuration: 120.0
-            }
-        },
-        {
-            name: "Fly Trap",
+            },
+        {name: "Fly Trap",
             available: 25,
             tier: 5,
             maxSlots: 6,

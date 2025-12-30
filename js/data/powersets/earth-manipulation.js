@@ -9,19 +9,7 @@ const EARTH_MANIPULATION_POWERSET = {
     description: "Earth Manipulation powerset",
     icon: "earth-manipulation_set.png",
     powers: [
-        {
-            name: "Earth Manipulation",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You can control the forces of the Earth. You can manipulate earth and stone to defeat your foes. The crushing force of many Earth Powers can reduce a target's Defense, while most Stone attacks will knock foes off their feet.",
-            shortHelp: "Earth Manipulation",
-            icon: "electricity_manipulation_set.png"
-        },
-        {
-            name: "Heavy Mallet",
+        {name: "Heavy Mallet",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -43,10 +31,8 @@ const EARTH_MANIPULATION_POWERSET = {
                     type: "Smashing",
                     scale: 4.0908999999999995
                 }
-            }
-        },
-        {
-            name: "Stone Prison",
+            },
+        {name: "Stone Prison",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -71,10 +57,8 @@ const EARTH_MANIPULATION_POWERSET = {
                 },
                 buffDuration: 9.2,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Salt Crystals",
+            },
+        {name: "Salt Crystals",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -94,10 +78,8 @@ const EARTH_MANIPULATION_POWERSET = {
                 cast: 1.07,
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Build Up",
+            },
+        {name: "Build Up",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -116,10 +98,8 @@ const EARTH_MANIPULATION_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Tremor",
+            },
+        {name: "Tremor",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -141,10 +121,8 @@ const EARTH_MANIPULATION_POWERSET = {
                     type: "Smashing",
                     scale: 2.1324
                 }
-            }
-        },
-        {
-            name: "Mud Bath",
+            },
+        {name: "Mud Bath",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -162,10 +140,8 @@ const EARTH_MANIPULATION_POWERSET = {
                 recharge: 4.0,
                 cast: 2.03,
                 buffDuration: 5.0
-            }
-        },
-        {
-            name: "Beryl Crystals",
+            },
+        {name: "Beryl Crystals",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -184,10 +160,8 @@ const EARTH_MANIPULATION_POWERSET = {
                 cast: 0.73,
                 buffDuration: 0.75,
                 tohitBuff: 1.0
-            }
-        },
-        {
-            name: "Fracture",
+            },
+        {name: "Fracture",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -209,10 +183,8 @@ const EARTH_MANIPULATION_POWERSET = {
                 defenseDebuff: 1.0,
                 buffDuration: 10.0,
                 stun: 3.0
-            }
-        },
-        {
-            name: "Seismic Smash",
+            },
+        {name: "Seismic Smash",
             available: 29,
             tier: 5,
             maxSlots: 6,

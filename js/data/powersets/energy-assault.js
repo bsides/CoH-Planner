@@ -32,31 +32,16 @@ const ENERGY_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 2.286
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 2.286},
+        {type: "Smashing",
                             scale: 1.524
                         }
                     ],
                     scale: 3.81
                 },
                 buffDuration: 15.0
-            }
-        },
-        {
-            name: "Energy Assault",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Focus pure energy into deadly melee attacks and powerful projectiles. The impact of the melee powers can often Disorient opponents, while the velocity of the ranged projectiles can send your enemies flying.",
-            shortHelp: "Energy Assault",
-            icon: "energy_assault_set.png"
-        },
-        {
-            name: "Power Bolt",
+            },
+        {name: "Power Bolt",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -78,19 +63,15 @@ const ENERGY_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 1.3559999999999999
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 1.3559999999999999},
+        {type: "Smashing",
                             scale: 0.904
                         }
                     ],
                     scale: 2.26
                 }
-            }
-        },
-        {
-            name: "Power Push",
+            },
+        {name: "Power Push",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -112,19 +93,15 @@ const ENERGY_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 1.8780000000000001
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 1.8780000000000001},
+        {type: "Smashing",
                             scale: 1.252
                         }
                     ],
                     scale: 3.13
                 }
-            }
-        },
-        {
-            name: "Power Blast",
+            },
+        {name: "Power Blast",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -146,19 +123,15 @@ const ENERGY_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 2.9467999999999996
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 2.9467999999999996},
+        {type: "Smashing",
                             scale: 0.9823
                         }
                     ],
                     scale: 3.9290999999999996
                 }
-            }
-        },
-        {
-            name: "Power Up",
+            },
+        {name: "Power Up",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -180,10 +153,8 @@ const ENERGY_ASSAULT_POWERSET = {
                 stunDuration: 10.0,
                 tohitBuff: 0.5,
                 defenseBuff: 0.5
-            }
-        },
-        {
-            name: "Whirling Hands",
+            },
+        {name: "Whirling Hands",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -205,19 +176,15 @@ const ENERGY_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 1.7015000000000002
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 1.7015000000000002},
+        {type: "Smashing",
                             scale: 1.1344
                         }
                     ],
                     scale: 2.8359000000000005
                 }
-            }
-        },
-        {
-            name: "Total Focus",
+            },
+        {name: "Total Focus",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -239,20 +206,16 @@ const ENERGY_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 4.1586
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 4.1586},
+        {type: "Smashing",
                             scale: 2.7724
                         }
                     ],
                     scale: 6.931
                 },
                 stun: 3.0
-            }
-        },
-        {
-            name: "Sniper Blast",
+            },
+        {name: "Sniper Blast",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -270,10 +233,8 @@ const ENERGY_ASSAULT_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 1.33
-            }
-        },
-        {
-            name: "Power Burst",
+            },
+        {name: "Power Burst",
             available: 29,
             tier: 5,
             maxSlots: 6,
@@ -295,10 +256,8 @@ const ENERGY_ASSAULT_POWERSET = {
                     types: [
                         {
                             type: "Energy",
-                            scale: 3.0974000000000004
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 3.0974000000000004},
+        {type: "Smashing",
                             scale: 1.6316000000000002
                         }
                     ],

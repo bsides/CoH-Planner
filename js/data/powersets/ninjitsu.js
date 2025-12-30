@@ -29,10 +29,8 @@ const NINJITSU_POWERSET = {
                 cast: 0.83,
                 buffDuration: 0.75,
                 defenseBuff: 0.5
-            }
-        },
-        {
-            name: "Ninja Reflexes",
+            },
+        {name: "Ninja Reflexes",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -51,21 +49,8 @@ const NINJITSU_POWERSET = {
                 cast: 1.53,
                 buffDuration: 0.75,
                 defenseBuff: 0.5
-            }
-        },
-        {
-            name: "Ninjitsu",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Ninjitsu is the secret art of Ninja. Many Ninjitsu powers emphasize acute senses that allow you to react deftly to avoid danger. Others focus on the ability to hide in plain sight. Still others rely on the ancient art of Kuji Kiri, and the pure focus of the mind to accomplish the impossible.",
-            shortHelp: "Ninjitsu",
-            icon: "ninjitsu_set.png"
-        },
-        {
-            name: "Shinobi-Iri",
+            },
+        {name: "Shinobi-Iri",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -82,10 +67,8 @@ const NINJITSU_POWERSET = {
                 recharge: 2.0,
                 endurance: 0.13,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Kuji-In Rin",
+            },
+        {name: "Kuji-In Rin",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -112,10 +95,8 @@ const NINJITSU_POWERSET = {
                 buffDuration: 120.0,
                 tohitBuff: 0.3,
                 defenseBuff: 0.3
-            }
-        },
-        {
-            name: "Seishinteki Kyoyo",
+            },
+        {name: "Seishinteki Kyoyo",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -131,10 +112,8 @@ const NINJITSU_POWERSET = {
                 accuracy: 1.0,
                 recharge: 60.0,
                 cast: 1.83
-            }
-        },
-        {
-            name: "Kuji-In Sha",
+            },
+        {name: "Kuji-In Sha",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -157,10 +136,8 @@ const NINJITSU_POWERSET = {
                     ticks: 30
                 },
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Bo Ryaku",
+            },
+        {name: "Bo Ryaku",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -175,10 +152,8 @@ const NINJITSU_POWERSET = {
             effects: {
                 accuracy: 1.0,
                 buffDuration: 10.25
-            }
-        },
-        {
-            name: "Blinding Powder",
+            },
+        {name: "Blinding Powder",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -200,10 +175,8 @@ const NINJITSU_POWERSET = {
                 cast: 1.07,
                 buffDuration: 20.0,
                 tohitDebuff: 1.0
-            }
-        },
-        {
-            name: "Kuji-In Retsu",
+            },
+        {name: "Kuji-In Retsu",
             available: 29,
             tier: 5,
             maxSlots: 6,

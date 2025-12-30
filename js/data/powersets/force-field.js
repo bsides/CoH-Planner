@@ -35,21 +35,8 @@ const FORCE_FIELD_POWERSET = {
                     ticks: 120
                 },
                 buffDuration: 240.0
-            }
-        },
-        {
-            name: "Force Field",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "The Force Field powers give you the ability to create shells of energy that protect yourself and your allies from various forms of damage and harm. Force Fields do not reduce damage, but reduced your allies chance of getting hit in the first place.",
-            shortHelp: "Force Field",
-            icon: "force_field_set.png"
-        },
-        {
-            name: "Personal Force Field",
+            },
+        {name: "Personal Force Field",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -67,10 +54,8 @@ const FORCE_FIELD_POWERSET = {
                 endurance: 0.13,
                 cast: 2.03,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Repulsion Bolt",
+            },
+        {name: "Repulsion Bolt",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -93,10 +78,8 @@ const FORCE_FIELD_POWERSET = {
                     scale: 0.2
                 },
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Insulation Shield",
+            },
+        {name: "Insulation Shield",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -118,10 +101,8 @@ const FORCE_FIELD_POWERSET = {
                 buffDuration: 240.0,
                 stun: 1.0,
                 stunDuration: 90.0
-            }
-        },
-        {
-            name: "Detention Field",
+            },
+        {name: "Detention Field",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -140,10 +121,8 @@ const FORCE_FIELD_POWERSET = {
                 endurance: 10.4,
                 cast: 2.07,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Dispersion Bubble",
+            },
+        {name: "Dispersion Bubble",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -164,10 +143,8 @@ const FORCE_FIELD_POWERSET = {
                 buffDuration: 15.0,
                 stun: 1.0,
                 stunDuration: 15.0
-            }
-        },
-        {
-            name: "Repulsion Field",
+            },
+        {name: "Repulsion Field",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -185,10 +162,8 @@ const FORCE_FIELD_POWERSET = {
                 recharge: 20.0,
                 endurance: 0.1625,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Force Bomb",
+            },
+        {name: "Force Bomb",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -212,10 +187,8 @@ const FORCE_FIELD_POWERSET = {
                     scale: 0.6
                 },
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Damping Bubble",
+            },
+        {name: "Damping Bubble",
             available: 25,
             tier: 5,
             maxSlots: 6,

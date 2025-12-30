@@ -9,19 +9,7 @@ const FIERY_MELEE_POWERSET = {
     description: "Fiery Melee powerset",
     icon: "fiery-melee_set.png",
     powers: [
-        {
-            name: "Fiery Melee",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Fiery Melee allows you to attack with fire, and even conjure up flaming melee weapons. Fiery Melee powers tend to set foes ablaze for added Damage Over Time.",
-            shortHelp: "Fiery Melee",
-            icon: "fiery_melee_set.png"
-        },
-        {
-            name: "Fire Sword",
+        {name: "Fire Sword",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -50,10 +38,8 @@ const FIERY_MELEE_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 0.5
-            }
-        },
-        {
-            name: "Scorch",
+            },
+        {name: "Scorch",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -81,10 +67,8 @@ const FIERY_MELEE_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 2.1
-            }
-        },
-        {
-            name: "Cremate",
+            },
+        {name: "Cremate",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -112,10 +96,8 @@ const FIERY_MELEE_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            }
-        },
-        {
-            name: "Build Up",
+            },
+        {name: "Build Up",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -134,10 +116,8 @@ const FIERY_MELEE_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 2.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Breath of Fire",
+            },
+        {name: "Breath of Fire",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -163,10 +143,8 @@ const FIERY_MELEE_POWERSET = {
                     ticks: 1
                 },
                 buffDuration: 0.6
-            }
-        },
-        {
-            name: "Confront",
+            },
+        {name: "Confront",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -184,10 +162,8 @@ const FIERY_MELEE_POWERSET = {
                 recharge: 3.0,
                 cast: 1.67,
                 buffDuration: 12.0
-            }
-        },
-        {
-            name: "Fire Sword Circle",
+            },
+        {name: "Fire Sword Circle",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -216,10 +192,8 @@ const FIERY_MELEE_POWERSET = {
                 },
                 buffDuration: 3.1,
                 defenseDebuff: 0.5
-            }
-        },
-        {
-            name: "Incinerate",
+            },
+        {name: "Incinerate",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -243,10 +217,8 @@ const FIERY_MELEE_POWERSET = {
                     ticks: 9
                 },
                 buffDuration: 4.6
-            }
-        },
-        {
-            name: "Greater Fire Sword",
+            },
+        {name: "Greater Fire Sword",
             available: 25,
             tier: 5,
             maxSlots: 6,

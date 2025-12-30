@@ -28,10 +28,8 @@ const ROBOTICS_POWERSET = {
                 recharge: 5.0,
                 endurance: 5.46,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Pulse Rifle Blast",
+            },
+        {name: "Pulse Rifle Blast",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -54,21 +52,8 @@ const ROBOTICS_POWERSET = {
                     scale: 2.26
                 },
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Robotics",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Robotics allows you to construct an army of mechanical henchmen and repair and upgrade them in order to keep your army in tip-top shape. Robot Henchmen generally have good resistances to Lethal, Cold and Psionic damage, as well as Sleep, Fear and Disorient. They are vulnerable to EMP attacks. Robot Henchmen cannot be resurrected.",
-            shortHelp: "Robotics",
-            icon: "robotics_set.png"
-        },
-        {
-            name: "Pulse Rifle Burst",
+            },
+        {name: "Pulse Rifle Burst",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -91,10 +76,8 @@ const ROBOTICS_POWERSET = {
                     scale: 3.13
                 },
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Equip Robot",
+            },
+        {name: "Equip Robot",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -114,10 +97,8 @@ const ROBOTICS_POWERSET = {
                 endurance: 11.375,
                 cast: 2.03,
                 buffDuration: 5.6
-            }
-        },
-        {
-            name: "Photon Grenade",
+            },
+        {name: "Photon Grenade",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -141,10 +122,8 @@ const ROBOTICS_POWERSET = {
                     scale: 1.6213
                 },
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Protector Bots",
+            },
+        {name: "Protector Bots",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -162,10 +141,8 @@ const ROBOTICS_POWERSET = {
                 recharge: 10.0,
                 endurance: 9.62,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Maintenance Drone",
+            },
+        {name: "Maintenance Drone",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -183,10 +160,8 @@ const ROBOTICS_POWERSET = {
                 recharge: 120.0,
                 endurance: 16.25,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Assault Bot",
+            },
+        {name: "Assault Bot",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -204,10 +179,8 @@ const ROBOTICS_POWERSET = {
                 recharge: 15.0,
                 endurance: 13.18,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Upgrade Robot",
+            },
+        {name: "Upgrade Robot",
             available: 25,
             tier: 5,
             maxSlots: 6,

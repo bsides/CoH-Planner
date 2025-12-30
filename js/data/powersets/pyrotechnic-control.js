@@ -32,30 +32,15 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                     types: [
                         {
                             type: "Fire",
-                            scale: 1.6268000000000002
-                        },
-                        {
-                            type: "Energy",
+                            scale: 1.6268000000000002},
+        {type: "Energy",
                             scale: 1.6268000000000002
                         }
                     ],
                     scale: 3.2536000000000005
                 }
-            }
-        },
-        {
-            name: "Pyrotechnic Control",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You have the ability to incapacitate enemies with creative and dazzling fireworks-like displays that incorporate elements of light, fire, energy and sound. Many powers have a chance to Blast Off targets, flinging them into the air and reducing their damage resistance with a vibrant explosion.",
-            shortHelp: "Pyrotechnic Control",
-            icon: "electric_control_set.png"
-        },
-        {
-            name: "Sparkling Cage",
+            },
+        {name: "Sparkling Cage",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -78,20 +63,16 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                         {
                             type: "Fire",
                             scale: 0.358,
-                            ticks: 4
-                        },
-                        {
-                            type: "Energy",
+                            ticks: 4},
+        {type: "Energy",
                             scale: 0.358,
                             ticks: 4
                         }
                     ]
                 },
                 buffDuration: 9.2
-            }
-        },
-        {
-            name: "Sparkling Chain",
+            },
+        {name: "Sparkling Chain",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -111,10 +92,8 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                 endurance: 13.0,
                 cast: 1.03,
                 buffDuration: 1.1
-            }
-        },
-        {
-            name: "Glittering Column",
+            },
+        {name: "Glittering Column",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -133,10 +112,8 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                 endurance: 7.8,
                 cast: 1.17,
                 buffDuration: 7.0
-            }
-        },
-        {
-            name: "Hypnotizing Lights",
+            },
+        {name: "Hypnotizing Lights",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -156,10 +133,8 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                 recharge: 45.0,
                 endurance: 8.582,
                 cast: 1.67
-            }
-        },
-        {
-            name: "Brilliant Barrage",
+            },
+        {name: "Brilliant Barrage",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -178,10 +153,8 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                 recharge: 90.0,
                 endurance: 15.6,
                 cast: 1.67
-            }
-        },
-        {
-            name: "Incendiary Aura",
+            },
+        {name: "Incendiary Aura",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -202,10 +175,8 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                 tohitDebuff: 1.25,
                 buffDuration: 0.45,
                 defenseDebuff: 0.75
-            }
-        },
-        {
-            name: "Explosive Bouquet",
+            },
+        {name: "Explosive Bouquet",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -224,10 +195,8 @@ const PYROTECHNIC_CONTROL_POWERSET = {
                 recharge: 8.0,
                 endurance: 8.528,
                 cast: 2.93
-            }
-        },
-        {
-            name: "Catherine Wheel",
+            },
+        {name: "Catherine Wheel",
             available: 25,
             tier: 5,
             maxSlots: 6,

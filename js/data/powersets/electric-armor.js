@@ -28,21 +28,8 @@ const ELECTRIC_ARMOR_POWERSET = {
                 endurance: 0.13,
                 cast: 0.67,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Electric Armor",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Your entire body is basically a powerful capacitor. You can store and release massive amounts of electricity that can absorb damage directed at you. Electric Armor offers better than average resistance to just about all types of damage, including Psionic, but has no defense boosting powers or resistance to Toxic. Electric Armor also offers superior resistance to Energy damage and Endurance Drain.",
-            shortHelp: "Electric Armor",
-            icon: "electric_armor_set.png"
-        },
-        {
-            name: "Lightning Field",
+            },
+        {name: "Lightning Field",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -64,10 +51,8 @@ const ELECTRIC_ARMOR_POWERSET = {
                     type: "Energy",
                     scale: 0.2
                 }
-            }
-        },
-        {
-            name: "Conductive Shield",
+            },
+        {name: "Conductive Shield",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -85,10 +70,8 @@ const ELECTRIC_ARMOR_POWERSET = {
                 endurance: 0.13,
                 cast: 0.67,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Static Shield",
+            },
+        {name: "Static Shield",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -105,10 +88,8 @@ const ELECTRIC_ARMOR_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.104,
                 cast: 1.17
-            }
-        },
-        {
-            name: "Grounded",
+            },
+        {name: "Grounded",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -122,10 +103,8 @@ const ELECTRIC_ARMOR_POWERSET = {
             effectArea: "SingleTarget",
             effects: {
                 accuracy: 1.0
-            }
-        },
-        {
-            name: "Energize",
+            },
+        {name: "Energize",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -143,10 +122,8 @@ const ELECTRIC_ARMOR_POWERSET = {
                 endurance: 10.4,
                 cast: 1.17,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Lightning Reflexes",
+            },
+        {name: "Lightning Reflexes",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -161,10 +138,8 @@ const ELECTRIC_ARMOR_POWERSET = {
             effects: {
                 accuracy: 1.0,
                 buffDuration: 10.25
-            }
-        },
-        {
-            name: "Power Sink",
+            },
+        {name: "Power Sink",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -182,10 +157,8 @@ const ELECTRIC_ARMOR_POWERSET = {
                 recharge: 60.0,
                 endurance: 13.0,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Power Surge",
+            },
+        {name: "Power Surge",
             available: 29,
             tier: 5,
             maxSlots: 6,

@@ -34,21 +34,8 @@ const NINJA_TRAINING_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            }
-        },
-        {
-            name: "Ninja Training",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You compliment your abilities with training in the secret art of the Ninja. You have mastered valuable ninja tools, poisons and weapons, including the deadly Ninja Blade. You also mastered the harmonic powers of Kuji-In Toh, allowing you to regenerate and recover endurance at an accelerated rate.",
-            shortHelp: "Ninja Training",
-            icon: "ninja_training_set.png"
-        },
-        {
-            name: "Sting of the Wasp",
+            },
+        {name: "Sting of the Wasp",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -72,10 +59,8 @@ const NINJA_TRAINING_POWERSET = {
                 },
                 defenseDebuff: 1.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Choking Powder",
+            },
+        {name: "Choking Powder",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -99,10 +84,8 @@ const NINJA_TRAINING_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.2
-            }
-        },
-        {
-            name: "Shinobi",
+            },
+        {name: "Shinobi",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -120,10 +103,8 @@ const NINJA_TRAINING_POWERSET = {
                 endurance: 0.13,
                 buffDuration: 0.75,
                 tohitBuff: 0.5
-            }
-        },
-        {
-            name: "The Lotus Drops",
+            },
+        {name: "The Lotus Drops",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -152,10 +133,8 @@ const NINJA_TRAINING_POWERSET = {
                 },
                 buffDuration: 2.1,
                 defenseDebuff: 1.0
-            }
-        },
-        {
-            name: "Kuji-In Toh",
+            },
+        {name: "Kuji-In Toh",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -178,10 +157,8 @@ const NINJA_TRAINING_POWERSET = {
                     ticks: 105
                 },
                 buffDuration: 210.0
-            }
-        },
-        {
-            name: "Smoke Flash",
+            },
+        {name: "Smoke Flash",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -200,10 +177,8 @@ const NINJA_TRAINING_POWERSET = {
                 endurance: 2.6,
                 cast: 1.83,
                 buffDuration: 15.0
-            }
-        },
-        {
-            name: "Blinding Powder",
+            },
+        {name: "Blinding Powder",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -225,10 +200,8 @@ const NINJA_TRAINING_POWERSET = {
                 cast: 1.07,
                 tohitDebuff: 1.0,
                 buffDuration: 15.0
-            }
-        },
-        {
-            name: "Golden Dragonfly",
+            },
+        {name: "Golden Dragonfly",
             available: 29,
             tier: 5,
             maxSlots: 6,

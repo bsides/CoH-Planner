@@ -9,19 +9,7 @@ const PSIONIC_ARMOR_POWERSET = {
     description: "Psionic Armor powerset",
     icon: "psionic-armor_set.png",
     powers: [
-        {
-            name: "Psionic Armor",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You use your psionic powers to shield yourself reducing incoming damage, as well as steal your foes own psyche and use it against them, be it by empowering your own regenerative powers, weakening their defenses or completely subduing their will.",
-            shortHelp: "Psionic Armor",
-            icon: "dark_armor_set.png"
-        },
-        {
-            name: "Psionic Shield",
+        {name: "Psionic Shield",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -38,10 +26,8 @@ const PSIONIC_ARMOR_POWERSET = {
                 recharge: 2.0,
                 endurance: 0.104,
                 cast: 1.17
-            }
-        },
-        {
-            name: "Psychic Wall",
+            },
+        {name: "Psychic Wall",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -59,10 +45,8 @@ const PSIONIC_ARMOR_POWERSET = {
                 endurance: 0.104,
                 cast: 0.67,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Mask Presence",
+            },
+        {name: "Mask Presence",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -79,10 +63,8 @@ const PSIONIC_ARMOR_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.104,
                 cast: 0.73
-            }
-        },
-        {
-            name: "Impenetrable Mind",
+            },
+        {name: "Impenetrable Mind",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -99,10 +81,8 @@ const PSIONIC_ARMOR_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.104,
                 cast: 0.73
-            }
-        },
-        {
-            name: "Devour Psyche",
+            },
+        {name: "Devour Psyche",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -122,10 +102,8 @@ const PSIONIC_ARMOR_POWERSET = {
                 recharge: 60.0,
                 endurance: 10.5,
                 cast: 1.0
-            }
-        },
-        {
-            name: "Psychokinetic Barrier",
+            },
+        {name: "Psychokinetic Barrier",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -143,10 +121,8 @@ const PSIONIC_ARMOR_POWERSET = {
                 endurance: 10.4,
                 cast: 1.17,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Precognition",
+            },
+        {name: "Precognition",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -162,10 +138,8 @@ const PSIONIC_ARMOR_POWERSET = {
                 accuracy: 1.0,
                 buffDuration: 10.25,
                 defenseBuff: 0.2312
-            }
-        },
-        {
-            name: "Aura of Insanity",
+            },
+        {name: "Aura of Insanity",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -182,10 +156,8 @@ const PSIONIC_ARMOR_POWERSET = {
                 accuracy: 0.8,
                 recharge: 10.0,
                 cast: 1.67
-            }
-        },
-        {
-            name: "Memento Mori",
+            },
+        {name: "Memento Mori",
             available: 29,
             tier: 5,
             maxSlots: 6,

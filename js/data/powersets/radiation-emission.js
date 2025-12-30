@@ -28,21 +28,8 @@ const RADIATION_EMISSION_POWERSET = {
                 recharge: 8.0,
                 endurance: 13.0,
                 cast: 2.03
-            }
-        },
-        {
-            name: "Radiation Emission",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Radiation Emission powers allow you to manipulate atomic particles and waves to protect your allies and weaken your enemies.",
-            shortHelp: "Radiation Emission",
-            icon: "radiation_emission_set.png"
-        },
-        {
-            name: "Radiation Infection",
+            },
+        {name: "Radiation Infection",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -64,10 +51,8 @@ const RADIATION_EMISSION_POWERSET = {
                 tohitDebuff: 2.5,
                 buffDuration: 0.75,
                 defenseDebuff: 2.5
-            }
-        },
-        {
-            name: "Accelerate Metabolism",
+            },
+        {name: "Accelerate Metabolism",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -88,10 +73,8 @@ const RADIATION_EMISSION_POWERSET = {
                 buffDuration: 120.0,
                 stun: 1.0,
                 stunDuration: 120.0
-            }
-        },
-        {
-            name: "Enervating Field",
+            },
+        {name: "Enervating Field",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -111,10 +94,8 @@ const RADIATION_EMISSION_POWERSET = {
                 endurance: 0.26,
                 cast: 1.5,
                 buffDuration: 0.75
-            }
-        },
-        {
-            name: "Mutation",
+            },
+        {name: "Mutation",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -135,10 +116,8 @@ const RADIATION_EMISSION_POWERSET = {
                 buffDuration: 0.5,
                 tohitBuff: 3.0,
                 tohitDebuff: 3.0
-            }
-        },
-        {
-            name: "Lingering Radiation",
+            },
+        {name: "Lingering Radiation",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -158,10 +137,8 @@ const RADIATION_EMISSION_POWERSET = {
                 endurance: 15.6,
                 cast: 1.5,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Choking Cloud",
+            },
+        {name: "Choking Cloud",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -179,10 +156,8 @@ const RADIATION_EMISSION_POWERSET = {
                 recharge: 20.0,
                 endurance: 1.3,
                 cast: 1.0
-            }
-        },
-        {
-            name: "Fallout",
+            },
+        {name: "Fallout",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -201,10 +176,8 @@ const RADIATION_EMISSION_POWERSET = {
                 endurance: 20.8,
                 cast: 3.2,
                 buffDuration: 1.0
-            }
-        },
-        {
-            name: "EM Pulse",
+            },
+        {name: "EM Pulse",
             available: 25,
             tier: 5,
             maxSlots: 6,

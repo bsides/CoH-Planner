@@ -9,19 +9,7 @@ const FIERY_ASSAULT_POWERSET = {
     description: "Fiery Assault powerset",
     icon: "fiery-assault_set.png",
     powers: [
-        {
-            name: "Fiery Assault",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "Fiery Assault allows you to conjure up flaming melee attacks and hurl devastating fiery projectiles. Fiery Assault powers tend to set foes ablaze for added Damage Over Time.",
-            shortHelp: "Fiery Assault",
-            icon: "fiery_assault_set.png"
-        },
-        {
-            name: "Flares",
+        {name: "Flares",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -43,10 +31,8 @@ const FIERY_ASSAULT_POWERSET = {
                     type: "Fire",
                     scale: 2.0978
                 }
-            }
-        },
-        {
-            name: "Incinerate",
+            },
+        {name: "Incinerate",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -70,10 +56,8 @@ const FIERY_ASSAULT_POWERSET = {
                     ticks: 9
                 },
                 buffDuration: 4.6
-            }
-        },
-        {
-            name: "Fire Breath",
+            },
+        {name: "Fire Breath",
             available: 3,
             tier: 2,
             maxSlots: 6,
@@ -99,10 +83,8 @@ const FIERY_ASSAULT_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 2.1
-            }
-        },
-        {
-            name: "Fire Blast",
+            },
+        {name: "Fire Blast",
             available: 9,
             tier: 3,
             maxSlots: 6,
@@ -130,10 +112,8 @@ const FIERY_ASSAULT_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            }
-        },
-        {
-            name: "Embrace of Fire",
+            },
+        {name: "Embrace of Fire",
             available: 15,
             tier: 4,
             maxSlots: 6,
@@ -151,10 +131,8 @@ const FIERY_ASSAULT_POWERSET = {
                 endurance: 7.8,
                 cast: 0.73,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Combustion",
+            },
+        {name: "Combustion",
             available: 19,
             tier: 4,
             maxSlots: 6,
@@ -182,10 +160,8 @@ const FIERY_ASSAULT_POWERSET = {
                     ticks: 7
                 },
                 buffDuration: 7.1
-            }
-        },
-        {
-            name: "Consume",
+            },
+        {name: "Consume",
             available: 23,
             tier: 5,
             maxSlots: 6,
@@ -204,10 +180,8 @@ const FIERY_ASSAULT_POWERSET = {
                 endurance: 0.52,
                 cast: 2.03,
                 buffDuration: 15.0
-            }
-        },
-        {
-            name: "Blazing Bolt",
+            },
+        {name: "Blazing Bolt",
             available: 27,
             tier: 5,
             maxSlots: 6,
@@ -225,10 +199,8 @@ const FIERY_ASSAULT_POWERSET = {
                 recharge: 20.0,
                 endurance: 18.512,
                 cast: 1.67
-            }
-        },
-        {
-            name: "Blaze",
+            },
+        {name: "Blaze",
             available: 29,
             tier: 5,
             maxSlots: 6,

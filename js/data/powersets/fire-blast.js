@@ -9,40 +9,7 @@ const FIRE_BLAST_POWERSET = {
     description: "Fire Blast powerset",
     icon: "fire-blast_set.png",
     powers: [
-        {
-            name: "Fire Blast",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["EnduranceReduction", "Range", "Recharge", "Damage", "Accuracy"],
-            allowedSetCategories: ["Blaster Archetype Sets", "Ranged Damage", "Universal Damage Sets"],
-            description: "Sends a Blast of Fire at a targeted foe and sets the target on fire for a short period of time. Slower recharge rate than Flares, but more damage.",
-            shortHelp: "Ranged, DMG(Fire)",
-            icon: "fireblast_fireblast.png",
-            powerType: "Click",
-            targetType: "Foe (Alive)",
-            effectArea: "SingleTarget",
-            effects: {
-                accuracy: 1.0,
-                range: 80.0,
-                recharge: 4.0,
-                endurance: 5.2,
-                cast: 1.2,
-                damage: {
-                    type: "Fire",
-                    scale: 2.4002
-                },
-                dotDamage: {
-                    type: "Fire",
-                    scale: 0.15,
-                    ticks: 3
-                },
-                buffDuration: 3.1
-            }
-        },
-
-        {
-            name: "Flares",
+        {name: "Flares",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -70,10 +37,8 @@ const FIRE_BLAST_POWERSET = {
                     ticks: 3
                 },
                 buffDuration: 3.1
-            }
-        },
-        {
-            name: "Fire Ball",
+            },
+        {name: "Fire Ball",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -96,10 +61,8 @@ const FIRE_BLAST_POWERSET = {
                     types: [
                         {
                             type: "Fire",
-                            scale: 1.1641
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 1.1641},
+        {type: "Smashing",
                             scale: 0.2
                         }
                     ],
@@ -111,10 +74,8 @@ const FIRE_BLAST_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 2.1
-            }
-        },
-        {
-            name: "Rain of Fire",
+            },
+        {name: "Rain of Fire",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -133,10 +94,8 @@ const FIRE_BLAST_POWERSET = {
                 endurance: 26.0,
                 cast: 2.03,
                 buffDuration: 15.0
-            }
-        },
-        {
-            name: "Fire Breath",
+            },
+        {name: "Fire Breath",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -162,10 +121,8 @@ const FIRE_BLAST_POWERSET = {
                     ticks: 2
                 },
                 buffDuration: 2.1
-            }
-        },
-        {
-            name: "Aim",
+            },
+        {name: "Aim",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -184,10 +141,8 @@ const FIRE_BLAST_POWERSET = {
                 cast: 1.17,
                 tohitBuff: 5.0,
                 buffDuration: 10.0
-            }
-        },
-        {
-            name: "Blaze",
+            },
+        {name: "Blaze",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -215,10 +170,8 @@ const FIRE_BLAST_POWERSET = {
                     ticks: 4
                 },
                 buffDuration: 4.1
-            }
-        },
-        {
-            name: "Blazing Bolt",
+            },
+        {name: "Blazing Bolt",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -236,10 +189,8 @@ const FIRE_BLAST_POWERSET = {
                 recharge: 12.0,
                 endurance: 14.352,
                 cast: 1.67
-            }
-        },
-        {
-            name: "Inferno",
+            },
+        {name: "Inferno",
             available: 25,
             tier: 5,
             maxSlots: 6,
@@ -261,10 +212,8 @@ const FIRE_BLAST_POWERSET = {
                     types: [
                         {
                             type: "Fire",
-                            scale: 4.4065
-                        },
-                        {
-                            type: "Smashing",
+                            scale: 4.4065},
+        {type: "Smashing",
                             scale: 1.0
                         }
                     ],

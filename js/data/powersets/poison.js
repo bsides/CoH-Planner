@@ -34,10 +34,8 @@ const POISON_POWERSET = {
                     ticks: 30
                 },
                 buffDuration: 60.0
-            }
-        },
-        {
-            name: "Envenom",
+            },
+        {name: "Envenom",
             available: 0,
             tier: 1,
             maxSlots: 6,
@@ -58,21 +56,8 @@ const POISON_POWERSET = {
                 cast: 1.33,
                 defenseDebuff: 1.5,
                 buffDuration: 30.0
-            }
-        },
-        {
-            name: "Poison",
-            available: 0,
-            tier: 1,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: [],
-            description: "You are a master of Poison and can concoct a variety of venoms and toxins allowing you to weaken your enemies. When used correctly, some Poisons can even be used to aid your allies.",
-            shortHelp: "Poison",
-            icon: "poison_set.png"
-        },
-        {
-            name: "Weaken",
+            },
+        {name: "Weaken",
             available: 1,
             tier: 1,
             maxSlots: 6,
@@ -93,10 +78,8 @@ const POISON_POWERSET = {
                 cast: 2.07,
                 buffDuration: 30.0,
                 tohitDebuff: 0.75
-            }
-        },
-        {
-            name: "Neurotoxic Breath",
+            },
+        {name: "Neurotoxic Breath",
             available: 5,
             tier: 3,
             maxSlots: 6,
@@ -117,10 +100,8 @@ const POISON_POWERSET = {
                 endurance: 10.4,
                 cast: 2.67,
                 buffDuration: 20.0
-            }
-        },
-        {
-            name: "Elixir of Life",
+            },
+        {name: "Elixir of Life",
             available: 7,
             tier: 3,
             maxSlots: 6,
@@ -146,10 +127,8 @@ const POISON_POWERSET = {
                 buffDuration: 0.5,
                 tohitBuff: 3.0,
                 tohitDebuff: 3.0
-            }
-        },
-        {
-            name: "Antidote",
+            },
+        {name: "Antidote",
             available: 11,
             tier: 4,
             maxSlots: 6,
@@ -172,10 +151,8 @@ const POISON_POWERSET = {
                         {
                             type: "Toxic",
                             scale: 2.0,
-                            ticks: 45
-                        },
-                        {
-                            type: "Cold",
+                            ticks: 45},
+        {type: "Cold",
                             scale: 1.0,
                             ticks: 45
                         }
@@ -184,10 +161,8 @@ const POISON_POWERSET = {
                 stun: 1.0,
                 stunDuration: 90.0,
                 buffDuration: 90.0
-            }
-        },
-        {
-            name: "Paralytic Poison",
+            },
+        {name: "Paralytic Poison",
             available: 17,
             tier: 4,
             maxSlots: 6,
@@ -205,10 +180,8 @@ const POISON_POWERSET = {
                 recharge: 16.0,
                 endurance: 7.8,
                 cast: 2.0
-            }
-        },
-        {
-            name: "Poison Trap",
+            },
+        {name: "Poison Trap",
             available: 21,
             tier: 5,
             maxSlots: 6,
@@ -226,10 +199,8 @@ const POISON_POWERSET = {
                 endurance: 10.4,
                 cast: 1.0,
                 buffDuration: 260.0
-            }
-        },
-        {
-            name: "Venomous Gas",
+            },
+        {name: "Venomous Gas",
             available: 25,
             tier: 5,
             maxSlots: 6,
