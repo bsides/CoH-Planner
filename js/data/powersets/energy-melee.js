@@ -1,199 +1,328 @@
 /**
- * City of Heroes: Energy Melee
- * 
- * Extracted from raw_data_homecoming-20250617_6916
+ * Energy Melee - Blaster Primary
+ * Extracted from raw_data_homecoming with updated converter
  */
 
-POWERSETS['energy-melee'] = {
+const ENERGY_MELEE_POWERSET = {
     name: "Energy Melee",
-    type: "primary",
-    description: "TODO: Add description",
+    category: "Blaster_RANGED",
+    description: "Energy Melee powerset",
+    icon: "energy-melee_set.png",
     powers: [
         {
-                    "name": "Barrage",
-                    "available": 0,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
-                    ],
-                    "tier": 1,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "range": 7.0,
-                                "recharge": 6.0,
-                                "endurance": 6.864,
-                                "cast": 1.33,
-                                "damage": {
-                                            "scale": 0.5
-                                }
-                    }
+            name: "Barrage",
+            available: 0,
+            tier: 1,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Melee Damage", "Scrapper Archetype Sets", "Stuns", "Universal Damage Sets"],
+            description: "You perform a quick punch that deals moderate damage. Coupled with other energy punches, Barrage can Disorient a foe. This power will have a 100% chance to stun and weaken the target's secondary effects and regeneration rate if used while in Energy Focus mode.",
+            shortHelp: "Melee, DMG(Smash/Energy), Foe Disorient, Special",
+            icon: "powerpunch_quick.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.0,
+                range: 7.0,
+                recharge: 6.0,
+                endurance: 6.864,
+                cast: 1.33,
+                dotDamage: {
+                    types: [
+                        {
+                            type: "Energy",
+                            scale: 1.0891,
+                            ticks: 1
+                        },
+                        {
+                            type: "Smashing",
+                            scale: 0.3564,
+                            ticks: 1
+                        },
+                        {
+                            type: "Fire",
+                            scale: 0.297,
+                            ticks: 1
+                        }
+                    ]
+                },
+                buffDuration: 0.3
+            }
         },
         {
-                    "name": "Energy Punch",
-                    "available": 0,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
-                    ],
-                    "tier": 1,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "range": 7.0,
-                                "recharge": 5.0,
-                                "endurance": 6.032,
-                                "cast": 0.83,
-                                "damage": {
-                                            "scale": 0.812
-                                }
-                    }
+            name: "Energy Melee",
+            available: 0,
+            tier: 1,
+            maxSlots: 6,
+            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
+            allowedSetCategories: [],
+            description: "You can use Energy Melee to power your blows with pure energy. These focused power attacks often Disorient opponents. Total Focus will enter Energy Focus upon hitting an enemy. Barrage, Power Crash or Energy Transfer are empowered while under Energy Focus.",
+            shortHelp: "Energy Melee",
+            icon: "energy_melee_set.png"
         },
         {
-                    "name": "Bone Smasher",
-                    "available": 1,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
+            name: "Energy Punch",
+            available: 0,
+            tier: 1,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Melee Damage", "Scrapper Archetype Sets", "Stuns", "Universal Damage Sets"],
+            description: "You perform a powerful Energy Punch that deals moderate damage. When used with other Energy Melee attacks, Energy Punch can Disorient your opponent.",
+            shortHelp: "Melee, DMG(Smash/Energy), Foe Disorient",
+            icon: "powerpunch_energypunch.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.0,
+                range: 7.0,
+                recharge: 5.0,
+                endurance: 6.032,
+                cast: 0.83,
+                damage: {
+                    types: [
+                        {
+                            type: "Energy",
+                            scale: 1.6387
+                        },
+                        {
+                            type: "Smashing",
+                            scale: 0.7022999999999999
+                        },
+                        {
+                            type: "Fire",
+                            scale: 0.522
+                        }
                     ],
-                    "tier": 2,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "range": 7.0,
-                                "recharge": 8.0,
-                                "endurance": 8.528,
-                                "cast": 1.27,
-                                "damage": {
-                                            "scale": 1.0
-                                }
-                    }
+                    scale: 2.863
+                }
+            }
         },
         {
-                    "name": "Build Up",
-                    "available": 5,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge"
+            name: "Bone Smasher",
+            available: 1,
+            tier: 1,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Melee Damage", "Scrapper Archetype Sets", "Stuns", "Universal Damage Sets"],
+            description: "This melee attack deals a good amount of damage and has a good chance to Disorient the target.",
+            shortHelp: "Melee, DMG(Smash/Energy), Disorient",
+            icon: "powerpunch_bonesmasher.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.0,
+                range: 7.0,
+                recharge: 8.0,
+                endurance: 8.528,
+                cast: 1.27,
+                damage: {
+                    types: [
+                        {
+                            type: "Energy",
+                            scale: 2.0780000000000003
+                        },
+                        {
+                            type: "Smashing",
+                            scale: 1.171
+                        },
+                        {
+                            type: "Fire",
+                            scale: 0.738
+                        }
                     ],
-                    "tier": 3,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "recharge": 90.0,
-                                "endurance": 5.2,
-                                "cast": 1.17,
-                                "damage": {
-                                            "scale": 8.0
-                                },
-                                "dotDamage": 8.0,
-                                "dotTicks": 5
-                    }
+                    scale: 3.987
+                }
+            }
         },
         {
-                    "name": "Power Crash",
-                    "available": 7,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
-                    ],
-                    "tier": 3,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "range": 10.0,
-                                "recharge": 9.0,
-                                "endurance": 9.36,
-                                "cast": 1.8,
-                                "damage": {
-                                            "scale": 0.5054
-                                }
-                    }
+            name: "Build Up",
+            available: 5,
+            tier: 3,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge"],
+            allowedSetCategories: ["To Hit Buff"],
+            description: "Greatly increases the amount of damage you deal for a few seconds, as well as slightly increasing your chance to hit.",
+            shortHelp: "Self +DMG, +To Hit",
+            icon: "powerpunch_buildup.png",
+            powerType: "Click",
+            targetType: "Self",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.0,
+                recharge: 90.0,
+                endurance: 5.2,
+                cast: 1.17,
+                tohitBuff: 2.0,
+                buffDuration: 10.0
+            }
         },
         {
-                    "name": "Confront",
-                    "available": 11,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "Range",
-                                "Recharge",
-                                "Accuracy"
+            name: "Power Crash",
+            available: 7,
+            tier: 3,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Melee AoE Damage", "Scrapper Archetype Sets", "Stuns", "Universal Damage Sets"],
+            description: "You focus your internal energy on your fists and release it once you hit your target unleashing an energy wave that hurts and disorients multiple enemies. This power will hit up to 5 additional foes if used while in Energy Focus mode.",
+            shortHelp: "Melee (Cone), DMG(Smash/Energy), Foe Disorient, Special",
+            icon: "powerpunch_powercrash.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "Cone",
+            maxTargets: 5,
+            arc: 2.0944,
+            effects: {
+                accuracy: 1.0,
+                range: 10.0,
+                recharge: 9.0,
+                endurance: 9.36,
+                cast: 1.8,
+                damage: {
+                    types: [
+                        {
+                            type: "Energy",
+                            scale: 1.4809
+                        },
+                        {
+                            type: "Smashing",
+                            scale: 1.0725
+                        },
+                        {
+                            type: "Fire",
+                            scale: 0.5415
+                        }
                     ],
-                    "tier": 4,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "range": 70.0,
-                                "recharge": 3.0,
-                                "cast": 1.67
-                    }
+                    scale: 3.0949
+                }
+            }
         },
         {
-                    "name": "Whirling Hands",
-                    "available": 17,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
-                    ],
-                    "tier": 4,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "recharge": 14.0,
-                                "endurance": 13.0,
-                                "cast": 2.5,
-                                "damage": {
-                                            "scale": 0.4964
-                                }
-                    }
+            name: "Confront",
+            available: 11,
+            tier: 4,
+            maxSlots: 6,
+            allowedEnhancements: ["Range", "Recharge", "Accuracy"],
+            allowedSetCategories: ["Threat Duration"],
+            description: "Challenges a foe to attack you. Useful to pull a villain off an ally who finds themselves in over their head. A To Hit check required to Taunt enemy players, but is not needed against critter targets.",
+            shortHelp: "Ranged, Foe Taunt",
+            icon: "powerpunch_challenge.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.0,
+                range: 70.0,
+                recharge: 3.0,
+                cast: 1.67,
+                buffDuration: 12.0
+            }
         },
         {
-                    "name": "Total Focus",
-                    "available": 21,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
+            name: "Whirling Hands",
+            available: 17,
+            tier: 4,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Melee AoE Damage", "Scrapper Archetype Sets", "Stuns", "Universal Damage Sets"],
+            description: "By focusing your energy into the muscles in your arms, you can launch a dizzying flurry of attacks against every foe in melee range. Some foes may be hit hard enough to be Disoriented as well.",
+            shortHelp: "PBAoE Melee, DMG(Smash/Energy)",
+            icon: "powerpunch_flurry.png",
+            powerType: "Click",
+            targetType: "Self",
+            effectArea: "AoE",
+            maxTargets: 10,
+            effects: {
+                accuracy: 1.0,
+                recharge: 14.0,
+                endurance: 13.0,
+                cast: 2.5,
+                damage: {
+                    types: [
+                        {
+                            type: "Energy",
+                            scale: 1.4
+                        },
+                        {
+                            type: "Smashing",
+                            scale: 1.0138
+                        },
+                        {
+                            type: "Fire",
+                            scale: 0.5318
+                        }
                     ],
-                    "tier": 5,
-                    "effects": {
-                                "accuracy": 1.2,
-                                "range": 7.0,
-                                "recharge": 20.0,
-                                "endurance": 18.512,
-                                "cast": 2.53,
-                                "damage": {
-                                            "scale": 1.0
-                                }
-                    }
+                    scale: 2.9455999999999998
+                }
+            }
         },
         {
-                    "name": "Energy Transfer",
-                    "available": 25,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
+            name: "Total Focus",
+            available: 21,
+            tier: 5,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Melee Damage", "Scrapper Archetype Sets", "Stuns", "Universal Damage Sets"],
+            description: "Total Focus is complete mastery over Energy Melee. This melee attack is a very slow, but incredibly devastating attack that can knock out most opponents, leaving them Disoriented. Due to the exhausting nature of Total Focus, recharge time is very long. This power will enter Energy Focus mode. Total Focus Criticals do not result in double damage, instead it grants double Energy Focus.",
+            shortHelp: "Melee, DMG(Smash/Energy), Foe Disorient, +Energy Focus",
+            icon: "powerpunch_totalfocus.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.2,
+                range: 7.0,
+                recharge: 20.0,
+                endurance: 18.512,
+                cast: 2.53,
+                damage: {
+                    types: [
+                        {
+                            type: "Energy",
+                            scale: 4.6396
+                        },
+                        {
+                            type: "Smashing",
+                            scale: 1.8913
+                        },
+                        {
+                            type: "Fire",
+                            scale: 1.602
+                        }
                     ],
-                    "tier": 5,
-                    "effects": {
-                                "accuracy": 1.2,
-                                "range": 7.0,
-                                "recharge": 10.0,
-                                "cast": 2.67
-                    }
+                    scale: 8.1329
+                },
+                stun: 3.0
+            }
+        },
+        {
+            name: "Energy Transfer",
+            available: 25,
+            tier: 5,
+            maxSlots: 6,
+            allowedEnhancements: ["Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Melee Damage", "Scrapper Archetype Sets", "Stuns", "Universal Damage Sets"],
+            description: "Mastery of Energy Melee culminates with the ability to transfer your own Hit Points into a punch that deals extreme damage. Energy Transfer has a good chance of Disorienting the target. This power will execute extremely quickly if under Energy Focus mode.",
+            shortHelp: "Melee, DMG(Energy), Foe Disorient, Self -HP, Special",
+            icon: "powerpunch_energytransfer.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.2,
+                range: 7.0,
+                recharge: 10.0,
+                cast: 2.67
+            }
         }
     ]
 };
+
+// Register to POWERSETS
+if (typeof POWERSETS !== 'undefined') {
+    POWERSETS['energy-melee'] = ENERGY_MELEE_POWERSET;
+} else if (typeof window !== 'undefined') {
+    window.ENERGY_MELEE_POWERSET = ENERGY_MELEE_POWERSET;
+}

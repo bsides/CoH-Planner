@@ -1,219 +1,288 @@
 /**
- * City of Heroes: Fiery Melee
- * 
- * Extracted from raw_data_homecoming-20250617_6916
+ * Fiery Melee - Blaster Primary
+ * Extracted from raw_data_homecoming with updated converter
  */
 
-POWERSETS['fiery-melee'] = {
+const FIERY_MELEE_POWERSET = {
     name: "Fiery Melee",
-    type: "primary",
-    description: "TODO: Add description",
+    category: "Blaster_RANGED",
+    description: "Fiery Melee powerset",
+    icon: "fiery-melee_set.png",
     powers: [
         {
-                    "name": "Fire Sword",
-                    "available": 0,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
-                    ],
-                    "tier": 1,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "range": 7.0,
-                                "recharge": 6.0,
-                                "endurance": 6.864,
-                                "cast": 1.33,
-                                "damage": {
-                                            "scale": 1.32
-                                },
-                                "dotDamage": 0.1,
-                                "dotTicks": 1
-                    }
+            name: "Fiery Melee",
+            available: 0,
+            tier: 1,
+            maxSlots: 6,
+            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
+            allowedSetCategories: [],
+            description: "Fiery Melee allows you to attack with fire, and even conjure up flaming melee weapons. Fiery Melee powers tend to set foes ablaze for added Damage Over Time.",
+            shortHelp: "Fiery Melee",
+            icon: "fiery_melee_set.png"
         },
         {
-                    "name": "Scorch",
-                    "available": 0,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
-                    ],
-                    "tier": 1,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "range": 7.0,
-                                "recharge": 3.0,
-                                "endurance": 4.368,
-                                "cast": 1.0,
-                                "damage": {
-                                            "scale": 0.84
-                                },
-                                "dotDamage": 0.1,
-                                "dotTicks": 1
-                    }
+            name: "Fire Sword",
+            available: 0,
+            tier: 1,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Accurate Defense Debuff", "Defense Debuff", "Melee Damage", "Scrapper Archetype Sets", "Universal Damage Sets"],
+            description: "Through concentration, you can create a Sword of Fire that sets foes ablaze. Successful attacks from the Fire Sword will cut through your target defenses and ignite them, dealing damage over time.",
+            shortHelp: "Melee, DMG(Fire), -Defense",
+            icon: "fieryfray_firesword.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.0,
+                range: 7.0,
+                recharge: 6.0,
+                endurance: 6.864,
+                cast: 1.33,
+                damage: {
+                    type: "Fire",
+                    scale: 2.891
+                },
+                dotDamage: {
+                    type: "Fire",
+                    scale: 0.1,
+                    ticks: 3
+                },
+                buffDuration: 3.1,
+                defenseDebuff: 0.5
+            }
         },
         {
-                    "name": "Cremate",
-                    "available": 1,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
-                    ],
-                    "tier": 2,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "range": 7.0,
-                                "recharge": 8.0,
-                                "endurance": 8.528,
-                                "cast": 1.5,
-                                "damage": {
-                                            "scale": 1.64
-                                },
-                                "dotDamage": 0.1,
-                                "dotTicks": 1
-                    }
+            name: "Scorch",
+            available: 0,
+            tier: 1,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Melee Damage", "Scrapper Archetype Sets", "Universal Damage Sets"],
+            description: "This power engulfs your hands in flames, and can ignite the target of your Scorching attack. Once on fire, the target will suffer damage over time.",
+            shortHelp: "Melee, DMG(Fire)",
+            icon: "fieryfray_targetedlightmelee.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.0,
+                range: 7.0,
+                recharge: 3.0,
+                endurance: 4.368,
+                cast: 1.0,
+                damage: {
+                    type: "Fire",
+                    scale: 5.3378
+                },
+                dotDamage: {
+                    type: "Fire",
+                    scale: 0.14500000000000002,
+                    ticks: 2
+                },
+                buffDuration: 2.1
+            }
         },
         {
-                    "name": "Build Up",
-                    "available": 5,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge"
-                    ],
-                    "tier": 3,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "recharge": 90.0,
-                                "endurance": 5.2,
-                                "cast": 1.17,
-                                "damage": {
-                                            "scale": 8.0
-                                },
-                                "dotDamage": 8.0,
-                                "dotTicks": 5
-                    }
+            name: "Cremate",
+            available: 1,
+            tier: 1,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Knockback", "Melee Damage", "Scrapper Archetype Sets", "Universal Damage Sets"],
+            description: "A slow but devastating attack. Cremate clobbers your foes with a massive 2 handed fiery smash knocks down and leaves your foe on fire.",
+            shortHelp: "Melee, DMG(Fire), Knockup",
+            icon: "fieryfray_scorch.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.0,
+                range: 7.0,
+                recharge: 8.0,
+                endurance: 8.528,
+                cast: 1.5,
+                damage: {
+                    type: "Fire",
+                    scale: 3.41
+                },
+                dotDamage: {
+                    type: "Fire",
+                    scale: 0.1,
+                    ticks: 3
+                },
+                buffDuration: 3.1
+            }
         },
         {
-                    "name": "Breath of Fire",
-                    "available": 7,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Range",
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
-                    ],
-                    "tier": 3,
-                    "effects": {
-                                "accuracy": 1.2,
-                                "range": 15.0,
-                                "recharge": 10.0,
-                                "endurance": 10.192,
-                                "cast": 2.67,
-                                "damage": {
-                                            "scale": 0.68
-                                },
-                                "dotDamage": 0.1,
-                                "dotTicks": 1
-                    }
+            name: "Build Up",
+            available: 5,
+            tier: 3,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge"],
+            allowedSetCategories: ["To Hit Buff"],
+            description: "Greatly increases the amount of damage you deal for a few seconds, as well as slightly increasing your chance to hit.",
+            shortHelp: "Self +DMG, +To Hit",
+            icon: "fieryfray_followup.png",
+            powerType: "Click",
+            targetType: "Self",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.0,
+                recharge: 90.0,
+                endurance: 5.2,
+                cast: 1.17,
+                tohitBuff: 2.0,
+                buffDuration: 10.0
+            }
         },
         {
-                    "name": "Confront",
-                    "available": 11,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "Range",
-                                "Recharge",
-                                "Accuracy"
-                    ],
-                    "tier": 4,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "range": 70.0,
-                                "recharge": 3.0,
-                                "cast": 1.67
-                    }
+            name: "Breath of Fire",
+            available: 7,
+            tier: 3,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Range", "Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Ranged AoE Damage", "Scrapper Archetype Sets", "Universal Damage Sets"],
+            description: "This allows you to spew forth fire from your mouth, burning all foes within its narrow cone. This is a very accurate attack that can deal good damage at a close range.",
+            shortHelp: "Close (Cone) DoT (Fire)",
+            icon: "fieryfray_breathingfire.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "Cone",
+            maxTargets: 10,
+            arc: 0.5236,
+            effects: {
+                accuracy: 1.2,
+                range: 15.0,
+                recharge: 10.0,
+                endurance: 10.192,
+                cast: 2.67,
+                dotDamage: {
+                    type: "Fire",
+                    scale: 1.8491,
+                    ticks: 1
+                },
+                buffDuration: 0.6
+            }
         },
         {
-                    "name": "Fire Sword Circle",
-                    "available": 17,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
-                    ],
-                    "tier": 4,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "recharge": 20.0,
-                                "endurance": 18.512,
-                                "cast": 2.67,
-                                "damage": {
-                                            "scale": 1.424
-                                },
-                                "dotDamage": 0.1,
-                                "dotTicks": 1
-                    }
+            name: "Confront",
+            available: 11,
+            tier: 4,
+            maxSlots: 6,
+            allowedEnhancements: ["Range", "Recharge", "Accuracy"],
+            allowedSetCategories: ["Threat Duration"],
+            description: "Challenges a foe to attack you. Useful to pull a villain off an ally who finds themselves in over their head. A To Hit check required to Taunt enemy players, but is not needed against critter targets.",
+            shortHelp: "Ranged, Foe Taunt",
+            icon: "fieryfray_willowisp.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.0,
+                range: 70.0,
+                recharge: 3.0,
+                cast: 1.67,
+                buffDuration: 12.0
+            }
         },
         {
-                    "name": "Incinerate",
-                    "available": 21,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
-                    ],
-                    "tier": 5,
-                    "effects": {
-                                "accuracy": 1.0,
-                                "range": 7.0,
-                                "recharge": 10.0,
-                                "endurance": 6.864,
-                                "cast": 1.67,
-                                "damage": {
-                                            "scale": 0.25
-                                },
-                                "dotDamage": 0.25,
-                                "dotTicks": 2
-                    }
+            name: "Fire Sword Circle",
+            available: 17,
+            tier: 4,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Accurate Defense Debuff", "Defense Debuff", "Melee AoE Damage", "Scrapper Archetype Sets", "Universal Damage Sets"],
+            description: "Mastery of your Fire Sword has enabled you to make an attack on every foe within melee distance. This will slash burn and cut through the defenses of your enemies, dealing moderate damage and setting them ablaze.",
+            shortHelp: "PBAoE Melee, DMG(Fire), -Defense",
+            icon: "fieryfray_fireswordcircle.png",
+            powerType: "Click",
+            targetType: "Self",
+            effectArea: "AoE",
+            maxTargets: 10,
+            effects: {
+                accuracy: 1.0,
+                recharge: 20.0,
+                endurance: 18.512,
+                cast: 2.67,
+                damage: {
+                    type: "Fire",
+                    scale: 2.6516
+                },
+                dotDamage: {
+                    type: "Fire",
+                    scale: 0.1,
+                    ticks: 3
+                },
+                buffDuration: 3.1,
+                defenseDebuff: 0.5
+            }
         },
         {
-                    "name": "Greater Fire Sword",
-                    "available": 25,
-                    "maxSlots": 6,
-                    "allowedEnhancements": [
-                                "EnduranceReduction",
-                                "Recharge",
-                                "Damage",
-                                "Accuracy"
-                    ],
-                    "tier": 5,
-                    "effects": {
-                                "accuracy": 1.2,
-                                "range": 7.0,
-                                "recharge": 12.0,
-                                "endurance": 12.688,
-                                "cast": 1.37,
-                                "damage": {
-                                            "scale": 2.28
-                                },
-                                "dotDamage": 0.2,
-                                "dotTicks": 2
-                    }
+            name: "Incinerate",
+            available: 21,
+            tier: 5,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Melee Damage", "Scrapper Archetype Sets", "Universal Damage Sets"],
+            description: "Intense concentration can allow you to Incinerate an opponent. This will set your foe ablaze, dealing damage over time.",
+            shortHelp: "Melee, DoT (Fire)",
+            icon: "fieryfray_incinerate.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.0,
+                range: 7.0,
+                recharge: 10.0,
+                endurance: 6.864,
+                cast: 1.67,
+                dotDamage: {
+                    type: "Fire",
+                    scale: 0.44689999999999996,
+                    ticks: 9
+                },
+                buffDuration: 4.6
+            }
+        },
+        {
+            name: "Greater Fire Sword",
+            available: 25,
+            tier: 5,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge", "Damage", "Accuracy"],
+            allowedSetCategories: ["Accurate Defense Debuff", "Defense Debuff", "Melee Damage", "Scrapper Archetype Sets", "Universal Damage Sets"],
+            description: "Your mastery of fire allows you to create an enhanced Sword of Fire that can set foes ablaze and cut through their defenses. Successful attacks from the Greater Fire Sword will ignite your target, dealing damage over time.",
+            shortHelp: "Melee, DMG(Fire), -Defense",
+            icon: "fieryfray_greaterfiresword.png",
+            powerType: "Click",
+            targetType: "Foe (Alive)",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.2,
+                range: 7.0,
+                recharge: 12.0,
+                endurance: 12.688,
+                cast: 1.37,
+                damage: {
+                    type: "Fire",
+                    scale: 4.119
+                },
+                dotDamage: {
+                    type: "Fire",
+                    scale: 0.2,
+                    ticks: 4
+                },
+                buffDuration: 4.1,
+                defenseDebuff: 0.5
+            }
         }
     ]
 };
+
+// Register to POWERSETS
+if (typeof POWERSETS !== 'undefined') {
+    POWERSETS['fiery-melee'] = FIERY_MELEE_POWERSET;
+} else if (typeof window !== 'undefined') {
+    window.FIERY_MELEE_POWERSET = FIERY_MELEE_POWERSET;
+}
