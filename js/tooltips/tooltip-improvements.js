@@ -589,12 +589,118 @@ function generateImprovedPowerTooltipHTML(power, basePower, showModified = false
             html += `</div>`;
         }
         
-        // HEALING/ABSORB SECTION
-        if (effects.healing !== undefined || effects.absorb !== undefined) {
+        // TYPED RESISTANCE SECTION (for armor powers)
+        if (effects.resistance && typeof effects.resistance === 'object') {
+            html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
+            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px;">RESISTANCE</div>`;
+            
+            // Sort damage types for consistent display
+            const damageTypes = Object.keys(effects.resistance).sort();
+            damageTypes.forEach(type => {
+                const value = effects.resistance[type];
+                const typeLabel = type.charAt(0).toUpperCase() + type.slice(1);
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+                html += `<span style="opacity: 0.8;">${typeLabel}:</span>`;
+                html += `<span style="font-weight: 600; color: var(--accent);">+${(value * 100).toFixed(1)}%</span>`;
+                html += `</div>`;
+            });
+            
+            html += `</div>`;
+        }
+        
+        // TYPED DEFENSE SECTION (for armor powers)
+        if (effects.defense && typeof effects.defense === 'object') {
+            html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
+            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px;">DEFENSE</div>`;
+            
+            // Sort defense types for consistent display
+            const defenseTypes = Object.keys(effects.defense).sort();
+            defenseTypes.forEach(type => {
+                const value = effects.defense[type];
+                const typeLabel = type.charAt(0).toUpperCase() + type.slice(1);
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+                html += `<span style="opacity: 0.8;">${typeLabel}:</span>`;
+                html += `<span style="font-weight: 600; color: var(--accent);">+${(value * 100).toFixed(1)}%</span>`;
+                html += `</div>`;
+            });
+            
+            html += `</div>`;
+        }
+        
+        // DEBUFF RESISTANCE SECTION (for armor/buff powers)
+        if (effects.debuffResistance && typeof effects.debuffResistance === 'object') {
+            html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
+            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px;">DEBUFF RESISTANCE</div>`;
+            
+            const debuffResLabels = {
+                tohit: 'ToHit Debuffs',
+                defense: 'Defense Debuffs',
+                damage: 'Damage Debuffs',
+                recharge: 'Recharge Debuffs',
+                movement: 'Movement Debuffs',
+                regeneration: 'Regeneration Debuffs',
+                recovery: 'Recovery Debuffs',
+                endurance: 'Endurance Debuffs',
+                healing: 'Healing Debuffs'
+            };
+            
+            // Sort for consistent display
+            Object.keys(effects.debuffResistance).sort().forEach(type => {
+                const value = effects.debuffResistance[type];
+                const label = debuffResLabels[type] || (type.charAt(0).toUpperCase() + type.slice(1));
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+                html += `<span style="opacity: 0.8;">${label}:</span>`;
+                html += `<span style="font-weight: 600; color: #22c55e;">+${(value * 100).toFixed(1)}%</span>`;
+                html += `</div>`;
+            });
+            
+            html += `</div>`;
+        }
+        
+        // HEALING SECTION (for powers like Dark Regeneration)
+        if (effects.healing && typeof effects.healing === 'object') {
             html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
             html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px;">HEALING</div>`;
             
-            if (effects.healing !== undefined) {
+            const healScale = effects.healing.scale || 0;
+            const perTarget = effects.healing.perTarget || false;
+            
+            if (perTarget) {
+                // Per-target healing (like Dark Regeneration)
+                const maxTargets = basePower.maxTargets || 10;
+                const totalHeal = healScale * maxTargets;
+                
+                html += `<div style="margin-bottom: 4px;">`;
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+                html += `<span style="opacity: 0.8;">Per Enemy:</span>`;
+                html += `<span style="font-weight: 600; color: #4ade80;">${healScale.toFixed(1)} HP</span>`;
+                html += `</div>`;
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+                html += `<span style="opacity: 0.8;">Max Targets:</span>`;
+                html += `<span style="font-weight: 600;">${maxTargets}</span>`;
+                html += `</div>`;
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2px; padding-top: 4px;">`;
+                html += `<span style="opacity: 0.8;">Max Heal:</span>`;
+                html += `<span style="font-weight: 700; color: #22c55e;">${totalHeal.toFixed(1)} HP</span>`;
+                html += `</div>`;
+                html += `</div>`;
+            } else {
+                // Single-target or self-only healing
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+                html += `<span style="opacity: 0.8;">Heal:</span>`;
+                html += `<span style="font-weight: 600; color: #4ade80;">${healScale.toFixed(1)} HP</span>`;
+                html += `</div>`;
+            }
+            
+            html += `</div>`;
+        }
+        
+        // HEALING/ABSORB SECTION (legacy format)
+        if ((effects.healing !== undefined && typeof effects.healing !== 'object') || effects.absorb !== undefined) {
+            html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
+            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px;">HEALING</div>`;
+            
+            if (effects.healing !== undefined && typeof effects.healing !== 'object') {
                 html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
                 html += `<span style="opacity: 0.8;">Healing:</span>`;
                 html += `<span style="font-weight: 600; color: #4ade80;">${(effects.healing * 100).toFixed(1)}% HP</span>`;
@@ -647,29 +753,57 @@ function generateImprovedPowerTooltipHTML(power, basePower, showModified = false
         }
         
         // STATUS PROTECTION SECTION
-        const protectionData = [
-            { key: 'holdProtection', label: 'Hold Protection' },
-            { key: 'stunProtection', label: 'Stun Protection' },
-            { key: 'immobilizeProtection', label: 'Immobilize Protection' },
-            { key: 'sleepProtection', label: 'Sleep Protection' },
-            { key: 'confuseProtection', label: 'Confuse Protection' },
-            { key: 'fearProtection', label: 'Fear Protection' },
-            { key: 'knockbackProtection', label: 'Knockback Protection' }
-        ];
-        
-        const protections = protectionData.filter(p => effects[p.key] !== undefined);
-        if (protections.length > 0) {
+        // Check for nested protection object or flat protection keys
+        if (effects.protection && typeof effects.protection === 'object') {
             html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
             html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px;">STATUS PROTECTION</div>`;
             
-            protections.forEach(({ key, label }) => {
+            const protectionLabels = {
+                hold: 'Hold',
+                stun: 'Stun', 
+                immobilize: 'Immobilize',
+                sleep: 'Sleep',
+                confuse: 'Confuse',
+                fear: 'Fear',
+                knockback: 'Knockback'
+            };
+            
+            Object.keys(effects.protection).sort().forEach(type => {
+                const value = effects.protection[type];
+                const label = protectionLabels[type] || (type.charAt(0).toUpperCase() + type.slice(1));
                 html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
-                html += `<span style="opacity: 0.8;">${label}:</span>`;
-                html += `<span style="font-weight: 600; color: #10b981;">Mag ${effects[key].toFixed(1)}</span>`;
+                html += `<span style="opacity: 0.8;">${label} Protection:</span>`;
+                html += `<span style="font-weight: 600; color: #10b981;">Mag ${value.toFixed(1)}</span>`;
                 html += `</div>`;
             });
             
             html += `</div>`;
+        } else {
+            // Fallback: check for flat protection keys (legacy format)
+            const protectionData = [
+                { key: 'holdProtection', label: 'Hold Protection' },
+                { key: 'stunProtection', label: 'Stun Protection' },
+                { key: 'immobilizeProtection', label: 'Immobilize Protection' },
+                { key: 'sleepProtection', label: 'Sleep Protection' },
+                { key: 'confuseProtection', label: 'Confuse Protection' },
+                { key: 'fearProtection', label: 'Fear Protection' },
+                { key: 'knockbackProtection', label: 'Knockback Protection' }
+            ];
+            
+            const protections = protectionData.filter(p => effects[p.key] !== undefined);
+            if (protections.length > 0) {
+                html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
+                html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px;">STATUS PROTECTION</div>`;
+                
+                protections.forEach(({ key, label }) => {
+                    html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+                    html += `<span style="opacity: 0.8;">${label}:</span>`;
+                    html += `<span style="font-weight: 600; color: #10b981;">Mag ${effects[key].toFixed(1)}</span>`;
+                    html += `</div>`;
+                });
+                
+                html += `</div>`;
+            }
         }
         
         // DURATION (if not shown in control effects)

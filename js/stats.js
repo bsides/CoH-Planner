@@ -322,10 +322,30 @@ function updateStatsDashboard() {
         const statItem = document.createElement('div');
         statItem.className = 'stat-item';
         statItem.style.cursor = 'help'; // Show help cursor on hover
-        statItem.innerHTML = `
-            <div class="stat-label ${statDef.color}">${statDef.name}</div>
-            <div class="stat-value">${formattedValue}</div>
-        `;
+        
+        const label = document.createElement('div');
+        label.className = 'stat-label';
+        label.textContent = statDef.name;
+        
+        // Apply color scheme if available
+        if (typeof applyDashboardStatStyle === 'function') {
+            applyDashboardStatStyle(label, statId);
+        } else {
+            // Fallback to legacy class-based styling
+            label.className += ` ${statDef.color}`;
+        }
+        
+        const statValue = document.createElement('div');
+        statValue.className = 'stat-value';
+        statValue.textContent = formattedValue;
+        
+        // Apply color to the value if color scheme is available
+        if (typeof getStatColor === 'function') {
+            statValue.style.color = getStatColor(statId);
+        }
+        
+        statItem.appendChild(label);
+        statItem.appendChild(statValue);
         
         // Add tooltip handlers (using unified tooltip system)
         statItem.onmouseenter = (e) => {

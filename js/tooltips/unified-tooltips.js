@@ -73,17 +73,18 @@ function generateAvailablePowerTooltipHTML(basePower) {
         // Show damage (handles single type, multiple types, and DoT)
         if (effects.damage) {
             const dmg = effects.damage;
+            const damageColor = getStatColor('damage');
             html += `<div style="margin-bottom: 4px;">`;
             
             if (dmg.type) {
                 // Single damage type
                 html += `<div style="display: flex; justify-content: space-between; font-size: 11px;">`;
-                html += `<span style="opacity: 0.8;">${dmg.type} Damage:</span>`;
+                html += `<span style="opacity: 0.8; color: ${damageColor};">${dmg.type} Damage:</span>`;
                 html += `<span style="font-weight: 600;">${dmg.scale.toFixed(2)}</span>`;
                 html += `</div>`;
             } else if (dmg.types) {
                 // Multiple damage types
-                html += `<div style="font-size: 11px; opacity: 0.8; margin-bottom: 2px;">Damage (${dmg.scale.toFixed(2)} total):</div>`;
+                html += `<div style="font-size: 11px; opacity: 0.8; margin-bottom: 2px; color: ${damageColor};">Damage (${dmg.scale.toFixed(2)} total):</div>`;
                 dmg.types.forEach(type => {
                     html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding-left: 12px;">`;
                     html += `<span style="opacity: 0.7;">${type.type}:</span>`;
@@ -98,13 +99,14 @@ function generateAvailablePowerTooltipHTML(basePower) {
         // Show DoT damage
         if (effects.dotDamage) {
             const dot = effects.dotDamage;
+            const dotDamageColor = getStatColor('damage');
             html += `<div style="margin-bottom: 4px;">`;
             
             if (dot.type) {
                 // Single DoT type
                 const totalDot = dot.scale * dot.ticks;
                 html += `<div style="display: flex; justify-content: space-between; font-size: 11px;">`;
-                html += `<span style="opacity: 0.8;">${dot.type} DoT:</span>`;
+                html += `<span style="opacity: 0.8; color: ${dotDamageColor};">${dot.type} DoT:</span>`;
                 html += `<span style="font-weight: 600;">${totalDot.toFixed(2)}</span>`;
                 html += `</div>`;
                 html += `<div style="font-size: 10px; opacity: 0.6; padding-left: 12px;">`;
@@ -112,7 +114,7 @@ function generateAvailablePowerTooltipHTML(basePower) {
                 html += `</div>`;
             } else if (dot.types) {
                 // Multiple DoT types
-                html += `<div style="font-size: 11px; opacity: 0.8; margin-bottom: 2px;">DoT:</div>`;
+                html += `<div style="font-size: 11px; opacity: 0.8; margin-bottom: 2px; color: ${dotDamageColor};">DoT:</div>`;
                 dot.types.forEach(type => {
                     const totalDot = type.scale * type.ticks;
                     html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding-left: 12px;">`;
@@ -127,17 +129,18 @@ function generateAvailablePowerTooltipHTML(basePower) {
         
         // Other common stats
         const statDisplay = [
-            { key: 'accuracy', label: 'Accuracy', format: v => `${(v * 100).toFixed(0)}%` },
-            { key: 'range', label: 'Range', format: v => `${v.toFixed(0)} ft` },
-            { key: 'recharge', label: 'Recharge', format: v => `${v.toFixed(1)}s` },
-            { key: 'endurance', label: 'Endurance', format: v => `${v.toFixed(2)}` },
-            { key: 'cast', label: 'Cast Time', format: v => `${v.toFixed(2)}s` }
+            { key: 'accuracy', label: 'Accuracy', format: v => `${(v * 100).toFixed(0)}%`, stat: 'accuracy' },
+            { key: 'range', label: 'Range', format: v => `${v.toFixed(0)} ft`, stat: 'range' },
+            { key: 'recharge', label: 'Recharge', format: v => `${v.toFixed(1)}s`, stat: 'recharge' },
+            { key: 'endurance', label: 'Endurance', format: v => `${v.toFixed(2)}`, stat: 'endurance' },
+            { key: 'cast', label: 'Cast Time', format: v => `${v.toFixed(2)}s`, stat: 'cast' }
         ];
         
-        statDisplay.forEach(({ key, label, format }) => {
+        statDisplay.forEach(({ key, label, format, stat }) => {
             if (effects[key] !== undefined) {
+                const statColor = getStatColor(stat);
                 html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
-                html += `<span style="opacity: 0.8;">${label}:</span>`;
+                html += `<span style="opacity: 0.8; color: ${statColor};">${label}:</span>`;
                 html += `<span style="font-weight: 600;">${format(effects[key])}</span>`;
                 html += `</div>`;
             }
@@ -157,13 +160,15 @@ function generateAvailablePowerTooltipHTML(basePower) {
         
         const hasDebuffs = debuffDisplay.some(({ key }) => effects[key] !== undefined);
         if (hasDebuffs) {
+            const debuffColor = getStatColor('debuff');
             html += `<div style="margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.1);">`;
-            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px;">DEBUFFS</div>`;
+            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px; color: ${debuffColor};">DEBUFFS</div>`;
             debuffDisplay.forEach(({ key, label, color }) => {
                 if (effects[key] !== undefined) {
+                    const valueColor = getValueColor(effects[key] * -1);
                     html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
                     html += `<span style="opacity: 0.8;">${label}:</span>`;
-                    html += `<span style="font-weight: 600; color: ${color};">-${(effects[key] * 100).toFixed(0)}%</span>`;
+                    html += `<span style="font-weight: 600; color: ${valueColor};">-${(effects[key] * 100).toFixed(0)}%</span>`;
                     html += `</div>`;
                 }
             });
@@ -185,13 +190,15 @@ function generateAvailablePowerTooltipHTML(basePower) {
         
         const hasBuffs = buffDisplay.some(({ key }) => effects[key] !== undefined);
         if (hasBuffs) {
+            const buffColor = getStatColor('buff');
             html += `<div style="margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.1);">`;
-            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px;">BUFFS</div>`;
+            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px; color: ${buffColor};">BUFFS</div>`;
             buffDisplay.forEach(({ key, label }) => {
                 if (effects[key] !== undefined) {
+                    const valueColor = getValueColor(effects[key]);
                     html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
                     html += `<span style="opacity: 0.8;">${label}:</span>`;
-                    html += `<span style="font-weight: 600; color: var(--accent);">+${(effects[key] * 100).toFixed(0)}%</span>`;
+                    html += `<span style="font-weight: 600; color: ${valueColor};">+${(effects[key] * 100).toFixed(0)}%</span>`;
                     html += `</div>`;
                 }
             });
@@ -200,8 +207,9 @@ function generateAvailablePowerTooltipHTML(basePower) {
         
         // === HEALING/ABSORB SECTION ===
         if (effects.healing !== undefined || effects.absorb !== undefined) {
+            const healingColor = getStatColor('healing');
             html += `<div style="margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.1);">`;
-            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px;">HEALING</div>`;
+            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px; color: ${healingColor};">HEALING</div>`;
             
             if (effects.healing !== undefined) {
                 html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
@@ -233,8 +241,9 @@ function generateAvailablePowerTooltipHTML(basePower) {
         
         const hasControl = controlEffects.some(({ key }) => effects[key] !== undefined);
         if (hasControl) {
+            const controlColor = getStatColor('control');
             html += `<div style="margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.1);">`;
-            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px;">CONTROL EFFECTS</div>`;
+            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px; color: ${controlColor};">CONTROL EFFECTS</div>`;
             
             controlEffects.forEach(({ key, durKey, label, color }) => {
                 if (effects[key] !== undefined) {
@@ -270,8 +279,9 @@ function generateAvailablePowerTooltipHTML(basePower) {
         
         const hasProtection = protectionEffects.some(({ key }) => effects[key] !== undefined);
         if (hasProtection) {
+            const protectionColor = getStatColor('protection');
             html += `<div style="margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.1);">`;
-            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px;">STATUS PROTECTION</div>`;
+            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px; color: ${protectionColor};">STATUS PROTECTION</div>`;
             
             protectionEffects.forEach(({ key, label }) => {
                 if (effects[key] !== undefined) {
@@ -774,7 +784,8 @@ function generateStatTooltipHTML(statName, statKey, totalValue) {
     
     html += `<div class="tooltip-section">`;
     html += `<div class="tooltip-label">Total:</div>`;
-    html += `<div class="tooltip-value" style="color: var(--accent); font-weight: 600; font-size: 14px;">+${totalValue.toFixed(2)}%</div>`;
+    const totalColor = getValueColor(totalValue);
+    html += `<div class="tooltip-value" style="color: ${totalColor}; font-weight: 600; font-size: 14px;">+${totalValue.toFixed(2)}%</div>`;
     html += `</div>`;
     
     const contributors = getStatContributors(statKey);
@@ -827,9 +838,10 @@ function generateStatTooltipHTML(statName, statKey, totalValue) {
             html += `<div style="margin-bottom: 8px;">`;
             html += `<div style="font-weight: 600; font-size: 10px; opacity: 0.7; margin-bottom: 4px;">ENHANCEMENT SETS</div>`;
             contributors.forEach(c => {
+                const contribColor = getValueColor(c.value);
                 html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
                 html += `<span>${c.source}</span>`;
-                html += `<span style="color: var(--accent);">+${c.value.toFixed(2)}%</span>`;
+                html += `<span style="color: ${contribColor};">+${c.value.toFixed(2)}%</span>`;
                 html += `</div>`;
             });
             html += `</div>`;
@@ -856,7 +868,7 @@ function showStatTooltip(event, statName, statKey, totalValue) {
     const tooltip = document.getElementById('tooltip');
     if (!tooltip) return;
     
-    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + generateStatTooltipHTML(statName, statKey, totalValue);
+    tooltip.innerHTML = generateStatTooltipHTML(statName, statKey, totalValue);
     positionTooltip(tooltip, event);
     tooltip.classList.add('visible');
 }

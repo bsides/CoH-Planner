@@ -122,26 +122,71 @@
    - stat-confuse (pink) - Confuse
    - stat-fear (indigo) - Fear
    
-   JavaScript helper: getStatColorClass('damage') returns 'stat-damage'
+   Using dynamic color scheme via color-scheme.js
 */
-.stat-damage { color: var(--stat-damage) !important; }
-.stat-accuracy { color: var(--stat-accuracy) !important; }
-.stat-tohit { color: var(--stat-tohit) !important; }
-.stat-defense { color: var(--stat-defense) !important; }
-.stat-resistance { color: var(--stat-resistance) !important; }
-.stat-healing { color: var(--stat-healing) !important; }
-.stat-regeneration { color: var(--stat-regeneration) !important; }
-.stat-recovery { color: var(--stat-recovery) !important; }
-.stat-endurance { color: var(--stat-endurance) !important; }
-.stat-recharge { color: var(--stat-recharge) !important; }
-.stat-range { color: var(--stat-range) !important; }
-.stat-speed { color: var(--stat-speed) !important; }
-.stat-jump { color: var(--stat-jump) !important; }
-.stat-fly { color: var(--stat-fly) !important; }
-.stat-knockback { color: var(--stat-knockback) !important; }
-.stat-hold { color: var(--stat-hold) !important; }
-.stat-stun { color: var(--stat-stun) !important; }
-.stat-immobilize { color: var(--stat-immobilize) !important; }
-.stat-sleep { color: var(--stat-sleep) !important; }
-.stat-confuse { color: var(--stat-confuse) !important; }
-.stat-fear { color: var(--stat-fear) !important; }
+
+/* Color Scheme Integration (after color-scheme.js initializes) */
+/* These rules provide enhanced styling when color-scheme.js is loaded */
+
+.stat-label.stat-damage {
+    color: var(--color-damage, var(--stat-damage));
+    border-left: 3px solid var(--color-damage, var(--stat-damage));
+    padding-left: 6px;
+}
+
+.stat-label.stat-defense {
+    color: var(--color-defense, var(--stat-defense));
+    border-left: 3px solid var(--color-defense, var(--stat-defense));
+    padding-left: 6px;
+}
+
+.stat-label.stat-recharge {
+    color: var(--color-recharge, var(--stat-recharge));
+    border-left: 3px solid var(--color-recharge, var(--stat-recharge));
+    padding-left: 6px;
+}
+
+.stat-label.stat-accuracy {
+    color: var(--color-accuracy, var(--stat-accuracy));
+    border-left: 3px solid var(--color-accuracy, var(--stat-accuracy));
+    padding-left: 6px;
+}
+
+.stat-label.stat-endurance {
+    color: var(--color-endurance, var(--stat-endurance));
+    border-left: 3px solid var(--color-endurance, var(--stat-endurance));
+    padding-left: 6px;
+}
+
+.stat-label.stat-resistance {
+    color: var(--color-resistance, var(--stat-resistance));
+    border-left: 3px solid var(--color-resistance, var(--stat-resistance));
+    padding-left: 6px;
+}
+
+.stat-label.stat-recovery {
+    color: var(--color-recovery, var(--stat-recovery));
+    border-left: 3px solid var(--color-recovery, var(--stat-recovery));
+    padding-left: 6px;
+}
+
+.stat-label.stat-healing {
+    color: var(--color-healing, var(--stat-healing));
+    border-left: 3px solid var(--color-healing, var(--stat-healing));
+    padding-left: 6px;
+}
+
+/* Color-scheme CSS variables for stat items */
+:root {
+    /* These will be populated by color-scheme.js if available */
+    /* They provide consistent theming across the application */
+    --color-damage: var(--stat-damage);
+    --color-defense: var(--stat-defense);
+    --color-accuracy: var(--stat-accuracy);
+    --color-recharge: var(--stat-recharge);
+    --color-endurance: var(--stat-endurance);
+    --color-resistance: var(--stat-resistance);
+    --color-recovery: var(--stat-recovery);
+    --color-healing: var(--stat-healing);
+}
+

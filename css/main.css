@@ -676,3 +676,72 @@ body {
 .power-toggle:hover {
     transform: scale(1.1);
 }
+
+/* Damage Type Color Classes */
+/* Used for displaying colored damage types in tooltips and UI */
+:root {
+    --color-damage-smashing: #94A3B8;   /* Gray */
+    --color-damage-lethal: #EF4444;     /* Red */
+    --color-damage-fire: #FF9500;       /* Orange */
+    --color-damage-cold: #06B6D4;       /* Cyan */
+    --color-damage-energy: #FBBF24;     /* Amber */
+    --color-damage-negative: #8B5CF6;   /* Purple */
+    --color-damage-psionic: #EC4899;    /* Pink */
+    --color-damage-toxic: #10B981;      /* Green */
+}
+
+.damage-type-smashing {
+    color: var(--color-damage-smashing);
+    background: color-mix(in srgb, var(--color-damage-smashing) 15%, transparent);
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.damage-type-lethal {
+    color: var(--color-damage-lethal);
+    background: color-mix(in srgb, var(--color-damage-lethal) 15%, transparent);
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.damage-type-fire {
+    color: var(--color-damage-fire);
+    background: color-mix(in srgb, var(--color-damage-fire) 15%, transparent);
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.damage-type-cold {
+    color: var(--color-damage-cold);
+    background: color-mix(in srgb, var(--color-damage-cold) 15%, transparent);
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.damage-type-energy {
+    color: var(--color-damage-energy);
+    background: color-mix(in srgb, var(--color-damage-energy) 15%, transparent);
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.damage-type-negative {
+    color: var(--color-damage-negative);
+    background: color-mix(in srgb, var(--color-damage-negative) 15%, transparent);
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.damage-type-psionic {
+    color: var(--color-damage-psionic);
+    background: color-mix(in srgb, var(--color-damage-psionic) 15%, transparent);
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.damage-type-toxic {
+    color: var(--color-damage-toxic);
+    background: color-mix(in srgb, var(--color-damage-toxic) 15%, transparent);
+    padding: 2px 4px;
+    border-radius: 2px;
+}
