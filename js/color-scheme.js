@@ -18,11 +18,22 @@ const COLOR_SCHEME = {
         tohitBuff: '#FFC72C',
         tohitDebuff: '#FFC72C',
         
-        // Defense (Blue/Purple)
+        // Defense (Blue/Purple) - All types
         defense: '#832AFF',
         defenseBuff: '#832AFF',
         defenseDebuff: '#832AFF',
         defenseResistance: '#832AFF',
+        defMelee: '#832AFF',
+        defRanged: '#832AFF',
+        defAoE: '#832AFF',
+        defSmashing: '#832AFF',
+        defLethal: '#832AFF',
+        defFire: '#832AFF',
+        defCold: '#832AFF',
+        defEnergy: '#832AFF',
+        defNegative: '#832AFF',
+        defPsionic: '#832AFF',
+        defToxic: '#832AFF',
         
         // Damage (Red)
         damage: '#FF4757',
@@ -36,15 +47,26 @@ const COLOR_SCHEME = {
         health: '#4CD964',
         regeneration: '#4CD964',
         
-        // Resistance (Orange)
+        // Resistance (Orange) - All types
         resistance: '#FF7327',
         resistanceBuff: '#FF7327',
         resistanceDebuff: '#FF7327',
+        resSmashing: '#FF7327',
+        resLethal: '#FF7327',
+        resFire: '#FF7327',
+        resCold: '#FF7327',
+        resEnergy: '#FF7327',
+        resNegative: '#FF7327',
+        resPsionic: '#FF7327',
+        resToxic: '#FF7327',
         
-        // Endurance & Recovery (Light Blue)
+        // Endurance & Recovery (Light Blue) - All types
         endurance: '#5AC8FA',
         recovery: '#5AC8FA',
         enduranceCost: '#5AC8FA',
+        endrdx: '#5AC8FA',
+        maxend: '#5AC8FA',
+        maxhp: '#4CD964',
         
         // Mez Protection (Magenta/Pink)
         protection: '#FF27B7',
@@ -61,12 +83,17 @@ const COLOR_SCHEME = {
         recharge: '#80ABB0',
         range: '#80ABB0',
         
-        // Movement (Dark Green)
+        // Movement (Dark Green) - All types
         speed: '#009D78',
         movement: '#009D78',
         fly: '#009D78',
+        flying: '#009D78',
+        flyspeed: '#009D78',
         running: '#009D78',
+        runspeed: '#009D78',
         jump: '#009D78',
+        jumpspeed: '#009D78',
+        jumpheight: '#009D78',
         
         // Debuffs (Brown/Tan)
         debuff: '#A67C52',
