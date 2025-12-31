@@ -73,10 +73,14 @@ const DEFAULT_ENABLED_STATS = [
     'damage',
     'accuracy',
     'recharge',
-    'Max HP',
-    'Regeneration',
-    'Max End',
-    'Recovery',
+    'defRanged',
+    'defEnergy',
+    'defNegative',
+    'runspeed',
+    'maxhp',
+    'regeneration',
+    'maxend',
+    'recovery',
 ];
 
 // User's enabled stats (stored in Build object)

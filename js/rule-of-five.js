@@ -58,12 +58,27 @@ function normalizeStatName(statName) {
         'cold_defense': 'defCold',
         'EnergyDef': 'defEnergy',
         'energy_defense': 'defEnergy',
+        'defense_(energy)': 'defEnergy',
         'NegativeDef': 'defNegative',
         'negative_defense': 'defNegative',
+        'defense_(negative)': 'defNegative',
         'PsionicDef': 'defPsionic',
         'psionic_defense': 'defPsionic',
+        'defense_(psionic)': 'defPsionic',
         'ToxicDef': 'defToxic',
         'toxic_defense': 'defToxic',
+        'defense_(toxic)': 'defToxic',
+        
+        // Defense - Positional (also aliased from numbered format)
+        'defense_(melee)': 'defMelee',
+        'defense_(ranged)': 'defRanged',
+        'defense_(aoe)': 'defAoE',
+        
+        // Defense - Typed (also aliased from numbered format)
+        'defense_(smashing)': 'defSmashing',
+        'defense_(lethal)': 'defLethal',
+        'defense_(fire)': 'defFire',
+        'defense_(cold)': 'defCold',
         
         // Resistance
         'SmashingRes': 'resSmashing',
@@ -97,6 +112,7 @@ function normalizeStatName(statName) {
         // Movement
         'RunSpeed': 'runspeed',
         'run_speed': 'runspeed',
+        'increased_movement': 'runspeed',
         'FlySpeed': 'flyspeed',
         'fly_speed': 'flyspeed',
         'JumpSpeed': 'jumpspeed',
