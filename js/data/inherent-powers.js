@@ -411,7 +411,7 @@ function initializeInherentPowers(archetypeId) {
         id: power.id,
         name: power.name,
         level: power.level,
-        category: 'inherent',
+        category: power.category,
         powerSet: power.category === 'fitness' ? 'Fitness' : 'Inherent',
         slots: [null], // Start with 1 empty slot
         maxSlots: power.maxSlots,
