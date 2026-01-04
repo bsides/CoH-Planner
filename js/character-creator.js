@@ -1045,6 +1045,11 @@ function removePoolPowerFromBuild(powerName, poolId) {
     // Remove power
     poolData.powers.splice(index, 1);
     
+    // Recalculate stats to remove pool power effects
+    if (typeof recalculateStats === 'function') {
+        recalculateStats();
+    }
+    
     // Refresh UI
     refreshAvailablePowers();
     
@@ -1073,8 +1078,13 @@ function openPoolPowerModal() {
     const listContainer = document.createElement('div');
     listContainer.className = 'pool-modal-list';
     
-    // Build pool sections
+    // Build pool sections (skip Fitness since those are inherent powers)
     Object.values(POWER_POOLS).forEach(pool => {
+        // Skip Fitness pool - those powers are inherent and auto-added
+        if (pool.id === 'fitness') {
+            return;
+        }
+        
         const poolSection = document.createElement('div');
         poolSection.className = 'pool-section';
         
@@ -1101,11 +1111,6 @@ function openPoolPowerModal() {
             powerName.className = 'pool-power-name';
             powerName.textContent = power.name;
             powerInfo.appendChild(powerName);
-            
-            const powerDesc = document.createElement('div');
-            powerDesc.className = 'pool-power-desc';
-            powerDesc.textContent = power.description;
-            powerInfo.appendChild(powerDesc);
             
             powerOption.appendChild(powerInfo);
             
@@ -1255,11 +1260,19 @@ function canSelectPoolPowerInModal(pool, power) {
  * @param {string} powerName - Power name
  */
 function selectPoolPowerFromModal(poolId, powerName) {
+    console.log('selectPoolPowerFromModal called with poolId:', poolId, 'powerName:', powerName);
+    
     const pool = POWER_POOLS[poolId];
-    if (!pool) return;
+    if (!pool) {
+        console.log('Pool not found:', poolId);
+        return;
+    }
     
     const power = pool.powers.find(p => p.name === powerName);
-    if (!power) return;
+    if (!power) {
+        console.log('Power not found:', powerName);
+        return;
+    }
     
     // Add pool to build if not already added
     let poolData = Build.pools.find(p => p.id === poolId);
@@ -1276,7 +1289,7 @@ function selectPoolPowerFromModal(poolId, powerName) {
             powers: []
         };
         Build.pools.push(poolData);
-        console.log(`Added pool: ${pool.name}`);
+        console.log(`Added pool: ${pool.name}, Build.pools is now:`, Build.pools);
     }
     
     // Create power object
@@ -1295,6 +1308,7 @@ function selectPoolPowerFromModal(poolId, powerName) {
     
     // Add to pool
     poolData.powers.push(powerObj);
+    console.log(`Added pool power: ${power.name} from ${pool.name}, Build.pools is now:`, Build.pools);
     
     // Auto-level in auto mode
     if (Build.progressionMode === 'auto') {
@@ -1307,6 +1321,11 @@ function selectPoolPowerFromModal(poolId, powerName) {
     }
     
     console.log(`Added pool power: ${power.name} from ${pool.name}`);
+    
+    // Recalculate stats to include pool power effects
+    if (typeof recalculateStats === 'function') {
+        recalculateStats();
+    }
     
     // Close modal and refresh
     closePoolPowerModal();

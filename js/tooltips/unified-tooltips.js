@@ -555,7 +555,13 @@ function generatePowerTooltipHTML(power, basePower) {
             accuracy: basePower.effects?.accuracy || 1.0,
             recharge: basePower.effects?.recharge || 0,
             endurance: basePower.effects?.endurance || 0,
-            range: basePower.effects?.range || 0
+            range: basePower.effects?.range || 0,
+            recovery: basePower.effects?.recovery?.scale || 0,
+            regeneration: basePower.effects?.regeneration?.scale || 0,
+            runSpeed: basePower.effects?.runSpeed?.scale || 0,
+            flySpeed: basePower.effects?.flySpeed?.scale || 0,
+            jumpHeight: basePower.effects?.jumpHeight?.scale || 0,
+            jumpSpeed: basePower.effects?.jumpSpeed?.scale || 0
         };
         
         const enhancedStats = calculateEnhancedPowerStats(power, basePower);
@@ -565,7 +571,9 @@ function generatePowerTooltipHTML(power, basePower) {
         const hasDotDamage = basePower.effects?.dotDamage !== undefined;
         
         // Only show stats that exist for this power
-        const hasStats = baseStats.damage > 0 || hasDotDamage || baseStats.recharge > 0 || baseStats.endurance > 0;
+        const hasStats = baseStats.damage > 0 || hasDotDamage || baseStats.recharge > 0 || baseStats.endurance > 0 || 
+                         baseStats.recovery > 0 || baseStats.regeneration > 0 || baseStats.runSpeed > 0 || 
+                         baseStats.flySpeed > 0 || baseStats.jumpHeight > 0 || baseStats.jumpSpeed > 0;
         
         if (hasStats) {
             html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
@@ -687,6 +695,72 @@ function generatePowerTooltipHTML(power, basePower) {
                 html += `</div>`;
             }
             
+            // Recovery (pool power bonus)
+            if (baseStats.recovery > 0) {
+                html += `<div class="power-stat-row" style="margin-bottom: 6px;">`;
+                html += `<div style="font-weight: 600; font-size: 11px; margin-bottom: 2px;">Recovery Bonus</div>`;
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px;">`;
+                html += `<span style="opacity: 0.7;">+${(baseStats.recovery * 100).toFixed(1)}%</span>`;
+                html += `<span style="color: var(--accent); font-weight: 600;">${(baseStats.recovery * 100).toFixed(1)}%</span>`;
+                html += `</div>`;
+                html += `</div>`;
+            }
+            
+            // Regeneration (pool power bonus)
+            if (baseStats.regeneration > 0) {
+                html += `<div class="power-stat-row" style="margin-bottom: 6px;">`;
+                html += `<div style="font-weight: 600; font-size: 11px; margin-bottom: 2px;">Regeneration Bonus</div>`;
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px;">`;
+                html += `<span style="opacity: 0.7;">+${(baseStats.regeneration * 100).toFixed(1)}%</span>`;
+                html += `<span style="color: var(--accent); font-weight: 600;">${(baseStats.regeneration * 100).toFixed(1)}%</span>`;
+                html += `</div>`;
+                html += `</div>`;
+            }
+            
+            // Run Speed (pool power bonus)
+            if (baseStats.runSpeed > 0) {
+                html += `<div class="power-stat-row" style="margin-bottom: 6px;">`;
+                html += `<div style="font-weight: 600; font-size: 11px; margin-bottom: 2px;">Run Speed Bonus</div>`;
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px;">`;
+                html += `<span style="opacity: 0.7;">+${(baseStats.runSpeed * 100).toFixed(1)}%</span>`;
+                html += `<span style="color: var(--accent); font-weight: 600;">${(baseStats.runSpeed * 100).toFixed(1)}%</span>`;
+                html += `</div>`;
+                html += `</div>`;
+            }
+            
+            // Fly Speed (pool power bonus)
+            if (baseStats.flySpeed > 0) {
+                html += `<div class="power-stat-row" style="margin-bottom: 6px;">`;
+                html += `<div style="font-weight: 600; font-size: 11px; margin-bottom: 2px;">Fly Speed Bonus</div>`;
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px;">`;
+                html += `<span style="opacity: 0.7;">+${(baseStats.flySpeed * 100).toFixed(1)}%</span>`;
+                html += `<span style="color: var(--accent); font-weight: 600;">${(baseStats.flySpeed * 100).toFixed(1)}%</span>`;
+                html += `</div>`;
+                html += `</div>`;
+            }
+            
+            // Jump Height (pool power bonus)
+            if (baseStats.jumpHeight > 0) {
+                html += `<div class="power-stat-row" style="margin-bottom: 6px;">`;
+                html += `<div style="font-weight: 600; font-size: 11px; margin-bottom: 2px;">Jump Height Bonus</div>`;
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px;">`;
+                html += `<span style="opacity: 0.7;">+${(baseStats.jumpHeight * 100).toFixed(1)}%</span>`;
+                html += `<span style="color: var(--accent); font-weight: 600;">${(baseStats.jumpHeight * 100).toFixed(1)}%</span>`;
+                html += `</div>`;
+                html += `</div>`;
+            }
+            
+            // Jump Speed (pool power bonus)
+            if (baseStats.jumpSpeed > 0) {
+                html += `<div class="power-stat-row">`;
+                html += `<div style="font-weight: 600; font-size: 11px; margin-bottom: 2px;">Jump Speed Bonus</div>`;
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px;">`;
+                html += `<span style="opacity: 0.7;">+${(baseStats.jumpSpeed * 100).toFixed(1)}%</span>`;
+                html += `<span style="color: var(--accent); font-weight: 600;">${(baseStats.jumpSpeed * 100).toFixed(1)}%</span>`;
+                html += `</div>`;
+                html += `</div>`;
+            }
+            
             html += `</div>`;
         }
     }
@@ -739,22 +813,47 @@ function showPowerTooltip(event, power, basePower) {
  * @returns {Array} Array of contributor objects
  */
 function getStatContributors(stat) {
+    const contributors = [];
+    
+    console.log('getStatContributors called for stat:', stat);
+    
+    // Add pool power contributors
+    if (typeof calculatePoolPowerBonuses === 'function') {
+        const poolBonuses = calculatePoolPowerBonuses();
+        console.log('calculatePoolPowerBonuses result:', poolBonuses);
+        if (poolBonuses[stat]) {
+            const poolSources = getPoolPowerSources(stat);
+            console.log(`Pool bonuses for ${stat}:`, poolBonuses[stat], 'Sources:', poolSources);
+            if (poolSources.length > 0) {
+                contributors.push({
+                    value: poolBonuses[stat],
+                    sources: poolSources,
+                    type: 'pool',
+                    total: poolBonuses[stat]
+                });
+            }
+        }
+    } else {
+        console.log('calculatePoolPowerBonuses is NOT a function');
+    }
+    
     // Use Rule of 5 system if available
     if (typeof getStatBreakdown === 'function') {
         const breakdown = getStatBreakdown(stat);
-        return breakdown.map(item => ({
-            value: item.value,
-            count: item.count,
-            sources: item.sources,
-            capped: item.capped,
-            total: item.total,
-            type: 'set'
-        }));
+        breakdown.forEach(item => {
+            contributors.push({
+                value: item.value,
+                count: item.count,
+                sources: item.sources,
+                capped: item.capped,
+                total: item.total,
+                type: 'set'
+            });
+        });
+        return contributors;
     }
     
     // Fallback to old system (should not happen if rule-of-five.js is loaded)
-    const contributors = [];
-    
     if (typeof getActiveSetBonuses === 'function') {
         const activeBonuses = getActiveSetBonuses();
         activeBonuses.forEach(bonus => {
@@ -768,7 +867,93 @@ function getStatContributors(stat) {
         });
     }
     
+    console.log('Final contributors for', stat, ':', contributors);
     return contributors;
+}
+
+/**
+ * Get pool power sources contributing to a stat
+ * @param {string} stat - Stat key
+ * @returns {Array} Array of source strings
+ */
+function getPoolPowerSources(stat) {
+    const sources = [];
+    
+    // Check inherent powers (Fitness, Archetype, Universal)
+    if (Build.inherents && Array.isArray(Build.inherents)) {
+        Build.inherents.forEach(power => {
+            // Skip Rest power - it's special and handled separately
+            if (power.name === 'Rest') {
+                return;
+            }
+            if (!power.effects) return;
+            
+            const effects = power.effects;
+            let hasEffect = false;
+            
+            // Map effects to stats
+            if (stat === 'regeneration' && effects.regeneration) {
+                hasEffect = true;
+            } else if (stat === 'recovery' && effects.recovery) {
+                hasEffect = true;
+            } else if (stat === 'runspeed' && effects.runSpeed) {
+                hasEffect = true;
+            } else if (stat === 'flyspeed' && effects.flySpeed) {
+                hasEffect = true;
+            } else if (stat === 'jumpheight' && effects.jumpHeight) {
+                hasEffect = true;
+            } else if (stat === 'jumpspeed' && effects.jumpSpeed) {
+                hasEffect = true;
+            } else if (stat === 'maxend' && effects.maxEndurance) {
+                hasEffect = true;
+            } else if (stat === 'maxhp' && effects.maxHealth) {
+                hasEffect = true;
+            }
+            
+            if (hasEffect) {
+                sources.push(power.name);
+            }
+        });
+    }
+    
+    // Check pool powers
+    if (Build.pools && Array.isArray(Build.pools)) {
+        Build.pools.forEach(poolData => {
+            if (!poolData.powers) return;
+            
+            poolData.powers.forEach(power => {
+                if (!power.effects) return;
+                
+                const effects = power.effects;
+                let hasEffect = false;
+                
+                // Map effects to stats - handle both direct values and nested {scale: value} objects
+                if (stat === 'regeneration') {
+                    if (effects.regeneration) hasEffect = true;
+                } else if (stat === 'recovery') {
+                    if (effects.recovery) hasEffect = true;
+                } else if (stat === 'runspeed' && effects.runSpeed) {
+                    hasEffect = true;
+                } else if (stat === 'flyspeed' && effects.flySpeed) {
+                    hasEffect = true;
+                } else if (stat === 'jumpheight' && effects.jumpHeight) {
+                    hasEffect = true;
+                } else if (stat === 'jumpspeed' && effects.jumpSpeed) {
+                    hasEffect = true;
+                } else if (stat === 'maxend' && effects.maxEndurance) {
+                    hasEffect = true;
+                } else if (stat === 'maxhp' && effects.maxHealth) {
+                    hasEffect = true;
+                }
+                
+                if (hasEffect) {
+                    sources.push(`${power.name} (${poolData.name})`);
+                }
+            });
+        });
+    }
+    
+    return sources;
 }
 
 /**
@@ -794,57 +979,83 @@ function generateStatTooltipHTML(statName, statKey, totalValue) {
         html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
         html += `<div class="tooltip-label" style="margin-bottom: 4px;">Contributors</div>`;
         
-        // Check if using Rule of 5 system (has count/sources)
-        const usingRuleOfFive = contributors[0] && contributors[0].count !== undefined;
+        // Separate pool and set contributors
+        const poolContributors = contributors.filter(c => c.type === 'pool');
+        const setContributors = contributors.filter(c => c.type === 'set');
         
-        if (usingRuleOfFive) {
-            // Display using Rule of 5 breakdown
+        // Display pool power contributors first
+        if (poolContributors.length > 0) {
             html += `<div style="margin-bottom: 8px;">`;
-            html += `<div style="font-weight: 600; font-size: 10px; opacity: 0.7; margin-bottom: 4px;">ENHANCEMENT SETS</div>`;
-            
-            contributors.forEach(c => {
-                const cappedIndicator = c.capped ? ' ⚠️ CAPPED' : '';
-                const countDisplay = c.capped ? '5/5' : `${c.count}/5`;
-                const cappedStyle = c.capped ? 'color: var(--warning);' : '';
-                
-                // Header for this bonus value
-                html += `<div style="font-weight: 600; font-size: 11px; margin-top: 6px; margin-bottom: 2px; ${cappedStyle}">`;
-                html += `+${c.value.toFixed(2)}% × ${countDisplay}${cappedIndicator}`;
-                html += `</div>`;
-                
-                // List sources
+            html += `<div style="font-weight: 600; font-size: 10px; opacity: 0.7; margin-bottom: 4px; color: var(--accent);">POWER POOLS</div>`;
+            poolContributors.forEach(c => {
+                const contribColor = getValueColor(c.value);
+                html += `<div style="margin-bottom: 4px;">`;
                 c.sources.forEach(source => {
-                    html += `<div style="padding-left: 12px; font-size: 10px; opacity: 0.8;">`;
+                    html += `<div style="font-size: 10px; opacity: 0.8;">`;
                     html += `• ${source}`;
                     html += `</div>`;
                 });
-                
-                // Show total from this unique value
-                html += `<div style="padding-left: 12px; font-size: 10px; font-weight: 600; color: var(--accent); margin-top: 2px;">`;
-                html += `= +${c.total.toFixed(2)}%`;
+                html += `<div style="padding-left: 12px; font-size: 10px; font-weight: 600; color: ${contribColor}; margin-top: 2px;">`;
+                html += `= +${c.value.toFixed(2)}%`;
+                html += `</div>`;
                 html += `</div>`;
             });
-            
             html += `</div>`;
+        }
+        
+        // Display enhancement set contributors
+        if (setContributors.length > 0) {
+            const usingRuleOfFive = setContributors[0] && setContributors[0].count !== undefined;
             
-            // Show Rule of 5 explanation if any are capped
-            if (contributors.some(c => c.capped)) {
-                html += `<div style="font-size: 10px; font-style: italic; opacity: 0.7; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border);">`;
-                html += `⚠️ Rule of 5: Identical bonus values can only stack 5 times`;
+            if (usingRuleOfFive) {
+                // Display using Rule of 5 breakdown
+                html += `<div style="margin-bottom: 8px;">`;
+                html += `<div style="font-weight: 600; font-size: 10px; opacity: 0.7; margin-bottom: 4px;">ENHANCEMENT SETS</div>`;
+                
+                setContributors.forEach(c => {
+                    const cappedIndicator = c.capped ? ' ⚠️ CAPPED' : '';
+                    const countDisplay = c.capped ? '5/5' : `${c.count}/5`;
+                    const cappedStyle = c.capped ? 'color: var(--warning);' : '';
+                    
+                    // Header for this bonus value
+                    html += `<div style="font-weight: 600; font-size: 11px; margin-top: 6px; margin-bottom: 2px; ${cappedStyle}">`;
+                    html += `+${c.value.toFixed(2)}% × ${countDisplay}${cappedIndicator}`;
+                    html += `</div>`;
+                    
+                    // List sources
+                    c.sources.forEach(source => {
+                        html += `<div style="padding-left: 12px; font-size: 10px; opacity: 0.8;">`;
+                        html += `• ${source}`;
+                        html += `</div>`;
+                    });
+                    
+                    // Show total from this unique value
+                    html += `<div style="padding-left: 12px; font-size: 10px; font-weight: 600; color: var(--accent); margin-top: 2px;">`;
+                    html += `= +${c.total.toFixed(2)}%`;
+                    html += `</div>`;
+                });
+                
+                html += `</div>`;
+                
+                // Show Rule of 5 explanation if any are capped
+                if (setContributors.some(c => c.capped)) {
+                    html += `<div style="font-size: 10px; font-style: italic; opacity: 0.7; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border);">`;
+                    html += `⚠️ Rule of 5: Identical bonus values can only stack 5 times`;
+                    html += `</div>`;
+                }
+            } else {
+                // Old system - simple list
+                html += `<div style="margin-bottom: 8px;">`;
+                html += `<div style="font-weight: 600; font-size: 10px; opacity: 0.7; margin-bottom: 4px;">ENHANCEMENT SETS</div>`;
+                setContributors.forEach(c => {
+                    const contribColor = getValueColor(c.value);
+                    html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+                    html += `<span>${c.source}</span>`;
+                    html += `<span style="color: ${contribColor};">+${c.value.toFixed(2)}%</span>`;
+                    html += `</div>`;
+                });
                 html += `</div>`;
             }
-        } else {
-            // Old system - simple list
-            html += `<div style="margin-bottom: 8px;">`;
-            html += `<div style="font-weight: 600; font-size: 10px; opacity: 0.7; margin-bottom: 4px;">ENHANCEMENT SETS</div>`;
-            contributors.forEach(c => {
-                const contribColor = getValueColor(c.value);
-                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
-                html += `<span>${c.source}</span>`;
-                html += `<span style="color: ${contribColor};">+${c.value.toFixed(2)}%</span>`;
-                html += `</div>`;
-            });
-            html += `</div>`;
         }
         
         html += `</div>`;

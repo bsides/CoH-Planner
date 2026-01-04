@@ -542,6 +542,41 @@ function generateImprovedPowerTooltipHTML(power, basePower, showModified = false
     if (basePower.effects) {
         const effects = basePower.effects;
         
+        // POOL POWER EFFECTS SECTION
+        const poolEffects = [
+            { key: 'recovery', label: 'Recovery', color: 'stat-recovery' },
+            { key: 'regeneration', label: 'Regeneration', color: 'stat-regeneration' },
+            { key: 'runSpeed', label: 'Run Speed', color: 'stat-speed' },
+            { key: 'flySpeed', label: 'Fly Speed', color: 'stat-fly' },
+            { key: 'jumpHeight', label: 'Jump Height', color: 'stat-jump' },
+            { key: 'jumpSpeed', label: 'Jump Speed', color: 'stat-jump' },
+            { key: 'maxEndurance', label: 'Max Endurance', color: 'stat-endurance' },
+            { key: 'maxHealth', label: 'Max Health', color: 'stat-healing' }
+        ];
+        
+        const poolBonuses = poolEffects.filter(e => {
+            const val = effects[e.key];
+            if (typeof val === 'object' && val.scale !== undefined) return true;
+            return val !== undefined && val !== 0;
+        });
+        
+        if (poolBonuses.length > 0) {
+            html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
+            html += `<div style="font-size: 10px; font-weight: 600; opacity: 0.7; margin-bottom: 4px; color: var(--accent);">POOL POWER BONUS</div>`;
+            poolBonuses.forEach(({ key, label, color }) => {
+                let value = effects[key];
+                if (typeof value === 'object' && value.scale !== undefined) {
+                    value = value.scale;
+                }
+                const displayValue = (value * 100).toFixed(1);
+                html += `<div style="display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0;">`;
+                html += `<span style="opacity: 0.8;">${label}:</span>`;
+                html += `<span style="font-weight: 600; color: var(--accent);">+${displayValue}%</span>`;
+                html += `</div>`;
+            });
+            html += `</div>`;
+        }
+        
         // DEBUFFS SECTION
         const debuffData = [
             { key: 'resistanceDebuff', label: 'Resistance Debuff', color: '#ff6b6b' },

@@ -1,459 +1,163 @@
 /**
- * City of Heroes - Power Pool Definitions
+ * City of Heroes: Homecoming - Power Pools Registry
  * 
- * Power Pool Structure:
- * - Rank 1-2: Available at level 4 (when pools unlock)
- * - Rank 3: Requires 1 power from pool + level requirement
- * - Rank 4: Requires 2 powers from pool + level requirement
+ * Central registry for all power pools.
+ * Individual pool files will register themselves here.
  */
 
-const POWER_POOLS = {
-    'flight': {
-        name: 'Flight',
-        id: 'flight',
-        icon: 'flight',
-        powers: [
-            {
-                name: 'Hover',
-                rank: 1,
-                available: 4,
-                type: 'toggle',
-                description: 'You hover slowly through the air, granting increased defense while attacking.',
-                allowedEnhancements: ['Defense Buff', 'Endurance Reduction', 'Flight Speed'],
-                effects: {
-                    defense: 0.025,
-                    flySpeed: 0.5,
-                    endurance: 0.18
-                }
-            },
-            {
-                name: 'Air Superiority',
-                rank: 2,
-                available: 4,
-                type: 'melee',
-                description: 'A melee attack that can knock flying foes from the sky.',
-                allowedEnhancements: ['Accuracy', 'Damage Increase', 'Endurance Reduction', 'Recharge Reduction'],
-                effects: {
-                    damage: { type: 'smashing', scale: 1.0 },
-                    knockup: { magnitude: 2 },
-                    accuracy: 1.0,
-                    recharge: 4,
-                    endurance: 5.2
-                }
-            },
-            {
-                name: 'Fly',
-                rank: 3,
-                available: 14,
-                prerequisiteCount: 1,
-                type: 'toggle',
-                description: 'Fly through the air at high speed.',
-                allowedEnhancements: ['Flight Speed', 'Endurance Reduction'],
-                effects: {
-                    flySpeed: 1.0,
-                    endurance: 0.65
-                }
-            },
-            {
-                name: 'Group Fly',
-                rank: 4,
-                available: 20,
-                prerequisiteCount: 2,
-                type: 'toggle-aura',
-                description: 'Grant flight to nearby allies.',
-                allowedEnhancements: ['Flight Speed', 'Endurance Reduction'],
-                effects: {
-                    flySpeed: 0.8,
-                    radius: 60,
-                    endurance: 0.78
-                }
-            }
-        ]
-    },
+const POWER_POOLS = {};
+
+/**
+ * Get a power pool by ID
+ * @param {string} poolId - The pool ID (e.g., 'fighting', 'speed')
+ * @returns {Object|null} Pool data or null if not found
+ */
+function getPool(poolId) {
+    return POWER_POOLS[poolId] || null;
+}
+
+/**
+ * Get all available power pools
+ * @returns {Array} Array of pool objects
+ */
+function getAllPools() {
+    return Object.values(POWER_POOLS);
+}
+
+/**
+ * Get pools available to a specific archetype
+ * @param {string} archetypeId - The archetype ID
+ * @returns {Array} Array of available pool objects
+ */
+function getPoolsForArchetype(archetypeId) {
+    // Most pools are available to all archetypes
+    // Special pools like Utility Belt have requirements
+    return getAllPools().filter(pool => {
+        // Check if pool has archetype restrictions
+        if (pool.requires && pool.requires.includes('arch')) {
+            // Parse requirements (simplified)
+            // For now, most pools are available to all
+            return true;
+        }
+        return true;
+    });
+}
+
+/**
+ * Get a specific power from a pool
+ * @param {string} poolId - The pool ID
+ * @param {string} powerName - The power name
+ * @returns {Object|null} Power data or null if not found
+ */
+function getPoolPower(poolId, powerName) {
+    const pool = getPool(poolId);
+    if (!pool) return null;
     
-    'speed': {
-        name: 'Speed',
-        id: 'speed',
-        icon: 'speed',
-        powers: [
-            {
-                name: 'Hasten',
-                rank: 1,
-                available: 4,
-                type: 'self-buff',
-                description: 'Greatly increase your recharge speed for 120 seconds.',
-                allowedEnhancements: ['Recharge Reduction'],
-                effects: {
-                    rechargeBuff: 0.70,
-                    duration: 120,
-                    recharge: 450,
-                    endurance: 5.2
-                }
-            },
-            {
-                name: 'Flurry',
-                rank: 2,
-                available: 4,
-                type: 'melee',
-                description: 'Pummel your foe with a flurry of rapid punches.',
-                allowedEnhancements: ['Accuracy', 'Damage Increase', 'Endurance Reduction', 'Recharge Reduction'],
-                effects: {
-                    damage: { type: 'smashing', scale: 1.32 },
-                    accuracy: 1.0,
-                    recharge: 8,
-                    endurance: 8.528
-                }
-            },
-            {
-                name: 'Super Speed',
-                rank: 3,
-                available: 14,
-                prerequisiteCount: 1,
-                type: 'toggle',
-                description: 'Run at super speed.',
-                allowedEnhancements: ['Run Speed', 'Endurance Reduction'],
-                effects: {
-                    runSpeed: 1.0,
-                    endurance: 0.26
-                }
-            },
-            {
-                name: 'Burnout',
-                rank: 4,
-                available: 20,
-                prerequisiteCount: 2,
-                type: 'self-buff',
-                description: 'Immediately recharge all powers (long recharge).',
-                allowedEnhancements: ['Recharge Reduction'],
-                effects: {
-                    recharge: 600,
-                    endurance: 0
-                }
-            }
-        ]
-    },
+    return pool.powers.find(p => p.name === powerName) || null;
+}
+
+/**
+ * Get powers from pool by rank
+ * @param {string} poolId - The pool ID
+ * @param {number} rank - The rank (1-5)
+ * @returns {Array} Array of powers at that rank
+ */
+function getPoolPowersByRank(poolId, rank) {
+    const pool = getPool(poolId);
+    if (!pool) return [];
     
-    'leaping': {
-        name: 'Leaping',
-        id: 'leaping',
-        icon: 'leaping',
-        powers: [
-            {
-                name: 'Combat Jumping',
-                rank: 1,
-                available: 4,
-                type: 'toggle',
-                description: 'Jump while in combat, providing defense and immobilize protection.',
-                allowedEnhancements: ['Defense Buff', 'Endurance Reduction', 'Jumping'],
-                effects: {
-                    defense: 0.025,
-                    immobilizeProtection: 10.38,
-                    jumpHeight: 1.0,
-                    endurance: 0.065
-                }
-            },
-            {
-                name: 'Jump Kick',
-                rank: 2,
-                available: 4,
-                type: 'melee',
-                description: 'A jumping kick that deals damage and knockback.',
-                allowedEnhancements: ['Accuracy', 'Damage Increase', 'Endurance Reduction', 'Recharge Reduction'],
-                effects: {
-                    damage: { type: 'smashing', scale: 1.0 },
-                    knockback: { magnitude: 2 },
-                    accuracy: 1.0,
-                    recharge: 6,
-                    endurance: 6.864
-                }
-            },
-            {
-                name: 'Super Jump',
-                rank: 3,
-                available: 14,
-                prerequisiteCount: 1,
-                type: 'toggle',
-                description: 'Jump great heights and distances.',
-                allowedEnhancements: ['Jumping', 'Endurance Reduction'],
-                effects: {
-                    jumpHeight: 2.0,
-                    endurance: 0.065
-                }
-            },
-            {
-                name: 'Acrobatics',
-                rank: 4,
-                available: 20,
-                prerequisiteCount: 2,
-                type: 'toggle',
-                description: 'Provides protection from holds and knockback.',
-                allowedEnhancements: ['Endurance Reduction'],
-                effects: {
-                    holdProtection: 10.38,
-                    knockbackProtection: 12,
-                    endurance: 0.26
-                }
-            }
-        ]
-    },
-    
-    'fighting': {
-        name: 'Fighting',
-        id: 'fighting',
-        icon: 'fighting',
-        powers: [
-            {
-                name: 'Boxing',
-                rank: 1,
-                available: 4,
-                type: 'melee',
-                description: 'A quick punch that has a chance to disorient.',
-                allowedEnhancements: ['Accuracy', 'Damage Increase', 'Endurance Reduction', 'Recharge Reduction', 'Disorient Duration'],
-                effects: {
-                    damage: { type: 'smashing', scale: 0.84 },
-                    stun: { magnitude: 2, chance: 0.2, duration: 5.96 },
-                    accuracy: 1.0,
-                    recharge: 3,
-                    endurance: 5.2
-                }
-            },
-            {
-                name: 'Kick',
-                rank: 2,
-                available: 4,
-                type: 'melee',
-                description: 'A strong kick with knockback.',
-                allowedEnhancements: ['Accuracy', 'Damage Increase', 'Endurance Reduction', 'Recharge Reduction', 'Knockback Distance'],
-                effects: {
-                    damage: { type: 'smashing', scale: 1.0 },
-                    knockback: { magnitude: 2 },
-                    accuracy: 1.0,
-                    recharge: 6,
-                    endurance: 6.864
-                }
-            },
-            {
-                name: 'Tough',
-                rank: 3,
-                available: 14,
-                prerequisiteCount: 1,
-                type: 'toggle',
-                description: 'Provides resistance to smashing and lethal damage.',
-                allowedEnhancements: ['Resist Damage', 'Endurance Reduction'],
-                effects: {
-                    resistance: { smashing: 0.15, lethal: 0.15 },
-                    endurance: 0.26
-                }
-            },
-            {
-                name: 'Weave',
-                rank: 4,
-                available: 20,
-                prerequisiteCount: 2,
-                type: 'toggle',
-                description: 'Provides defense to melee, ranged, and AoE attacks.',
-                allowedEnhancements: ['Defense Buff', 'Endurance Reduction'],
-                effects: {
-                    defense: { melee: 0.05, ranged: 0.05, aoe: 0.05 },
-                    endurance: 0.26
-                }
-            }
-        ]
-    },
-    
-    'leadership': {
-        name: 'Leadership',
-        id: 'leadership',
-        icon: 'leadership',
-        powers: [
-            {
-                name: 'Maneuvers',
-                rank: 1,
-                available: 4,
-                type: 'toggle-aura',
-                description: 'Provides defense bonus to nearby allies.',
-                allowedEnhancements: ['Defense Buff', 'Endurance Reduction'],
-                effects: {
-                    defense: { melee: 0.035, ranged: 0.035, aoe: 0.035 },
-                    radius: 60,
-                    endurance: 0.26
-                }
-            },
-            {
-                name: 'Assault',
-                rank: 2,
-                available: 4,
-                type: 'toggle-aura',
-                description: 'Provides damage bonus to nearby allies.',
-                allowedEnhancements: ['Endurance Reduction'],
-                effects: {
-                    damageBuff: 0.10,
-                    radius: 60,
-                    endurance: 0.26
-                }
-            },
-            {
-                name: 'Tactics',
-                rank: 3,
-                available: 14,
-                prerequisiteCount: 1,
-                type: 'toggle-aura',
-                description: 'Provides accuracy and perception bonus to nearby allies.',
-                allowedEnhancements: ['To Hit Buff', 'Endurance Reduction'],
-                effects: {
-                    tohitBuff: 0.07,
-                    radius: 60,
-                    endurance: 0.26
-                }
-            },
-            {
-                name: 'Vengeance',
-                rank: 4,
-                available: 20,
-                prerequisiteCount: 2,
-                type: 'pbaoe',
-                description: 'Grant bonuses to nearby allies when a team member is defeated.',
-                allowedEnhancements: ['Defense Buff', 'To Hit Buff', 'Recharge Reduction'],
-                effects: {
-                    defense: 0.15,
-                    tohitBuff: 0.20,
-                    damageBuff: 0.25,
-                    duration: 90,
-                    radius: 30,
-                    recharge: 300,
-                    endurance: 15.6
-                }
-            }
-        ]
-    },
-    
-    'concealment': {
-        name: 'Concealment',
-        id: 'concealment',
-        icon: 'concealment',
-        powers: [
-            {
-                name: 'Stealth',
-                rank: 1,
-                available: 4,
-                type: 'toggle',
-                description: 'Become stealthy, reducing enemy perception range.',
-                allowedEnhancements: ['Defense Buff', 'Endurance Reduction'],
-                effects: {
-                    stealth: 35,
-                    defense: { melee: 0.0125, ranged: 0.0125, aoe: 0.0125 },
-                    endurance: 0.26
-                }
-            },
-            {
-                name: 'Grant Invisibility',
-                rank: 2,
-                available: 4,
-                type: 'ally-buff',
-                description: 'Grant invisibility to an ally.',
-                allowedEnhancements: ['Defense Buff', 'Endurance Reduction', 'Recharge Reduction'],
-                effects: {
-                    stealth: 55,
-                    defense: 0.025,
-                    duration: 120,
-                    recharge: 3,
-                    endurance: 5.2
-                }
-            },
-            {
-                name: 'Invisibility',
-                rank: 3,
-                available: 14,
-                prerequisiteCount: 1,
-                type: 'toggle',
-                description: 'Become invisible (cannot attack while active).',
-                allowedEnhancements: ['Defense Buff', 'Endurance Reduction'],
-                effects: {
-                    stealth: 55,
-                    defense: 0.025,
-                    endurance: 0.26
-                }
-            },
-            {
-                name: 'Phase Shift',
-                rank: 4,
-                available: 20,
-                prerequisiteCount: 2,
-                type: 'toggle',
-                description: 'Become intangible and untargetable (cannot attack).',
-                allowedEnhancements: ['Endurance Reduction'],
-                effects: {
-                    intangible: true,
-                    endurance: 0.65
-                }
-            }
-        ]
-    },
-    
-    'medicine': {
-        name: 'Medicine',
-        id: 'medicine',
-        icon: 'medicine',
-        powers: [
-            {
-                name: 'Aid Other',
-                rank: 1,
-                available: 4,
-                type: 'ally-heal',
-                description: 'Heal a targeted ally.',
-                allowedEnhancements: ['Healing', 'Endurance Reduction', 'Recharge Reduction', 'Interrupt Decrease'],
-                effects: {
-                    heal: { scale: 1.46 },
-                    interrupt: 2.0,
-                    recharge: 10,
-                    endurance: 13
-                }
-            },
-            {
-                name: 'Stimulant',
-                rank: 2,
-                available: 4,
-                type: 'ally-buff',
-                description: 'Free an ally from sleep, hold, stun, immobilize, and fear.',
-                allowedEnhancements: ['Recharge Reduction', 'Interrupt Decrease'],
-                effects: {
-                    mezzProtection: true,
-                    interrupt: 1.5,
-                    recharge: 4,
-                    endurance: 7.8
-                }
-            },
-            {
-                name: 'Aid Self',
-                rank: 3,
-                available: 14,
-                prerequisiteCount: 1,
-                type: 'self-heal',
-                description: 'Heal yourself.',
-                allowedEnhancements: ['Healing', 'Endurance Reduction', 'Recharge Reduction', 'Interrupt Decrease'],
-                effects: {
-                    heal: { scale: 1.46 },
-                    interrupt: 2.0,
-                    recharge: 30,
-                    endurance: 13
-                }
-            },
-            {
-                name: 'Resuscitate',
-                rank: 4,
-                available: 20,
-                prerequisiteCount: 2,
-                type: 'ally-rez',
-                description: 'Revive a defeated ally.',
-                allowedEnhancements: ['Healing', 'Endurance Reduction', 'Recharge Reduction', 'Interrupt Decrease'],
-                effects: {
-                    resurrect: true,
-                    heal: { scale: 0.5 },
-                    interrupt: 3.0,
-                    recharge: 300,
-                    endurance: 26
-                }
-            }
-        ]
+    return pool.powers.filter(p => p.rank === rank);
+}
+
+/**
+ * Check if a pool power meets prerequisites
+ * @param {string} poolId - The pool ID
+ * @param {string} powerName - The power name
+ * @param {Object} build - Current build state
+ * @returns {Object} { canSelect: boolean, reason: string }
+ */
+function checkPoolPowerPrerequisites(poolId, powerName, build) {
+    const pool = getPool(poolId);
+    if (!pool) {
+        return { canSelect: false, reason: 'Pool not found' };
     }
-};
+    
+    const power = pool.powers.find(p => p.name === powerName);
+    if (!power) {
+        return { canSelect: false, reason: 'Power not found' };
+    }
+    
+    // Check level requirement
+    if (build.level < 4) {
+        return { canSelect: false, reason: 'Power pools unlock at level 4' };
+    }
+    
+    // Rank 1-2: Available immediately at level 4+
+    if (power.rank <= 2) {
+        return { canSelect: true, reason: '' };
+    }
+    
+    // Rank 3+: Require level 14
+    if (build.level < 14) {
+        return { canSelect: false, reason: 'Requires level 14' };
+    }
+    
+    // Check if pool is selected
+    const poolData = build.pools.find(p => p.id === poolId);
+    if (!poolData) {
+        return { canSelect: false, reason: 'Must select a rank 1-2 power first' };
+    }
+    
+    // Rank 3: Need 1 other power
+    if (power.rank === 3) {
+        if (poolData.powers.length < 1) {
+            return { canSelect: false, reason: 'Requires 1 other power from this pool' };
+        }
+        return { canSelect: true, reason: '' };
+    }
+    
+    // Rank 4-5: Need 2 other powers
+    if (power.rank >= 4) {
+        if (poolData.powers.length < 2) {
+            const needed = 2 - poolData.powers.length;
+            return { canSelect: false, reason: `Requires ${needed} more power(s) from this pool` };
+        }
+        return { canSelect: true, reason: '' };
+    }
+    
+    return { canSelect: true, reason: '' };
+}
+
+/**
+ * Get power pool statistics
+ * @returns {Object} Statistics about loaded pools
+ */
+function getPoolStats() {
+    const pools = getAllPools();
+    const totalPowers = pools.reduce((sum, pool) => sum + pool.powers.length, 0);
+    
+    return {
+        totalPools: pools.length,
+        totalPowers: totalPowers,
+        pools: pools.map(p => ({
+            id: p.id,
+            name: p.name,
+            powerCount: p.powers.length
+        }))
+    };
+}
+
+// Export for use in other modules
+if (typeof window !== 'undefined') {
+    window.POWER_POOLS = POWER_POOLS;
+    window.getPool = getPool;
+    window.getAllPools = getAllPools;
+    window.getPoolsForArchetype = getPoolsForArchetype;
+    window.getPoolPower = getPoolPower;
+    window.getPoolPowersByRank = getPoolPowersByRank;
+    window.checkPoolPowerPrerequisites = checkPoolPowerPrerequisites;
+    window.getPoolStats = getPoolStats;
+}
+
+// Log when loaded
+console.log('Power Pools registry loaded');

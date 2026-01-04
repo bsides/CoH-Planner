@@ -595,16 +595,30 @@ function updatePoolCounter() {
         const poolCount = Build.pools.length;
         button.textContent = `+ Add Power Pool (${poolCount}/4 pools used)`;
         
+        // Remove existing click listeners and re-add to ensure it works
+        const newButton = button.cloneNode(true);
+        newButton.addEventListener('click', () => {
+            if (Build.level < 4) {
+                alert('Power Pools unlock at level 4');
+                return;
+            }
+            openPoolPowerModal();
+        });
+        
         // Disable if at max
         if (poolCount >= 4) {
-            button.disabled = true;
-            button.style.opacity = '0.5';
-            button.style.cursor = 'not-allowed';
+            newButton.disabled = true;
+            newButton.style.opacity = '0.5';
+            newButton.style.cursor = 'not-allowed';
+            newButton.title = 'Maximum pools selected (4/4)';
         } else {
-            button.disabled = false;
-            button.style.opacity = '1';
-            button.style.cursor = 'pointer';
+            newButton.disabled = false;
+            newButton.style.opacity = '1';
+            newButton.style.cursor = 'pointer';
+            newButton.title = '';
         }
+        
+        button.replaceWith(newButton);
     }
 }
 
@@ -697,14 +711,21 @@ function displayInherentPowers() {
     addPoolBtn.id = 'addPoolBtn';
     addPoolBtn.textContent = '+ Add Power Pool';
     
+    // Add click handler (always, even when disabled)
+    addPoolBtn.addEventListener('click', () => {
+        if (Build.level < 4) {
+            alert('Power Pools unlock at level 4');
+            return;
+        }
+        openPoolPowerModal();
+    });
+    
     // Check if pools are unlocked
     if (Build.level < 4) {
         addPoolBtn.disabled = true;
         addPoolBtn.title = 'Power Pools unlock at level 4';
         addPoolBtn.style.opacity = '0.5';
         addPoolBtn.style.cursor = 'not-allowed';
-    } else {
-        addPoolBtn.onclick = () => openPoolPowerModal();
     }
     
     container.appendChild(addPoolBtn);

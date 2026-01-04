@@ -51,10 +51,10 @@ const STAT_CATEGORIES = {
     recovery: {
         name: 'Recovery & HP',
         stats: {
-            recovery: { name: 'Recovery', format: '+{value}%', color: 'stat-recovery' },
-            regeneration: { name: 'Regeneration', format: '+{value}%', color: 'stat-regeneration' },
-            maxhp: { name: 'Max HP', format: '+{value}%', color: 'stat-healing' },
-            maxend: { name: 'Max End', format: '+{value}%', color: 'stat-endurance' }
+            recovery: { name: 'Recovery', format: '{absValue} /sec (+{value}%)', color: 'stat-recovery', dualDisplay: true },
+            regeneration: { name: 'Regeneration', format: '{absValue} HP/sec (+{value}%)', color: 'stat-regeneration', dualDisplay: true },
+            maxhp: { name: 'Max HP', format: '{absValue} HP (+{value}%)', color: 'stat-healing', dualDisplay: true },
+            maxend: { name: 'Max End', format: '{absValue} (+{value}%)', color: 'stat-endurance', dualDisplay: true }
         }
     },
     baseline: {
@@ -69,7 +69,7 @@ const STAT_CATEGORIES = {
     movement: {
         name: 'Movement',
         stats: {
-            runspeed: { name: 'Run Speed', format: '+{value}%', color: 'stat-speed' },
+            runspeed: { name: 'Run Speed', format: '{absValue} mph (+{value}%)', color: 'stat-speed', dualDisplay: true },
             flyspeed: { name: 'Fly Speed', format: '+{value}%', color: 'stat-fly' },
             jumpspeed: { name: 'Jump Speed', format: '+{value}%', color: 'stat-jump' },
             jumpheight: { name: 'Jump Height', format: '+{value}%', color: 'stat-jump' }
@@ -425,10 +425,44 @@ function updateStatsDashboard() {
             value = CharacterStats[statId] || 0;
         }
         
-        // Format the value (baseline stats are absolute values, not percentages)
-        const formattedValue = statDef.format.replace('{value}', 
-            statId.startsWith('baseline') ? value.toFixed(0) : value.toFixed(1)
-        );
+        // Format the value
+        let formattedValue;
+        if (statDef.dualDisplay) {
+            // For stats that show both absolute value and percentage
+            let absValue = 0;
+            
+            // Calculate absolute value based on stat type
+            if (statId === 'maxhp') {
+                // Max HP = baseline health + (baseline * percentage bonus)
+                absValue = BaselineStats.baselineMaxHealth * (1 + value / 100);
+            } else if (statId === 'maxend') {
+                // Max Endurance = baseline endurance + (baseline * percentage bonus)
+                absValue = BaselineStats.baselineEndurance * (1 + value / 100);
+            } else if (statId === 'regeneration') {
+                // Regeneration = baseline recovery + (baseline * percentage bonus)
+                // For regeneration, we need base regen which comes from Rest power or buffs
+                // Using a base of 1 HP/sec for regeneration and applying the bonus
+                const baseRegen = 1; // Base regeneration from Rest or other sources
+                absValue = baseRegen * (1 + value / 100);
+            } else if (statId === 'recovery') {
+                // Recovery = baseline recovery + (baseline * percentage bonus)
+                absValue = BaselineStats.baselineRecovery * (1 + value / 100);
+            } else if (statId === 'runspeed') {
+                // Run speed: base is 12.50 mph (City of Heroes standard), apply percentage bonus
+                const baseRunSpeed = 12.50;
+                absValue = baseRunSpeed * (1 + value / 100);
+            }
+            
+            // Replace both {value} (percentage) and {absValue} (absolute)
+            formattedValue = statDef.format
+                .replace('{absValue}', absValue.toFixed(2))
+                .replace('{value}', value.toFixed(1));
+        } else {
+            // Standard single value formatting
+            formattedValue = statDef.format.replace('{value}', 
+                statId.startsWith('baseline') ? value.toFixed(0) : value.toFixed(1)
+            );
+        }
         
         const statItem = document.createElement('div');
         statItem.className = 'stat-item';
@@ -497,6 +531,133 @@ function openStatsDetail() {
 // ============================================
 
 /**
+ * Calculate bonuses from inherent and pool powers
+ * @returns {Object} Object with stat bonuses keyed by stat name
+ */
+function calculatePoolPowerBonuses() {
+    const bonuses = {};
+    const allPowers = [];
+    
+    console.log('calculatePoolPowerBonuses called, Build.inherents:', Build.inherents, 'Build.pools:', Build.pools);
+    
+    // Collect inherent powers (including Fitness)
+    if (Build.inherents && Array.isArray(Build.inherents)) {
+        console.log(`Processing ${Build.inherents.length} inherent powers`);
+        Build.inherents.forEach(power => {
+            // Skip Rest power - it's special and handled separately
+            if (power.name === 'Rest') {
+                console.log('Skipping Rest power');
+                return;
+            }
+            console.log('Processing inherent power:', power.name, 'with effects:', power.effects);
+            if (power.effects) {
+                allPowers.push(power);
+            }
+        });
+    }
+    
+    // Collect pool powers
+    if (Build.pools && Array.isArray(Build.pools)) {
+        console.log(`Processing ${Build.pools.length} pools`);
+        Build.pools.forEach(poolData => {
+            console.log('Processing pool:', poolData.id, 'with', poolData.powers?.length || 0, 'powers');
+            if (!poolData.powers) return;
+            
+            poolData.powers.forEach(power => {
+                console.log('Processing pool power:', power.name, 'with effects:', power.effects);
+                if (power.effects) {
+                    allPowers.push(power);
+                }
+            });
+        });
+    }
+    
+    // Process all collected powers
+    console.log('Processing', allPowers.length, 'total powers:', allPowers.map(p => p.name));
+    
+    allPowers.forEach(power => {
+        const effects = power.effects;
+        console.log(`Processing power "${power.name}" with effects:`, effects);
+        
+        // Map effect names to stat names
+        // Effects are decimal multipliers (0.25 = 25% increase)
+        // We accumulate these as additive multipliers
+        
+        // Regeneration effect (in HP/sec)
+        if (effects.regeneration !== undefined && effects.regeneration !== null) {
+            const scaleValue = typeof effects.regeneration === 'number' 
+                ? effects.regeneration 
+                : (effects.regeneration.scale || 0);
+            bonuses.regeneration = (bonuses.regeneration || 0) + scaleValue;
+            console.log(`  Regeneration: ${scaleValue}, total now: ${bonuses.regeneration}`);
+        }
+        
+        // Recovery effect (in Endurance/sec)
+        if (effects.recovery !== undefined && effects.recovery !== null) {
+            const scaleValue = typeof effects.recovery === 'number' 
+                ? effects.recovery 
+                : (effects.recovery.scale || 0);
+            bonuses.recovery = (bonuses.recovery || 0) + scaleValue;
+            console.log(`  Recovery: ${scaleValue}, total now: ${bonuses.recovery}`);
+        }
+        
+        // Run speed effect
+        if (effects.runSpeed !== undefined && effects.runSpeed !== null) {
+            const scaleValue = typeof effects.runSpeed === 'number' 
+                ? effects.runSpeed 
+                : (effects.runSpeed.scale || 0);
+            bonuses.runspeed = (bonuses.runspeed || 0) + scaleValue;
+            console.log(`  RunSpeed: ${scaleValue}, total now: ${bonuses.runspeed}`);
+        }
+        
+        // Fly speed effect
+        if (effects.flySpeed !== undefined && effects.flySpeed !== null) {
+            const scaleValue = typeof effects.flySpeed === 'number' 
+                ? effects.flySpeed 
+                : (effects.flySpeed.scale || 0);
+            bonuses.flyspeed = (bonuses.flyspeed || 0) + scaleValue;
+        }
+        
+        // Jump height effect
+        if (effects.jumpHeight !== undefined && effects.jumpHeight !== null) {
+            const scaleValue = typeof effects.jumpHeight === 'number' 
+                ? effects.jumpHeight 
+                : (effects.jumpHeight.scale || 0);
+            bonuses.jumpheight = (bonuses.jumpheight || 0) + scaleValue;
+            console.log(`  JumpHeight: ${scaleValue}, total now: ${bonuses.jumpheight}`);
+        }
+        
+        // Jump speed effect
+        if (effects.jumpSpeed !== undefined && effects.jumpSpeed !== null) {
+            const scaleValue = typeof effects.jumpSpeed === 'number' 
+                ? effects.jumpSpeed 
+                : (effects.jumpSpeed.scale || 0);
+            bonuses.jumpspeed = (bonuses.jumpspeed || 0) + scaleValue;
+            console.log(`  JumpSpeed: ${scaleValue}, total now: ${bonuses.jumpspeed}`);
+        }
+        
+        // Max endurance effect
+        if (effects.maxEndurance !== undefined && effects.maxEndurance !== null) {
+            const scaleValue = typeof effects.maxEndurance === 'number' 
+                ? effects.maxEndurance 
+                : (effects.maxEndurance.scale || 0);
+            bonuses.maxend = (bonuses.maxend || 0) + scaleValue;
+        }
+        
+        // Max HP effect
+        if (effects.maxHealth !== undefined && effects.maxHealth !== null) {
+            const scaleValue = typeof effects.maxHealth === 'number' 
+                ? effects.maxHealth 
+                : (effects.maxHealth.scale || 0);
+            bonuses.maxhp = (bonuses.maxhp || 0) + scaleValue;
+        }
+    });
+    
+    console.log('Final bonuses (as multipliers):', bonuses);
+    return bonuses;
+}
+
+/**
  * Recalculate all character stats from enhancements and set bonuses
  * Uses Rule of 5 system for accurate bonus tracking
  */
@@ -529,6 +690,28 @@ function recalculateStats() {
         });
         console.log('Stats recalculated (old system):', CharacterStats);
     }
+    
+    // Add pool power bonuses (as multipliers to baseline)
+    const poolBonuses = calculatePoolPowerBonuses();
+    console.log('Applying pool bonuses to CharacterStats, available BaselineStats keys:', Object.keys(BaselineStats));
+    Object.entries(poolBonuses).forEach(([stat, multiplier]) => {
+        if (multiplier > 0) {
+            const baselineKey = 'baseline' + stat.charAt(0).toUpperCase() + stat.slice(1);
+            console.log(`  Checking ${stat}: looking for key "${baselineKey}", exists in BaselineStats:`, BaselineStats.hasOwnProperty(baselineKey));
+            
+            if (BaselineStats.hasOwnProperty(baselineKey)) {
+                const baseline = BaselineStats[baselineKey];
+                // Apply multiplier to baseline: new value = baseline * multiplier
+                CharacterStats[stat] += (baseline * multiplier);
+                console.log(`  Applied ${stat} bonus: baseline=${baseline}, multiplier=${multiplier}, increase=${baseline * multiplier}`);
+            } else {
+                // For stats without baselines (movement, regen), apply multiplier as percentage points
+                // multiplier is already a decimal (0.2 = 20% bonus)
+                CharacterStats[stat] = (CharacterStats[stat] || 0) + (multiplier * 100);
+                console.log(`  Applied ${stat} as percentage bonus: multiplier=${multiplier}, added ${multiplier * 100}%`);
+            }
+        }
+    });
     
     // TODO: Add enhancement bonuses from slotted enhancements
     
