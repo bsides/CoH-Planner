@@ -324,6 +324,11 @@ function addSlotToPower(powerName) {
     // Update display
     updatePowerSlots(powerName);
     
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
+    
     console.log(`Added slot to ${powerName} (${power.slots.length}/${power.maxSlots})`);
 }
 

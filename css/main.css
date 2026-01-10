@@ -406,6 +406,9 @@ body {
     padding: 8px 10px;
     margin-bottom: 4px;
     position: relative; /* For absolute positioned toggle */
+    min-height: 54px; /* Maintains consistent height for powers without slots */
+    display: flex;
+    flex-direction: column;
 }
 
 .selected-power-header {

@@ -34,7 +34,7 @@ function initializeInherentPowers(archetypeId) {
     });
     
     // Universal inherent powers (non-fitness) - only add if not already added
-    const universalInherents = ['brawl', 'sprint', 'rest'];
+    const universalInherents = ['brawl', 'sprint', 'rest', 'prestige-sprint-level-4', 'prestige-sprint-level-10', 'prestige-sprint-level-20', 'prestige-sprint-level-30', 'prestige-sprint-level-40'];
     
     // Add universal inherents - preserve their category or set to 'universal', and initialize slots
     universalInherents.forEach(powerKey => {

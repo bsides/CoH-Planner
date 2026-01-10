@@ -57,6 +57,96 @@ const INHERENT_POWERS = {
         }
     },
     
+    'prestige-sprint-level-4': {
+        name: 'Prestige Sprint (L4)',
+        category: 'universal',
+        description: 'Prestige Sprint - Available at Level 4. Enhanced running speed variant.',
+        shortHelp: 'Toggle: Self +Speed, -End',
+        icon: 'inherent_sprint.png',
+        powerType: 'Toggle',
+        level: 4,
+        maxSlots: 6,
+        allowedEnhancements: ['EnduranceReduction', 'Run'],
+        allowedSetCategories: ['Running'],
+        effects: {
+            runSpeed: 0.5,
+            enduranceCost: 0.13,
+            activateEnd: 0.0
+        }
+    },
+    
+    'prestige-sprint-level-10': {
+        name: 'Prestige Sprint (L10)',
+        category: 'universal',
+        description: 'Prestige Sprint - Available at Level 10. Enhanced running speed variant.',
+        shortHelp: 'Toggle: Self +Speed, -End',
+        icon: 'inherent_sprint.png',
+        powerType: 'Toggle',
+        level: 10,
+        maxSlots: 6,
+        allowedEnhancements: ['EnduranceReduction', 'Run'],
+        allowedSetCategories: ['Running'],
+        effects: {
+            runSpeed: 0.5,
+            enduranceCost: 0.13,
+            activateEnd: 0.0
+        }
+    },
+    
+    'prestige-sprint-level-20': {
+        name: 'Prestige Sprint (L20)',
+        category: 'universal',
+        description: 'Prestige Sprint - Available at Level 20. Enhanced running speed variant.',
+        shortHelp: 'Toggle: Self +Speed, -End',
+        icon: 'inherent_sprint.png',
+        powerType: 'Toggle',
+        level: 20,
+        maxSlots: 6,
+        allowedEnhancements: ['EnduranceReduction', 'Run'],
+        allowedSetCategories: ['Running'],
+        effects: {
+            runSpeed: 0.5,
+            enduranceCost: 0.13,
+            activateEnd: 0.0
+        }
+    },
+    
+    'prestige-sprint-level-30': {
+        name: 'Prestige Sprint (L30)',
+        category: 'universal',
+        description: 'Prestige Sprint - Available at Level 30. Enhanced running speed variant.',
+        shortHelp: 'Toggle: Self +Speed, -End',
+        icon: 'inherent_sprint.png',
+        powerType: 'Toggle',
+        level: 30,
+        maxSlots: 6,
+        allowedEnhancements: ['EnduranceReduction', 'Run'],
+        allowedSetCategories: ['Running'],
+        effects: {
+            runSpeed: 0.5,
+            enduranceCost: 0.13,
+            activateEnd: 0.0
+        }
+    },
+    
+    'prestige-sprint-level-40': {
+        name: 'Prestige Sprint (L40)',
+        category: 'universal',
+        description: 'Prestige Sprint - Available at Level 40. Enhanced running speed variant.',
+        shortHelp: 'Toggle: Self +Speed, -End',
+        icon: 'inherent_sprint.png',
+        powerType: 'Toggle',
+        level: 40,
+        maxSlots: 6,
+        allowedEnhancements: ['EnduranceReduction', 'Run'],
+        allowedSetCategories: ['Running'],
+        effects: {
+            runSpeed: 0.5,
+            enduranceCost: 0.13,
+            activateEnd: 0.0
+        }
+    },
+    
     'rest': {
         name: 'Rest',
         category: 'universal',

@@ -58,6 +58,11 @@ function addPoolPower(pool, powerName, level) {
 
     // Update pool counter
     updatePoolCounter();
+    
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
 
     closePoolModal();
 }

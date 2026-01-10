@@ -17,6 +17,11 @@ function initializeCharacterCreator() {
     // Populate archetype dropdown
     populateArchetypeDropdown();
     
+    // Initialize slot counter display
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
+    
     console.log('Character creator initialized');
 }
 
@@ -385,6 +390,44 @@ function updateAvailableSecondaryPowers(powerset) {
  * @param {Object} power - Power data
  * @returns {boolean} Can select
  */
+// ============================================
+// POWER SELECTION HELPERS
+// ============================================
+
+/**
+ * Get total number of powers selected across all categories
+ * @returns {number} Total power count
+ */
+function getTotalPowerCount() {
+    let total = 0;
+    
+    // Count primary powers
+    if (Build.primary.powers) {
+        total += Build.primary.powers.length;
+    }
+    
+    // Count secondary powers
+    if (Build.secondary.powers) {
+        total += Build.secondary.powers.length;
+    }
+    
+    // Count pool powers
+    if (Build.pools) {
+        Build.pools.forEach(pool => {
+            if (pool.powers) {
+                total += pool.powers.length;
+            }
+        });
+    }
+    
+    // Count epic pool powers
+    if (Build.epicPool && Build.epicPool.powers) {
+        total += Build.epicPool.powers.length;
+    }
+    
+    return total;
+}
+
 function canSelectPrimaryPower(power) {
     const hasPrimaryPower = Build.primary.powers.length > 0;
     const hasSecondaryPower = Build.secondary.powers.length > 0;
@@ -461,6 +504,13 @@ function selectPower(powerData, category) {
         return;
     }
     
+    // Check total power limit (24 powers maximum)
+    const totalPowers = getTotalPowerCount();
+    if (totalPowers >= 24) {
+        alert('Maximum 24 powers allowed total (primary + secondary + pools + epic). You already have ' + totalPowers + '.');
+        return;
+    }
+    
     // Check if can select
     const canSelect = category === 'primary' ? canSelectPrimaryPower(powerData) : canSelectSecondaryPower(powerData);
     if (!canSelect) {
@@ -498,6 +548,11 @@ function selectPower(powerData, category) {
     
     // Refresh available powers to update gating
     refreshAvailablePowers();
+    
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
     
     console.log(`Added power: ${powerData.name} to ${category}`);
 }
@@ -540,6 +595,11 @@ function removePowerFromBuild(powerName, category) {
     // Refresh available powers to update gating
     refreshAvailablePowers();
     
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
+    
     console.log(`Removed power: ${powerName} from ${category}`);
 }
 
@@ -561,195 +621,8 @@ function refreshAvailablePowers() {
         }
     }
     
-    // Update pool powers column (column 4)
-    if (arePoolsUnlocked()) {
-        updatePoolPowersColumn();
-    }
-}
-
-/**
- * Update pool powers column (column 4)
- */
-function updatePoolPowersColumn() {
-    const container = document.querySelector('.column:nth-child(4) .column-content');
-    if (!container) return;
-    
-    // Get pool button or create it if needed
-    let addPoolBtn = container.querySelector('.add-pool-btn');
-    if (!addPoolBtn) {
-        addPoolBtn = document.createElement('button');
-        addPoolBtn.className = 'add-pool-btn';
-        addPoolBtn.textContent = '+ Add Power Pool';
-        addPoolBtn.onclick = () => openPoolPowerModal();
-        container.appendChild(addPoolBtn);
-    }
-    
-    // Remove existing pool power groups (but keep inherent sections)
-    const existingGroups = container.querySelectorAll('.pool-power-group');
-    existingGroups.forEach(group => group.remove());
-    
-    // Display selected pool powers grouped by pool
-    Build.pools.forEach(poolData => {
-        const pool = POWER_POOLS[poolData.id];
-        if (!pool) return;
-        
-        // Only show pool if it has powers
-        if (poolData.powers.length === 0) return;
-        
-        // Create pool group
-        const poolGroup = document.createElement('div');
-        poolGroup.className = 'pool-power-group';
-        poolGroup.style.marginTop = '16px';
-        
-        // Pool header
-        const poolHeader = document.createElement('div');
-        poolHeader.style.fontWeight = '600';
-        poolHeader.style.fontSize = '11px';
-        poolHeader.style.color = 'var(--accent)';
-        poolHeader.style.textTransform = 'uppercase';
-        poolHeader.style.letterSpacing = '0.05em';
-        poolHeader.style.marginBottom = '8px';
-        poolHeader.textContent = pool.name;
-        poolGroup.appendChild(poolHeader);
-        
-        // Pool powers
-        poolData.powers.forEach(power => {
-            const powerElement = document.createElement('div');
-            powerElement.className = 'selected-power';
-            powerElement.dataset.powerName = power.name;
-            powerElement.innerHTML = `
-                <div class="selected-power-header">
-                    <span class="selected-power-name">${power.name}</span>
-                    <span class="selected-power-level">Level ${power.level}</span>
-                </div>
-                <div class="enhancement-slots"></div>
-            `;
-            
-            // Add tooltip - use unified tooltip system
-            powerElement.onmouseenter = (e) => {
-                const originalPower = getOriginalPowerData(power.name, 'pool', poolData.id);
-                if (originalPower && typeof showPowerTooltip === 'function') {
-                    showPowerTooltip(e, power, originalPower);
-                }
-            };
-            powerElement.onmouseleave = () => {
-                if (typeof hideTooltip === 'function') {
-                    hideTooltip();
-                }
-            };
-            
-            poolGroup.appendChild(powerElement);
-        });
-
-        container.appendChild(poolGroup);
-
-        // Initialize slots after the group is in the DOM
-        poolData.powers.forEach(power => {
-            updatePowerSlots(power.name);
-        });
-    });
-    
-    // Display epic pool section (if selected)
-    if (Build.epicPool.id && Build.epicPool.powers.length > 0) {
-        const pool = EPIC_POOLS[Build.epicPool.id];
-        if (pool) {
-            const epicPoolGroup = document.createElement('div');
-            epicPoolGroup.className = 'epic-pool-group';
-            epicPoolGroup.style.marginTop = '20px';
-            epicPoolGroup.style.borderTop = '1px solid var(--border)';
-            epicPoolGroup.style.paddingTop = '12px';
-            
-            // Epic pool header (with remove button)
-            const epicPoolHeader = document.createElement('div');
-            epicPoolHeader.style.display = 'flex';
-            epicPoolHeader.style.justifyContent = 'space-between';
-            epicPoolHeader.style.alignItems = 'center';
-            epicPoolHeader.style.marginBottom = '8px';
-            
-            const headerName = document.createElement('div');
-            headerName.style.fontWeight = '600';
-            headerName.style.fontSize = '11px';
-            headerName.style.color = 'var(--accent)';
-            headerName.style.textTransform = 'uppercase';
-            headerName.style.letterSpacing = '0.05em';
-            headerName.textContent = `${pool.name} (Epic)`;
-            
-            const removeBtn = document.createElement('button');
-            removeBtn.textContent = 'Remove';
-            removeBtn.style.fontSize = '10px';
-            removeBtn.style.padding = '2px 6px';
-            removeBtn.style.backgroundColor = 'var(--button-bg)';
-            removeBtn.style.color = 'var(--text)';
-            removeBtn.style.border = '1px solid var(--border)';
-            removeBtn.style.cursor = 'pointer';
-            removeBtn.onclick = removeEpicPool;
-            
-            epicPoolHeader.appendChild(headerName);
-            epicPoolHeader.appendChild(removeBtn);
-            epicPoolGroup.appendChild(epicPoolHeader);
-            
-            // Epic pool powers
-            Build.epicPool.powers.forEach(power => {
-                const powerElement = document.createElement('div');
-                powerElement.className = 'selected-power epic-power';
-                powerElement.dataset.powerName = power.name;
-                
-                // Check if this is a toggle or auto power that needs a checkbox
-                const needsToggle = power.powerType === 'Toggle' || power.powerType === 'Auto';
-                
-                powerElement.innerHTML = `
-                    <div class="selected-power-header">
-                        <span class="selected-power-name">${power.name}</span>
-                        ${needsToggle ? `
-                            <label class="switch">
-                                <input type="checkbox" class="power-toggle-input">
-                                <span class="slider round"></span>
-                            </label>
-                        ` : ''}
-                        <span class="selected-power-level">Level ${power.level}</span>
-                    </div>
-                    <div class="enhancement-slots"></div>
-                `;
-                
-                // Add toggle handler if needed
-                if (needsToggle) {
-                    const checkbox = powerElement.querySelector('.power-toggle-input');
-                    checkbox.checked = power.isActive || false;
-                    checkbox.addEventListener('change', (e) => {
-                        e.stopPropagation();
-                        power.isActive = checkbox.checked;
-                        console.log(`${power.name} active: ${power.isActive}`);
-                        // Recalculate stats
-                        if (typeof recalculateStats === 'function') {
-                            recalculateStats();
-                        }
-                    });
-                }
-                
-                // Add tooltip for epic powers
-                powerElement.onmouseenter = (e) => {
-                    const originalPower = getEpicPoolPower(Build.epicPool.id, power.name);
-                    if (originalPower && typeof showPowerTooltip === 'function') {
-                        showPowerTooltip(e, power, originalPower);
-                    }
-                };
-                powerElement.onmouseleave = () => {
-                    if (typeof hideTooltip === 'function') {
-                        hideTooltip();
-                    }
-                };
-                
-                epicPoolGroup.appendChild(powerElement);
-            });
-            
-            container.appendChild(epicPoolGroup);
-            
-            // Initialize slots for epic powers
-            Build.epicPool.powers.forEach(power => {
-                updatePowerSlots(power.name);
-            });
-        }
-    }
+    // Update pool powers display (pools at top, inherent powers below)
+    displayInherentPowers();
 }
 
 /**
@@ -1107,6 +980,11 @@ function removePowerPool(poolId) {
     // Remove pool and all its powers
     Build.pools.splice(index, 1);
     
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
+    
     console.log(`Removed pool: ${poolId}`);
     
     // Refresh UI
@@ -1188,6 +1066,11 @@ function removePoolPowerFromBuild(powerName, poolId) {
     
     // Refresh UI
     refreshAvailablePowers();
+    
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
     
     console.log(`Removed pool power: ${powerName}`);
 }
@@ -1348,6 +1231,152 @@ function openPoolPowerModal() {
 }
 
 /**
+ * Open pool power selection modal for a SPECIFIC pool
+ * Shows only powers from the selected pool
+ * @param {string} poolId - The specific pool ID to show powers from
+ */
+function openPoolPowerModalForSpecificPool(poolId) {
+    const pool = POWER_POOLS[poolId];
+    if (!pool) {
+        console.error(`Pool not found: ${poolId}`);
+        return;
+    }
+    
+    // Create modal overlay
+    const modal = document.createElement('div');
+    modal.id = 'poolPowerModalSpecific';
+    modal.className = 'simple-modal';
+    
+    // Create modal content container
+    const modalContent = document.createElement('div');
+    modalContent.className = 'simple-modal-content pool-modal-content';
+    
+    // Header
+    const header = document.createElement('h3');
+    header.textContent = `Select ${pool.name} Power`;
+    modalContent.appendChild(header);
+    
+    // Scrollable list container
+    const listContainer = document.createElement('div');
+    listContainer.className = 'pool-modal-list';
+    
+    // Show only the selected pool's powers
+    pool.powers.forEach(power => {
+        const canSelect = canSelectPoolPowerInModal(pool, power);
+        
+        const powerOption = document.createElement('div');
+        powerOption.className = 'pool-power-option';
+        if (!canSelect) {
+            powerOption.classList.add('disabled');
+        }
+        
+        // Power info
+        const powerInfo = document.createElement('div');
+        
+        const powerName = document.createElement('div');
+        powerName.className = 'pool-power-name';
+        powerName.textContent = power.name;
+        powerInfo.appendChild(powerName);
+        
+        powerOption.appendChild(powerInfo);
+        
+        // Level requirement
+        const powerLevel = document.createElement('div');
+        powerLevel.className = 'pool-power-level';
+        
+        // Special handling for travel powers at level 4
+        const travelPowersLevel4 = [
+            { pool: 'flight', power: 'Fly' },
+            { pool: 'teleportation', power: 'Teleport' },
+            { pool: 'leaping', power: 'Super Jump' },
+            { pool: 'speed', power: 'Super Speed' },
+            { pool: 'experimentation', power: 'Speed of Sound' },
+            { pool: 'invisibility', power: 'Infiltration' },
+            { pool: 'sorcery', power: 'Mystic Flight' }
+        ];
+        
+        const isTravelPowerLevel4 = travelPowersLevel4.some(t => t.pool === pool.id && t.power === power.name);
+        
+        // Build requirement text
+        let requirementText = '';
+        if (power.rank === 1 || power.rank === 2) {
+            requirementText = `Level ${Math.max(4, power.available || 4)}`;
+        } else if (isTravelPowerLevel4) {
+            requirementText = `Level 4`;
+        } else if (power.rank === 3) {
+            requirementText = `Level 14, 1 other ${pool.name} power`;
+        } else if (power.rank >= 4) {
+            requirementText = `Level 14, 2 other ${pool.name} powers`;
+        }
+        
+        powerLevel.textContent = requirementText;
+        
+        // Show why it's disabled
+        if (!canSelect) {
+            if (Build.level < 4) {
+                powerLevel.textContent += ' (Unlock at level 4)';
+            } else if (isTravelPowerLevel4 && Build.level < 4) {
+                powerLevel.textContent += ' (Need level 4)';
+            } else if (!isTravelPowerLevel4 && power.rank >= 3 && Build.level < 14) {
+                powerLevel.textContent += ' (Need level 14)';
+            } else if (power.rank >= 3) {
+                const poolData = Build.pools.find(p => p.id === pool.id);
+                const powersOwned = poolData ? poolData.powers.length : 0;
+                const powersNeeded = power.rank === 3 ? 1 : 2;
+                if (powersOwned < powersNeeded) {
+                    powerLevel.textContent += ` (Need ${powersNeeded - powersOwned} more)`;
+                }
+            }
+        }
+        
+        powerOption.appendChild(powerLevel);
+        
+        // Add click handler if selectable
+        if (canSelect) {
+            powerOption.style.cursor = 'pointer';
+            powerOption.addEventListener('click', () => {
+                selectPoolPowerFromModal(pool.id, power.name);
+            });
+        }
+        
+        // Add tooltip (available power - base values only)
+        powerOption.addEventListener('mouseenter', (e) => {
+            if (typeof showAvailablePowerTooltip === 'function') {
+                showAvailablePowerTooltip(e, power);
+            }
+        });
+        powerOption.addEventListener('mouseleave', () => {
+            hideTooltip();
+        });
+        
+        listContainer.appendChild(powerOption);
+    });
+    
+    modalContent.appendChild(listContainer);
+    
+    // Cancel button
+    const cancelBtn = document.createElement('button');
+    cancelBtn.textContent = 'Cancel';
+    cancelBtn.addEventListener('click', () => {
+        modal.remove();
+    });
+    modalContent.appendChild(cancelBtn);
+    
+    // Assemble modal
+    modal.appendChild(modalContent);
+    
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+    
+    // Add to page
+    document.body.appendChild(modal);
+}
+
+/**
  * Check if a pool power can be selected (in modal context)
  * @param {Object} pool - Pool definition
  * @param {Object} power - Power from pool
@@ -1427,6 +1456,13 @@ function selectPoolPowerFromModal(poolId, powerName) {
         return;
     }
     
+    // Check total power limit (24 powers maximum)
+    const totalPowers = getTotalPowerCount();
+    if (totalPowers >= 24) {
+        alert('Maximum 24 powers allowed total (primary + secondary + pools + epic). You already have ' + totalPowers + '.');
+        return;
+    }
+    
     // Add pool to build if not already added
     let poolData = Build.pools.find(p => p.id === poolId);
     if (!poolData) {
@@ -1475,8 +1511,20 @@ function selectPoolPowerFromModal(poolId, powerName) {
         recalculateStats();
     }
     
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
+    
     // Close modal and refresh
     closePoolPowerModal();
+    
+    // Also close specific pool modal if it's open
+    const specificModal = document.getElementById('poolPowerModalSpecific');
+    if (specificModal) {
+        specificModal.remove();
+    }
+    
     refreshAvailablePowers();
 }
 
@@ -1669,6 +1717,13 @@ function selectEpicPoolPower(powerData, poolId) {
         return;
     }
     
+    // Check total power limit (24 powers maximum)
+    const totalPowers = getTotalPowerCount();
+    if (totalPowers >= 24) {
+        alert('Maximum 24 powers allowed total (primary + secondary + pools + epic). You already have ' + totalPowers + '.');
+        return;
+    }
+    
     // Check level requirement
     if (Build.progressionMode === 'auto' && powerData.available > Build.level) {
         alert(`${powerData.name} requires level ${powerData.available}`);
@@ -1706,6 +1761,11 @@ function selectEpicPoolPower(powerData, poolId) {
         recalculateStats();
     }
     
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
+    
     // Refresh UI
     refreshAvailablePowers();
 }
@@ -1732,6 +1792,11 @@ function removeEpicPoolPowerFromBuild(powerName) {
     // Recalculate stats
     if (typeof recalculateStats === 'function') {
         recalculateStats();
+    }
+    
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
     }
     
     // Refresh UI

@@ -1152,14 +1152,16 @@ function positionTooltip(tooltip, event) {
     // Get tooltip dimensions for edge detection
     const rect = tooltip.getBoundingClientRect();
     
-    // Adjust if tooltip goes off right edge
-    if (rect.right > window.innerWidth) {
+    // Adjust if tooltip goes off right edge - move to left side
+    if (rect.right > window.innerWidth - 5) {
         x = event.clientX - rect.width - offset;
+        x = Math.max(5, x); // Keep at least 5px from left edge
     }
     
-    // Adjust if tooltip goes off bottom edge
-    if (rect.bottom > window.innerHeight) {
+    // Adjust if tooltip goes off bottom edge - try positioning above cursor
+    if (rect.bottom > window.innerHeight - 5) {
         y = event.clientY - rect.height - offset;
+        y = Math.max(5, y); // Keep at least 5px from top edge
     }
     
     // Apply final position

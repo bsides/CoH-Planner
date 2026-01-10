@@ -145,13 +145,19 @@ function removePower(category, powerName) {
  * @returns {Object|null} Power object or null if not found
  */
 function findPower(powerName) {
-    // Check primary/secondary/inherent
-    const categories = ['primary', 'secondary', 'inherent'];
+    // Check primary/secondary
+    const categories = ['primary', 'secondary'];
     for (const category of categories) {
         const power = Build[category].powers.find(p => p.name === powerName);
         if (power) {
             return { category, power };
         }
+    }
+    
+    // Check inherent powers (stored in Build.inherents array)
+    const inherentPower = Build.inherents.find(p => p.name === powerName);
+    if (inherentPower) {
+        return { category: 'inherent', power: inherentPower };
     }
     
     // Check all pool powers
@@ -185,6 +191,12 @@ function addSlotToPower(powerName) {
     }
     
     power.slots.push(null);
+    
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
+    
     console.log(`Added slot to ${powerName} (${power.slots.length}/${power.maxSlots})`);
     return true;
 }
@@ -223,6 +235,12 @@ function removeSlotFromPower(powerName, slotIndex) {
     }
     
     power.slots.splice(slotIndex, 1);
+    
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
+    
     console.log(`Removed slot from ${powerName} (${power.slots.length}/${power.maxSlots})`);
     return true;
 }
@@ -261,6 +279,11 @@ function addEnhancementToPower(powerName, slotIndex, enhancement) {
         trackSetBonus(enhancement.setId);
     }
     
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
+    
     console.log(`Added ${enhancement.type} enhancement to ${powerName} slot ${slotIndex}`);
     return true;
 }
@@ -294,6 +317,11 @@ function removeEnhancementFromPower(powerName, slotIndex) {
     
     // Remove enhancement
     power.slots.splice(slotIndex, 1);
+    
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
     
     console.log(`Removed enhancement from ${powerName} slot ${slotIndex}`);
     return true;
@@ -496,7 +524,9 @@ function exportBuild() {
         link.href = url;
         
         // Generate filename from build name and date
-        const buildName = Build.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        const buildName = Build.name && Build.name !== 'Untitled Build' 
+            ? Build.name.replace(/[^a-z0-9]/gi, '_').toLowerCase()
+            : 'unnamed_build';
         const date = new Date().toISOString().split('T')[0];
         link.download = `${buildName}_${date}.json`;
         
@@ -638,6 +668,11 @@ function refreshUIAfterImport() {
     // Recalculate stats and bonuses
     if (typeof recalculateStats === 'function') {
         recalculateStats();
+    }
+    
+    // Update the slot counter to show actual usage
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
     }
     
     console.log('UI refreshed after import');
