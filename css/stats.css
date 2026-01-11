@@ -176,6 +176,36 @@
     padding-left: 6px;
 }
 
+.stat-label.stat-tohit {
+    color: var(--color-accuracy, var(--stat-tohit));
+    border-left: 3px solid var(--color-accuracy, var(--stat-tohit));
+    padding-left: 6px;
+}
+
+.stat-label.stat-speed {
+    color: var(--color-speed, var(--stat-speed));
+    border-left: 3px solid var(--color-speed, var(--stat-speed));
+    padding-left: 6px;
+}
+
+.stat-label.stat-fly {
+    color: var(--color-fly, var(--stat-fly));
+    border-left: 3px solid var(--color-fly, var(--stat-fly));
+    padding-left: 6px;
+}
+
+.stat-label.stat-jump {
+    color: var(--color-jump, var(--stat-jump));
+    border-left: 3px solid var(--color-jump, var(--stat-jump));
+    padding-left: 6px;
+}
+
+.stat-label.stat-regeneration {
+    color: var(--color-regeneration, var(--stat-regeneration));
+    border-left: 3px solid var(--color-regeneration, var(--stat-regeneration));
+    padding-left: 6px;
+}
+
 /* Color-scheme CSS variables for stat items */
 :root {
     /* These will be populated by color-scheme.js if available */
@@ -188,5 +218,10 @@
     --color-resistance: var(--stat-resistance);
     --color-recovery: var(--stat-recovery);
     --color-healing: var(--stat-healing);
+    --color-tohit: var(--stat-tohit);
+    --color-speed: var(--stat-speed);
+    --color-fly: var(--stat-fly);
+    --color-jump: var(--stat-jump);
+    --color-regeneration: var(--stat-regeneration);
 }
 

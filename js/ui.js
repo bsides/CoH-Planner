@@ -810,15 +810,15 @@ function displayInherentPowers() {
             powerElement.innerHTML = `
                 <div class="selected-power-header">
                     <span class="selected-power-name">${power.name}</span>
-                    ${needsToggle ? `
-                        <label class="switch">
-                            <input type="checkbox" class="power-toggle-input">
-                            <span class="slider round"></span>
-                        </label>
-                    ` : ''}
                     <span class="selected-power-level">Level ${power.level}</span>
                     <button class="remove-pool-power-btn" title="Remove from build" style="margin-left: auto; padding: 2px 6px; background: var(--button-bg); color: var(--text); border: 1px solid var(--border); cursor: pointer; font-size: 10px; border-radius: 3px;">✕</button>
                 </div>
+                ${needsToggle ? `
+                    <label class="switch" style="position: absolute; bottom: 4px; right: 4px;">
+                        <input type="checkbox" class="power-toggle-input">
+                        <span class="slider round"></span>
+                    </label>
+                ` : ''}
                 <div class="enhancement-slots"></div>
             `;
             
@@ -948,14 +948,14 @@ function displayInherentPowers() {
                 powerElement.innerHTML = `
                     <div class="selected-power-header">
                         <span class="selected-power-name">${power.name}</span>
-                        ${needsToggle ? `
-                            <label class="switch">
-                                <input type="checkbox" class="power-toggle-input">
-                                <span class="slider round"></span>
-                            </label>
-                        ` : ''}
                         <span class="selected-power-level">Level ${power.level}</span>
                     </div>
+                    ${needsToggle ? `
+                        <label class="switch" style="position: absolute; bottom: 4px; right: 4px;">
+                            <input type="checkbox" class="power-toggle-input">
+                            <span class="slider round"></span>
+                        </label>
+                    ` : ''}
                     <div class="enhancement-slots"></div>
                 `;
                 
@@ -1101,14 +1101,14 @@ function displayInherentPowers() {
             powerElement.innerHTML = `
                 <div class="selected-power-header">
                     <span class="selected-power-name">${power.name}</span>
-                    ${needsToggle ? `
-                        <label class="switch">
-                            <input type="checkbox" class="power-toggle-input">
-                            <span class="slider round"></span>
-                        </label>
-                    ` : ''}
                     <span class="selected-power-level">Inherent</span>
                 </div>
+                ${needsToggle ? `
+                    <label class="switch" style="position: absolute; bottom: 4px; right: 4px;">
+                        <input type="checkbox" class="power-toggle-input">
+                        <span class="slider round"></span>
+                    </label>
+                ` : ''}
                 <div class="enhancement-slots"></div>
             `;
             
