@@ -805,7 +805,9 @@ function displayInherentPowers() {
             powerElement.dataset.powerName = power.name;
             
             // Check if this is a toggle or auto power that needs a checkbox
-            const needsToggle = power.powerType === 'Toggle' || power.powerType === 'Auto';
+            // Fitness powers are always on and should not have toggles
+            const isFitnessPower = poolData.id === 'fitness';
+            const needsToggle = !isFitnessPower && (power.powerType === 'Toggle' || power.powerType === 'Auto');
             
             powerElement.innerHTML = `
                 <div class="selected-power-header">
@@ -1096,7 +1098,9 @@ function displayInherentPowers() {
             powerElement.dataset.powerName = power.name;
             
             // Check if this is a toggle or auto power that needs a checkbox
-            const needsToggle = power.powerType === 'Toggle' || power.powerType === 'Auto';
+            // Fitness powers are always on and should not have toggles
+            const isFitnessPower = power.category === 'fitness';
+            const needsToggle = !isFitnessPower && (power.powerType === 'Toggle' || power.powerType === 'Auto');
             
             powerElement.innerHTML = `
                 <div class="selected-power-header">

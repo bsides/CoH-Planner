@@ -319,8 +319,10 @@ function getDashboardStatStyle(statType) {
 function applyDashboardStatStyle(element, statType) {
     const style = getDashboardStatStyle(statType);
     element.style.color = style.color;
-    element.style.borderColor = style.borderColor;
-    element.style.backgroundColor = style.backgroundColor;
+    element.style.borderLeftColor = style.borderColor;
+    element.style.borderLeftWidth = '3px';
+    element.style.borderLeftStyle = 'solid';
+    element.style.paddingLeft = '6px';
 }
 
 // Initialize color scheme on page load

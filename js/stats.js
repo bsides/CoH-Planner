@@ -395,16 +395,18 @@ function updateStatsDashboard() {
             
             // Calculate absolute value based on stat type using standard CoH baselines
             if (statId === 'maxhp') {
-                // Max HP = 40 baseline (at level 50) + (40 * percentage bonus)
-                const baselineMaxHP = 40;
+                // Max HP uses archetype-based baseline
+                const health = getBaselineHealth();
+                const baselineMaxHP = health.maxHealth;
                 absValue = baselineMaxHP * (1 + value / 100);
             } else if (statId === 'maxend') {
-                // Max Endurance = 100 baseline + (100 * percentage bonus)
-                const baselineMaxEnd = 100;
+                // Max Endurance uses archetype-based baseline
+                const baselineMaxEnd = getBaselineEndurance();
                 absValue = baselineMaxEnd * (1 + value / 100);
             } else if (statId === 'regeneration') {
                 // Regeneration is based on 5% of max health every 12 seconds
-                const baselineMaxHP = 40;
+                const health = getBaselineHealth();
+                const baselineMaxHP = health.maxHealth;
                 const maxHealth = baselineMaxHP * (1 + (CharacterStats.maxhp || 0) / 100);
                 const baseRegenRate = 0.05; // 5% per 12 seconds
                 const baseRegenPerSecond = (maxHealth * baseRegenRate) / 12;
@@ -413,8 +415,8 @@ function updateStatsDashboard() {
                 const bonusMultiplier = (1 + value / 100);
                 absValue = baseRegenPerSecond * bonusMultiplier;
             } else if (statId === 'recovery') {
-                // Recovery = 1.0 baseline + (1.0 * percentage bonus)
-                const baselineRecovery = 1.0;
+                // Recovery uses archetype-based baseline
+                const baselineRecovery = getBaselineRecovery();
                 absValue = baselineRecovery * (1 + value / 100);
             } else if (statId === 'runspeed') {
                 // Run speed: base is 12.50 mph (City of Heroes standard)
