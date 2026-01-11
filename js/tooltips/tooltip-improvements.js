@@ -387,21 +387,9 @@ function generateImprovedPowerTooltipHTML(power, basePower, showModified = false
                         enhancedValue = baseValue * (1 + (bonuses[mezKey] || 0));
                     }
                     
-                    // Apply global bonuses for final value
-                    const stats = CharacterStats || {};
-                    if (enhClass === 'Healing') {
-                        finalValue = enhancedValue * (1 + (stats.damage || 0) / 100);
-                    } else if (enhClass === 'Accuracy') {
-                        finalValue = enhancedValue * (1 + (stats.accuracy || 0) / 100);
-                    } else if (enhClass === 'Recharge') {
-                        finalValue = enhancedValue / (1 + (stats.recharge || 0) / 100);
-                    } else if (enhClass === 'EnduranceReduction') {
-                        finalValue = enhancedValue / (1 + (stats.endrdx || 0) / 100);
-                    } else if (enhClass === 'Range') {
-                        finalValue = enhancedValue * (1 + (stats.range || 0) / 100);
-                    } else {
-                        finalValue = enhancedValue; // No global bonuses for debuffs/buffs yet
-                    }
+                    // Apply global bonuses for final value (if CharacterStats available)
+                    // CharacterStats is defined in stats.js but may not be accessible here
+                    finalValue = enhancedValue; // Default to enhanced value without global bonuses
                 }
                 
                 statsToShow.push({

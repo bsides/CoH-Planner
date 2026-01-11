@@ -665,17 +665,17 @@ function recalculateStats() {
     
     // Add accolade bonuses
     if (typeof getActiveAccoladeBuffs === 'function') {
-        const accoladeBufss = getActiveAccoladeBuffs();
+        const accoladeBuffs = getActiveAccoladeBuffs();
         
         // Handle endurance bonuses (+5, +5, etc. are absolute values)
-        if (accoladeBufss.endurance > 0) {
-            CharacterStats.maxend = (CharacterStats.maxend || 0) + accoladeBufss.endurance;
+        if (accoladeBuffs.endurance > 0) {
+            CharacterStats.maxend = (CharacterStats.maxend || 0) + accoladeBuffs.endurance;
         }
         
         // Handle max health bonuses (percentage bonuses)
-        if (accoladeBufss.maxHealth > 0) {
+        if (accoladeBuffs.maxHealth > 0) {
             // Convert percentage bonus to percentage points (0.10 = 10%)
-            const maxHealthBonus = accoladeBufss.maxHealth * 100;
+            const maxHealthBonus = accoladeBuffs.maxHealth * 100;
             CharacterStats.maxhp = (CharacterStats.maxhp || 0) + maxHealthBonus;
         }
     }
