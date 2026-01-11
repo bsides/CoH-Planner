@@ -371,6 +371,9 @@ function updateStatsDashboard() {
     const container = document.querySelector('.stats-dashboard-items');
     if (!container) return;
     
+    // Hide container while updating to prevent flashing
+    container.classList.remove('ready');
+    
     container.innerHTML = '';
     
     // Get all stat definitions
@@ -476,6 +479,11 @@ function updateStatsDashboard() {
         };
         
         container.appendChild(statItem);
+    });
+    
+    // Show container after all stats have been added and styled
+    requestAnimationFrame(() => {
+        container.classList.add('ready');
     });
 }
 

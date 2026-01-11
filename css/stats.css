@@ -41,6 +41,12 @@
     gap: 24px;
     flex: 1;
     flex-wrap: wrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stats-dashboard-items.ready {
+    opacity: 1;
 }
 
 .stat-item {
