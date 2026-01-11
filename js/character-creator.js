@@ -1489,7 +1489,7 @@ function selectPoolPowerFromModal(poolId, powerName) {
         powerSet: pool.name,
         category: 'pool',
         poolId: poolId,
-        slots: [null],
+        slots: [null, null, null, null, null, null],
         maxSlots: 6,
         allowedEnhancements: power.allowedEnhancements,
         effects: power.effects
@@ -1738,7 +1738,7 @@ function selectEpicPoolPower(powerData, poolId) {
         powerSet: poolData.name,
         category: 'epic',
         poolId: poolId,
-        slots: [null], // Start with 1 empty slot
+        slots: [null, null, null, null, null, null], // Start with 6 empty slots
         maxSlots: 6,
         allowedEnhancements: powerData.allowedEnhancements,
         effects: powerData.effects,

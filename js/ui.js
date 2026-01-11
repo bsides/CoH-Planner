@@ -1196,9 +1196,12 @@ function displayInherentPowers() {
                 const needsToggle = power.powerType === 'Toggle' || power.powerType === 'Auto';
                 
                 powerElement.innerHTML = `
-                    <div class="selected-power-header">
-                        <span class="selected-power-name">${power.name}</span>
-                        <span class="selected-power-level">Level ${power.level}</span>
+                    <div class="selected-power-header" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="flex: 1;">
+                            <span class="selected-power-name">${power.name}</span>
+                            <span class="selected-power-level">Level ${power.level}</span>
+                        </div>
+                        <button class="epic-power-remove-btn" style="font-size: 10px; padding: 2px 6px; background: var(--button-bg); color: var(--text); border: 1px solid var(--border); cursor: pointer; border-radius: 2px; margin-left: 8px; white-space: nowrap;">×</button>
                     </div>
                     ${needsToggle ? `
                         <label class="switch" style="position: absolute; bottom: 4px; right: 4px;">
@@ -1208,6 +1211,19 @@ function displayInherentPowers() {
                     ` : ''}
                     <div class="enhancement-slots"></div>
                 `;
+                
+                // Add remove button handler
+                const removeBtn = powerElement.querySelector('.epic-power-remove-btn');
+                removeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (typeof removeEpicPoolPowerFromBuild === 'function') {
+                        removeEpicPoolPowerFromBuild(power.name);
+                        // Refresh the UI
+                        if (typeof displayInherentPowers === 'function') {
+                            displayInherentPowers();
+                        }
+                    }
+                });
                 
                 // Add toggle handler if needed
                 if (needsToggle) {
