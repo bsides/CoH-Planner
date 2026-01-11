@@ -37,7 +37,7 @@
 </head>
 <body>
     <div class="wip-banner">
-        ⚠️ WORK IN PROGRESS - This application is incomplete and under active development<span>|</span><span>Expect changes and bugs</span><span></span>|<span>Alpha 2.6.2</span>
+        ⚠️ WORK IN PROGRESS - This application is incomplete and under active development<span>|</span><span>Expect changes and bugs</span><span></span>|<span>Alpha 2.6.4</span>
     </div>
     <div class="container">
         <!-- Top Panel -->
@@ -67,9 +67,15 @@
                     <option value="auto">Auto-Level (Recommended)</option>
                     <option value="freeform">Freeform</option>
                 </select>
-                <label>Character Level: <span id="charLevel">1</span></label>
+                <label style="font-weight: 600; font-size: 14px; color: #fff; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 3px; display: inline-block; margin-left: 12px;">
+                    <span style="color: var(--text-secondary);">Level:</span> <span id="charLevel" style="font-size: 16px; color: #4CAF50;">1</span>
+                </label>
             </div>
 
+            <div class="resource-badge">
+                Powers: <span id="powerCounter">0/24</span>
+            </div>
+            
             <div class="resource-badge">
                 Slots: <span>67/67</span>
             </div>

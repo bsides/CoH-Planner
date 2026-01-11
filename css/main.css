@@ -570,10 +570,10 @@ body {
 .add-pool-btn {
     width: 100%;
     padding: 12px;
-    background: var(--bg-tertiary);
-    border: 2px dashed var(--border);
+    background: rgba(90, 200, 250, 0.1);
+    border: 2px solid #5ac8fa;
     border-radius: 6px;
-    color: var(--text-secondary);
+    color: #5ac8fa;
     cursor: pointer;
     font-size: 13px;
     font-weight: 500;
@@ -581,9 +581,9 @@ body {
 }
 
 .add-pool-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(59, 130, 246, 0.05);
+    border-color: #5ac8fa;
+    color: #fff;
+    background: #5ac8fa;
 }
 
 /* Tooltip */

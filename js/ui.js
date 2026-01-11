@@ -901,6 +901,21 @@ function updateSlotCounter() {
     const maxAdditionalSlots = 67;
     const slotsRemaining = maxAdditionalSlots - Math.max(0, additionalSlotsUsed);
     badge.textContent = `${slotsRemaining}/${maxAdditionalSlots}`;
+    
+    // Also update power counter
+    updatePowerCounter();
+}
+
+/**
+ * Update the power counter (X/24 powers selected)
+ */
+function updatePowerCounter() {
+    const powerBadge = document.getElementById('powerCounter');
+    if (!powerBadge) return;
+    
+    const totalPowers = typeof getTotalPowerCount === 'function' ? getTotalPowerCount() : 0;
+    const maxPowers = 24;
+    powerBadge.textContent = `${totalPowers}/${maxPowers}`;
 }
 
 /**
@@ -997,6 +1012,9 @@ function displayInherentPowers() {
     addPoolBtn.textContent = '+ Add Power Pool';
     addPoolBtn.style.width = '100%';
     addPoolBtn.style.marginBottom = '8px';
+    addPoolBtn.style.backgroundColor = 'rgba(90, 200, 250, 0.1)';
+    addPoolBtn.style.borderColor = '#5ac8fa';
+    addPoolBtn.style.color = '#5ac8fa';
     
     // Add click handler
     addPoolBtn.addEventListener('click', () => {
@@ -1297,6 +1315,9 @@ function displayInherentPowers() {
         addEpicPoolBtn.textContent = '+ Add Epic Pool';
         addEpicPoolBtn.style.marginTop = '8px';
         addEpicPoolBtn.style.width = '100%';
+        addEpicPoolBtn.style.backgroundColor = 'rgba(90, 200, 250, 0.1)';
+        addEpicPoolBtn.style.borderColor = '#5ac8fa';
+        addEpicPoolBtn.style.color = '#5ac8fa';
         
         // Add click handler
         addEpicPoolBtn.addEventListener('click', () => {
