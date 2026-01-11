@@ -5,6 +5,19 @@
  */
 
 /**
+ * Drag state for adding multiple slots
+ */
+const SlotDragState = {
+    isDragging: false,
+    hasMoved: false,
+    startPowerName: null,
+    numSlotsToAdd: 0,
+    startX: 0,
+    startY: 0,
+    ghostSlotElement: null
+};
+
+/**
  * Update power slots display for a given power
  * @param {string} powerName - Name of the power
  */
@@ -100,9 +113,121 @@ function createSlotElement(slot, index, power) {
 function createGhostSlot(index, power) {
     const ghostSlot = document.createElement('div');
     ghostSlot.className = 'slot ghost';
-    ghostSlot.title = 'Add enhancement slot';
-    ghostSlot.onclick = () => addSlotToPower(power.name);
+    ghostSlot.title = 'Add enhancement slot (or drag to add multiple)';
+    ghostSlot.dataset.powerName = power.name;
+    ghostSlot.dataset.startIndex = index;
+    
+    // Drag handlers for adding multiple slots
+    ghostSlot.addEventListener('mousedown', handleSlotDragStart);
+    
     return ghostSlot;
+}
+
+/**
+ * Handle start of slot drag
+ */
+function handleSlotDragStart(e) {
+    // Only handle left mouse button
+    if (e.button !== 0) return;
+    
+    // Only handle ghost slots
+    if (!e.target.classList.contains('ghost')) return;
+    
+    e.preventDefault();
+    
+    const powerName = e.target.dataset.powerName;
+    const power = findPowerInBuild(powerName);
+    if (!power) return;
+    
+    SlotDragState.isDragging = true;
+    SlotDragState.hasMoved = false;
+    SlotDragState.startPowerName = powerName;
+    SlotDragState.numSlotsToAdd = 1;
+    SlotDragState.startX = e.clientX;
+    SlotDragState.startY = e.clientY;
+    SlotDragState.ghostSlotElement = e.target;
+    
+    // Add visual feedback
+    e.target.classList.add('drag-active');
+    
+    // Attach document-level handlers
+    document.addEventListener('mousemove', handleSlotDragMove);
+    document.addEventListener('mouseup', handleSlotDragEnd);
+    
+    console.log('Slot drag started');
+}
+
+/**
+ * Handle slot drag movement
+ */
+function handleSlotDragMove(e) {
+    if (!SlotDragState.isDragging) return;
+    
+    const power = findPowerInBuild(SlotDragState.startPowerName);
+    if (!power) return;
+    
+    // Calculate distance moved
+    const deltaX = Math.abs(e.clientX - SlotDragState.startX);
+    const deltaY = Math.abs(e.clientY - SlotDragState.startY);
+    const totalDistance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    
+    // If moved more than 5 pixels, it's a drag
+    if (totalDistance > 5) {
+        SlotDragState.hasMoved = true;
+    }
+    
+    // Each ~35 pixels of movement adds another slot (roughly the height of a slot + gap)
+    const additionalSlots = Math.floor(totalDistance / 35);
+    
+    // Calculate max slots that can be added
+    const maxCanAdd = power.maxSlots - power.slots.length;
+    SlotDragState.numSlotsToAdd = Math.min(1 + additionalSlots, maxCanAdd);
+    
+    // Visual feedback - update tooltip
+    if (SlotDragState.ghostSlotElement) {
+        SlotDragState.ghostSlotElement.title = `Add ${SlotDragState.numSlotsToAdd} slot${SlotDragState.numSlotsToAdd > 1 ? 's' : ''}`;
+    }
+    
+    console.log(`Dragging: distance=${totalDistance}, slots=${SlotDragState.numSlotsToAdd}`);
+}
+
+/**
+ * Handle end of slot drag
+ */
+function handleSlotDragEnd(e) {
+    if (!SlotDragState.isDragging) return;
+    
+    e.preventDefault();
+    
+    // Remove visual feedback
+    if (SlotDragState.ghostSlotElement) {
+        SlotDragState.ghostSlotElement.classList.remove('drag-active');
+    }
+    
+    // If we dragged (moved and have slots to add), add them
+    if (SlotDragState.hasMoved && SlotDragState.numSlotsToAdd > 0) {
+        console.log(`Drag completed - adding ${SlotDragState.numSlotsToAdd} slot(s)`);
+        addMultipleSlots(SlotDragState.startPowerName, SlotDragState.numSlotsToAdd);
+    } else if (!SlotDragState.hasMoved) {
+        // Just a click - add single slot
+        console.log('Just a click - adding single slot');
+        addSlotToPower(SlotDragState.startPowerName);
+    }
+    
+    // Remove document-level handlers
+    document.removeEventListener('mousemove', handleSlotDragMove);
+    document.removeEventListener('mouseup', handleSlotDragEnd);
+    
+    // Reset state
+    SlotDragState.isDragging = false;
+    SlotDragState.hasMoved = false;
+    SlotDragState.startPowerName = null;
+    SlotDragState.numSlotsToAdd = 0;
+    SlotDragState.startX = 0;
+    SlotDragState.startY = 0;
+    SlotDragState.ghostSlotElement = null;
+    
+    console.log('Slot drag ended');
 }
 
 /**
@@ -330,6 +455,39 @@ function addSlotToPower(powerName) {
     }
     
     console.log(`Added slot to ${powerName} (${power.slots.length}/${power.maxSlots})`);
+}
+
+/**
+ * Add multiple slots to a power at once
+ * @param {string} powerName - Power name
+ * @param {number} numSlots - Number of slots to add
+ */
+function addMultipleSlots(powerName, numSlots) {
+    const power = findPowerInBuild(powerName);
+    if (!power) return;
+    
+    const maxCanAdd = power.maxSlots - power.slots.length;
+    const slotsToAdd = Math.min(numSlots, maxCanAdd);
+    
+    if (slotsToAdd <= 0) {
+        console.log(`${powerName} already has maximum slots`);
+        return;
+    }
+    
+    // Add multiple empty slots
+    for (let i = 0; i < slotsToAdd; i++) {
+        power.slots.push(null);
+    }
+    
+    // Update display
+    updatePowerSlots(powerName);
+    
+    // Update slot counter
+    if (typeof updateSlotCounter === 'function') {
+        updateSlotCounter();
+    }
+    
+    console.log(`Added ${slotsToAdd} slot(s) to ${powerName} (${power.slots.length}/${power.maxSlots})`);
 }
 
 /**
