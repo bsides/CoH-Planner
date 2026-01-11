@@ -25,45 +25,30 @@ const STAT_CATEGORIES = {
             defMelee: { name: 'Def (Melee)', format: '{value}%', color: 'stat-defense' },
             defRanged: { name: 'Def (Ranged)', format: '{value}%', color: 'stat-defense' },
             defAoE: { name: 'Def (AoE)', format: '{value}%', color: 'stat-defense' },
-            defSmashing: { name: 'Def (S)', format: '{value}%', color: 'stat-defense' },
-            defLethal: { name: 'Def (L)', format: '{value}%', color: 'stat-defense' },
-            defFire: { name: 'Def (F)', format: '{value}%', color: 'stat-defense' },
-            defCold: { name: 'Def (C)', format: '{value}%', color: 'stat-defense' },
-            defEnergy: { name: 'Def (E)', format: '{value}%', color: 'stat-defense' },
-            defNegative: { name: 'Def (N)', format: '{value}%', color: 'stat-defense' },
-            defPsionic: { name: 'Def (P)', format: '{value}%', color: 'stat-defense' },
-            defToxic: { name: 'Def (T)', format: '{value}%', color: 'stat-defense' }
+            defSL: { name: 'Def (S/L)', format: '{value}%', color: 'stat-defense' },
+            defFC: { name: 'Def (F/C)', format: '{value}%', color: 'stat-defense' },
+            defEN: { name: 'Def (E/N)', format: '{value}%', color: 'stat-defense' },
+            defPsionic: { name: 'Def (Psy)', format: '{value}%', color: 'stat-defense' },
+            defToxic: { name: 'Def (Tox)', format: '{value}%', color: 'stat-defense' }
         }
     },
     resistance: {
         name: 'Resistance',
         stats: {
-            resSmashing: { name: 'Res (S)', format: '{value}%', color: 'stat-resistance' },
-            resLethal: { name: 'Res (L)', format: '{value}%', color: 'stat-resistance' },
-            resFire: { name: 'Res (F)', format: '{value}%', color: 'stat-resistance' },
-            resCold: { name: 'Res (C)', format: '{value}%', color: 'stat-resistance' },
-            resEnergy: { name: 'Res (E)', format: '{value}%', color: 'stat-resistance' },
-            resNegative: { name: 'Res (N)', format: '{value}%', color: 'stat-resistance' },
-            resPsionic: { name: 'Res (P)', format: '{value}%', color: 'stat-resistance' },
-            resToxic: { name: 'Res (T)', format: '{value}%', color: 'stat-resistance' }
+            resSL: { name: 'Res (S/L)', format: '{value}%', color: 'stat-resistance' },
+            resFC: { name: 'Res (F/C)', format: '{value}%', color: 'stat-resistance' },
+            resEN: { name: 'Res (E/N)', format: '{value}%', color: 'stat-resistance' },
+            resPsionic: { name: 'Res (Psy)', format: '{value}%', color: 'stat-resistance' },
+            resToxic: { name: 'Res (Tox)', format: '{value}%', color: 'stat-resistance' }
         }
     },
     recovery: {
         name: 'Recovery & HP',
         stats: {
+            maxend: { name: 'Max End', format: '{absValue} (+{value}%)', color: 'stat-endurance', dualDisplay: true },
             recovery: { name: 'Recovery', format: '{absValue} /sec (+{value}%)', color: 'stat-recovery', dualDisplay: true },
-            regeneration: { name: 'Regeneration', format: '{absValue} HP/sec (+{value}%)', color: 'stat-regeneration', dualDisplay: true },
             maxhp: { name: 'Max HP', format: '{absValue} HP (+{value}%)', color: 'stat-healing', dualDisplay: true },
-            maxend: { name: 'Max End', format: '{absValue} (+{value}%)', color: 'stat-endurance', dualDisplay: true }
-        }
-    },
-    baseline: {
-        name: 'Baseline Stats',
-        stats: {
-            baselineEndurance: { name: 'Base Endurance', format: '{value}', color: 'stat-endurance' },
-            baselineRecovery: { name: 'Base Recovery', format: '{value} /sec', color: 'stat-recovery' },
-            baselineHealth: { name: 'Base Health', format: '{value} HP', color: 'stat-healing' },
-            baselineMaxHealth: { name: 'Max Health', format: '{value} HP', color: 'stat-healing' }
+            regeneration: { name: 'Regeneration', format: '{absValue} HP/sec (+{value}%)', color: 'stat-regeneration', dualDisplay: true }
         }
     },
     movement: {
@@ -80,15 +65,9 @@ const STAT_CATEGORIES = {
 // Default enabled stats (what shows on dashboard initially)
 const DEFAULT_ENABLED_STATS = [
     'damage',
-    'accuracy',
-    'recharge',
-    'defRanged',
-    'defEnergy',
-    'defNegative',
-    'runspeed',
+    'tohit',
     'maxhp',
     'regeneration',
-    'maxend',
     'recovery',
 ];
 
@@ -111,23 +90,17 @@ const CharacterStats = {
     defRanged: 0,
     defAoE: 0,
     
-    // Defense (Typed)
-    defSmashing: 0,
-    defLethal: 0,
-    defFire: 0,
-    defCold: 0,
-    defEnergy: 0,
-    defNegative: 0,
+    // Defense (Typed - Combined)
+    defSL: 0,
+    defFC: 0,
+    defEN: 0,
     defPsionic: 0,
     defToxic: 0,
     
-    // Resistance
-    resSmashing: 0,
-    resLethal: 0,
-    resFire: 0,
-    resCold: 0,
-    resEnergy: 0,
-    resNegative: 0,
+    // Resistance (Combined)
+    resSL: 0,
+    resFC: 0,
+    resEN: 0,
     resPsionic: 0,
     resToxic: 0,
     
@@ -142,14 +115,6 @@ const CharacterStats = {
     flyspeed: 0,
     jumpspeed: 0,
     jumpheight: 0
-};
-
-// Baseline stats (before enhancements and set bonuses)
-const BaselineStats = {
-    baselineEndurance: 0,
-    baselineRecovery: 0,
-    baselineHealth: 0,
-    baselineMaxHealth: 0
 };
 
 // ============================================
@@ -169,7 +134,7 @@ function openStatsSelector() {
     // Create modal content
     const content = document.createElement('div');
     content.className = 'simple-modal-content';
-    content.style.maxWidth = '700px';
+    content.style.maxWidth = '1000px';
     content.style.maxHeight = '80vh';
     
     // Header
@@ -209,15 +174,15 @@ function openStatsSelector() {
         
         const statsGrid = document.createElement('div');
         statsGrid.style.display = 'grid';
-        statsGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+        statsGrid.style.gridTemplateColumns = 'repeat(4, 1fr)';
         statsGrid.style.gap = '8px';
         
         Object.entries(category.stats).forEach(([statId, stat]) => {
-            const statOption = document.createElement('label');
+            const statOption = document.createElement('div');
             statOption.style.display = 'flex';
             statOption.style.alignItems = 'center';
-            statOption.style.gap = '8px';
-            statOption.style.padding = '6px 8px';
+            statOption.style.gap = '12px';
+            statOption.style.padding = '8px 12px';
             statOption.style.background = 'var(--bg-tertiary)';
             statOption.style.border = '1px solid var(--border)';
             statOption.style.borderRadius = '4px';
@@ -225,16 +190,28 @@ function openStatsSelector() {
             statOption.style.fontSize = '12px';
             statOption.style.transition = 'all 0.15s';
             
+            // Create toggle switch
+            const toggleLabel = document.createElement('label');
+            toggleLabel.className = `switch stat-toggle-${statId}`;
+            
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.value = statId;
             checkbox.checked = Build.settings.enabledStats.includes(statId);
             checkbox.onchange = () => updateStatSelection(statId, checkbox.checked);
             
+            const slider = document.createElement('span');
+            slider.className = 'slider round';
+            
+            toggleLabel.appendChild(checkbox);
+            toggleLabel.appendChild(slider);
+            
             const label = document.createElement('span');
             label.textContent = stat.name;
+            label.style.flex = '1';
+            label.className = `stat-${statId}`;
             
-            statOption.appendChild(checkbox);
+            statOption.appendChild(toggleLabel);
             statOption.appendChild(label);
             
             statOption.onmouseenter = () => {

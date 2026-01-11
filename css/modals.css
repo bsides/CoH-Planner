@@ -907,7 +907,7 @@ body:not(.hints-enabled) .main-hint-image {
     border: 1px solid var(--border);
     border-radius: 8px;
     width: 90%;
-    max-width: 500px;
+    max-width: 1000px;
     max-height: 80vh;
     overflow: hidden;
     display: flex;
@@ -936,7 +936,7 @@ body:not(.hints-enabled) .main-hint-image {
     margin: 0;
 }
 
-.simple-modal-content > div:not(:first-child):not(h3):not(p) {
+.simple-modal-content > div:not(:first-child):not(h3):not(p):not(:last-child) {
     flex: 1;
     overflow-y: auto;
     margin: 16px 0;
@@ -963,3 +963,42 @@ body:not(.hints-enabled) .main-hint-image {
     transform: translateY(0);
 }
 
+/* Stat-colored toggle switches */
+.switch.stat-toggle-damage input:checked + .slider { background-color: var(--stat-damage); }
+.switch.stat-toggle-accuracy input:checked + .slider { background-color: var(--stat-accuracy); }
+.switch.stat-toggle-tohit input:checked + .slider { background-color: var(--stat-tohit); }
+.switch.stat-toggle-recharge input:checked + .slider { background-color: var(--stat-recharge); }
+.switch.stat-toggle-endrdx input:checked + .slider { background-color: var(--stat-endurance); }
+
+.switch.stat-toggle-defMelee input:checked + .slider { background-color: var(--stat-defense); }
+.switch.stat-toggle-defRanged input:checked + .slider { background-color: var(--stat-defense); }
+.switch.stat-toggle-defAoE input:checked + .slider { background-color: var(--stat-defense); }
+.switch.stat-toggle-defSL input:checked + .slider { background-color: var(--stat-defense); }
+.switch.stat-toggle-defFC input:checked + .slider { background-color: var(--stat-defense); }
+.switch.stat-toggle-defEN input:checked + .slider { background-color: var(--stat-defense); }
+.switch.stat-toggle-defPsionic input:checked + .slider { background-color: var(--stat-defense); }
+.switch.stat-toggle-defToxic input:checked + .slider { background-color: var(--stat-defense); }
+
+.switch.stat-toggle-resSL input:checked + .slider { background-color: var(--stat-resistance); }
+.switch.stat-toggle-resFC input:checked + .slider { background-color: var(--stat-resistance); }
+.switch.stat-toggle-resEN input:checked + .slider { background-color: var(--stat-resistance); }
+.switch.stat-toggle-resPsionic input:checked + .slider { background-color: var(--stat-resistance); }
+.switch.stat-toggle-resToxic input:checked + .slider { background-color: var(--stat-resistance); }
+
+.switch.stat-toggle-recovery input:checked + .slider { background-color: var(--stat-recovery); }
+.switch.stat-toggle-regeneration input:checked + .slider { background-color: var(--stat-regeneration); }
+.switch.stat-toggle-maxhp input:checked + .slider { background-color: var(--stat-healing); }
+.switch.stat-toggle-maxend input:checked + .slider { background-color: var(--stat-endurance); }
+
+.switch.stat-toggle-runspeed input:checked + .slider { background-color: var(--stat-speed); }
+.switch.stat-toggle-flyspeed input:checked + .slider { background-color: var(--stat-fly); }
+.switch.stat-toggle-jumpspeed input:checked + .slider { background-color: var(--stat-jump); }
+.switch.stat-toggle-jumpheight input:checked + .slider { background-color: var(--stat-jump); }
+
+.switch.stat-toggle-knockback input:checked + .slider { background-color: var(--stat-knockback); }
+.switch.stat-toggle-hold input:checked + .slider { background-color: var(--stat-hold); }
+.switch.stat-toggle-stun input:checked + .slider { background-color: var(--stat-stun); }
+.switch.stat-toggle-immobilize input:checked + .slider { background-color: var(--stat-immobilize); }
+.switch.stat-toggle-sleep input:checked + .slider { background-color: var(--stat-sleep); }
+.switch.stat-toggle-confuse input:checked + .slider { background-color: var(--stat-confuse); }
+.switch.stat-toggle-fear input:checked + .slider { background-color: var(--stat-fear); }
