@@ -209,7 +209,6 @@ function renderGenericRow(setsPanel) {
                     <img src="${iconPath}" class="enhancement-icon-base">
                     <img src="img/Overlay/IO.png" class="enhancement-icon-overlay">
                 </div>
-                <div class="set-piece-number">${aspect.name}</div>
             </div>`;
     });
 
@@ -224,6 +223,23 @@ function renderGenericRow(setsPanel) {
         const aspectName = el.dataset.aspectName;
         addGenericIO(aspectId, aspectName);
     });
+    
+    // Add tooltip handlers for Common IOs
+    const commonGrid = setsPanel.querySelector('.common-io-grid');
+    commonGrid.addEventListener('mouseenter', (e) => {
+        const el = e.target.closest('.set-piece-icon');
+        if (!el) return;
+        const aspectName = el.dataset.aspectName;
+        if (aspectName) {
+            showCommonIOTooltip(e, aspectName);
+        }
+    }, true);
+    
+    commonGrid.addEventListener('mouseleave', (e) => {
+        const el = e.target.closest('.set-piece-icon');
+        if (!el) return;
+        hideTooltip();
+    }, true);
 }
 
 /**
@@ -249,26 +265,45 @@ function renderSpecialRow(setsPanel) {
                     <div class="set-pieces-grid special-grid-inline">`;
 
     hamiTypes.forEach(hami => {
-        const iconPath = `img/Enhancements/HO${hami.name}.png`;
-        // Determine allowed by checking any aspect mapping
+        const baseIconPath = `img/Enhancements/HO${hami.name}.png`;
         const allowed = hami.aspects.some(a => isAspectAllowedByPower(a));
         const disabledClass = allowed ? '' : ' disabled';
         html += `
             <div class="set-piece-icon${disabledClass}" data-hami-id="${hami.id}">
-                <img src="${iconPath}" style="width:48px;height:48px;">
-                <div class="set-piece-number">${hami.name}</div>
+                <div class="enhancement-icon-layered">
+                    <img src="${baseIconPath}" class="enhancement-icon-base">
+                    <img src="img/Overlay/HO.png" class="enhancement-icon-overlay">
+                </div>
             </div>`;
     });
 
     html += `</div></div>`;
     setsPanel.innerHTML = html;
 
-    setsPanel.querySelector('.special-grid-inline').addEventListener('click', (e) => {
+    const specialGrid = setsPanel.querySelector('.special-grid-inline');
+    
+    specialGrid.addEventListener('click', (e) => {
         const el = e.target.closest('.set-piece-icon');
         if (!el || el.classList.contains('disabled')) return;
         const hamiId = el.dataset.hamiId;
         addSpecialEnhancement(hamiId);
     });
+    
+    // Add tooltip handlers for Hamidon
+    specialGrid.addEventListener('mouseenter', (e) => {
+        const el = e.target.closest('.set-piece-icon');
+        if (!el) return;
+        const hamiId = el.dataset.hamiId;
+        if (hamiId) {
+            showHamidonTooltip(e, hamiId);
+        }
+    }, true);
+    
+    specialGrid.addEventListener('mouseleave', (e) => {
+        const el = e.target.closest('.set-piece-icon');
+        if (!el) return;
+        hideTooltip();
+    }, true);
 }
 
 /**
@@ -308,7 +343,6 @@ function renderOriginRows(setsPanel) {
                         <img src="${iconPath}" class="enhancement-icon-base">
                         <img src="${getOriginOverlay(t.tier)}" class="enhancement-icon-overlay">
                     </div>
-                    <div class="set-piece-number">${aspect.name}</div>
                 </div>`;
         });
 
@@ -328,6 +362,23 @@ function renderOriginRows(setsPanel) {
             addSO(tier, tier === 2 ? 'Single Origin' : tier === 1 ? 'Dual Origin' : 'Training', aspect, aspectName);
         }
     });
+    
+    // Add tooltip handlers for Origin enhancements
+    setsPanel.addEventListener('mouseenter', (e) => {
+        const el = e.target.closest('.set-piece-icon');
+        if (!el || !el.dataset.tier) return;
+        const tier = parseInt(el.dataset.tier);
+        const aspectName = el.dataset.aspectName;
+        if (aspectName) {
+            showOriginTooltip(e, tier, aspectName);
+        }
+    }, true);
+    
+    setsPanel.addEventListener('mouseleave', (e) => {
+        const el = e.target.closest('.set-piece-icon');
+        if (!el || !el.dataset.tier) return;
+        hideTooltip();
+    }, true);
 }
 
 /**
@@ -496,8 +547,10 @@ function renderSetsList(setsPanel, setsToShow) {
                 <div class="set-piece-icon${uniqueClass}${procClass}${disabledClass}" 
                      data-set-id="${setId}"
                      data-piece-num="${piece.num}">
-                    <img src="${iconPath}" alt="${set.name}" onerror="this.onerror=null;this.src='img/Enhancements/Damage.png'">
-                    <div class="set-piece-number">${piece.num}</div>
+                    <div class="enhancement-icon-layered">
+                        <img src="${iconPath}" class="enhancement-icon-base" onerror="this.onerror=null;this.src='img/Enhancements/Damage.png'">
+                        <img src="img/Overlay/IO.png" class="enhancement-icon-overlay">
+                    </div>
                 </div>
             `;
         });
@@ -529,7 +582,7 @@ function setupSetPieceEvents(setsPanel) {
     // Mark as having listeners attached
     setsPanel.dataset.listenersAttached = 'true';
     
-    // Click handler
+    // Click handler (only for IO Set pieces)
     setsPanel.addEventListener('click', (e) => {
         const piece = e.target.closest('.set-piece-icon');
         if (!piece) return;
@@ -537,8 +590,17 @@ function setupSetPieceEvents(setsPanel) {
         // Ignore clicks on disabled pieces
         if (piece.classList.contains('disabled')) return;
         
+        // Only handle IO Set pieces (those with data-set-id)
         const setId = piece.dataset.setId;
+        if (!setId) return; // Not an IO Set piece, ignore
+        
         const pieceNum = parseInt(piece.dataset.pieceNum);
+        
+        if (isNaN(pieceNum)) {
+            console.error('Invalid piece number:', { setId, pieceNum });
+            return;
+        }
+        
         handlePieceClick(e, setId, pieceNum);
     });
     
@@ -572,6 +634,10 @@ function setupSetPieceEvents(setsPanel) {
  */
 function addEnhancement(setId, pieceNum) {
     const set = IO_SETS[setId];
+    if (!set) {
+        console.error('Set not found:', setId);
+        return;
+    }
     const piece = set.pieces.find(p => p.num === pieceNum);
     
     // Check if this piece is already slotted in this power
@@ -803,7 +869,9 @@ function addSpecialEnhancement(hamiType) {
     if (success) {
         // Update UI
         updatePowerSlots(AppState.currentPowerName);
-        updateStatsDisplay();
+        if (typeof updateStatsDashboard === 'function') {
+            updateStatsDashboard();
+        }
         closeModal();
     }
 }
@@ -849,7 +917,7 @@ function loadOriginIcons() {
             
             html += `
                 <div class="enhancement-type-icon"
-                     onmouseenter="showOriginTooltip(event, ${t.tier}, '${t.name}', '${aspect.name}', ${tierData.value})"
+                     onmouseenter="showOriginTooltip(event, ${t.tier}, '${aspect.name}')"
                      onmouseleave="hideTooltip()"
                      onclick="addSO(${t.tier}, '${t.name}', '${aspect.id}', '${aspect.name}')">
                     <div class="enhancement-icon-layered">
@@ -868,23 +936,6 @@ function loadOriginIcons() {
 /**
  * Show tooltip for origin enhancement
  */
-function showOriginTooltip(event, tier, tierName, aspectName, value) {
-    const origin = Build.settings.origin;
-    
-    const tooltip = document.getElementById('tooltip');
-    const html = `
-        <div class="tooltip-title">${tierName} - ${aspectName}</div>
-        <div class="tooltip-section">
-            <div class="tooltip-label">Origin: ${origin}</div>
-            <div class="tooltip-value">+${value}%</div>
-        </div>
-    `;
-    
-    tooltip.innerHTML = (typeof getTooltipHintsHtml === 'function' ? getTooltipHintsHtml() : '') + html;
-    positionTooltip(tooltip, event);
-    tooltip.classList.add('visible');
-}
-
 /**
  * Add origin enhancement (TO/DO/SO)
  */
@@ -906,7 +957,9 @@ function addSO(tier, tierName, aspect, aspectName) {
     if (success) {
         // Update UI
         updatePowerSlots(AppState.currentPowerName);
-        updateStatsDisplay();
+        if (typeof updateStatsDashboard === 'function') {
+            updateStatsDashboard();
+        }
         closeModal();
     }
 }

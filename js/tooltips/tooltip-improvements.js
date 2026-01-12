@@ -955,3 +955,136 @@ window.showPowerTooltip = showImprovedPowerTooltip;
 window.showAvailablePowerTooltip = function(event, basePower) {
     showImprovedPowerTooltip(event, null, basePower);
 };
+
+// ============================================
+// NON-SET ENHANCEMENT TOOLTIPS
+// ============================================
+
+/**
+ * Show tooltip for Common IO enhancement
+ */
+function showCommonIOTooltip(event, aspectName) {
+    const tooltip = document.getElementById('tooltip');
+    if (!tooltip) return;
+    
+    const ioLevel = AppState.globalIOLevel || 50;
+    const normalized = normalizeAspectName(aspectName);
+    const schedule = normalized ? getAspectSchedule(normalized) : 'A';
+    const enhValue = (typeof getIOValueAtLevel === 'function' ? getIOValueAtLevel(ioLevel, schedule) : 0.255) * 100;
+    const colorClass = getAspectColorClass(aspectName);
+    
+    let html = `<div class="tooltip-title">Common IO</div>`;
+    html += `<div class="tooltip-section">`;
+    html += `<div style="font-weight: 600; font-size: 12px; color: var(--accent);">${aspectName}</div>`;
+    html += `</div>`;
+    html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
+    html += `<div class="tooltip-label" style="margin-bottom: 6px;">Enhancement Value (Level ${ioLevel})</div>`;
+    html += `<div style="font-size: 11px; padding: 2px 0;">`;
+    html += `<span class="${colorClass}" style="font-weight: 600;">${aspectName}: +${enhValue.toFixed(1)}%</span>`;
+    html += `</div>`;
+    html += `</div>`;
+    
+    tooltip.innerHTML = html;
+    positionTooltip(tooltip, event);
+    tooltip.classList.add('visible');
+}
+
+/**
+ * Show tooltip for Hamidon enhancement
+ */
+function showHamidonTooltip(event, hamiId) {
+    const hamiTypes = {
+        'nucleolus': { name: 'Nucleolus', aspects: ['Damage', 'Accuracy'] },
+        'centriole': { name: 'Centriole', aspects: ['Damage', 'Range'] },
+        'enzyme': { name: 'Enzyme', aspects: ['To Hit Buff', 'Defense Debuff'] },
+        'lysosome': { name: 'Lysosome', aspects: ['Accuracy', 'To Hit Debuff'] },
+        'membrane': { name: 'Membrane', aspects: ['Recharge', 'Defense Debuff'] },
+        'peroxisome': { name: 'Peroxisome', aspects: ['Damage', 'Mez'] },
+        'cytoskeleton': { name: 'Cytoskeleton', aspects: ['Defense', 'To Hit Buff'] },
+        'endoplasm': { name: 'Endoplasm', aspects: ['Accuracy', 'Mez'] },
+        'golgi': { name: 'Golgi', aspects: ['Healing', 'Endurance'] },
+        'microfilament': { name: 'Microfilament', aspects: ['Travel', 'Endurance'] },
+        'ribosome': { name: 'Ribosome', aspects: ['Resist', 'Endurance'] }
+    };
+    
+    const hami = hamiTypes[hamiId];
+    if (!hami) return;
+    
+    const tooltip = document.getElementById('tooltip');
+    if (!tooltip) return;
+    
+    let html = `<div class="tooltip-title">Hamidon Origin Enhancement</div>`;
+    html += `<div class="tooltip-section">`;
+    html += `<div style="font-weight: 600; font-size: 12px; color: var(--accent);">${hami.name}</div>`;
+    html += `</div>`;
+    html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
+    html += `<div class="tooltip-label" style="margin-bottom: 6px;">Enhancement Values</div>`;
+    
+    hami.aspects.forEach(aspect => {
+        const colorClass = getAspectColorClass(aspect);
+        html += `<div style="font-size: 11px; padding: 2px 0;">`;
+        html += `<span class="${colorClass}" style="font-weight: 600;">${aspect}: +50.0%</span>`;
+        html += `</div>`;
+    });
+    
+    html += `</div>`;
+    
+    tooltip.innerHTML = html;
+    positionTooltip(tooltip, event);
+    tooltip.classList.add('visible');
+}
+
+/**
+ * Show tooltip for Origin enhancement (TO/DO/SO)
+ */
+function showOriginTooltip(event, tier, aspectName) {
+    const tooltip = document.getElementById('tooltip');
+    if (!tooltip) return;
+    
+    // Ensure tier is a number
+    tier = parseInt(tier);
+    
+    const tierNames = {
+        0: 'Training Origin',
+        1: 'Dual Origin',
+        2: 'Single Origin'
+    };
+    
+    // Enhancement schedules (at even level / relative level 0)
+    // Schedule A: Most aspects
+    const scheduleA = {
+        0: 8.35,   // Training
+        1: 16.66,  // Dual Origin
+        2: 33.33   // Single Origin
+    };
+    
+    // Schedule B: Defense, Resistance, To-Hit buffs/debuffs
+    const scheduleB = {
+        0: 5.0,    // Training
+        1: 10.0,   // Dual Origin
+        2: 20.0    // Single Origin
+    };
+    
+    // Determine which schedule to use based on aspect
+    const scheduleBaspects = ['Defense', 'Resistance'];
+    const tierValues = scheduleBaspects.includes(aspectName) ? scheduleB : scheduleA;
+    
+    const tierName = tierNames[tier] || 'Origin Enhancement';
+    const enhValue = tierValues[tier] || 0;
+    const colorClass = getAspectColorClass(aspectName);
+    
+    let html = `<div class="tooltip-title">${tierName}</div>`;
+    html += `<div class="tooltip-section">`;
+    html += `<div style="font-weight: 600; font-size: 12px; color: var(--accent);">${aspectName}</div>`;
+    html += `</div>`;
+    html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;">`;
+    html += `<div class="tooltip-label" style="margin-bottom: 6px;">Enhancement Value</div>`;
+    html += `<div style="font-size: 11px; padding: 2px 0;">`;
+    html += `<span class="${colorClass}" style="font-weight: 600;">${aspectName}: +${enhValue.toFixed(1)}%</span>`;
+    html += `</div>`;
+    html += `</div>`;
+    
+    tooltip.innerHTML = html;
+    positionTooltip(tooltip, event);
+    tooltip.classList.add('visible');
+}

@@ -307,6 +307,11 @@ body:not(.hints-enabled) .main-hint-image {
     image-rendering: crisp-edges;
 }
 
+.set-piece-icon .enhancement-icon-layered {
+    width: 36px;
+    height: 36px;
+}
+
 .set-piece-number {
     position: absolute;
     bottom: 2px;
