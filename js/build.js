@@ -168,6 +168,14 @@ function findPower(powerName) {
         }
     }
     
+    // Check epic pool powers
+    if (Build.epicPool && Build.epicPool.powers) {
+        const power = Build.epicPool.powers.find(p => p.name === powerName);
+        if (power) {
+            return { category: 'epic', power, poolId: Build.epicPool.id };
+        }
+    }
+    
     return null;
 }
 

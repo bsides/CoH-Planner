@@ -1489,7 +1489,7 @@ function selectPoolPowerFromModal(poolId, powerName) {
         powerSet: pool.name,
         category: 'pool',
         poolId: poolId,
-        slots: [null, null, null, null, null, null],
+        slots: [null], // Start with 1 empty slot
         maxSlots: 6,
         allowedEnhancements: power.allowedEnhancements,
         effects: power.effects
