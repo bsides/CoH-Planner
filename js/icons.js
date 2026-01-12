@@ -13,6 +13,53 @@
  * Map enhancement aspect to base icon filename
  */
 
+/**
+ * Get base icon filename from set type
+ * @param {Object} enhancement - Enhancement object
+ * @returns {string|null} Base icon filename
+ */
+function getBaseIconForSetType(enhancement) {
+    if (!enhancement || !IO_SETS || !IO_SETS[enhancement.setId]) {
+        return null;
+    }
+    
+    const setType = IO_SETS[enhancement.setId].type;
+    if (!setType) return null;
+    
+    // Map set types to appropriate base icons
+    const typeMapping = {
+        'Ranged Damage': 'Damage.png',
+        'Melee Damage': 'Damage.png',
+        'Ranged AoE Damage': 'Damage.png',
+        'Melee AoE Damage': 'Damage.png',
+        'PBAoE Damage': 'Damage.png',
+        'Sniper Attacks': 'Damage.png',
+        'Targeted AoE Damage': 'Damage.png',
+        'Accurate To-Hit Debuff': 'ToHitDebuff.png',
+        'To Hit Debuff': 'ToHitDebuff.png',
+        'Defense Debuff': 'DefDebuff.png',
+        'Accurate Defense Debuff': 'DefDebuff.png',
+        'Defense': 'Defbuff.png',
+        'Resist Damage': 'DamRes.png',
+        'Healing': 'Heal.png',
+        'Holds': 'Hold.png',
+        'Stuns': 'Stun.png',
+        'Immobilize': 'Immob.png',
+        'Sleep': 'Sleep.png',
+        'Confuse': 'Confuse.png',
+        'Fear': 'Fear.png',
+        'Knockback': 'Knock.png',
+        'Fly': 'Fly.png',
+        'Jump': 'Jump.png',
+        'Run': 'Run.png',
+        'Endurance Modification': 'EndMod.png',
+        'Recharge': 'Recharge.png',
+        'Accuracy': 'Acc.png'
+    };
+    
+    return typeMapping[setType] || null;
+}
+
 // Return overlay path using canonical overlay filenames from ORIGIN_OVERLAYS
 function getOriginOverlay(tier) {
     const origin = (Build && Build.settings && Build.settings.origin) ? Build.settings.origin.toLowerCase() : 'natural';
@@ -99,6 +146,56 @@ const IO_SET_ICONS = {
     'cupids_crush': 'sCrushingimpact.png'
 };
 
+/**
+ * Common icon name case corrections
+ * Maps lowercase icon names to correct casing as they appear in filesystem
+ */
+const ICON_CASE_CORRECTIONS = {
+    'sabsoluteamazement.png': 'sAbsoluteAmazement.png',
+    'sachillesheel.png': 'sAchillesHeel.png',
+    'sbefuddlingaura.png': 'sBefuddlingAUra.png',
+    'sbloodmandate.png': 'sBloodMandate.png',
+    'sbonesnap.png': 'sBoneSnap.png',
+    'sbrilliantleadership.png': 'sBrilliantLeadership.png',
+    'sbruisingblow.png': 'sBruisingBlow.png',
+    'scallofthesandman.png': 'sCallOfTheSandman.png',
+    'scleavingblow.png': 'sCleavingBlow.png',
+    'scommandingpresence.png': 'sCommandingPresence.png',
+    'scrushingimpact.png': 'sCrushingImpact.png',
+    'scurtailspeed.png': 'sCurtailSpeed.png',
+    'sdampenedspirits.png': 'sDampenedSpirits.png',
+    'sdebilitativeaction.png': 'sDebilitativeAction.png',
+    'sdeflatedego.png': 'sDeflatedEgo.png',
+    'sdiscouragingwords.png': 'sDiscouragingWords.png',
+    'sdoctoredwounds.png': 'sDoctoredWounds.png',
+    'sedictofthemaster.png': 'sEdictOfTheMaster.png',
+    'sefficiencyadaptor.png': 'sEfficiencyAdaptor.png',
+    'sencouragedacc.png': 'sEncouragedAcc.png',
+    'senergymanip.png': 'sEnergyManip.png',
+    'senfeebledoperation.png': 'sEnfeebledOperation.png',
+    'sentropicchaos.png': 'sEntropicChaos.png',
+    'sessenceofcurare.png': 'sEssenceOfCurare.png',
+    'sexecutionerscontract.png': 'sExecutionersContract.png',
+    'sexploitvuln.png': 'sExploitVuln.png',
+    'sexploitweakness.png': 'sExploitWeakness.png',
+    'sexplossivestrike.png': 'sExplosiveStrike.png',
+    'sairburst.png': 'sAirBurst.png',
+    'scupidscrush.png': 'sCupidsCrush.png',
+    // Add more as needed
+};
+
+/**
+ * Normalize icon filename to correct casing
+ * @param {string} iconName - Icon filename from data
+ * @returns {string} Corrected icon filename
+ */
+function normalizeIconName(iconName) {
+    if (!iconName) return iconName;
+    
+    const lowerName = iconName.toLowerCase();
+    return ICON_CASE_CORRECTIONS[lowerName] || iconName;
+}
+
 // ============================================
 // ICON GENERATION
 // ============================================
@@ -123,15 +220,28 @@ function getEnhancementIcon(enhancement) {
             iconFile = IO_SETS[enhancement.setId].icon;
         }
         
-        // Fallback to a default icon if still not found
-        if (!iconFile) {
-            console.warn('No icon found for set:', enhancement.setId);
-            iconFile = 'IO_Generic.png'; // Generic IO icon
+        // Normalize icon name for case-sensitivity issues
+        if (iconFile) {
+            iconFile = normalizeIconName(iconFile);
         }
         
+        // If icon found, return it (will check if file exists in createEnhancementIconElement)
+        if (iconFile) {
+            return {
+                type: 'single',
+                path: `img/Enhancements/${iconFile}`,
+                fallbackToLayered: true, // Flag to use layered approach if icon fails to load
+                enhancement: enhancement
+            };
+        }
+        
+        // No icon specified - use layered approach with IO overlay
+        console.warn('No icon specified for set:', enhancement.setId, '- using layered approach');
+        const baseIcon = getBaseIconForSet(enhancement);
         return {
-            type: 'single',
-            path: `img/Enhancements/${iconFile}`
+            type: 'layered',
+            base: `img/Enhancements/${baseIcon}`,
+            overlay: 'img/Overlay/IO.png'
         };
     }
     
@@ -145,12 +255,26 @@ function getEnhancementIcon(enhancement) {
         };
     }
     
-    // Hamidon - Use pre-composed icon
+    // Hamidon - Use pre-composed icon or layered with HO overlay
     if (enhancement.type === 'hamidon') {
         const iconFile = HAMIDON_ICONS[enhancement.hamiType];
+        
+        if (iconFile) {
+            return {
+                type: 'single',
+                path: `img/Enhancements/${iconFile}`,
+                fallbackToLayered: true,
+                enhancement: enhancement
+            };
+        }
+        
+        // Fallback to layered approach with HO overlay
+        console.warn('No icon found for Hamidon type:', enhancement.hamiType);
+        const baseIcon = getBaseIconForHamidon(enhancement);
         return {
-            type: 'single',
-            path: `img/Enhancements/${iconFile}`
+            type: 'layered',
+            base: `img/Enhancements/${baseIcon}`,
+            overlay: 'img/Overlay/HO.png'
         };
     }
     
@@ -189,7 +313,25 @@ function createEnhancementIconElement(enhancement) {
         img.src = iconInfo.path;
         img.className = 'enhancement-icon';
         img.alt = enhancement.name || 'Enhancement';
-        img.onerror = function() { this.onerror = null; this.src = 'img/Enhancements/Damage.png'; };
+        
+        // If icon fails to load and fallbackToLayered is set, create a layered icon instead
+        img.onerror = function() {
+            this.onerror = null;
+            
+            if (iconInfo.fallbackToLayered && iconInfo.enhancement) {
+                console.warn('Icon failed to load:', iconInfo.path, '- using layered fallback');
+                
+                // Replace this img with a layered icon
+                const parent = this.parentElement;
+                if (parent) {
+                    const layeredIcon = createLayeredIconFallback(iconInfo.enhancement);
+                    parent.replaceChild(layeredIcon, this);
+                }
+            } else {
+                // Final fallback - just show base damage icon
+                this.src = 'img/Enhancements/Damage.png';
+            }
+        };
         return img;
     }
     
@@ -216,6 +358,81 @@ function createEnhancementIconElement(enhancement) {
 }
 
 /**
+ * Create a layered icon as fallback when pre-composed icon fails
+ * @param {Object} enhancement - Enhancement object
+ * @returns {HTMLElement} Layered icon container
+ */
+function createLayeredIconFallback(enhancement) {
+    const container = document.createElement('div');
+    container.className = 'enhancement-icon-layered';
+    
+    let baseIcon, overlayPath;
+    
+    if (enhancement.type === 'io-set') {
+        baseIcon = getBaseIconForSet(enhancement);
+        overlayPath = 'img/Overlay/IO.png';
+    } else if (enhancement.type === 'hamidon') {
+        baseIcon = getBaseIconForHamidon(enhancement);
+        overlayPath = 'img/Overlay/HO.png';
+    } else {
+        // Generic fallback
+        baseIcon = 'Damage.png';
+        overlayPath = 'img/Overlay/IO.png';
+    }
+    
+    const baseImg = document.createElement('img');
+    baseImg.src = `img/Enhancements/${baseIcon}`;
+    baseImg.className = 'enhancement-icon-base';
+    baseImg.onerror = function() { this.onerror = null; this.src = 'img/Enhancements/Damage.png'; };
+    
+    const overlayImg = document.createElement('img');
+    overlayImg.src = overlayPath;
+    overlayImg.className = 'enhancement-icon-overlay';
+    
+    container.appendChild(baseImg);
+    container.appendChild(overlayImg);
+    
+    return container;
+}
+
+/**
+ * Get base icon for an IO set enhancement
+ * @param {Object} enhancement - Enhancement object
+ * @returns {string} Base icon filename
+ */
+function getBaseIconForSet(enhancement) {
+    // First try to get icon from set type
+    const iconFromType = getBaseIconForSetType(enhancement);
+    if (iconFromType) {
+        return iconFromType;
+    }
+    
+    // Try to determine the most appropriate base icon from the set's aspects
+    if (IO_SETS && IO_SETS[enhancement.setId] && IO_SETS[enhancement.setId].pieces) {
+        const pieces = IO_SETS[enhancement.setId].pieces;
+        // Use the first piece's first aspect to determine base icon
+        if (pieces.length > 0 && pieces[0].aspects && pieces[0].aspects.length > 0) {
+            const aspect = pieces[0].aspects[0].toLowerCase();
+            return ASPECT_ICONS[aspect] || 'Damage.png';
+        }
+    }
+    
+    // Default fallback
+    return 'Damage.png';
+}
+
+/**
+ * Get base icon for a Hamidon enhancement
+ * @param {Object} enhancement - Enhancement object
+ * @returns {string} Base icon filename
+ */
+function getBaseIconForHamidon(enhancement) {
+    // Hamidon enhancements typically affect multiple aspects
+    // Use Damage as a reasonable default
+    return 'Damage.png';
+}
+
+/**
  * Get icon path for display in picker modal
  * @param {string} setId - IO set ID
  * @returns {string} Icon path
@@ -239,25 +456,4 @@ function getSetIcon(setId) {
 function getAspectIcon(aspect) {
     const iconFile = ASPECT_ICONS[aspect];
     return iconFile ? `img/Enhancements/${iconFile}` : null;
-}
-
-/**
- * Get overlay path for origin enhancement based on tier
- * @param {number} tier - 0=TO, 1=DO, 2=SO
- * @returns {string} Overlay path
- */
-function getOriginOverlay(tier) {
-    const origin = Build.settings.origin.toLowerCase();
-    const originCap = origin.charAt(0).toUpperCase() + origin.slice(1);
-    
-    if (tier === 0) {
-        return 'img/Overlay/Training.png';
-    } else if (tier === 1) {
-        return `img/Overlay/${originCap}DO.png`;
-    } else if (tier === 2) {
-        return `img/Overlay/${originCap}SO.png`;
-    }
-    
-    // Fallback
-    return 'img/Overlay/NatSO.png';
 }

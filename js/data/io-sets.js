@@ -133,7 +133,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sAbsoluteamazement.png"
+        "icon": "sAbsoluteAmazement.png"
 },
 
     'achilles_heel': {
@@ -197,7 +197,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sAchillesheel.png"
+        "icon": "sAchillesHeel.png"
 },
 
     'adjusted_targeting': {
@@ -635,7 +635,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sAirburst.png"
+        "icon": "sAirBurst.png"
 },
 
     'analyze_weakness': {
@@ -2023,7 +2023,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sBefuddlingaura.png"
+        "icon": "sBefuddlingAUra.png"
 },
 
     'blasters_wrath': {
@@ -2516,7 +2516,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sBloodmandate.png"
+        "icon": "sBloodMandate.png"
 },
 
     'bombardment': {
@@ -2717,7 +2717,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sBonesnap.png"
+        "icon": "sBoneSnap.png"
 },
 
     'brilliant_leadership': {
@@ -2849,7 +2849,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sBrilliantleadership.png"
+        "icon": "sBrilliantLeadership.png"
 },
 
     'bruising_blow': {
@@ -2912,7 +2912,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sBruisingblow.png"
+        "icon": "sBruisingBlow.png"
 },
 
     'brutes_fury': {
@@ -3448,7 +3448,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sCallofthesandman.png"
+        "icon": "sCallOfTheSandman.png"
 },
 
     'call_to_arms': {
@@ -3735,7 +3735,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sCleavingblow.png"
+        "icon": "sCleavingBlow.png"
 },
 
     'cloud_senses': {
@@ -4241,7 +4241,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sCommandingpresence.png"
+        "icon": "sCommandingPresence.png"
 },
 
     'critical_strikes': {
@@ -4508,7 +4508,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sCrushingimpact.png"
+        "icon": "sCrushingImpact.png"
 },
 
     'cupids_crush': {
@@ -4644,7 +4644,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sCupidsCrush.png"
+        "icon": "SEW_Cupids_Crush.png"
 },
 
     'curtail_speed': {
@@ -4758,7 +4758,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sCurtailspeed.png"
+        "icon": "sCurtailSpeed.png"
 },
 
     'dampened_spirits': {
@@ -4890,7 +4890,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sDampenedspirits.png"
+        "icon": "sDampenedSpirits.png"
 },
 
     'dark_watchers_despair': {
@@ -5151,7 +5151,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sDebilitativeaction.png"
+        "icon": "sDebilitativeAction.png"
 },
 
     'decimation': {
@@ -5604,7 +5604,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sDeflatedego.png"
+        "icon": "sDeflatedEgo.png"
 },
 
     'detonation': {
@@ -5950,7 +5950,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sDiscouragingwords.png"
+        "icon": "sDiscouragingWords.png"
 },
 
     'doctored_wounds': {
@@ -6087,7 +6087,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sDoctoredwounds.png"
+        "icon": "sDoctoredWounds.png"
 },
 
     'dominating_grasp': {
@@ -6517,7 +6517,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sEdictofthemaster.png"
+        "icon": "sEdictOfTheMaster.png"
 },
 
     'efficacy_adaptor': {
@@ -6901,7 +6901,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sEnfeebledoperation.png"
+        "icon": "sEnfeebledOperation.png"
 },
 
     'entomb': {
@@ -7147,7 +7147,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sEntropicchaos.png"
+        "icon": "sEntropicChaos.png"
 },
 
     'eradication': {
@@ -7423,7 +7423,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sEssenceofcurare.png"
+        "icon": "sEssenceOfCurare.png"
 },
 
     'essence_transfer': {
@@ -7694,7 +7694,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sExecutionerscontract.png"
+        "icon": "sExecutionersContract.png"
 },
 
     'expedient_reinforcement': {
@@ -8083,7 +8083,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sExploitweakness.png"
+        "icon": "sExploitWeakness.png"
 },
 
     'exploited_vulnerability': {
@@ -8216,7 +8216,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sExplosivestrike.png"
+        "icon": "sExplosiveStrike.png"
 },
 
     'extreme_measures': {
@@ -8353,7 +8353,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sExtrememeasures.png"
+        "icon": "sExtremeMeasures.png"
 },
 
     'far_strike': {
@@ -8421,7 +8421,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sFarstrike.png"
+        "icon": "sFarStrike.png"
 },
 
     'focused_smite': {
@@ -8536,7 +8536,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sFocusedsmite.png"
+        "icon": "sFocusedSmite.png"
 },
 
     'force_feedback': {
@@ -8667,7 +8667,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sForcefeedback.png"
+        "icon": "sForceFeedback.png"
 },
 
     'fortunata_hypnosis': {
@@ -8797,7 +8797,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sFortunatehyp.png"
+        "icon": "sFortunateHyp.png"
 },
 
     'freebird': {
@@ -8855,7 +8855,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sFreebird.png"
+        "icon": "sFreeBird.png"
 },
 
     'frozen_blast': {
@@ -9160,7 +9160,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sFuryofthegladiator.png"
+        "icon": "sFuryoftheGladiator.png"
 },
 
     'gauntleted_fist': {
@@ -9582,7 +9582,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sGhostwidowsembrace.png"
+        "icon": "sGhostWidowsEmbrace.png"
 },
 
     'gift_of_the_ancients': {
@@ -9729,7 +9729,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sGiftoftheancients.png"
+        "icon": "sGiftOfTheAncients.png"
 },
 
     'gladiators_armor': {
@@ -9899,7 +9899,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sGladiatorsarmor.png"
+        "icon": "sGladiatorsArmor.png"
 },
 
     'gladiators_javelin': {
@@ -10063,7 +10063,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sGladiatorsjavelin.png"
+        "icon": "sGladiatorsJavelin.png"
 },
 
     'gladiators_net': {
@@ -10221,7 +10221,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sGladiatorsnet.png"
+        "icon": "sGladiatorsNet.png"
 },
 
     'gladiators_strike': {
@@ -10385,7 +10385,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sGladiatorsstrike.png"
+        "icon": "sGladiatorsStrike.png"
 },
 
     'glimpse_of_the_abyss': {
@@ -10511,7 +10511,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sGlimpseoftheabyss.png"
+        "icon": "sGlimpseOfTheAbyss.png"
 },
 
     'gravitational_anchor': {
@@ -10778,7 +10778,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sHarmonizedhealing.png"
+        "icon": "sHarmonizedHealing.png"
 },
 
     'hecatomb': {
@@ -11481,7 +11481,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sImpededswiftness.png"
+        "icon": "sImpededSwiftness.png"
 },
 
     'impervious_skin': {
@@ -11597,7 +11597,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sImperviousskin.png"
+        "icon": "sImperviousSkin.png"
 },
 
     'impervium_armor': {
@@ -11737,7 +11737,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sImperviumarmor.png"
+        "icon": "sImperviumArmor.png"
 },
 
     'induced_coma': {
@@ -11863,7 +11863,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sInducedcoma.png"
+        "icon": "sInducedComa.png"
 },
 
     'jaunt': {
@@ -12088,7 +12088,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sJavelinvolley.png"
+        "icon": "sJavelinVolley.png"
 },
 
     'karma': {
@@ -12425,7 +12425,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sKineticcombat.png"
+        "icon": "sKineticCombat.png"
 },
 
     'kinetic_crash': {
@@ -12555,7 +12555,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sKineticcrash.png"
+        "icon": "sKineticCrash.png"
 },
 
     'kismet': {
@@ -12890,7 +12890,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sLethargicrepose.png"
+        "icon": "sLethargicRepose.png"
 },
 
     'lockdown': {
@@ -13170,7 +13170,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sLuckofthegambler.png"
+        "icon": "sLuckOfTheGambler.png"
 },
 
     'maelstroms_fury': {
@@ -13264,7 +13264,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sMaelstromsfury.png"
+        "icon": "sMaelstromsFury.png"
 },
 
     'makos_bite': {
@@ -13528,7 +13528,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sMalaisesillusions.png"
+        "icon": "sMalaisesIllusions.png"
 },
 
     'malice_of_the_corruptor': {
@@ -14213,7 +14213,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sMockingberatement.png"
+        "icon": "sMockingBeratement.png"
 },
 
     'multi_strike': {
@@ -14363,7 +14363,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sMultistrike.png"
+        "icon": "sMultiStrike.png"
 },
 
     'neuronic_shutdown': {
@@ -14494,7 +14494,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sNeuronicshutdown.png"
+        "icon": "sNeuronicShutdown.png"
 },
 
     'nightmare': {
@@ -14763,7 +14763,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sNuminasconvalesence.png"
+        "icon": "sNuminasConvalesence.png"
 },
 
     'obliteration': {
@@ -15454,7 +15454,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sPacingoftheturtle.png"
+        "icon": "sPacingOfTheTurtle.png"
 },
 
     'panacea': {
@@ -15853,7 +15853,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sPerfectzinger.png"
+        "icon": "sPerfectZinger.png"
 },
 
     'performance_shifter': {
@@ -15978,7 +15978,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sPerformanceShift.png"
+        "icon": "sPerformanceSHift.png"
 },
 
     'perplex': {
@@ -16243,7 +16243,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sPositronsblast.png"
+        "icon": "sPositronsBlast.png"
 },
 
     'pounding_slugfest': {
@@ -16328,7 +16328,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sPoundingslugfest.png"
+        "icon": "sPoundingSlugfest.png"
 },
 
     'power_transfer': {
@@ -16796,7 +16796,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sPulverizingfisticuffs.png"
+        "icon": "sPulverizingFisticuffs.png"
 },
 
     'quickfoot': {
@@ -17123,7 +17123,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sRazzledazzle.png"
+        "icon": "sRazzleDazzle.png"
 },
 
     'reactive_armor': {
@@ -17270,7 +17270,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sReactivearmor.png"
+        "icon": "sReactiveArmor.png"
 },
 
     'reactive_defenses': {
@@ -17478,7 +17478,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sRectifiedreticle.png"
+        "icon": "sRectifiedReticle.png"
 },
 
     'red_fortune': {
@@ -17615,7 +17615,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sRedfortune.png"
+        "icon": "sRedFortune.png"
 },
 
     'regenerative_tissue': {
@@ -17716,7 +17716,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sRegenerativetissue.png"
+        "icon": "sRegenerativeTissue.png"
 },
 
     'rooting_grasp': {
@@ -17954,7 +17954,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sRopeadope.png"
+        "icon": "sRopeADope.png"
 },
 
     'ruin': {
@@ -18276,7 +18276,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sSciroccosdervish.png"
+        "icon": "sSciroccosDervish.png"
 },
 
     'scourging_blast': {
@@ -19116,7 +19116,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sShieldwall.png"
+        "icon": "sShieldWall.png"
 },
 
     'siphon_insight': {
@@ -19341,7 +19341,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sSmashinghaymaker.png"
+        "icon": "sSmashingHaymaker.png"
 },
 
     'soaring': {
@@ -20186,7 +20186,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sSteadfastprotection.png"
+        "icon": "sSteadfastProtection.png"
 },
 
     'sting_of_the_manticore': {
@@ -20319,7 +20319,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sStingofthemanticore.png"
+        "icon": "sStingOfTheManticore.png"
 },
 
     'stupefy': {
@@ -25190,7 +25190,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sTemperedreadiness.png"
+        "icon": "sTemperedReadiness.png"
 },
 
     'tempest': {
@@ -25685,7 +25685,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sSpacetimemanipulation.png"
+        "icon": "sSpaceTimeManipulation.png"
 },
 
     'titanium_coating': {
@@ -25822,7 +25822,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sTitaniumcoating.png"
+        "icon": "sTitaniumCoating.png"
 },
 
     'touch_of_death': {
@@ -25959,7 +25959,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sTouchofdeath.png"
+        "icon": "sTouchOfDeath.png"
 },
 
     'touch_of_lady_grey': {
@@ -26079,7 +26079,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sTouchofladygray.png"
+        "icon": "sTouchofLadyGray.png"
 },
 
     'touch_of_the_nictus': {
@@ -26336,7 +26336,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sTrapofthehunter.png"
+        "icon": "sTrapOfTheHunter.png"
 },
 
     'triage': {
@@ -26484,7 +26484,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sTriumphantinsult.png"
+        "icon": "sTriumphantInsult.png"
 },
 
     'unbounded_leap': {
@@ -26542,7 +26542,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sUnboundedleap.png"
+        "icon": "sUnboundedLeap.png"
 },
 
     'unbreakable_constraint': {
@@ -26672,7 +26672,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sUnbreakableconstraint.png"
+        "icon": "sUnbreakableConstraint.png"
 },
 
     'unbreakable_guard': {
@@ -27038,7 +27038,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sUnquestioningloyalty.png"
+        "icon": "sUnquestioningLoyalty.png"
 },
 
     'unrelenting_fury': {
@@ -27325,7 +27325,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sUnspeakableterror.png"
+        "icon": "sUnspeakableTerror.png"
 },
 
     'vigilant_assault': {
@@ -27519,7 +27519,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sVolleyfire.png"
+        "icon": "sVolleyFire.png"
 },
 
     'volley_of_velocity': {
@@ -27582,7 +27582,7 @@ const IO_SETS = {
                         "unique": false
                 }
         ],
-        "icon": "sVolleyofvelocity.png"
+        "icon": "sVolleyOfVelocity.png"
 },
 
     'warp': {
