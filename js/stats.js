@@ -299,11 +299,11 @@ function closeStatsSelector() {
  * @returns {number} Baseline endurance value
  */
 function getBaselineEndurance() {
-    if (!Build.archetype || !ARCHETYPES[Build.archetype]) {
-        return 100;
+    if (!Build.archetype || !Build.archetype.id || !ARCHETYPES[Build.archetype.id]) {
+        return 0;
     }
     
-    const archetype = ARCHETYPES[Build.archetype];
+    const archetype = ARCHETYPES[Build.archetype.id];
     const baseEnd = archetype.stats.baseEndurance || 100;
     
     // Endurance scales slightly with level (approximately +1% per level after level 1)
@@ -317,11 +317,11 @@ function getBaselineEndurance() {
  * @returns {number} Baseline recovery value
  */
 function getBaselineRecovery() {
-    if (!Build.archetype || !ARCHETYPES[Build.archetype]) {
-        return 1.67;
+    if (!Build.archetype || !Build.archetype.id || !ARCHETYPES[Build.archetype.id]) {
+        return 0;
     }
     
-    const archetype = ARCHETYPES[Build.archetype];
+    const archetype = ARCHETYPES[Build.archetype.id];
     const baseRecovery = archetype.stats.baseRecovery || 1.67;
     
     // Recovery scales with level (approximately +2% per level after level 1)
@@ -335,14 +335,14 @@ function getBaselineRecovery() {
  * @returns {object} Object with baseHealth and maxHealth values
  */
 function getBaselineHealth() {
-    if (!Build.archetype || !ARCHETYPES[Build.archetype]) {
+    if (!Build.archetype || !Build.archetype.id || !ARCHETYPES[Build.archetype.id]) {
         return {
-            baseHealth: 1204.8,
-            maxHealth: 1606.4
+            baseHealth: 0,
+            maxHealth: 0
         };
     }
     
-    const archetype = ARCHETYPES[Build.archetype];
+    const archetype = ARCHETYPES[Build.archetype.id];
     const baseHP = archetype.stats.baseHP || 1204.8;
     const maxHP = archetype.stats.maxHP || 1606.4;
     
