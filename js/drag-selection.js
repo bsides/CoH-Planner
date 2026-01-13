@@ -209,10 +209,6 @@ function slotMultiplePieces(setId, pieceNums) {
             const set = IO_SETS[setId];
             const piece = set.pieces.find(p => p.num === pieceNum);
 
-            console.log('=== DRAG SELECTION - Creating Enhancement ===');
-            console.log('AppState.attunementEnabled:', AppState.attunementEnabled);
-            console.log('Set:', set.name, 'Piece:', piece.name);
-
             const enhancement = createEnhancement('io-set', {
                 setId: setId,
                 pieceNum: pieceNum,
@@ -222,10 +218,6 @@ function slotMultiplePieces(setId, pieceNums) {
                 unique: piece.unique || false,
                 attuned: AppState.attunementEnabled || false
             });
-
-            console.log('Created enhancement:', enhancement);
-            console.log('enhancement.attuned:', enhancement.attuned);
-            console.log('==========================================');
 
             // Add to the next empty slot
             const slotIndex = emptySlots[slotsUsed];

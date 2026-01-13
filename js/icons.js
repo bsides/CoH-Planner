@@ -225,24 +225,14 @@ function getEnhancementIcon(enhancement) {
             iconFile = normalizeIconName(iconFile);
         }
 
-        console.log('=== ICON RENDERING - IO Set ===');
-        console.log('Enhancement:', enhancement.setName, enhancement.pieceName);
-        console.log('enhancement.attuned:', enhancement.attuned);
-        console.log('iconFile:', iconFile);
-
         // If attuned, use layered approach with the set-specific icon and catalyzed overlay
         if (enhancement.attuned && iconFile) {
-            console.log('Using layered icon with catalyzed overlay');
-            console.log('================================');
             return {
                 type: 'layered',
                 base: `img/Enhancements/${iconFile}`,
                 overlay: 'img/Overlay/catalyzed_overlay_placeholder.png'
             };
         }
-
-        console.log('Using standard single icon (not attuned)');
-        console.log('================================');
 
         // If icon found and not attuned, return single icon
         if (iconFile) {
