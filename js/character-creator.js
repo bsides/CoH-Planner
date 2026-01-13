@@ -915,9 +915,15 @@ function canSelectPoolPower(pool, power) {
     ];
     
     const isTravelPowerLevel4 = travelPowersLevel4.some(t => t.pool === pool.id && t.power === power.name);
-    
+
+    // Debug logging
+    if (power.rank === 3 || power.rank === 4) {
+        console.log(`Checking power: ${pool.id}/${power.name}, rank: ${power.rank}, isTravelPowerLevel4: ${isTravelPowerLevel4}, Build.level: ${Build.level}`);
+    }
+
     // Travel powers at level 4: Available at level 4 with no prerequisites
     if (isTravelPowerLevel4) {
+        console.log(`Travel power ${power.name} check: level ${Build.level} >= 4 = ${Build.level >= 4}`);
         return Build.level >= 4;
     }
     
@@ -1414,30 +1420,48 @@ function canSelectPoolPowerInModal(pool, power) {
     if (power.rank === 1 || power.rank === 2) {
         return true;
     }
-    
+
+    // Special handling for travel powers that unlock at level 4
+    const travelPowersLevel4 = [
+        { pool: 'flight', power: 'Fly' },
+        { pool: 'teleportation', power: 'Teleport' },
+        { pool: 'leaping', power: 'Super Jump' },
+        { pool: 'speed', power: 'Super Speed' },
+        { pool: 'experimentation', power: 'Speed of Sound' },
+        { pool: 'invisibility', power: 'Infiltration' },
+        { pool: 'sorcery', power: 'Mystic Flight' }
+    ];
+
+    const isTravelPowerLevel4 = travelPowersLevel4.some(t => t.pool === pool.id && t.power === power.name);
+
+    // Travel powers at level 4: Available at level 4 with no prerequisites
+    if (isTravelPowerLevel4) {
+        return Build.level >= 4;
+    }
+
     // Rank 3+: Requires level 14 AND prerequisites
     if (power.rank >= 3) {
         // Must be level 14+
         if (Build.level < 14) {
             return false;
         }
-        
+
         // Pool must already be added
         if (!poolData) {
             return false;
         }
-        
+
         // Rank 3: Need 1 other power from pool
         if (power.rank === 3) {
             return poolData.powers.length >= 1;
         }
-        
+
         // Rank 4-5: Need 2 other powers from pool
         if (power.rank >= 4) {
             return poolData.powers.length >= 2;
         }
     }
-    
+
     return false;
 }
 
@@ -1497,7 +1521,9 @@ function selectPoolPowerFromModal(poolId, powerName) {
         slots: [null], // Start with 1 empty slot
         maxSlots: 6,
         allowedEnhancements: power.allowedEnhancements,
-        effects: power.effects
+        effects: power.effects,
+        powerType: power.powerType || null, // Track power type for Toggle/Auto powers
+        isActive: false // For toggles, autos, and buffs
     };
     
     // Add to pool
