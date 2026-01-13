@@ -163,11 +163,13 @@ const TANKER_PSIONIC_ARMOR_POWERSET = {
             effectArea: "SingleTarget",
             effects: {
                 accuracy: 1.0,
+                defense: {
+                    psionic: 0.1
+                },
                 debuffResistance: {
                     defense: 0.099994
                 },
-                buffDuration: 10.25,
-                defenseBuff: 0.2312
+                buffDuration: 10.25
             }
         },
         {

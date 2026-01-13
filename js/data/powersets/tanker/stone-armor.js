@@ -29,11 +29,14 @@ const TANKER_STONE_ARMOR_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.104,
                 cast: 0.73,
+                defense: {
+                    smashing: 0.16000000000000003,
+                    lethal: 0.16000000000000003
+                },
                 debuffResistance: {
                     defense: 0.17300000000000001
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {
@@ -55,6 +58,16 @@ const TANKER_STONE_ARMOR_POWERSET = {
                     type: "Psionic",
                     scale: 1.0,
                     ticks: 5
+                },
+                defense: {
+                    smashing: 0.05,
+                    lethal: 0.05,
+                    fire: 0.05,
+                    cold: 0.05,
+                    energy: 0.05,
+                    negative: 0.05,
+                    psionic: 0.05,
+                    toxic: 0.05
                 },
                 resistance: {
                     smashing: 0.1,
@@ -159,7 +172,6 @@ const TANKER_STONE_ARMOR_POWERSET = {
                     movement: 0.5
                 },
                 buffDuration: 0.75,
-                defenseBuff: 0.3,
                 stun: 1.0,
                 stunDuration: 0.75,
                 tohitBuff: 0.3
@@ -183,11 +195,14 @@ const TANKER_STONE_ARMOR_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.104,
                 cast: 1.0,
+                defense: {
+                    energy: 0.16000000000000003,
+                    negative: 0.16000000000000003
+                },
                 debuffResistance: {
                     defense: 0.17300000000000001
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {
@@ -210,6 +225,9 @@ const TANKER_STONE_ARMOR_POWERSET = {
                 cast: 0.73,
                 protection: {
                     confuse: 30.0
+                },
+                defense: {
+                    psionic: 0.25
                 },
                 buffDuration: 0.75
             }
@@ -264,6 +282,15 @@ const TANKER_STONE_ARMOR_POWERSET = {
                     sleep: 21.625,
                     immobilize: 21.625
                 },
+                defense: {
+                    smashing: 0.15000000000000002,
+                    lethal: 0.15000000000000002,
+                    fire: 0.15000000000000002,
+                    cold: 0.15000000000000002,
+                    energy: 0.15000000000000002,
+                    negative: 0.15000000000000002,
+                    psionic: 0.15000000000000002
+                },
                 resistance: {
                     smashing: 0.5,
                     lethal: 0.5,
@@ -277,7 +304,6 @@ const TANKER_STONE_ARMOR_POWERSET = {
                     defense: 0.4325
                 },
                 buffDuration: 0.75,
-                defenseBuff: 1.0,
                 stun: 1.0,
                 stunDuration: 0.75
             }

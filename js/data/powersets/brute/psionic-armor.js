@@ -163,11 +163,13 @@ const BRUTE_PSIONIC_ARMOR_POWERSET = {
             effectArea: "SingleTarget",
             effects: {
                 accuracy: 1.0,
+                defense: {
+                    psionic: 0.0375
+                },
                 debuffResistance: {
                     defense: 0.07999519999999999
                 },
-                buffDuration: 10.25,
-                defenseBuff: 0.2312
+                buffDuration: 10.25
             }
         },
         {

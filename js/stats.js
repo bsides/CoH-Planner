@@ -169,7 +169,38 @@ function openStatsSelector() {
         categoryHeader.style.marginBottom = '10px';
         categoryHeader.style.paddingBottom = '4px';
         categoryHeader.style.borderBottom = '1px solid var(--border)';
-        categoryHeader.textContent = category.name;
+        categoryHeader.style.display = 'flex';
+        categoryHeader.style.justifyContent = 'space-between';
+        categoryHeader.style.alignItems = 'center';
+
+        const categoryName = document.createElement('span');
+        categoryName.textContent = category.name;
+        categoryHeader.appendChild(categoryName);
+
+        const toggleGroupBtn = document.createElement('button');
+        toggleGroupBtn.textContent = 'Toggle Group';
+        toggleGroupBtn.style.fontSize = '10px';
+        toggleGroupBtn.style.padding = '4px 8px';
+        toggleGroupBtn.style.background = 'var(--button-bg)';
+        toggleGroupBtn.style.color = 'var(--text)';
+        toggleGroupBtn.style.border = '1px solid var(--border)';
+        toggleGroupBtn.style.borderRadius = '3px';
+        toggleGroupBtn.style.cursor = 'pointer';
+        toggleGroupBtn.onclick = (e) => {
+            e.stopPropagation();
+            // Get all checkboxes in this category
+            const categoryStats = Object.keys(category.stats);
+            const allChecked = categoryStats.every(statId => Build.settings.enabledStats.includes(statId));
+
+            // Toggle all in this category
+            categoryStats.forEach(statId => {
+                updateStatSelection(statId, !allChecked);
+                const checkbox = section.querySelector(`.stat-toggle-${statId} input`);
+                if (checkbox) checkbox.checked = !allChecked;
+            });
+        };
+        categoryHeader.appendChild(toggleGroupBtn);
+
         section.appendChild(categoryHeader);
         
         const statsGrid = document.createElement('div');
@@ -234,7 +265,27 @@ function openStatsSelector() {
     const buttonContainer = document.createElement('div');
     buttonContainer.style.display = 'flex';
     buttonContainer.style.gap = '8px';
-    
+
+    const toggleAllBtn = document.createElement('button');
+    toggleAllBtn.textContent = 'Toggle All';
+    toggleAllBtn.onclick = () => {
+        // Get all stat IDs
+        const allStatIds = [];
+        Object.values(STAT_CATEGORIES).forEach(category => {
+            allStatIds.push(...Object.keys(category.stats));
+        });
+
+        // Check if all are enabled
+        const allEnabled = allStatIds.every(statId => Build.settings.enabledStats.includes(statId));
+
+        // Toggle all
+        allStatIds.forEach(statId => {
+            updateStatSelection(statId, !allEnabled);
+            const checkbox = content.querySelector(`.stat-toggle-${statId} input`);
+            if (checkbox) checkbox.checked = !allEnabled;
+        });
+    };
+
     const resetBtn = document.createElement('button');
     resetBtn.textContent = 'Reset to Defaults';
     resetBtn.onclick = () => {
@@ -243,7 +294,7 @@ function openStatsSelector() {
         openStatsSelector(); // Reopen to show updated checkboxes
         updateStatsDashboard();
     };
-    
+
     const closeBtn = document.createElement('button');
     closeBtn.textContent = 'Done';
     closeBtn.style.marginLeft = 'auto';
@@ -252,6 +303,7 @@ function openStatsSelector() {
         updateStatsDashboard();
     };
     
+    buttonContainer.appendChild(toggleAllBtn);
     buttonContainer.appendChild(resetBtn);
     buttonContainer.appendChild(closeBtn);
     content.appendChild(buttonContainer);
@@ -537,13 +589,10 @@ function calculatePoolPowerBonuses() {
     
     // Collect pool powers
     if (Build.pools && Array.isArray(Build.pools)) {
-        console.log(`Processing ${Build.pools.length} pools`);
         Build.pools.forEach(poolData => {
-            console.log('Processing pool:', poolData.id, 'with', poolData.powers?.length || 0, 'powers');
             if (!poolData.powers) return;
             
             poolData.powers.forEach(power => {
-                console.log('Processing pool power:', power.name, 'with effects:', power.effects);
                 if (power.effects) {
                     allPowers.push(power);
                 }
@@ -642,65 +691,148 @@ function calculatePoolPowerBonuses() {
  */
 function calculateActivePowerBufsBonuses() {
     const bonuses = {};
-    
+
+    // Helper function to process power effects
+    const processPowerEffects = (power) => {
+        if (!power.isActive || !power.effects) return;
+
+        const effects = power.effects;
+
+        // Add tohitBuff as percentage bonus
+        if (effects.tohitBuff !== undefined && effects.tohitBuff !== null) {
+            bonuses.tohit = (bonuses.tohit || 0) + (effects.tohitBuff * 100);
+        }
+
+        // Add damageBuff as percentage bonus
+        if (effects.damageBuff !== undefined && effects.damageBuff !== null) {
+            bonuses.damage = (bonuses.damage || 0) + (effects.damageBuff * 100);
+        }
+
+        // Note: defenseBuff in power files is incorrect - it should be a detailed object like resistance
+        // The raw game data has separate scale values for each damage type (S/L, Energy, etc.)
+        // but the extraction process incorrectly stores a single value
+        // For now, we skip it to avoid displaying incorrect percentages
+        // TODO: Re-extract powersets with correct defense breakdown
+        if (effects.defenseBuff !== undefined && effects.defenseBuff !== null) {
+            // Skip defenseBuff - values in power files are not properly extracted from raw data
+            console.warn(`Power ${power.name} has defenseBuff: ${effects.defenseBuff}, but this value needs re-extraction from raw data to show correct defense values`);
+        }
+
+        // Add defense from detailed object - map to specific damage types
+        if (effects.defense && typeof effects.defense === 'object') {
+            const def = effects.defense;
+
+            // Map to combined defense stats (S/L, F/C, E/N, Psi, Tox)
+            // Smashing/Lethal
+            if (def.smashing !== undefined || def.lethal !== undefined) {
+                const sVal = (def.smashing || 0) * 100;
+                const lVal = (def.lethal || 0) * 100;
+                const avgSL = (sVal + lVal) / 2;
+                bonuses.defSL = (bonuses.defSL || 0) + avgSL;
+            }
+
+            // Fire/Cold
+            if (def.fire !== undefined || def.cold !== undefined) {
+                const fVal = (def.fire || 0) * 100;
+                const cVal = (def.cold || 0) * 100;
+                const avgFC = (fVal + cVal) / 2;
+                bonuses.defFC = (bonuses.defFC || 0) + avgFC;
+            }
+
+            // Energy/Negative
+            if (def.energy !== undefined || def.negative !== undefined) {
+                const eVal = (def.energy || 0) * 100;
+                const nVal = (def.negative || 0) * 100;
+                const avgEN = (eVal + nVal) / 2;
+                bonuses.defEN = (bonuses.defEN || 0) + avgEN;
+            }
+
+            // Psionic
+            if (def.psionic !== undefined) {
+                bonuses.defPsionic = (bonuses.defPsionic || 0) + (def.psionic * 100);
+            }
+
+            // Toxic
+            if (def.toxic !== undefined) {
+                bonuses.defToxic = (bonuses.defToxic || 0) + (def.toxic * 100);
+            }
+        }
+
+        // Add resistanceBuff as percentage bonus (single value) - NOT USED, use detailed object instead
+        if (effects.resistanceBuff !== undefined && effects.resistanceBuff !== null) {
+            console.warn(`Power ${power.name} has resistanceBuff: ${effects.resistanceBuff}, consider using detailed resistance object instead`);
+        }
+
+        // Add resistance from detailed object - map to specific damage types
+        if (effects.resistance && typeof effects.resistance === 'object') {
+            const res = effects.resistance;
+
+            // Map to combined resistance stats (S/L, F/C, E/N, Psi, Tox)
+            // Smashing/Lethal
+            if (res.smashing !== undefined || res.lethal !== undefined) {
+                const sVal = (res.smashing || 0) * 100;
+                const lVal = (res.lethal || 0) * 100;
+                const avgSL = (sVal + lVal) / 2;
+                bonuses.resSL = (bonuses.resSL || 0) + avgSL;
+            }
+
+            // Fire/Cold
+            if (res.fire !== undefined || res.cold !== undefined) {
+                const fVal = (res.fire || 0) * 100;
+                const cVal = (res.cold || 0) * 100;
+                const avgFC = (fVal + cVal) / 2;
+                bonuses.resFC = (bonuses.resFC || 0) + avgFC;
+            }
+
+            // Energy/Negative
+            if (res.energy !== undefined || res.negative !== undefined) {
+                const eVal = (res.energy || 0) * 100;
+                const nVal = (res.negative || 0) * 100;
+                const avgEN = (eVal + nVal) / 2;
+                bonuses.resEN = (bonuses.resEN || 0) + avgEN;
+            }
+
+            // Psionic
+            if (res.psionic !== undefined) {
+                bonuses.resPsionic = (bonuses.resPsionic || 0) + (res.psionic * 100);
+            }
+
+            // Toxic
+            if (res.toxic !== undefined) {
+                bonuses.resToxic = (bonuses.resToxic || 0) + (res.toxic * 100);
+            }
+        }
+
+        // Track toggle endurance cost
+        if (power.powerType === 'Toggle' && effects.endurance) {
+            bonuses.toggleEndCost = (bonuses.toggleEndCost || 0) + effects.endurance;
+        }
+    };
+
     // Check primary powers
     if (Build.primary && Build.primary.powers) {
-        Build.primary.powers.forEach(power => {
-            if (power.isActive && power.effects) {
-                const effects = power.effects;
-                
-                // Add tohitBuff as percentage bonus
-                if (effects.tohitBuff !== undefined && effects.tohitBuff !== null) {
-                    bonuses.tohit = (bonuses.tohit || 0) + (effects.tohitBuff * 100);
-                }
-                
-                // Add damageBuff as percentage bonus
-                if (effects.damageBuff !== undefined && effects.damageBuff !== null) {
-                    bonuses.damage = (bonuses.damage || 0) + (effects.damageBuff * 100);
-                }
-                
-                // Add defenseBuff as percentage bonus
-                if (effects.defenseBuff !== undefined && effects.defenseBuff !== null) {
-                    bonuses.defense = (bonuses.defense || 0) + (effects.defenseBuff * 100);
-                }
-                
-                // Add resistanceBuff as percentage bonus
-                if (effects.resistanceBuff !== undefined && effects.resistanceBuff !== null) {
-                    bonuses.resistance = (bonuses.resistance || 0) + (effects.resistanceBuff * 100);
-                }
-            }
-        });
+        Build.primary.powers.forEach(processPowerEffects);
     }
     
     // Check secondary powers
     if (Build.secondary && Build.secondary.powers) {
-        Build.secondary.powers.forEach(power => {
-            if (power.isActive && power.effects) {
-                const effects = power.effects;
-                
-                // Add tohitBuff as percentage bonus
-                if (effects.tohitBuff !== undefined && effects.tohitBuff !== null) {
-                    bonuses.tohit = (bonuses.tohit || 0) + (effects.tohitBuff * 100);
-                }
-                
-                // Add damageBuff as percentage bonus
-                if (effects.damageBuff !== undefined && effects.damageBuff !== null) {
-                    bonuses.damage = (bonuses.damage || 0) + (effects.damageBuff * 100);
-                }
-                
-                // Add defenseBuff as percentage bonus
-                if (effects.defenseBuff !== undefined && effects.defenseBuff !== null) {
-                    bonuses.defense = (bonuses.defense || 0) + (effects.defenseBuff * 100);
-                }
-                
-                // Add resistanceBuff as percentage bonus
-                if (effects.resistanceBuff !== undefined && effects.resistanceBuff !== null) {
-                    bonuses.resistance = (bonuses.resistance || 0) + (effects.resistanceBuff * 100);
-                }
+        Build.secondary.powers.forEach(processPowerEffects);
+    }
+
+    // Check pool powers
+    if (Build.pools) {
+        Build.pools.forEach(pool => {
+            if (pool.powers) {
+                pool.powers.forEach(processPowerEffects);
             }
         });
     }
-    
+
+    // Check epic pool powers
+    if (Build.epicPool && Build.epicPool.powers) {
+        Build.epicPool.powers.forEach(processPowerEffects);
+    }
+
     console.log('Active power buff bonuses:', bonuses);
     return bonuses;
 }
@@ -744,7 +876,14 @@ function recalculateStats() {
     // Add active power buff bonuses
     const activePowerBuffs = calculateActivePowerBufsBonuses();
     Object.entries(activePowerBuffs).forEach(([stat, value]) => {
-        if (value > 0) {
+        if (stat === 'toggleEndCost') {
+            // Subtract toggle endurance costs from recovery
+            // toggleEndCost is in endurance/sec, recovery is a percentage
+            // We need to convert to percentage reduction
+            const baseRecovery = getBaselineRecovery();
+            const endCostAsPercentage = (value / baseRecovery) * 100;
+            CharacterStats.recovery = (CharacterStats.recovery || 0) - endCostAsPercentage;
+        } else if (value > 0) {
             CharacterStats[stat] = (CharacterStats[stat] || 0) + value;
         }
     });

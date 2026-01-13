@@ -35,8 +35,7 @@ const BRUTE_SUPER_REFLEXES_POWERSET = {
                 debuffResistance: {
                     defense: 0.1384
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {
@@ -57,11 +56,13 @@ const BRUTE_SUPER_REFLEXES_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.13,
                 cast: 2.03,
+                defense: {
+                    psionic: 0.13875
+                },
                 debuffResistance: {
                     defense: 0.1384
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {
@@ -91,8 +92,7 @@ const BRUTE_SUPER_REFLEXES_POWERSET = {
                 debuffResistance: {
                     defense: 0.0692
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.2
+                buffDuration: 0.75
             }
         },
         {
@@ -128,8 +128,7 @@ const BRUTE_SUPER_REFLEXES_POWERSET = {
                 buffDuration: 120.0,
                 stun: 1.0,
                 stunDuration: 120.0,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {
@@ -159,8 +158,7 @@ const BRUTE_SUPER_REFLEXES_POWERSET = {
                 debuffResistance: {
                     defense: 0.0692
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.2
+                buffDuration: 0.75
             }
         },
         {
@@ -185,8 +183,7 @@ const BRUTE_SUPER_REFLEXES_POWERSET = {
                 debuffResistance: {
                     defense: 0.1384
                 },
-                buffDuration: 2.25,
-                defenseBuff: 0.4
+                buffDuration: 2.25
             }
         },
         {
@@ -216,8 +213,7 @@ const BRUTE_SUPER_REFLEXES_POWERSET = {
                 debuffResistance: {
                     defense: 0.0692
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.2
+                buffDuration: 0.75
             }
         },
         {
@@ -263,8 +259,7 @@ const BRUTE_SUPER_REFLEXES_POWERSET = {
                 debuffResistance: {
                     defense: 0.346
                 },
-                buffDuration: 180.0,
-                defenseBuff: 1.0
+                buffDuration: 180.0
             }
         }
     ]

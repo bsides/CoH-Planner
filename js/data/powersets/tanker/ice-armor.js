@@ -29,6 +29,10 @@ const TANKER_ICE_ARMOR_POWERSET = {
                 recharge: 2.0,
                 endurance: 0.13,
                 cast: 0.73,
+                defense: {
+                    smashing: 0.17,
+                    lethal: 0.17
+                },
                 resistance: {
                     cold: 0.30000000000000004,
                     fire: 0.125
@@ -36,8 +40,7 @@ const TANKER_ICE_ARMOR_POWERSET = {
                 debuffResistance: {
                     defense: 0.17300000000000001
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {
@@ -148,6 +151,16 @@ const TANKER_ICE_ARMOR_POWERSET = {
                     sleep: 12.975,
                     immobilize: 12.975
                 },
+                defense: {
+                    smashing: 0.010000000000000002,
+                    lethal: 0.010000000000000002,
+                    fire: 0.010000000000000002,
+                    cold: 0.010000000000000002,
+                    energy: 0.010000000000000002,
+                    negative: 0.010000000000000002,
+                    psionic: 0.010000000000000002,
+                    toxic: 0.010000000000000002
+                },
                 resistance: {
                     cold: 0.30000000000000004
                 },
@@ -160,8 +173,7 @@ const TANKER_ICE_ARMOR_POWERSET = {
                 buffDuration: 0.75,
                 stun: 1.0,
                 stunDuration: 0.75,
-                tohitBuff: 0.3,
-                defenseBuff: 0.4
+                tohitBuff: 0.3
             }
         },
         {
@@ -283,14 +295,18 @@ const TANKER_ICE_ARMOR_POWERSET = {
                 recharge: 2.0,
                 endurance: 0.13,
                 cast: 2.03,
+                defense: {
+                    energy: 0.17,
+                    negative: 0.17,
+                    psionic: 0.17
+                },
                 resistance: {
                     cold: 0.30000000000000004
                 },
                 debuffResistance: {
                     defense: 0.17300000000000001
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {

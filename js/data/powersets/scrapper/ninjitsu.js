@@ -32,8 +32,7 @@ const SCRAPPER_NINJITSU_POWERSET = {
                 debuffResistance: {
                     defense: 0.173
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.5
+                buffDuration: 0.75
             }
         },
         {
@@ -57,8 +56,7 @@ const SCRAPPER_NINJITSU_POWERSET = {
                 debuffResistance: {
                     defense: 0.173
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.5
+                buffDuration: 0.75
             }
         },
         {
@@ -124,8 +122,7 @@ const SCRAPPER_NINJITSU_POWERSET = {
                 stun: 1.0,
                 stunDuration: 120.0,
                 buffDuration: 120.0,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {
@@ -254,8 +251,7 @@ const SCRAPPER_NINJITSU_POWERSET = {
                 debuffResistance: {
                     defense: 0.346
                 },
-                buffDuration: 180.0,
-                defenseBuff: 1.0
+                buffDuration: 180.0
             }
         }
     ]

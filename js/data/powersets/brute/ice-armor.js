@@ -29,6 +29,10 @@ const BRUTE_ICE_ARMOR_POWERSET = {
                 recharge: 2.0,
                 endurance: 0.13,
                 cast: 0.73,
+                defense: {
+                    smashing: 0.1275,
+                    lethal: 0.1275
+                },
                 resistance: {
                     cold: 0.22499999999999998,
                     fire: 0.09375
@@ -36,8 +40,7 @@ const BRUTE_ICE_ARMOR_POWERSET = {
                 debuffResistance: {
                     defense: 0.1384
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {
@@ -148,6 +151,16 @@ const BRUTE_ICE_ARMOR_POWERSET = {
                     sleep: 10.379999999999999,
                     immobilize: 10.379999999999999
                 },
+                defense: {
+                    smashing: 0.0075,
+                    lethal: 0.0075,
+                    fire: 0.0075,
+                    cold: 0.0075,
+                    energy: 0.0075,
+                    negative: 0.0075,
+                    psionic: 0.0075,
+                    toxic: 0.0075
+                },
                 resistance: {
                     cold: 0.22499999999999998
                 },
@@ -160,8 +173,7 @@ const BRUTE_ICE_ARMOR_POWERSET = {
                 buffDuration: 0.75,
                 stun: 1.0,
                 stunDuration: 0.75,
-                tohitBuff: 0.3,
-                defenseBuff: 0.4
+                tohitBuff: 0.3
             }
         },
         {
@@ -182,14 +194,18 @@ const BRUTE_ICE_ARMOR_POWERSET = {
                 recharge: 2.0,
                 endurance: 0.13,
                 cast: 2.03,
+                defense: {
+                    energy: 0.1275,
+                    negative: 0.1275,
+                    psionic: 0.1275
+                },
                 resistance: {
                     cold: 0.22499999999999998
                 },
                 debuffResistance: {
                     defense: 0.1384
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {

@@ -29,11 +29,14 @@ const BRUTE_STONE_ARMOR_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.104,
                 cast: 0.73,
+                defense: {
+                    smashing: 0.12,
+                    lethal: 0.12
+                },
                 debuffResistance: {
                     defense: 0.1384
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {
@@ -55,6 +58,16 @@ const BRUTE_STONE_ARMOR_POWERSET = {
                     type: "Psionic",
                     scale: 1.0,
                     ticks: 5
+                },
+                defense: {
+                    smashing: 0.0375,
+                    lethal: 0.0375,
+                    fire: 0.0375,
+                    cold: 0.0375,
+                    energy: 0.0375,
+                    negative: 0.0375,
+                    psionic: 0.0375,
+                    toxic: 0.0375
                 },
                 resistance: {
                     smashing: 0.075,
@@ -161,8 +174,7 @@ const BRUTE_STONE_ARMOR_POWERSET = {
                 buffDuration: 0.75,
                 stun: 1.0,
                 stunDuration: 0.75,
-                tohitBuff: 0.3,
-                defenseBuff: 0.4
+                tohitBuff: 0.3
             }
         },
         {
@@ -183,11 +195,14 @@ const BRUTE_STONE_ARMOR_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.104,
                 cast: 1.0,
+                defense: {
+                    energy: 0.12,
+                    negative: 0.12
+                },
                 debuffResistance: {
                     defense: 0.1384
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {
@@ -210,6 +225,9 @@ const BRUTE_STONE_ARMOR_POWERSET = {
                 cast: 0.73,
                 protection: {
                     confuse: 30.0
+                },
+                defense: {
+                    psionic: 0.1875
                 },
                 buffDuration: 0.75
             }
@@ -264,6 +282,15 @@ const BRUTE_STONE_ARMOR_POWERSET = {
                     sleep: 17.299999999999997,
                     immobilize: 17.299999999999997
                 },
+                defense: {
+                    smashing: 0.11249999999999999,
+                    lethal: 0.11249999999999999,
+                    fire: 0.11249999999999999,
+                    cold: 0.11249999999999999,
+                    energy: 0.11249999999999999,
+                    negative: 0.11249999999999999,
+                    psionic: 0.11249999999999999
+                },
                 resistance: {
                     smashing: 0.375,
                     lethal: 0.375,
@@ -278,8 +305,7 @@ const BRUTE_STONE_ARMOR_POWERSET = {
                 },
                 buffDuration: 0.75,
                 stun: 1.0,
-                stunDuration: 0.75,
-                defenseBuff: 1.0
+                stunDuration: 0.75
             }
         }
     ]

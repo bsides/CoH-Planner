@@ -53,6 +53,14 @@ const SENTINEL_DARK_ARMOR_POWERSET = {
             effectArea: "SingleTarget",
             effects: {
                 accuracy: 1.0,
+                defense: {
+                    smashing: 0.0175,
+                    lethal: 0.0175,
+                    fire: 0.0175,
+                    cold: 0.0175,
+                    energy: 0.0175,
+                    negative: 0.0175
+                },
                 buffDuration: 10.25
             }
         },
@@ -123,8 +131,7 @@ const SENTINEL_DARK_ARMOR_POWERSET = {
                 buffDuration: 0.75,
                 stun: 1.0,
                 stunDuration: 0.75,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {
@@ -206,6 +213,16 @@ const SENTINEL_DARK_ARMOR_POWERSET = {
                 cast: 1.17,
                 protection: {
                     immobilize: 8.304
+                },
+                defense: {
+                    smashing: 0.035,
+                    lethal: 0.035,
+                    fire: 0.035,
+                    cold: 0.035,
+                    energy: 0.035,
+                    negative: 0.035,
+                    psionic: 0.035,
+                    toxic: 0.035
                 },
                 buffDuration: 0.75
             }

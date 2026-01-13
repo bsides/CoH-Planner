@@ -112,6 +112,9 @@ const SENTINEL_WILLPOWER_POWERSET = {
                     confuse: 8.304,
                     immobilize: 8.304
                 },
+                defense: {
+                    psionic: 0.07
+                },
                 debuffResistance: {
                     tohit: 0.3,
                     defense: 0.3,
@@ -121,8 +124,7 @@ const SENTINEL_WILLPOWER_POWERSET = {
                 stun: 1.0,
                 stunDuration: 0.75,
                 buffDuration: 0.75,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {
@@ -182,11 +184,18 @@ const SENTINEL_WILLPOWER_POWERSET = {
                 recharge: 2.0,
                 endurance: 0.104,
                 cast: 0.67,
+                defense: {
+                    smashing: 0.023100000000000002,
+                    lethal: 0.023100000000000002,
+                    fire: 0.09100000000000001,
+                    cold: 0.09100000000000001,
+                    energy: 0.09100000000000001,
+                    negative: 0.09100000000000001
+                },
                 debuffResistance: {
                     defense: 0.1384
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.5
+                buffDuration: 0.75
             }
         },
         {

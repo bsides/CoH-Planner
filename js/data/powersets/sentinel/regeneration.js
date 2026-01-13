@@ -111,8 +111,7 @@ const SENTINEL_REGENERATION_POWERSET = {
                     endurance: 0.2
                 },
                 buffDuration: 10.3,
-                tohitBuff: 0.2,
-                defenseBuff: 0.2
+                tohitBuff: 0.2
             }
         },
         {
@@ -148,8 +147,7 @@ const SENTINEL_REGENERATION_POWERSET = {
                 buffDuration: 0.75,
                 stun: 1.0,
                 stunDuration: 0.75,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {

@@ -32,8 +32,7 @@ const TANKER_SHIELD_DEFENSE_POWERSET = {
                 debuffResistance: {
                     defense: 0.17300000000000001
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {
@@ -54,6 +53,9 @@ const TANKER_SHIELD_DEFENSE_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.104,
                 cast: 1.5,
+                defense: {
+                    psionic: 0.15000000000000002
+                },
                 resistance: {
                     smashing: 0.15000000000000002,
                     lethal: 0.15000000000000002
@@ -150,8 +152,7 @@ const TANKER_SHIELD_DEFENSE_POWERSET = {
                 stun: 1.0,
                 stunDuration: 120.0,
                 buffDuration: 120.0,
-                tohitBuff: 0.3,
-                defenseBuff: 0.5
+                tohitBuff: 0.3
             }
         },
         {
@@ -214,8 +215,7 @@ const TANKER_SHIELD_DEFENSE_POWERSET = {
                 recharge: 10.0,
                 endurance: 0.312,
                 cast: 2.5,
-                buffDuration: 2.25,
-                defenseBuff: 0.4
+                buffDuration: 2.25
             }
         },
         {

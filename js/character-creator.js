@@ -916,14 +916,8 @@ function canSelectPoolPower(pool, power) {
     
     const isTravelPowerLevel4 = travelPowersLevel4.some(t => t.pool === pool.id && t.power === power.name);
 
-    // Debug logging
-    if (power.rank === 3 || power.rank === 4) {
-        console.log(`Checking power: ${pool.id}/${power.name}, rank: ${power.rank}, isTravelPowerLevel4: ${isTravelPowerLevel4}, Build.level: ${Build.level}`);
-    }
-
     // Travel powers at level 4: Available at level 4 with no prerequisites
     if (isTravelPowerLevel4) {
-        console.log(`Travel power ${power.name} check: level ${Build.level} >= 4 = ${Build.level >= 4}`);
         return Build.level >= 4;
     }
     
@@ -1046,8 +1040,6 @@ function selectPoolPower(powerData, poolId) {
     
     // Refresh UI
     refreshAvailablePowers();
-    
-    console.log(`Added pool power: ${powerData.name} from ${poolData.name}`);
 }
 
 /**
@@ -1082,8 +1074,6 @@ function removePoolPowerFromBuild(powerName, poolId) {
     if (typeof updateSlotCounter === 'function') {
         updateSlotCounter();
     }
-    
-    console.log(`Removed pool power: ${powerName}`);
 }
 
 /**
@@ -1528,15 +1518,12 @@ function selectPoolPowerFromModal(poolId, powerName) {
     
     // Add to pool
     poolData.powers.push(powerObj);
-    console.log(`Added pool power: ${power.name} from ${pool.name}, Build.pools is now:`, Build.pools);
-    
+
     // Auto-level in auto mode: Update based on total power count
     if (Build.progressionMode === 'auto') {
         updateLevelFromPowerCount();
     }
-    
-    console.log(`Added pool power: ${power.name} from ${pool.name}`);
-    
+
     // Recalculate stats to include pool power effects
     if (typeof recalculateStats === 'function') {
         recalculateStats();
@@ -1829,19 +1816,15 @@ function removeEpicPoolPowerFromBuild(powerName) {
     if (typeof updateSlotCounter === 'function') {
         updateSlotCounter();
     }
-    
+
     // Refresh UI
     refreshAvailablePowers();
-    
-    console.log(`Removed epic pool power: ${powerName}`);
 }
 
 /**
  * Open epic pool power selection modal
  */
 function openEpicPoolPowerModal() {
-    console.log(`openEpicPoolPowerModal called for pool: ${Build.epicPool.id}`);
-    
     if (!Build.epicPool.id) {
         alert('Select an epic pool first');
         return;

@@ -29,6 +29,9 @@ const STALKER_SHIELD_DEFENSE_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.104,
                 cast: 1.5,
+                defense: {
+                    psionic: 0.11249999999999999
+                },
                 resistance: {
                     smashing: 0.11249999999999999,
                     lethal: 0.11249999999999999
@@ -53,6 +56,16 @@ const STALKER_SHIELD_DEFENSE_POWERSET = {
                 accuracy: 1.0,
                 recharge: 2.0,
                 cast: 0.73,
+                defense: {
+                    smashing: 0.0375,
+                    lethal: 0.0375,
+                    fire: 0.0375,
+                    cold: 0.0375,
+                    energy: 0.0375,
+                    negative: 0.0375,
+                    psionic: 0.0375,
+                    toxic: 0.0375
+                },
                 buffDuration: 0.75
             }
         },
@@ -77,8 +90,7 @@ const STALKER_SHIELD_DEFENSE_POWERSET = {
                 debuffResistance: {
                     defense: 0.1384
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {
@@ -170,8 +182,7 @@ const STALKER_SHIELD_DEFENSE_POWERSET = {
                 stun: 1.0,
                 stunDuration: 120.0,
                 buffDuration: 120.0,
-                tohitBuff: 0.3,
-                defenseBuff: 0.5
+                tohitBuff: 0.3
             }
         },
         {
@@ -215,8 +226,7 @@ const STALKER_SHIELD_DEFENSE_POWERSET = {
                 recharge: 10.0,
                 endurance: 0.312,
                 cast: 2.5,
-                buffDuration: 2.25,
-                defenseBuff: 0.4
+                buffDuration: 2.25
             }
         },
         {

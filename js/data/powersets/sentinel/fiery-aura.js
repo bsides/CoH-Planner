@@ -190,8 +190,7 @@ const SENTINEL_FIERY_AURA_POWERSET = {
                     movement: 0.5
                 },
                 buffDuration: 0.75,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {

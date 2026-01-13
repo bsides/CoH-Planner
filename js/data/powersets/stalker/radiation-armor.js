@@ -54,6 +54,16 @@ const STALKER_RADIATION_ARMOR_POWERSET = {
                 accuracy: 1.0,
                 recharge: 2.0,
                 cast: 0.73,
+                defense: {
+                    smashing: 0.0375,
+                    lethal: 0.0375,
+                    fire: 0.0375,
+                    cold: 0.0375,
+                    energy: 0.0375,
+                    negative: 0.0375,
+                    psionic: 0.0375,
+                    toxic: 0.0375
+                },
                 buffDuration: 0.75
             }
         },

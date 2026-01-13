@@ -112,6 +112,9 @@ const TANKER_WILLPOWER_POWERSET = {
                     confuse: 12.975,
                     immobilize: 12.975
                 },
+                defense: {
+                    psionic: 0.1
+                },
                 debuffResistance: {
                     tohit: 0.3,
                     defense: 0.3,
@@ -121,8 +124,7 @@ const TANKER_WILLPOWER_POWERSET = {
                 stun: 1.0,
                 stunDuration: 0.75,
                 buffDuration: 0.75,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {
@@ -184,11 +186,18 @@ const TANKER_WILLPOWER_POWERSET = {
                 recharge: 2.0,
                 endurance: 0.104,
                 cast: 0.67,
+                defense: {
+                    smashing: 0.033,
+                    lethal: 0.033,
+                    fire: 0.13,
+                    cold: 0.13,
+                    energy: 0.13,
+                    negative: 0.13
+                },
                 debuffResistance: {
                     defense: 0.21625
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.5
+                buffDuration: 0.75
             }
         },
         {

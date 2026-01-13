@@ -170,8 +170,7 @@ const TANKER_RADIATION_ARMOR_POWERSET = {
                 endurance: 0.208,
                 cast: 0.67,
                 tohitDebuff: 0.75,
-                buffDuration: 1.0,
-                defenseDebuff: 1.5
+                buffDuration: 1.0
             }
         },
         {

@@ -87,11 +87,15 @@ const SENTINEL_ENERGY_AURA_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.13,
                 cast: 0.73,
+                defense: {
+                    smashing: 0.11900000000000001,
+                    lethal: 0.11900000000000001,
+                    energy: 0.0175
+                },
                 debuffResistance: {
                     defense: 0.1384
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.5
+                buffDuration: 0.75
             }
         },
         {
@@ -112,11 +116,17 @@ const SENTINEL_ENERGY_AURA_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.13,
                 cast: 1.67,
+                defense: {
+                    fire: 0.14,
+                    energy: 0.14,
+                    cold: 0.14,
+                    negative: 0.14,
+                    psionic: 0.14
+                },
                 debuffResistance: {
                     defense: 0.1384
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.5
+                buffDuration: 0.75
             }
         },
         {
@@ -177,7 +187,6 @@ const SENTINEL_ENERGY_AURA_POWERSET = {
                 buffDuration: 0.75,
                 stun: 1.0,
                 stunDuration: 0.75,
-                defenseBuff: 0.3,
                 tohitBuff: 0.3
             }
         },
@@ -224,6 +233,16 @@ const SENTINEL_ENERGY_AURA_POWERSET = {
             effectArea: "SingleTarget",
             effects: {
                 accuracy: 1.0,
+                defense: {
+                    smashing: 0.035,
+                    lethal: 0.035,
+                    fire: 0.035,
+                    cold: 0.035,
+                    energy: 0.035,
+                    negative: 0.035,
+                    psionic: 0.035,
+                    toxic: 0.035
+                },
                 buffDuration: 10.3
             }
         },
@@ -267,11 +286,20 @@ const SENTINEL_ENERGY_AURA_POWERSET = {
                 recharge: 1000.0,
                 endurance: 2.6,
                 cast: 3.0,
+                defense: {
+                    smashing: 0.42000000000000004,
+                    lethal: 0.42000000000000004,
+                    fire: 0.42000000000000004,
+                    cold: 0.42000000000000004,
+                    energy: 0.42000000000000004,
+                    negative: 0.42000000000000004,
+                    psionic: 0.31500000000000006,
+                    toxic: 0.31500000000000006
+                },
                 debuffResistance: {
                     defense: 0.2768
                 },
-                buffDuration: 180.0,
-                defenseBuff: 1.0
+                buffDuration: 180.0
             }
         }
     ]

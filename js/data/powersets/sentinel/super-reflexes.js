@@ -36,8 +36,7 @@ const SENTINEL_SUPER_REFLEXES_POWERSET = {
                 debuffResistance: {
                     defense: 0.11072
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {
@@ -67,7 +66,6 @@ const SENTINEL_SUPER_REFLEXES_POWERSET = {
                     defense: 0.11072
                 },
                 buffDuration: 0.75,
-                defenseBuff: 0.4,
                 stun: 1.0,
                 stunDuration: 0.75
             }
@@ -99,8 +97,7 @@ const SENTINEL_SUPER_REFLEXES_POWERSET = {
                 debuffResistance: {
                     defense: 0.05536
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.2
+                buffDuration: 0.75
             }
         },
         {
@@ -157,8 +154,7 @@ const SENTINEL_SUPER_REFLEXES_POWERSET = {
                 buffDuration: 120.0,
                 stun: 1.0,
                 stunDuration: 120.0,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {
@@ -176,6 +172,9 @@ const SENTINEL_SUPER_REFLEXES_POWERSET = {
             effectArea: "SingleTarget",
             effects: {
                 accuracy: 1.0,
+                defense: {
+                    psionic: 0.07
+                },
                 resistance: {
                     smashing: 0.0,
                     lethal: 0.0,
@@ -192,7 +191,6 @@ const SENTINEL_SUPER_REFLEXES_POWERSET = {
                     movement: 0.5
                 },
                 buffDuration: 0.75,
-                defenseBuff: 0.2,
                 tohitBuff: 0.3
             }
         },
@@ -223,8 +221,7 @@ const SENTINEL_SUPER_REFLEXES_POWERSET = {
                 debuffResistance: {
                     defense: 0.05536
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.2
+                buffDuration: 0.75
             }
         },
         {
@@ -270,8 +267,7 @@ const SENTINEL_SUPER_REFLEXES_POWERSET = {
                 debuffResistance: {
                     defense: 0.11072
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {
@@ -295,8 +291,7 @@ const SENTINEL_SUPER_REFLEXES_POWERSET = {
                 debuffResistance: {
                     defense: 0.2768
                 },
-                buffDuration: 180.0,
-                defenseBuff: 1.0
+                buffDuration: 180.0
             }
         }
     ]

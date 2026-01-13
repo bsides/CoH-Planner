@@ -126,8 +126,7 @@ const SCRAPPER_DARK_ARMOR_POWERSET = {
                 buffDuration: 0.75,
                 stun: 1.0,
                 stunDuration: 0.75,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {
@@ -209,6 +208,16 @@ const SCRAPPER_DARK_ARMOR_POWERSET = {
                 cast: 1.17,
                 protection: {
                     immobilize: 10.379999999999999
+                },
+                defense: {
+                    smashing: 0.0375,
+                    lethal: 0.0375,
+                    fire: 0.0375,
+                    cold: 0.0375,
+                    energy: 0.0375,
+                    negative: 0.0375,
+                    psionic: 0.0375,
+                    toxic: 0.0375
                 },
                 buffDuration: 0.75
             }

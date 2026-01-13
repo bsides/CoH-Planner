@@ -28,6 +28,16 @@ const STALKER_ENERGY_AURA_POWERSET = {
                 accuracy: 1.0,
                 recharge: 2.0,
                 cast: 0.73,
+                defense: {
+                    smashing: 0.0375,
+                    lethal: 0.0375,
+                    fire: 0.0375,
+                    cold: 0.0375,
+                    energy: 0.0375,
+                    negative: 0.0375,
+                    psionic: 0.0375,
+                    toxic: 0.0375
+                },
                 buffDuration: 0.75
             }
         },
@@ -49,11 +59,15 @@ const STALKER_ENERGY_AURA_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.13,
                 cast: 0.73,
+                defense: {
+                    smashing: 0.165,
+                    lethal: 0.165,
+                    energy: 0.02625
+                },
                 debuffResistance: {
                     defense: 0.173
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.5
+                buffDuration: 0.75
             }
         },
         {
@@ -74,11 +88,17 @@ const STALKER_ENERGY_AURA_POWERSET = {
                 recharge: 4.0,
                 endurance: 0.13,
                 cast: 1.67,
+                defense: {
+                    fire: 0.165,
+                    cold: 0.165,
+                    energy: 0.165,
+                    psionic: 0.165,
+                    negative: 0.1275
+                },
                 debuffResistance: {
                     defense: 0.173
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.5
+                buffDuration: 0.75
             }
         },
         {
@@ -114,7 +134,6 @@ const STALKER_ENERGY_AURA_POWERSET = {
                 buffDuration: 0.75,
                 stun: 1.0,
                 stunDuration: 0.75,
-                defenseBuff: 0.3,
                 tohitBuff: 0.3
             }
         },
@@ -262,11 +281,20 @@ const STALKER_ENERGY_AURA_POWERSET = {
                 recharge: 1000.0,
                 endurance: 2.6,
                 cast: 3.0,
+                defense: {
+                    smashing: 0.44999999999999996,
+                    lethal: 0.44999999999999996,
+                    fire: 0.44999999999999996,
+                    cold: 0.44999999999999996,
+                    energy: 0.44999999999999996,
+                    negative: 0.44999999999999996,
+                    psionic: 0.33749999999999997,
+                    toxic: 0.33749999999999997
+                },
                 debuffResistance: {
                     defense: 0.346
                 },
-                buffDuration: 180.0,
-                defenseBuff: 1.0
+                buffDuration: 180.0
             }
         }
     ]

@@ -126,8 +126,7 @@ const TANKER_DARK_ARMOR_POWERSET = {
                 buffDuration: 0.75,
                 stun: 1.0,
                 stunDuration: 0.75,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {
@@ -209,6 +208,16 @@ const TANKER_DARK_ARMOR_POWERSET = {
                 cast: 1.17,
                 protection: {
                     immobilize: 12.975
+                },
+                defense: {
+                    smashing: 0.05,
+                    lethal: 0.05,
+                    fire: 0.05,
+                    cold: 0.05,
+                    energy: 0.05,
+                    negative: 0.05,
+                    psionic: 0.05,
+                    toxic: 0.05
                 },
                 buffDuration: 0.75
             }

@@ -112,6 +112,9 @@ const SCRAPPER_WILLPOWER_POWERSET = {
                     confuse: 10.379999999999999,
                     immobilize: 10.379999999999999
                 },
+                defense: {
+                    psionic: 0.075
+                },
                 debuffResistance: {
                     tohit: 0.3,
                     defense: 0.3,
@@ -121,8 +124,7 @@ const SCRAPPER_WILLPOWER_POWERSET = {
                 stun: 1.0,
                 stunDuration: 0.75,
                 buffDuration: 0.75,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {
@@ -184,11 +186,18 @@ const SCRAPPER_WILLPOWER_POWERSET = {
                 recharge: 2.0,
                 endurance: 0.104,
                 cast: 0.67,
+                defense: {
+                    smashing: 0.02475,
+                    lethal: 0.02475,
+                    fire: 0.0975,
+                    cold: 0.0975,
+                    energy: 0.0975,
+                    negative: 0.0975
+                },
                 debuffResistance: {
                     defense: 0.173
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.5
+                buffDuration: 0.75
             }
         },
         {

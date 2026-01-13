@@ -28,6 +28,16 @@ const STALKER_NINJITSU_POWERSET = {
                 accuracy: 1.0,
                 recharge: 2.0,
                 cast: 0.73,
+                defense: {
+                    smashing: 0.0375,
+                    lethal: 0.0375,
+                    fire: 0.0375,
+                    cold: 0.0375,
+                    energy: 0.0375,
+                    negative: 0.0375,
+                    psionic: 0.0375,
+                    toxic: 0.0375
+                },
                 buffDuration: 0.75
             }
         },
@@ -52,8 +62,7 @@ const STALKER_NINJITSU_POWERSET = {
                 debuffResistance: {
                     defense: 0.173
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.5
+                buffDuration: 0.75
             }
         },
         {
@@ -77,8 +86,7 @@ const STALKER_NINJITSU_POWERSET = {
                 debuffResistance: {
                     defense: 0.173
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.5
+                buffDuration: 0.75
             }
         },
         {
@@ -146,8 +154,7 @@ const STALKER_NINJITSU_POWERSET = {
                 stun: 1.0,
                 stunDuration: 120.0,
                 buffDuration: 120.0,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {
@@ -250,8 +257,7 @@ const STALKER_NINJITSU_POWERSET = {
                 debuffResistance: {
                     defense: 0.346
                 },
-                buffDuration: 180.0,
-                defenseBuff: 1.0
+                buffDuration: 180.0
             }
         }
     ]

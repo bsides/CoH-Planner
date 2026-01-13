@@ -112,8 +112,7 @@ const TANKER_REGENERATION_POWERSET = {
                     endurance: 0.2
                 },
                 buffDuration: 10.3,
-                tohitBuff: 0.2,
-                defenseBuff: 0.2
+                tohitBuff: 0.2
             }
         },
         {
@@ -150,8 +149,7 @@ const TANKER_REGENERATION_POWERSET = {
                 buffDuration: 2.25,
                 stun: 1.0,
                 stunDuration: 2.25,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {

@@ -1,11 +1,11 @@
 /**
  * Energy Aura
  * Character Level: 50
- * Archetype: tanker
+ * Archetype: brute
  * Extracted from raw_data_homecoming with archetype modifiers applied
  */
 
-const TANKER_ENERGY_AURA_POWERSET = {
+const BRUTE_ENERGY_AURA_POWERSET = {
     name: "Energy Aura",
     category: "Unknown",
     description: "Energy Aura powerset",
@@ -46,12 +46,23 @@ const TANKER_ENERGY_AURA_POWERSET = {
                     ]
                 },
                 resistance: {
-                    smashing: 0.125,
-                    lethal: 0.125,
-                    energy: 0.1
+                    smashing: 0.09375,
+                    lethal: 0.09375,
+                    energy: 0.075
                 },
                 buffDuration: 10.25
             }
+        },
+        {
+            name: "Energy Aura",
+            available: 0,
+            tier: 1,
+            maxSlots: 6,
+            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
+            allowedSetCategories: [],
+            description: "You can surround yourself in powerful defensive Energy Auras that can deflect your foes' attacks. Like other defensive powers, Energy Auras do not reduce the damage you take, but rather reduce your chance of getting hit by deflecting your foes' attacks. Energy Auras offer good defense to most attack types, but offer superior defense to Energy based attacks. However, Energy Aura offers no defense to Psionic attacks.",
+            shortHelp: "Energy Aura",
+            icon: "energy_aura_set.png"
         },
         {
             name: "Kinetic Shield",
@@ -72,20 +83,20 @@ const TANKER_ENERGY_AURA_POWERSET = {
                 endurance: 0.13,
                 cast: 0.73,
                 defense: {
-                    smashing: 0.17,
-                    lethal: 0.17,
-                    energy: 0.025
+                    smashing: 0.1275,
+                    lethal: 0.1275,
+                    energy: 0.01875
                 },
                 debuffResistance: {
-                    defense: 0.21625
+                    defense: 0.173
                 },
                 buffDuration: 0.75
             }
         },
         {
             name: "Power Shield",
-            available: 1,
-            tier: 1,
+            available: 3,
+            tier: 2,
             maxSlots: 6,
             allowedEnhancements: ["EnduranceReduction", "Recharge"],
             allowedSetCategories: ["Defense Sets"],
@@ -101,26 +112,26 @@ const TANKER_ENERGY_AURA_POWERSET = {
                 endurance: 0.13,
                 cast: 1.67,
                 defense: {
-                    energy: 0.2,
-                    fire: 0.2,
-                    cold: 0.2,
-                    negative: 0.2,
-                    psionic: 0.2
+                    energy: 0.15,
+                    fire: 0.15,
+                    cold: 0.15,
+                    negative: 0.15,
+                    psionic: 0.15
                 },
                 debuffResistance: {
-                    defense: 0.21625
+                    defense: 0.173
                 },
                 buffDuration: 0.75
             }
         },
         {
             name: "Entropic Aura",
-            available: 5,
+            available: 9,
             tier: 3,
             maxSlots: 6,
             allowedEnhancements: ["EnduranceReduction", "Recharge"],
             allowedSetCategories: ["Threat Duration"],
-            description: "Entropic Aura diminishes and dampens the energy of controlling type effects. The shield makes you resistant to Knockback, Repel, Disorient, Hold, Sleep, Immobilization, and enemy Teleportation for as long as you can keep this toggle power active. Entropic Aura also grants you good resistance to Defense Debuffs as well as providing you a recharge bonus for each foe in melee, up to the first 10 foes. Foes that get close to the user will have their own recharge rate reduced.",
+            description: "Entropic Aura diminishes and dampens the energy of controlling type effects. The shield makes you resistant to Knockback, Repel, Disorient, Hold, Sleep, Immobilization, and enemy Teleportation for as long as you can keep this toggle power active. Entropic Aura also grants you good resistance to Defense Debuffs as well as providing you a recharge bonus for each foe in melee, up to the first 10 foes. Foes that get close to the user will have their own recharge rate reduced and may be taunted.<br><br><color #fcfc95>Recharge: Moderate.</color>",
             shortHelp: "Toggle: Self +Res(Knockback, Repel, Disorient, Hold, Sleep, Immobilize, Teleport, DeBuff DEF), Self +Recharge, Foe -Recharge",
             icon: "energyaura_entropy.png",
             powerType: "Toggle",
@@ -137,8 +148,8 @@ const TANKER_ENERGY_AURA_POWERSET = {
         },
         {
             name: "Energy Protection",
-            available: 7,
-            tier: 3,
+            available: 15,
+            tier: 4,
             maxSlots: 6,
             allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
             allowedSetCategories: ["Resist Damage"],
@@ -175,10 +186,10 @@ const TANKER_ENERGY_AURA_POWERSET = {
                     ]
                 },
                 resistance: {
-                    energy: 0.125,
-                    negative: 0.125,
-                    psionic: 0.125,
-                    toxic: 0.125
+                    energy: 0.09375,
+                    negative: 0.09375,
+                    psionic: 0.09375,
+                    toxic: 0.09375
                 },
                 debuffResistance: {
                     recharge: 0.2,
@@ -188,65 +199,43 @@ const TANKER_ENERGY_AURA_POWERSET = {
             }
         },
         {
-            name: "Power Armor",
-            available: 11,
-            tier: 4,
-            maxSlots: 6,
-            allowedEnhancements: ["Damage", "Accuracy", "Recharge", "EnduranceReduction"],
-            allowedSetCategories: ["Healing", "Resist Damage"],
-            description: "Power Armor increases Hit Points and resistance to all damage types. This power is always on and costs no endurance.",
-            shortHelp: "Auto: Self +MaxHP, +Resist(All DMG)",
-            icon: "energyaura_powerarmor.png",
-            powerType: "Auto",
-            targetType: "Self",
-            effectArea: "SingleTarget",
-            effects: {
-                accuracy: 1.0,
-                resistance: {
-                    smashing: 0.07500000000000001,
-                    lethal: 0.07500000000000001,
-                    fire: 0.07500000000000001,
-                    cold: 0.07500000000000001,
-                    energy: 0.07500000000000001,
-                    negative: 0.07500000000000001,
-                    psionic: 0.07500000000000001,
-                    toxic: 0.07500000000000001
-                },
-                buffDuration: 10.25
-            }
-        },
-        {
-            name: "Energize",
-            available: 17,
+            name: "Energy Cloak",
+            available: 19,
             tier: 4,
             maxSlots: 6,
             allowedEnhancements: ["EnduranceReduction", "Recharge"],
-            allowedSetCategories: ["Healing"],
-            description: "You can channel a tremendous amount of energy through your body for a short period of time. Doing so will heal some hit points, reduce the endurance cost of your powers and boost your regeneration for a short time.",
-            shortHelp: "Self Endurance Discount, Heal, +Regen",
-            icon: "energyaura_energize.png",
-            powerType: "Click",
+            allowedSetCategories: ["Defense Sets"],
+            description: "The Energy Cloak bends light around you so you become partially invisible. While Cloaked you can only be seen at very close range. If you attack while Cloaked, you will be discovered. Even if discovered, you still maintain a Defense bonus to all attacks.",
+            shortHelp: "Toggle: Self Stealth, +DEF",
+            icon: "energyaura_cloak.png",
+            powerType: "Toggle",
             targetType: "Self",
             effectArea: "SingleTarget",
             effects: {
                 accuracy: 1.0,
-                recharge: 120.0,
-                endurance: 10.4,
-                cast: 1.17,
-                healing: {
-                    scale: 468.51725,
-                    perTarget: true
+                recharge: 2.0,
+                endurance: 0.13,
+                cast: 0.73,
+                defense: {
+                    smashing: 0.0375,
+                    lethal: 0.0375,
+                    fire: 0.0375,
+                    cold: 0.0375,
+                    energy: 0.0375,
+                    negative: 0.0375,
+                    psionic: 0.0375,
+                    toxic: 0.0375
                 },
-                buffDuration: 30.0
+                buffDuration: 0.75
             }
         },
         {
             name: "Energy Drain",
-            available: 21,
+            available: 23,
             tier: 5,
             maxSlots: 6,
             allowedEnhancements: ["EnduranceReduction", "Recharge"],
-            allowedSetCategories: ["Defense Sets", "Endurance Modification"],
+            allowedSetCategories: ["Defense Sets", "Endurance Modification", "Threat Duration"],
             description: "Energy Drain leeches energy directly from the bodies of all nearby foes, draining their Endurance. Each foe you draw energy from increases your Endurance and Defense. If there are no foes within range, you will not gain any Endurance or Defense.",
             shortHelp: "PBAoE, Self +End, +Def, Foe -End",
             icon: "energyaura_drain.png",
@@ -262,37 +251,62 @@ const TANKER_ENERGY_AURA_POWERSET = {
             }
         },
         {
+            name: "Energize",
+            available: 27,
+            tier: 5,
+            maxSlots: 6,
+            allowedEnhancements: ["EnduranceReduction", "Recharge"],
+            allowedSetCategories: ["Healing"],
+            description: "You can channel a tremendous amount of energy through your body for a short period of time. Doing so will heal some hit points, reduce the endurance cost of your powers and boost your regeneration for a short time.",
+            shortHelp: "Self Endurance Discount, Heal, +Regen",
+            icon: "energyaura_energize.png",
+            powerType: "Click",
+            targetType: "Self",
+            effectArea: "SingleTarget",
+            effects: {
+                accuracy: 1.0,
+                recharge: 120.0,
+                endurance: 10.4,
+                cast: 1.17,
+                healing: {
+                    scale: 374.81375,
+                    perTarget: true
+                },
+                buffDuration: 30.0
+            }
+        },
+        {
             name: "Overload",
-            available: 25,
+            available: 29,
             tier: 5,
             maxSlots: 6,
             allowedEnhancements: ["EnduranceReduction", "Recharge"],
             allowedSetCategories: ["Defense Sets", "Endurance Modification", "Healing"],
-            description: "You can Overcharge your Energy Aura and significantly improve your defense to all attack types. Overcharge also grants you Defense Debuffs. This Energy Aura is so powerful, that it can even absorb some damage, effectively increasing your Max Hit Points. Overcharge also adds a moderate Elusivity defense bonus to all attacks in PVP zones.",
-            shortHelp: "Self +DEF(All), +Recovery, +MaxHP, Res(DeBuff DEF)",
+            description: "You can Overload your Energy Aura and dramatically improve your defense to all attack types. Overload also grants you high resistance to Defense Debuffs. This Energy Aura is so powerful, that it can even absorb some damage, effectively increasing your Max Hit Points. However, when Overload wears off, you are left drained of all Endurance and unable to recover Endurance for a while. Overload also adds a moderate Elusivity defense bonus to all attacks in PVP zones.",
+            shortHelp: "Self +DEF(All), +Recovery, +Max HP, Res(DeBuff DEF), +Special",
             icon: "energyaura_overload.png",
             powerType: "Click",
             targetType: "Self",
             effectArea: "SingleTarget",
             effects: {
                 accuracy: 1.0,
-                recharge: 300.0,
-                endurance: 10.5,
+                recharge: 1000.0,
+                endurance: 2.6,
                 cast: 3.0,
                 defense: {
-                    smashing: 0.25,
-                    lethal: 0.25,
-                    fire: 0.25,
-                    cold: 0.25,
-                    energy: 0.25,
-                    negative: 0.25,
-                    psionic: 0.2,
-                    toxic: 0.2
+                    smashing: 0.44999999999999996,
+                    lethal: 0.44999999999999996,
+                    fire: 0.44999999999999996,
+                    cold: 0.44999999999999996,
+                    energy: 0.44999999999999996,
+                    negative: 0.44999999999999996,
+                    psionic: 0.33749999999999997,
+                    toxic: 0.33749999999999997
                 },
                 debuffResistance: {
-                    defense: 0.4325
+                    defense: 0.346
                 },
-                buffDuration: 30.0
+                buffDuration: 180.0
             }
         }
     ]
@@ -300,7 +314,7 @@ const TANKER_ENERGY_AURA_POWERSET = {
 
 // Register to POWERSETS
 if (typeof POWERSETS !== 'undefined') {
-    POWERSETS['tanker/energy-aura'] = TANKER_ENERGY_AURA_POWERSET;
+    POWERSETS['brute/energy-aura'] = BRUTE_ENERGY_AURA_POWERSET;
 } else if (typeof window !== 'undefined') {
-    window.TANKER_ENERGY_AURA_POWERSET = TANKER_ENERGY_AURA_POWERSET;
+    window.BRUTE_ENERGY_AURA_POWERSET = BRUTE_ENERGY_AURA_POWERSET;
 }

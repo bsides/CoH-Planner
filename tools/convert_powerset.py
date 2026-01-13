@@ -143,12 +143,22 @@ def extract_typed_defense(effects, archetype, level, tables_dir):
     """Extract typed defense/resistance with archetype modifiers"""
     if not effects:
         return None
-    
+
     typed_defense = {}
     typed_resistance = {}
-    
+
     # Damage type mapping
     damage_types = {
+        'Smashing': 'smashing',
+        'Lethal': 'lethal',
+        'Fire': 'fire',
+        'Cold': 'cold',
+        'Energy': 'energy',
+        'Negative_Energy': 'negative',
+        'NegativeEnergy': 'negative',
+        'Psionic': 'psionic',
+        'Toxic': 'toxic',
+        # Also check _Dmg variants for resistance
         'Smashing_Dmg': 'smashing',
         'Lethal_Dmg': 'lethal',
         'Fire_Dmg': 'fire',
@@ -158,22 +168,23 @@ def extract_typed_defense(effects, archetype, level, tables_dir):
         'Psionic_Dmg': 'psionic',
         'Toxic_Dmg': 'toxic'
     }
-    
+
     for effect in effects:
         if 'templates' not in effect:
             continue
-        
+
         for template in effect['templates']:
             aspect = template.get('aspect', '')
+            temp_type = template.get('type', '')
             target = template.get('target', '')
             attribs = template.get('attribs', [])
             scale = template.get('scale', 0.0)
             table_name = template.get('table', '')
-            
+
             # Skip if not self-targeted
             if target != 'Self':
                 continue
-            
+
             # Apply archetype modifier if applicable
             if table_name and archetype:
                 final_value = apply_archetype_modifier(
@@ -181,25 +192,38 @@ def extract_typed_defense(effects, archetype, level, tables_dir):
                 )
             else:
                 final_value = scale
-            
-            # Defense
-            if aspect == 'Strength' and 'Defense' in attribs:
-                for dmg_attr, dmg_type in damage_types.items():
-                    if dmg_attr in attribs:
-                        typed_defense[dmg_type] = final_value
-            
-            # Resistance
+
+            # Defense (type=Magnitude, aspect=Current)
+            # Defense buffs typically have type=Magnitude targeting specific damage types
+            # Check for Buff_Def tables which indicate defense buffs
+            is_defense_buff = ('Buff_Def' in table_name or 'buff_def' in table_name.lower())
+            if is_defense_buff and temp_type == 'Magnitude' and aspect == 'Current':
+                for attr in attribs:
+                    if attr in damage_types:
+                        dmg_type = damage_types[attr]
+                        # Aggregate if multiple templates provide same type
+                        if dmg_type in typed_defense:
+                            typed_defense[dmg_type] = max(typed_defense[dmg_type], final_value)
+                        else:
+                            typed_defense[dmg_type] = final_value
+
+            # Resistance (aspect=Resistance)
             if aspect == 'Resistance':
-                for dmg_attr, dmg_type in damage_types.items():
-                    if dmg_attr in attribs:
-                        typed_resistance[dmg_type] = final_value
-    
+                for attr in attribs:
+                    if attr in damage_types:
+                        dmg_type = damage_types[attr]
+                        # Aggregate if multiple templates provide same type
+                        if dmg_type in typed_resistance:
+                            typed_resistance[dmg_type] = max(typed_resistance[dmg_type], final_value)
+                        else:
+                            typed_resistance[dmg_type] = final_value
+
     result = {}
     if typed_defense:
         result['defense'] = typed_defense
     if typed_resistance:
         result['resistance'] = typed_resistance
-    
+
     return result if result else None
 
 def extract_debuff_resistance(effects, archetype, level, tables_dir):
@@ -451,14 +475,11 @@ def extract_debuffs(effects, target_type='Foe'):
                         stats['tohitDebuff'] = abs(scale)
                     elif is_buff_table:
                         stats['tohitBuff'] = abs(scale)
-                
-                # Defense buff/debuff
-                if any('Defense' in attr for attr in attribs) and duration != '0 seconds':
-                    if is_debuff_table:
-                        stats['defenseDebuff'] = abs(scale)
-                    elif is_buff_table:
-                        stats['defenseBuff'] = abs(scale)
-                
+
+                # Defense buff/debuff - SKIP, handled by extract_typed_defense()
+                # Defense buffs are extracted with proper damage type breakdown
+                # in extract_typed_defense() function instead of as a single value
+
                 # Damage buff/debuff
                 if 'Damage' in attribs and duration != '0 seconds':
                     if is_debuff_table:
@@ -674,14 +695,15 @@ def convert_powerset(powerset_dir, output_file=None, archetype=None, level=50, t
         print(f"Error: Directory not found: {powerset_dir}")
         return
     
-    # Read all JSON files
-    json_files = sorted(powerset_path.glob("*.json"))
-    
+    # Read all JSON files, excluding index.json
+    all_json_files = sorted(powerset_path.glob("*.json"))
+    json_files = [f for f in all_json_files if f.name.lower() != 'index.json']
+
     if not json_files:
         print(f"Error: No JSON files found in {powerset_dir}")
         return
-    
-    print(f"Found {len(json_files)} power files")
+
+    print(f"Found {len(json_files)} power files (excluding index.json)")
     
     # Auto-detect archetype from first power if not specified
     if not archetype:

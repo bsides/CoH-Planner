@@ -104,9 +104,9 @@ const TANKER_BIO_ORGANIC_ARMOR_POWERSET = {
                     sleep: 12.975
                 },
                 resistance: {
-                    smashing: 0.07500000000000001,
-                    lethal: 0.07500000000000001,
-                    toxic: 0.07500000000000001
+                    smashing: 0.25,
+                    lethal: 0.25,
+                    toxic: 0.25
                 },
                 buffDuration: 0.75,
                 stun: 1.0,
@@ -157,6 +157,15 @@ const TANKER_BIO_ORGANIC_ARMOR_POWERSET = {
                 protection: {
                     hold: 12.975,
                     immobilize: 12.975
+                },
+                defense: {
+                    fire: 0.15000000000000002,
+                    cold: 0.15000000000000002,
+                    energy: 0.15000000000000002,
+                    negative: 0.15000000000000002,
+                    psionic: 0.07500000000000001,
+                    smashing: 0.045000000000000005,
+                    lethal: 0.045000000000000005
                 },
                 buffDuration: 0.75,
                 tohitBuff: 0.75
@@ -219,15 +228,24 @@ const TANKER_BIO_ORGANIC_ARMOR_POWERSET = {
                 recharge: 10.0,
                 endurance: 0.26,
                 cast: 2.93,
+                defense: {
+                    smashing: 0.037500000000000006,
+                    lethal: 0.037500000000000006,
+                    fire: 0.028000000000000004,
+                    cold: 0.028000000000000004,
+                    energy: 0.028000000000000004,
+                    negative: 0.028000000000000004,
+                    psionic: 0.020000000000000004
+                },
                 resistance: {
-                    fire: 0.0011400000000000002,
-                    cold: 0.0011400000000000002,
-                    energy: 0.0011400000000000002,
-                    negative: 0.0011400000000000002,
-                    psionic: 0.0009,
-                    smashing: 0.0015,
-                    lethal: 0.0015,
-                    toxic: 0.0015
+                    fire: 0.037500000000000006,
+                    cold: 0.037500000000000006,
+                    energy: 0.037500000000000006,
+                    negative: 0.037500000000000006,
+                    psionic: 0.03,
+                    smashing: 0.05,
+                    lethal: 0.05,
+                    toxic: 0.05
                 },
                 buffDuration: 1.125
             }

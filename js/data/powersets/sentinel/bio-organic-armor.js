@@ -104,9 +104,9 @@ const SENTINEL_BIO_ORGANIC_ARMOR_POWERSET = {
                     sleep: 8.304
                 },
                 resistance: {
-                    smashing: 0.052500000000000005,
-                    lethal: 0.052500000000000005,
-                    toxic: 0.052500000000000005
+                    smashing: 0.17500000000000002,
+                    lethal: 0.17500000000000002,
+                    toxic: 0.17500000000000002
                 },
                 buffDuration: 0.75,
                 stun: 1.0,
@@ -157,6 +157,15 @@ const SENTINEL_BIO_ORGANIC_ARMOR_POWERSET = {
                 protection: {
                     hold: 8.304,
                     immobilize: 8.304
+                },
+                defense: {
+                    fire: 0.10500000000000001,
+                    cold: 0.10500000000000001,
+                    energy: 0.10500000000000001,
+                    negative: 0.10500000000000001,
+                    psionic: 0.052500000000000005,
+                    smashing: 0.03150000000000001,
+                    lethal: 0.03150000000000001
                 },
                 buffDuration: 0.75,
                 tohitBuff: 0.75
@@ -244,8 +253,7 @@ const SENTINEL_BIO_ORGANIC_ARMOR_POWERSET = {
                     defense: 0.2076,
                     movement: 0.4
                 },
-                buffDuration: 2.25,
-                defenseBuff: 0.75
+                buffDuration: 2.25
             }
         },
         {
@@ -308,14 +316,14 @@ const SENTINEL_BIO_ORGANIC_ARMOR_POWERSET = {
                     ]
                 },
                 resistance: {
-                    smashing: 0.015750000000000004,
-                    lethal: 0.015750000000000004,
-                    fire: 0.0105,
-                    cold: 0.0105,
-                    energy: 0.0105,
-                    negative: 0.0105,
-                    psionic: 0.0126,
-                    toxic: 0.021
+                    smashing: 0.052500000000000005,
+                    lethal: 0.052500000000000005,
+                    fire: 0.035,
+                    cold: 0.035,
+                    energy: 0.035,
+                    negative: 0.035,
+                    psionic: 0.042,
+                    toxic: 0.07
                 },
                 buffDuration: 5.25
             }

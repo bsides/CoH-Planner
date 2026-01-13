@@ -29,6 +29,10 @@ const SENTINEL_ICE_ARMOR_POWERSET = {
                 recharge: 2.0,
                 endurance: 0.13,
                 cast: 0.73,
+                defense: {
+                    smashing: 0.11900000000000001,
+                    lethal: 0.11900000000000001
+                },
                 resistance: {
                     cold: 0.21000000000000002,
                     fire: 0.08750000000000001
@@ -36,8 +40,7 @@ const SENTINEL_ICE_ARMOR_POWERSET = {
                 debuffResistance: {
                     defense: 0.11072
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {
@@ -126,6 +129,16 @@ const SENTINEL_ICE_ARMOR_POWERSET = {
                     sleep: 8.304,
                     immobilize: 8.304
                 },
+                defense: {
+                    smashing: 0.007000000000000001,
+                    lethal: 0.007000000000000001,
+                    fire: 0.007000000000000001,
+                    cold: 0.007000000000000001,
+                    energy: 0.007000000000000001,
+                    negative: 0.007000000000000001,
+                    psionic: 0.007000000000000001,
+                    toxic: 0.007000000000000001
+                },
                 resistance: {
                     cold: 0.21000000000000002
                 },
@@ -138,8 +151,7 @@ const SENTINEL_ICE_ARMOR_POWERSET = {
                 buffDuration: 0.75,
                 stun: 1.0,
                 stunDuration: 0.75,
-                tohitBuff: 0.3,
-                defenseBuff: 0.4
+                tohitBuff: 0.3
             }
         },
         {
@@ -187,6 +199,16 @@ const SENTINEL_ICE_ARMOR_POWERSET = {
                 recharge: 60.0,
                 endurance: 13.0,
                 cast: 1.93,
+                defense: {
+                    smashing: 0.028000000000000004,
+                    lethal: 0.028000000000000004,
+                    fire: 0.028000000000000004,
+                    cold: 0.028000000000000004,
+                    energy: 0.028000000000000004,
+                    negative: 0.028000000000000004,
+                    psionic: 0.028000000000000004,
+                    toxic: 0.028000000000000004
+                },
                 buffDuration: 100.0
             }
         },
@@ -208,14 +230,18 @@ const SENTINEL_ICE_ARMOR_POWERSET = {
                 recharge: 2.0,
                 endurance: 0.13,
                 cast: 2.03,
+                defense: {
+                    energy: 0.11900000000000001,
+                    negative: 0.11900000000000001,
+                    psionic: 0.11900000000000001
+                },
                 resistance: {
                     cold: 0.21000000000000002
                 },
                 debuffResistance: {
                     defense: 0.11072
                 },
-                buffDuration: 0.75,
-                defenseBuff: 0.4
+                buffDuration: 0.75
             }
         },
         {

@@ -112,8 +112,7 @@ const BRUTE_REGENERATION_POWERSET = {
                     endurance: 0.2
                 },
                 buffDuration: 10.3,
-                tohitBuff: 0.2,
-                defenseBuff: 0.2
+                tohitBuff: 0.2
             }
         },
         {
@@ -150,8 +149,7 @@ const BRUTE_REGENERATION_POWERSET = {
                 buffDuration: 2.25,
                 stun: 1.0,
                 stunDuration: 2.25,
-                tohitBuff: 0.3,
-                defenseBuff: 0.3
+                tohitBuff: 0.3
             }
         },
         {
@@ -315,6 +313,16 @@ const BRUTE_REGENERATION_POWERSET = {
                     stun: 17.299999999999997,
                     sleep: 17.299999999999997,
                     immobilize: 17.299999999999997
+                },
+                defense: {
+                    smashing: 0.7125,
+                    lethal: 0.7125,
+                    fire: 0.7125,
+                    cold: 0.7125,
+                    energy: 0.7125,
+                    negative: 0.7125,
+                    psionic: 0.7125,
+                    toxic: 0.7125
                 },
                 resistance: {
                     smashing: 0.7125,

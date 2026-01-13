@@ -104,9 +104,9 @@ const BRUTE_BIO_ORGANIC_ARMOR_POWERSET = {
                     sleep: 10.379999999999999
                 },
                 resistance: {
-                    smashing: 0.056249999999999994,
-                    lethal: 0.056249999999999994,
-                    toxic: 0.056249999999999994
+                    smashing: 0.1875,
+                    lethal: 0.1875,
+                    toxic: 0.1875
                 },
                 buffDuration: 0.75,
                 stun: 1.0,
@@ -157,6 +157,15 @@ const BRUTE_BIO_ORGANIC_ARMOR_POWERSET = {
                 protection: {
                     hold: 10.379999999999999,
                     immobilize: 10.379999999999999
+                },
+                defense: {
+                    fire: 0.11249999999999999,
+                    cold: 0.11249999999999999,
+                    energy: 0.11249999999999999,
+                    negative: 0.11249999999999999,
+                    psionic: 0.056249999999999994,
+                    smashing: 0.03375,
+                    lethal: 0.03375
                 },
                 buffDuration: 0.75,
                 tohitBuff: 0.75
@@ -219,15 +228,24 @@ const BRUTE_BIO_ORGANIC_ARMOR_POWERSET = {
                 recharge: 10.0,
                 endurance: 0.26,
                 cast: 2.93,
+                defense: {
+                    smashing: 0.028124999999999997,
+                    lethal: 0.028124999999999997,
+                    fire: 0.021,
+                    cold: 0.021,
+                    energy: 0.021,
+                    negative: 0.021,
+                    psionic: 0.015
+                },
                 resistance: {
-                    fire: 0.000855,
-                    cold: 0.000855,
-                    energy: 0.000855,
-                    negative: 0.000855,
-                    psionic: 0.0006749999999999999,
-                    smashing: 0.001125,
-                    lethal: 0.001125,
-                    toxic: 0.001125
+                    fire: 0.028124999999999997,
+                    cold: 0.028124999999999997,
+                    energy: 0.028124999999999997,
+                    negative: 0.028124999999999997,
+                    psionic: 0.0225,
+                    smashing: 0.0375,
+                    lethal: 0.0375,
+                    toxic: 0.0375
                 },
                 buffDuration: 1.125
             }

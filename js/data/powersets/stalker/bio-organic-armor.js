@@ -104,9 +104,9 @@ const STALKER_BIO_ORGANIC_ARMOR_POWERSET = {
                     sleep: 10.379999999999999
                 },
                 resistance: {
-                    smashing: 0.056249999999999994,
-                    lethal: 0.056249999999999994,
-                    toxic: 0.056249999999999994
+                    smashing: 0.1875,
+                    lethal: 0.1875,
+                    toxic: 0.1875
                 },
                 buffDuration: 0.75,
                 stun: 1.0,
@@ -130,6 +130,16 @@ const STALKER_BIO_ORGANIC_ARMOR_POWERSET = {
                 accuracy: 1.0,
                 recharge: 2.0,
                 cast: 0.73,
+                defense: {
+                    smashing: 0.0375,
+                    lethal: 0.0375,
+                    fire: 0.0375,
+                    cold: 0.0375,
+                    energy: 0.0375,
+                    negative: 0.0375,
+                    psionic: 0.0375,
+                    toxic: 0.0375
+                },
                 buffDuration: 0.75
             }
         },
@@ -177,6 +187,15 @@ const STALKER_BIO_ORGANIC_ARMOR_POWERSET = {
                 protection: {
                     hold: 10.379999999999999,
                     immobilize: 10.379999999999999
+                },
+                defense: {
+                    fire: 0.11249999999999999,
+                    cold: 0.11249999999999999,
+                    energy: 0.11249999999999999,
+                    negative: 0.11249999999999999,
+                    psionic: 0.056249999999999994,
+                    smashing: 0.03375,
+                    lethal: 0.03375
                 },
                 buffDuration: 0.75,
                 tohitBuff: 0.75
