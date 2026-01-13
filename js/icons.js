@@ -210,9 +210,9 @@ function getEnhancementIcon(enhancement) {
         return null;
     }
     
-    // IO Set - Use pre-composed icon (unless attuned, then force layered to show catalyzed overlay)
+    // IO Set - Always use layered approach to show IO or catalyzed overlay
     if (enhancement.type === 'io-set') {
-        // Get the set-specific icon file
+        // Get the set-specific icon file for base image
         let iconFile = IO_SET_ICONS[enhancement.setId];
 
         // If not found, get from IO set data
@@ -225,29 +225,23 @@ function getEnhancementIcon(enhancement) {
             iconFile = normalizeIconName(iconFile);
         }
 
-        // If attuned, use layered approach with the set-specific icon and catalyzed overlay
-        if (enhancement.attuned && iconFile) {
+        // Determine which overlay to use
+        const overlayPath = enhancement.attuned
+            ? 'img/Overlay/catalyzed_overlay_placeholder.png'
+            : 'img/Overlay/IO.png';
+
+        // Use layered approach with set-specific icon (or fallback) and appropriate overlay
+        if (iconFile) {
             return {
                 type: 'layered',
                 base: `img/Enhancements/${iconFile}`,
-                overlay: 'img/Overlay/catalyzed_overlay_placeholder.png'
+                overlay: overlayPath
             };
         }
 
-        // If icon found and not attuned, return single icon
-        if (iconFile) {
-            return {
-                type: 'single',
-                path: `img/Enhancements/${iconFile}`,
-                fallbackToLayered: true, // Flag to use layered approach if icon fails to load
-                enhancement: enhancement
-            };
-        }
-        
-        // No icon specified - use layered approach with IO overlay (or catalyzed if attuned)
-        console.warn('No icon specified for set:', enhancement.setId, '- using layered approach');
+        // No icon specified - use base icon for set type
+        console.warn('No icon specified for set:', enhancement.setId, '- using base icon');
         const baseIcon = getBaseIconForSet(enhancement);
-        const overlayPath = enhancement.attuned ? 'img/Overlay/catalyzed_overlay_placeholder.png' : 'img/Overlay/IO.png';
         return {
             type: 'layered',
             base: `img/Enhancements/${baseIcon}`,
