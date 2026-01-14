@@ -204,6 +204,9 @@ function toggleExemplar() {
     }
 }
 
+// Debounce timer for exemplar level updates
+let exemplarDebounceTimer = null;
+
 /**
  * Update exemplar level
  */
@@ -215,10 +218,13 @@ function updateExemplarLevel() {
     Build.exemplarLevel = level;
     display.textContent = level;
 
-    // Recalculate stats as set bonuses may change
-    if (typeof recalculateStats === 'function') {
-        recalculateStats();
-    }
+    // Debounce the recalculation to prevent flickering
+    clearTimeout(exemplarDebounceTimer);
+    exemplarDebounceTimer = setTimeout(() => {
+        if (typeof recalculateStats === 'function') {
+            recalculateStats();
+        }
+    }, 100); // 100ms delay
 }
 
 // ============================================
