@@ -226,10 +226,28 @@ function collectAllSetBonuses() {
         power.slots.forEach(slot => {
             if (slot && slot.type === 'io-set') {
                 const setId = slot.setId;
-                if (!setsInPower[setId]) {
-                    setsInPower[setId] = [];
+
+                // Check if this IO's set bonuses are suppressed by exemplar level
+                const effectiveLevel = Build.exemplarLevel || Build.level;
+                let bonusesActive = true;
+
+                if (slot.attuned) {
+                    // Attuned: bonuses active down to (minLevel - 3)
+                    const minBonusLevel = (slot.minLevel || 1) - 3;
+                    bonusesActive = effectiveLevel >= minBonusLevel;
+                } else {
+                    // Non-attuned: bonuses active if exemplar level >= (IO level - 3)
+                    const ioLevel = slot.level || 50;
+                    bonusesActive = effectiveLevel >= (ioLevel - 3);
                 }
-                setsInPower[setId].push(slot.pieceNum);
+
+                // Only count this piece if bonuses are active
+                if (bonusesActive) {
+                    if (!setsInPower[setId]) {
+                        setsInPower[setId] = [];
+                    }
+                    setsInPower[setId].push(slot.pieceNum);
+                }
             }
         });
         

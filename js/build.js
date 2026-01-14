@@ -21,6 +21,7 @@ const Build = {
         inherent: null
     },
     level: 1, // Current character level
+    exemplarLevel: null, // Exemplar level (null = not exemplared, use actual level)
     progressionMode: 'auto', // 'auto' or 'freeform'
     
     // Power sets
@@ -678,7 +679,30 @@ function refreshUIAfterImport() {
     if (charLevelSpan) {
         charLevelSpan.textContent = Build.level;
     }
-    
+
+    // Update exemplar level display
+    const exemplarToggle = document.getElementById('exemplarToggle');
+    const exemplarSlider = document.getElementById('exemplarLevel');
+    const exemplarDisplay = document.getElementById('exemplarLevelDisplay');
+    if (Build.exemplarLevel !== null && Build.exemplarLevel !== undefined) {
+        if (exemplarToggle) exemplarToggle.checked = true;
+        if (exemplarSlider) {
+            exemplarSlider.disabled = false;
+            exemplarSlider.value = Build.exemplarLevel;
+        }
+        if (exemplarDisplay) {
+            exemplarDisplay.textContent = Build.exemplarLevel;
+            exemplarDisplay.style.color = '#FF9800';
+        }
+    } else {
+        if (exemplarToggle) exemplarToggle.checked = false;
+        if (exemplarSlider) exemplarSlider.disabled = true;
+        if (exemplarDisplay) {
+            exemplarDisplay.textContent = '--';
+            exemplarDisplay.style.color = '';
+        }
+    }
+
     // Refresh power displays
     if (typeof refreshPowerDisplay === 'function') {
         refreshPowerDisplay();

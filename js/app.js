@@ -175,6 +175,52 @@ function toggleAttunement() {
     }
 }
 
+/**
+ * Toggle exemplar mode
+ */
+function toggleExemplar() {
+    const toggle = document.getElementById('exemplarToggle');
+    const slider = document.getElementById('exemplarLevel');
+    const display = document.getElementById('exemplarLevelDisplay');
+
+    if (toggle.checked) {
+        // Enable exemplar mode
+        slider.disabled = false;
+        const level = parseInt(slider.value);
+        Build.exemplarLevel = level;
+        display.textContent = level;
+        display.style.color = '#FF9800'; // Orange for exemplar
+    } else {
+        // Disable exemplar mode
+        slider.disabled = true;
+        Build.exemplarLevel = null;
+        display.textContent = '--';
+        display.style.color = '';
+    }
+
+    // Recalculate stats as set bonuses may change
+    if (typeof recalculateStats === 'function') {
+        recalculateStats();
+    }
+}
+
+/**
+ * Update exemplar level
+ */
+function updateExemplarLevel() {
+    const slider = document.getElementById('exemplarLevel');
+    const display = document.getElementById('exemplarLevelDisplay');
+    const level = parseInt(slider.value);
+
+    Build.exemplarLevel = level;
+    display.textContent = level;
+
+    // Recalculate stats as set bonuses may change
+    if (typeof recalculateStats === 'function') {
+        recalculateStats();
+    }
+}
+
 // ============================================
 // INITIALIZATION
 // ============================================

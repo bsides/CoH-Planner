@@ -661,7 +661,10 @@ function addEnhancement(setId, pieceNum) {
         pieceName: piece.name,
         values: piece.values,
         unique: piece.unique || false,
-        attuned: AppState.attunementEnabled || false
+        attuned: AppState.attunementEnabled || false,
+        level: AppState.globalIOLevel || 50,  // Store IO level for exemplar suppression
+        minLevel: set.minLevel,
+        maxLevel: set.maxLevel
     });
 
     // Add to build
