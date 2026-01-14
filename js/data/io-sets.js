@@ -2,7 +2,6 @@
  * City of Heroes Planner - Invention Origin Sets Library
  * 
  * Auto-generated from raw game data
- * DO NOT EDIT MANUALLY - Use convert_io_sets.py to regenerate
  */
 
 const IO_SETS = {
