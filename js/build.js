@@ -288,7 +288,9 @@ function addEnhancementToPower(powerName, slotIndex, enhancement) {
     
     // Add enhancement to slot
     power.slots[slotIndex] = enhancement;
-    
+    console.log(`[Build] Added enhancement to ${powerName} slot ${slotIndex}:`, enhancement);
+    console.log(`[Build] Power slots now:`, power.slots);
+
     // Track set bonuses if it's an IO set enhancement
     if (enhancement.type === 'io-set') {
         trackSetBonus(enhancement.setId);

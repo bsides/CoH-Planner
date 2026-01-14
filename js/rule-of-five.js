@@ -219,11 +219,14 @@ function collectAllSetBonuses() {
     // Helper to process a single power
     const processPower = (power, powerName) => {
         if (!power.slots) return;
-        
+
+        console.log(`[Rule of 5] Processing power: ${powerName}, slots:`, power.slots);
+
         // Track which sets are slotted in this power
         const setsInPower = {};
-        
-        power.slots.forEach(slot => {
+
+        power.slots.forEach((slot, idx) => {
+            console.log(`[Rule of 5] Slot ${idx}:`, slot);
             if (slot && slot.type === 'io-set') {
                 const setId = slot.setId;
 
@@ -333,6 +336,7 @@ function collectAllSetBonuses() {
         });
     }
     
+    console.log('[Rule of 5] Total bonuses collected:', bonuses);
     return bonuses;
 }
 
