@@ -268,8 +268,13 @@ function updateAvailablePrimaryPowers(powerset) {
     header.textContent = `${powerset.name} (Primary)`;
     container.appendChild(header);
     
-    // Add powers
+    // Add powers (filter out available: -1 powers as they're granted by other powers)
     powerset.powers.forEach(power => {
+        // Skip powers with available: -1 (they'll appear in Inherent Powers section)
+        if (power.available === -1) {
+            return;
+        }
+
         const isSelected = Build.primary.powers.some(p => p.name === power.name);
         const canSelect = canSelectPrimaryPower(power);
         
@@ -334,9 +339,14 @@ function updateAvailableSecondaryPowers(powerset) {
     header.style.marginBottom = '8px';
     header.textContent = `${powerset.name} (Secondary)`;
     container.appendChild(header);
-    
-    // Add powers
+
+    // Add powers (filter out available: -1 powers as they're granted by other powers)
     powerset.powers.forEach(power => {
+        // Skip powers with available: -1 (they'll appear in Inherent Powers section)
+        if (power.available === -1) {
+            return;
+        }
+
         const isSelected = Build.secondary.powers.some(p => p.name === power.name);
         const canSelect = canSelectSecondaryPower(power);
         

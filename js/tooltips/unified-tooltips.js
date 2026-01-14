@@ -323,9 +323,13 @@ function generateAvailablePowerTooltipHTML(basePower) {
         html += `</div>`;
     }
     
-    // Show available level
+    // Show available level (or "Granted Power" for available: -1)
     html += `<div class="tooltip-section" style="border-top: 1px solid var(--border); padding-top: 6px; margin-top: 8px;">`;
-    html += `<div style="font-size: 10px; opacity: 0.7; text-align: center;">Available at Level ${basePower.available}</div>`;
+    if (basePower.available === -1) {
+        html += `<div style="font-size: 10px; opacity: 0.7; text-align: center;">Granted Power</div>`;
+    } else {
+        html += `<div style="font-size: 10px; opacity: 0.7; text-align: center;">Available at Level ${basePower.available}</div>`;
+    }
     html += `</div>`;
     
     return html;

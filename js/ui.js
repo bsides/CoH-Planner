@@ -1403,9 +1403,34 @@ function displayInherentPowers() {
     const fitnessPowers = Build.inherents.filter(p => p.category === 'fitness');
     const archetypePowers = Build.inherents.filter(p => p.category === 'archetype-specific');
     const universalPowers = Build.inherents.filter(p => p.category === 'universal');
+
+    // Collect granted powers (available: -1) from primary and secondary powersets
+    const grantedPowers = [];
+    if (Build.primary && Build.primary.powerset && Build.primary.powerset.powers) {
+        Build.primary.powerset.powers.forEach(power => {
+            if (power.available === -1) {
+                // Add category to match inherent power structure
+                const grantedPower = {...power, category: 'granted'};
+                grantedPowers.push(grantedPower);
+            }
+        });
+    }
+    if (Build.secondary && Build.secondary.powerset && Build.secondary.powerset.powers) {
+        Build.secondary.powerset.powers.forEach(power => {
+            if (power.available === -1) {
+                // Add category to match inherent power structure
+                const grantedPower = {...power, category: 'granted'};
+                grantedPowers.push(grantedPower);
+            }
+        });
+    }
     
+    // Merge granted powers with archetype powers for the "Inherent Powers" section
+    const allInherentPowers = [...archetypePowers, ...grantedPowers];
+
     console.log('Fitness powers:', fitnessPowers.map(p => p.name));
     console.log('Archetype powers:', archetypePowers.map(p => p.name));
+    console.log('Granted powers:', grantedPowers.map(p => p.name));
     console.log('Universal powers:', universalPowers.map(p => p.name));
     console.log('Fitness first power object:', fitnessPowers[0]);
     console.log('Archetype first power object:', archetypePowers[0]);
@@ -1502,8 +1527,8 @@ function displayInherentPowers() {
         allSections.appendChild(fitnessSection);
     }
     
-    // Display archetype section
-    const archetypeSection = createPowerSection('Inherent Archetype', archetypePowers);
+    // Display archetype section (renamed to Inherent Powers to include granted powers)
+    const archetypeSection = createPowerSection('Inherent Powers', allInherentPowers);
     if (archetypeSection) {
         if (!allSections) {
             allSections = document.createElement('div');
@@ -1528,7 +1553,7 @@ function displayInherentPowers() {
     }
     
     // NOW initialize slots AFTER all DOM elements are added
-    const allInherents = [...fitnessPowers, ...archetypePowers, ...universalPowers];
+    const allInherents = [...fitnessPowers, ...allInherentPowers, ...universalPowers];
     allInherents.forEach(power => {
         if (power.maxSlots > 0) {
             updatePowerSlots(power.name);
