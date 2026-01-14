@@ -59,11 +59,6 @@
                 <option value="">Select Secondary...</option>
             </select>
 
-            <div class="io-level-setting">
-                <label>IO Level: <span id="ioLevelDisplay">50</span></label>
-                <input type="range" min="10" max="53" value="50" step="1" id="globalIOLevel" oninput="updateGlobalIOLevel()" class="level-slider">
-            </div>
-
             <div class="level-info">
                 <label>Progression Mode:</label>
                 <select id="progressionMode" onchange="changeProgressionMode()">
@@ -73,6 +68,11 @@
                 <label style="font-weight: 600; font-size: 14px; color: #fff; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 3px; display: inline-block; margin-left: 12px;">
                     <span style="color: var(--text-secondary);">Level:</span> <span id="charLevel" style="font-size: 16px; color: #4CAF50;">1</span>
                 </label>
+            </div>
+
+            <div class="io-level-setting">
+                <label>IO Level: <span id="ioLevelDisplay">50</span></label>
+                <input type="range" min="10" max="53" value="50" step="1" id="globalIOLevel" oninput="updateGlobalIOLevel()" class="level-slider">
             </div>
 
             <div class="resource-badge">
