@@ -468,8 +468,9 @@ function openEnhancementPicker(powerName, slotIndex) {
  */
 function addSlotToPower(powerName) {
     const power = findPowerInBuild(powerName);
+    console.log(`addSlotToPower: powerName=${powerName}, power found=${!!power}, maxSlots=${power?.maxSlots}, currentSlots=${power?.slots?.length}`);
     if (!power) return;
-    
+
     if (power.slots.length >= power.maxSlots) {
         console.log(`${powerName} already has maximum slots`);
         return;
