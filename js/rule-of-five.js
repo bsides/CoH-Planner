@@ -226,9 +226,10 @@ function collectAllSetBonuses() {
         const setsInPower = {};
 
         power.slots.forEach((slot, idx) => {
-            console.log(`[Rule of 5] Slot ${idx}:`, slot);
+            console.log(`[Rule of 5] Slot ${idx}:`, slot, `type="${slot?.type}", setId="${slot?.setId}", pieceNum=${slot?.pieceNum}`);
             if (slot && slot.type === 'io-set') {
                 const setId = slot.setId;
+                console.log(`[Rule of 5] Found io-set slot, setId: "${setId}", pieceNum: ${slot.pieceNum}`);
 
                 // Check if this IO's set bonuses are suppressed by exemplar level
                 const effectiveLevel = Build.exemplarLevel || Build.level;
@@ -238,10 +239,12 @@ function collectAllSetBonuses() {
                     // Attuned: bonuses active down to (minLevel - 3)
                     const minBonusLevel = (slot.minLevel || 1) - 3;
                     bonusesActive = effectiveLevel >= minBonusLevel;
+                    console.log(`[Rule of 5] Attuned check: effectiveLevel=${effectiveLevel}, minBonusLevel=${minBonusLevel}, active=${bonusesActive}`);
                 } else {
                     // Non-attuned: bonuses active if exemplar level >= (IO level - 3)
                     const ioLevel = slot.level || 50;
                     bonusesActive = effectiveLevel >= (ioLevel - 3);
+                    console.log(`[Rule of 5] Non-attuned check: effectiveLevel=${effectiveLevel}, ioLevel=${ioLevel}, active=${bonusesActive}`);
                 }
 
                 // Only count this piece if bonuses are active
@@ -250,18 +253,24 @@ function collectAllSetBonuses() {
                         setsInPower[setId] = [];
                     }
                     setsInPower[setId].push(slot.pieceNum);
+                    console.log(`[Rule of 5] Added piece ${slot.pieceNum} to set ${setId}, now has ${setsInPower[setId].length} pieces`);
                 }
+            } else if (slot) {
+                console.log(`[Rule of 5] Slot ${idx} is not io-set, type: "${slot.type}"`);
             }
         });
         
         // For each set, check how many pieces are slotted
+        console.log(`[Rule of 5] setsInPower for ${powerName}:`, setsInPower);
         Object.keys(setsInPower).forEach(setId => {
             const set = IO_SETS[setId];
+            console.log(`[Rule of 5] Looking up set "${setId}" in IO_SETS:`, set ? `Found: ${set.name}` : 'NOT FOUND');
             if (!set) return;
-            
+
             const pieces = setsInPower[setId];
             const pieceCount = pieces.length;
-            
+            console.log(`[Rule of 5] Set ${set.name} has ${pieceCount} pieces slotted, bonuses:`, set.bonuses);
+
             // Check each set bonus
             set.bonuses.forEach(bonus => {
                 if (!bonus || !bonus.pieces) return;
@@ -312,7 +321,11 @@ function collectAllSetBonuses() {
     };
     
     // Process primary powers
+    console.log('[Rule of 5] Build.primary:', Build.primary);
+    console.log('[Rule of 5] Build.secondary:', Build.secondary);
+    console.log('[Rule of 5] Build.pools:', Build.pools);
     if (Build.primary && Build.primary.powers) {
+        console.log('[Rule of 5] Processing', Build.primary.powers.length, 'primary powers');
         Build.primary.powers.forEach(power => {
             processPower(power, power.name);
         });
