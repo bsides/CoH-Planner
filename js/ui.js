@@ -1117,10 +1117,12 @@ function displayInherentPowers() {
             powerElement.className = 'selected-power';
             powerElement.dataset.powerName = power.name;
             
-            // Check if this is a Toggle power that needs a toggle checkbox
-            // Only Toggle powers get a switch - Auto powers are always on
-            const needsToggle = power.powerType === 'Toggle';
-            
+            // Check if this power needs a toggle checkbox
+            // Toggle powers always get a switch
+            // Click powers with buffDuration get a switch (they have lasting effects worth toggling for planning)
+            const needsToggle = power.powerType === 'Toggle' ||
+                (power.powerType === 'Click' && power.effects?.buffDuration);
+
             const levelDisplay = power.level > 0 ? `(${power.level})` : '';
             powerElement.innerHTML = `
                 <div class="selected-power-header">
@@ -1256,10 +1258,12 @@ function displayInherentPowers() {
                 powerElement.className = 'selected-power epic-power';
                 powerElement.dataset.powerName = power.name;
                 
-                // Check if this is a Toggle power that needs a toggle checkbox
-                // Only Toggle powers get a switch - Auto powers are always on
-                const needsToggle = power.powerType === 'Toggle';
-                
+                // Check if this power needs a toggle checkbox
+                // Toggle powers always get a switch
+                // Click powers with buffDuration get a switch (they have lasting effects worth toggling for planning)
+                const needsToggle = power.powerType === 'Toggle' ||
+                    (power.powerType === 'Click' && power.effects?.buffDuration);
+
                 const levelDisplay = power.level > 0 ? `(${power.level})` : '';
                 powerElement.innerHTML = `
                     <div class="selected-power-header">
@@ -1452,10 +1456,12 @@ function displayInherentPowers() {
             powerElement.className = 'selected-power inherent-power';
             powerElement.dataset.powerName = power.name;
             
-            // Check if this is a Toggle power that needs a toggle checkbox
-            // Only Toggle powers get a switch - Auto powers are always on
-            const needsToggle = power.powerType === 'Toggle';
-            
+            // Check if this power needs a toggle checkbox
+            // Toggle powers always get a switch
+            // Click powers with buffDuration get a switch (they have lasting effects worth toggling for planning)
+            const needsToggle = power.powerType === 'Toggle' ||
+                (power.powerType === 'Click' && power.effects?.buffDuration);
+
             powerElement.innerHTML = `
                 <div class="selected-power-header">
                     <span class="selected-power-name">${power.name}</span>

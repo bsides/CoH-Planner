@@ -673,10 +673,11 @@ function addPowerToColumn(power, category) {
     powerElement.className = 'selected-power';
     powerElement.dataset.powerName = power.name;
     
-    // Check if this is a Toggle power that needs a toggle checkbox
-    // Only Toggle powers get a switch - Auto powers are always on
-    const needsToggle = power.powerType === 'Toggle';
-    console.log(`addPowerToColumn: ${power.name}, powerType=${power.powerType}, needsToggle=${needsToggle}`);
+    // Check if this power needs a toggle checkbox
+    // Toggle powers always get a switch
+    // Click powers with buffDuration get a switch (they have lasting effects worth toggling for planning)
+    const needsToggle = power.powerType === 'Toggle' ||
+        (power.powerType === 'Click' && power.effects?.buffDuration);
     
     // Format: (level) Power Name
     const levelDisplay = power.level > 0 ? `(${power.level})` : '';
